@@ -29,10 +29,6 @@
   }
 }
 
-.container {
-  @include content-padding-inline;
-}
-
 @mixin page-grid {
   --columns: 2;
 

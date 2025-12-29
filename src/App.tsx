@@ -6,15 +6,18 @@ import { ProjectDetail } from './pages/ProjectDetail';
 import { Home } from './pages/Home';
 import { PrivateRoute } from './routers/PrivateRoute';
 import { NotFound } from './pages/NotFound';
+import { Layout } from './components/Layout';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
+      </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
