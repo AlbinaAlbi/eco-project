@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react';
-import { getTestData } from '../../api/api';
+import { fetchProjects } from '../../api/projects';
+import { Project } from '../../types/project';
 
-const HomePage = () => {
-  const [data, setData] = useState('');
+export const Home = () => {
+  const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
-    getTestData().then(setData);
+    fetchProjects().then(setProjects);
   }, []);
 
-  return <div>{data || 'Loading...'}</div>;
-};
+  if (projects.length === 0) return <div>Loading...</div>;
 
-export default HomePage;
+  return (
+    <div></div>
+  );
+};
