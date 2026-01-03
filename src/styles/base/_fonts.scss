@@ -1,0 +1,27 @@
+@mixin responsive-font(
+  $font-family,
+  $font-weight,
+  $mobile-size,
+  $tablet-size,
+  $desktop-size,
+  $mobile-line-height,
+  $tablet-line-height,
+  $desktop-line-height,
+  $letter-spacing: 0
+) {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $mobile-size;
+  line-height: $mobile-line-height;
+  letter-spacing: $letter-spacing;
+
+  @media (min-width: $tablet-min-width) {
+    font-size: $tablet-size;
+    line-height: $tablet-line-height;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    font-size: $desktop-size;
+    line-height: $desktop-line-height;
+  }
+}

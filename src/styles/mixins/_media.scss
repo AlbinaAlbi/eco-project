@@ -1,3 +1,5 @@
+@import '../tokens/breakpoints';
+
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
@@ -27,6 +29,10 @@
   @include on-desktop {
     padding-inline: 120px;
   }
+}
+
+.containerContentPadding {
+  @include content-padding-inline;
 }
 
 @mixin page-grid {
