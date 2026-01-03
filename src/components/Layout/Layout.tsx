@@ -5,9 +5,9 @@ import styles from './Layout.module.scss';
 
 export const Layout = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Header />
-      <main>
+      <main className={styles.containerContentPadding}>
         <Outlet />
       </main>
       <Footer />

@@ -1,6 +1,2 @@
-@import '../../styles/mixins';
-@import '../../styles/vars';
+@import '../../styles/index';
 
-.container {
-  @include content-padding-inline;
-}
