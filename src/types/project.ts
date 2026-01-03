@@ -2,9 +2,8 @@ export interface Project {
   id: number;
   title: string;
   shortDescription: string;
-  imageUrl: string;
-  city: string;
-  currentAmount: number;
-  goalAmount: number;
+  image: string;
+  location: string;
   status: string;
-}
+ }
+ 
