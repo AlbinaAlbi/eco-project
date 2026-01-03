@@ -1,9 +1,12 @@
-export interface Project {
+export type Project = {
   id: number;
   title: string;
   shortDescription: string;
-  image: string;
-  location: string;
-  status: string;
- }
- 
+  imageUrl: string;
+  city: string;
+  lat: number;
+  lng: number;
+  currentAmount: number;
+  goalAmount: number;
+  status: "ACTIVE" | "COMPLETED" | "PAUSED";
+};
