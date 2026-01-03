@@ -1,9 +1,15 @@
-import { NavLink } from 'react-router-dom';
+import styles from './Header.module.scss';
+import { Icon } from './Icon';
+import { NavLinks } from './NavLinks';
 
 export const Header = () => (
-  <nav>
-    <NavLink to="/">Home</NavLink>
-    <NavLink to="/dashboard">Dashboard</NavLink>
-    <NavLink to="/login">Login</NavLink>
-  </nav>
+  <div className={styles.containerContentPadding}>
+    <div className={styles.container}>
+      <Icon />
+
+      <NavLinks />
+
+      <div className={styles.icon}>buttons</div>
+    </div>
+  </div>
 );
