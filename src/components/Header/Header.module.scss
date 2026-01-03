@@ -1,0 +1,22 @@
+@import '../../styles/index';
+@import '../../styles/mixins/media';
+
+.container {
+  height: $size-3xl;
+  background-color: $color-gray-100;
+  border-radius: $size-40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: $size-s;
+
+  @include on-desktop {
+    margin: 0 102px;
+  }
+}
+
+.icon {
+  width: 100%;
+
+}
