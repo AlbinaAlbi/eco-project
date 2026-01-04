@@ -8,21 +8,22 @@ import { DashboardPage } from './pages/DashboardPage';
 import { ProjectDetailPage } from './pages/ProjectDetailPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { ProtectedRoute } from './auth/ProtectedRoute';
+import { AppErrorHandler } from './pages/AppErrorHandler';
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
-        <Route path="/projects/:id" element={<ProjectDetailPage />} />
-      </Route>
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <AppErrorHandler />
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
+            <Route path="/projects/:id" element={<ProjectDetailPage />} />
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
     </BrowserRouter>
-
   );
 }
 
