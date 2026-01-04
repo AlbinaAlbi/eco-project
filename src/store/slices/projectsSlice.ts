@@ -9,7 +9,7 @@ interface Project {
 interface ProjectsState {
   projects: Project[];
 }
-
+ 
 const initialState: ProjectsState = {
   projects: [],
 };
