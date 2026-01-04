@@ -1,7 +1,7 @@
-// src/api/api.ts
 import axios from 'axios';
-import { getToken } from '../auth/auth.storage';
-import { refreshAccessToken, logout } from '../auth/auth.api';
+import { store } from '../store/store';
+import { refreshAccessToken } from '../auth/auth.api';
+import { logout as logoutRedux } from '../store/slices/authSlice';
 
 export const api = axios.create({
   baseURL: 'http://localhost:8080/api/v1',
@@ -9,12 +9,12 @@ export const api = axios.create({
 });
 
 api.interceptors.request.use(config => {
-  const token = getToken();
+  const token = store.getState().auth.token;
 
   if (token) {
-    config.headers.Authorization = `Bearer ${token}`
-  };
-
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  
   return config;
 });
 
@@ -29,11 +29,11 @@ api.interceptors.response.use(
 
       if (newToken) {
         originalRequest.headers.Authorization = `Bearer ${newToken}`;
-
         return api(originalRequest);
       }
 
-      logout();
+      store.dispatch(logoutRedux());
+      window.location.href = '/login';
     }
 
     return Promise.reject(error);
