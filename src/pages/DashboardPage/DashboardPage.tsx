@@ -1,20 +1,14 @@
-import { Routes, Route, Link } from "react-router-dom";
-import { ProjectsList } from "./ProjectsList";
-import { ProjectEdit } from "./ProjectEdit";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import { logout } from "../../store/slices/authSlice";
 
-export const DashboardPage = () => {
+const DashboardPage = () => {
+  const dispatch = useAppDispatch();
+  const user = useAppSelector(state => state.auth.user);
+
   return (
     <div>
-      <h1>Личный кабинет</h1>
-      <nav>
-        <Link to="projects">Мои проекты</Link>
-        {/* можно добавить другие ссылки: мои донаты, инициативы */}
-      </nav>
-
-      <Routes>
-        <Route path="projects" element={<ProjectsList />} />
-        <Route path="projects/:id/edit" element={<ProjectEdit />} />
-      </Routes>
+      <h1>Welcome, {user?.name}</h1>
+      <button onClick={() => dispatch(logout())}>Logout</button>
     </div>
   );
 };
