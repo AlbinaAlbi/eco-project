@@ -1,10 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface ProjectState {
-  projects: string[];
+interface Project {
+  id: string;
+  title: string;
+  description?: string;
 }
 
-const initialState: ProjectState = {
+interface ProjectsState {
+  projects: Project[];
+}
+
+const initialState: ProjectsState = {
   projects: [],
 };
 
@@ -12,15 +18,17 @@ const projectsSlice = createSlice({
   name: 'projects',
   initialState,
   reducers: {
-    addProject(state, action: PayloadAction<string>) {
+    setProjects(state, action: PayloadAction<Project[]>) {
+      state.projects = action.payload;
+    },
+    addProject(state, action: PayloadAction<Project>) {
       state.projects.push(action.payload);
     },
     removeProject(state, action: PayloadAction<string>) {
-      state.projects = state.projects.filter(p => p !== action.payload);
+      state.projects = state.projects.filter(p => p.id !== action.payload);
     },
   },
 });
 
-export const { addProject, removeProject } = projectsSlice.actions;
+export const { setProjects, addProject, removeProject } = projectsSlice.actions;
 export default projectsSlice.reducer;
-
