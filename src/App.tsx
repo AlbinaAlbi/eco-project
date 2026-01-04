@@ -1,25 +1,25 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import './index';
 
-import { Login } from './pages/Login';
-import { Dashboard } from './pages/Dashboard';
-import { ProjectDetail } from './pages/ProjectDetail';
-import { Home } from './pages/Home';
-import { PrivateRoute } from './routers/PrivateRoute';
-import { NotFound } from './pages/NotFound';
 import { Layout } from './components/Layout';
+import { HomePage } from './pages/HomePage';
+import { LoginPage } from './pages/LoginPage';
+import { DashboardPage } from './pages/DashboardPage';
+import { ProjectDetailPage } from './pages/ProjectDetailPage';
+import { NotFoundPage } from './pages/NotFoundPage';
+import { ProtectedRoute } from './auth/ProtectedRoute';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-        <Route path="/projects/:id" element={<ProjectDetail />} />
+        <Route index element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
+        <Route path="/projects/:id" element={<ProjectDetailPage />} />
       </Route>
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
 
