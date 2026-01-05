@@ -1,101 +1,39 @@
 @import '../base/fonts';
 
 h1 {
-  @include responsive-font(
-    $font-poppins,
-    500,
-    32px,
-    40px,
-    56px,  
-    48px,
-    60px,
-    80%,
-    0
-  );
+  @include responsive-font($font-poppins, 500, 32px, 40px, 56px, 48px, 60px, 80%, 0);
 }
 
 h2 {
-  @include responsive-font(
-    $font-poppins,
-    600,
-    28px,
-    32px,
-    40px,
-    42px,
-    48px,
-    60px,
-    0
-  );
+  @include responsive-font($font-poppins, 600, 28px, 32px, 40px, 42px, 48px, 60px, 0);
 }
 
 h3 {
-  @include responsive-font(
-    $font-poppins,
-    600,
-    22px,
-    24px,
-    28px,
-    33px,
-    36px,
-    42px,
-    0
-  );
+  @include responsive-font($font-poppins, 600, 22px, 24px, 28px, 33px, 36px, 42px, 0);
 }
 
 h4 {
-  @include responsive-font(
-    $font-poppins,
-    400,
-    20px,
-    20px,
-    24px,
-    30px,
-    30px,
-    36px,
-    0
-  );
+  @include responsive-font($font-poppins, 400, 20px, 20px, 24px, 30px, 30px, 36px, 0);
 }
 
 h5 {
-  @include responsive-font(
-    $font-inter,
-    400,
-    18px,
-    18px,
-    20px,
-    21.8px,
-    21.8px,
-    24.2px,
-    0
-  );
+  @include responsive-font($font-inter, 400, 18px, 18px, 20px, 21.8px, 21.8px, 24.2px, 0);
 }
 
 .textBody {
-  @include responsive-font($font-inter, 400,
-    16px, 17px, 18px,
-    19.4px, 20px, 22px
-  );
+  @include responsive-font($font-inter, 400, 16px, 17px, 18px, 19.4px, 20px, 22px);
 }
 
 .textSecondary {
-  @include responsive-font($font-inter, 400,
-    14px, 15px, 16px,
-    16.9px, 18px, 19px
-  );
+  @include responsive-font($font-inter, 400, 14px, 15px, 16px, 16.9px, 18px, 19px);
 }
 
 .textSmall {
-  @include responsive-font($font-inter, 400,
-    13px, 13px, 14px,
-    15.7px, 15.7px, 16.9px
-  );
+  @include responsive-font($font-inter, 400, 13px, 13px, 14px, 15.7px, 15.7px, 16.9px);
 }
 
 .textButton {
-  @include responsive-font($font-inter, 500,
-    16px, 16px, 16px,
-    19.4px, 19.4px, 19.4px
-  );
+  @include responsive-font($font-inter, 500, 16px, 16px, 16px, 19.4px, 19.4px, 19.4px);
 
   text-transform: uppercase;
 }

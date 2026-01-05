@@ -1,5 +1,5 @@
 export type Donation = {
-  projectId: number,
-  amount: number,
-  date: string
-}
+  projectId: number;
+  amount: number;
+  date: string;
+};

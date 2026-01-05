@@ -1,9 +1,9 @@
-import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { logout } from "../../store/slices/authSlice";
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { logout } from '../../store/slices/AuthSlice/authSlice';
 
-const DashboardPage = () => {
+export const DashboardPage = () => {
   const dispatch = useAppDispatch();
-  const user = useAppSelector(state => state.auth.user);
+  const user = useAppSelector((state) => state.auth.user);
 
   return (
     <div>

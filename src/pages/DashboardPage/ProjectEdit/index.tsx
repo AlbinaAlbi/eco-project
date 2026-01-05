@@ -1,1 +1,1 @@
-export * from './ProjectEdit'
+export * from './ProjectEdit';

@@ -1,5 +1,5 @@
 import styles from './Icon.module.scss';
-import icon from '../../../imgs/EcoLeaf..svg'
+import icon from '../../../imgs/EcoLeaf..svg';
 
 export const Icon = () => (
   <div className={styles.container}>

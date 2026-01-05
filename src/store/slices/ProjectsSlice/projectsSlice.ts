@@ -9,7 +9,7 @@ interface Project {
 interface ProjectsState {
   projects: Project[];
 }
- 
+
 const initialState: ProjectsState = {
   projects: [],
 };
@@ -25,7 +25,7 @@ const projectsSlice = createSlice({
       state.projects.push(action.payload);
     },
     removeProject(state, action: PayloadAction<string>) {
-      state.projects = state.projects.filter(p => p.id !== action.payload);
+      state.projects = state.projects.filter((p) => p.id !== action.payload);
     },
   },
 });

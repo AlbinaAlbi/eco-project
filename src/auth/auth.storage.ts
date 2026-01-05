@@ -13,15 +13,11 @@ export const clearToken = () => {
   localStorage.removeItem(TOKEN_KEY);
 };
 
-export const saveRefreshToken = (token: string) => 
-  localStorage.setItem(REFRESH_TOKEN_KEY, token);
+export const saveRefreshToken = (token: string) => localStorage.setItem(REFRESH_TOKEN_KEY, token);
 
-export const getRefreshToken = (): string | null => 
-  localStorage.getItem(REFRESH_TOKEN_KEY);
+export const getRefreshToken = (): string | null => localStorage.getItem(REFRESH_TOKEN_KEY);
 
-export const clearRefreshToken = () => 
-  localStorage.removeItem(REFRESH_TOKEN_KEY);
-
+export const clearRefreshToken = () => localStorage.removeItem(REFRESH_TOKEN_KEY);
 
 export const clearAuth = () => {
   clearToken();

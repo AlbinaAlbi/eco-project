@@ -1,5 +1,3 @@
 export const ProjectEdit = () => {
-  return (
-    <div>ProjectEdit</div>
-  );
+  return <div>ProjectEdit</div>;
 };

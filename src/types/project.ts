@@ -8,5 +8,5 @@ export type Project = {
   lng: number;
   currentAmount: number;
   goalAmount: number;
-  status: "ACTIVE" | "COMPLETED" | "PAUSED";
+  status: 'ACTIVE' | 'COMPLETED' | 'PAUSED';
 };

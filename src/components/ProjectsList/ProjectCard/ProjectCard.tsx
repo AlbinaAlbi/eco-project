@@ -1,5 +1,3 @@
 export const ProjectCard = () => {
-  return (
-    <div></div>
-  );
-}
+  return <div></div>;
+};

@@ -6,4 +6,4 @@ export type ProjectDetail = {
   donationGoal: number;
   currentAmount: number;
   volunteersNeeded: number;
-}
+};

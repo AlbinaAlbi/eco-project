@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Project } from "../../types/Project";
-import { fetchProjects } from "../../api/projects";
+import React, { useEffect, useState } from 'react';
+import { Project } from '../../types/Project';
+import { fetchProjects } from '../../api/projects';
 
 const ProjectsList = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -15,7 +15,7 @@ const ProjectsList = () => {
         const data = await fetchProjects();
         setProjects(data);
       } catch {
-        setError("Не вдалося завантажити проекти");
+        setError('Не вдалося завантажити проекти');
       } finally {
         setLoading(false);
       }

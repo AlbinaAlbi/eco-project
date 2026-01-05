@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [token, setToken] = useState<string | null>(getToken());
 
   const login = (newToken: string) => setToken(newToken);
-  
+
   const logout = () => {
     clearAuth();
     setToken(null);
@@ -20,9 +20,5 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setToken(getToken());
   }, []);
 
-  return (
-    <AuthContext.Provider value={{ token, login, logout }}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={{ token, login, logout }}>{children}</AuthContext.Provider>;
 };
