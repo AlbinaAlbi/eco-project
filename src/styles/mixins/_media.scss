@@ -31,10 +31,6 @@
   }
 }
 
-.containerContentPadding {
-  @include content-padding-inline;
-}
-
 @mixin page-grid {
   --columns: 2;
 
@@ -50,4 +46,9 @@
   @include on-desktop {
     --columns: 12;
   }
+}
+
+
+.containerContentPadding {
+  @include content-padding-inline;
 }

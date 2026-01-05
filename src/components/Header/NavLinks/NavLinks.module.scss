@@ -1,7 +1,12 @@
 @import '/src/styles/index.scss';
+@import '/src/styles/index.scss';
 
 .container {
-  display: flex;
+  display: none;
   justify-content: space-between;
   width: 100%;
+
+  @include on-desktop {
+    display: flex;
+  }
 }
