@@ -1,5 +1,6 @@
 import styles from './Header.module.scss';
 import { Icon } from './Icon';
+import { Menu } from './Menu';
 import { NavLinks } from './NavLinks';
 
 export const Header = () => (
@@ -9,7 +10,7 @@ export const Header = () => (
 
       <NavLinks />
 
-      <div className={styles.icon}>buttons</div>
+      <Menu />
     </div>
   </div>
 );
