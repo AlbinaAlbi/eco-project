@@ -1,7 +1,12 @@
 // src/context/AuthContext.tsx
 import { createContext, ReactNode, useState, useEffect } from 'react';
-import { AuthContextType } from '../types/AuthContextType';
 import { getToken, clearAuth } from '../auth/auth.storage';
+
+type AuthContextType = {
+  token: string | null;
+  login: (token: string) => void;
+  logout: () => void;
+};
 
 export const AuthContext = createContext<AuthContextType | null>(null);
 
