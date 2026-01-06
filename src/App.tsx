@@ -12,11 +12,13 @@ import { AppErrorHandler } from './pages/AppErrorHandler';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { Contacts } from './pages/Contacts';
 import { AboutUs } from './pages/AboutUs';
+import { Sidebar } from './components/Sidebar';
 
 function App() {
   return (
     <>
       <AppErrorHandler />
+      <Sidebar />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -29,9 +31,8 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/projects" element={<ProjectsPage />}>
-            <Route path="/projects/:id" element={<ProjectDetailPage />} />
-          </Route>
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/:id" element={<ProjectDetailPage />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/about" element={<AboutUs />} />
         </Route>

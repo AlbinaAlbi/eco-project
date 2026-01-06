@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { store } from './store/store';
 import { LanguageProvider } from './context/LanguageContext';
+import { SidebarProvider } from './context/SidebarContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
@@ -15,9 +16,11 @@ root.render(
     <Provider store={store}>
       <LanguageProvider>
         <AuthProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
+          <SidebarProvider>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </SidebarProvider>
         </AuthProvider>
       </LanguageProvider>
     </Provider>
