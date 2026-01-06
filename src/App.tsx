@@ -9,6 +9,9 @@ import { ProjectDetailPage } from './pages/ProjectDetailPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { ProtectedRoute } from './auth/ProtectedRoute';
 import { AppErrorHandler } from './pages/AppErrorHandler';
+import { ProjectsPage } from './pages/ProjectsPage';
+import { Contacts } from './pages/Contacts';
+import { AboutUs } from './pages/AboutUs';
 
 function App() {
   return (
@@ -26,7 +29,11 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/projects/:id" element={<ProjectDetailPage />} />
+          <Route path="/projects" element={<ProjectsPage />}>
+            <Route path="/projects/:id" element={<ProjectDetailPage />} />
+          </Route>
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/about" element={<AboutUs />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
