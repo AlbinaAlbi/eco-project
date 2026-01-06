@@ -11,10 +11,12 @@ export const ProjectsPage = () => {
     const loadProjects = async () => {
       const data = await fetchProjects();
       const dataWithStringId = data.map((p) => ({ ...p, id: p.id.toString() }));
+
       dispatch(setProjects(dataWithStringId));
     };
     loadProjects();
   }, [dispatch]);
+
   return (
     <div>
       <h1>Projects</h1>
