@@ -6,8 +6,12 @@ import { Language } from './Language';
 export const Menu = () => {
   return (
     <div className={styles.container}>
-      <Language />
-      <Explore />
+      <div className="desktopOnly">
+        <Language />
+      </div>
+      <div className="tabletAndMore">
+        <Explore />
+      </div>
       <BurgerMenu />
     </div>
   );

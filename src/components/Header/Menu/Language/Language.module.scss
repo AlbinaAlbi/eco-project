@@ -1,11 +1,7 @@
 @import '../../../../styles//index.scss';
 
 .container {
-  display: none;
-  
-  @include on-desktop {
-    display: flex;
-  }
+  display: flex;
 }
 
 .en,
@@ -16,6 +12,7 @@ color: $color-gray-500;
 font-family: $font-inter;
 font-size: $size-18;
 width: $size-26;
+background: none;
 }
 
 .active {

@@ -8,7 +8,9 @@ export const Header = () => (
     <div className={styles.container}>
       <Icon />
 
-      <NavLinks />
+      <div className="desktopOnly">
+        <NavLinks />
+      </div>
 
       <Menu />
     </div>
