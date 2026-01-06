@@ -12,4 +12,13 @@
 
 .container a {
   text-decoration: none;
+  color: $color-black;
+  font-weight: 400;
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.active {
+  border-bottom: 1.5px solid $c-button-primary;
 }
