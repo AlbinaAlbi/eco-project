@@ -2,20 +2,23 @@
 @import '../../styles/mixins/media';
 
 .container {
-  height: $size-3xl;
   background-color: $color-gray-100;
-  border-radius: $size-40px;
+  border-radius: $size-40;
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
+  margin-top: $size-xl;
   padding: $size-l;
+  height: $size-3xl;
+
+  @include on-tablet {
+    padding: $size-s $size-24;
+    height: $size-72;
+  }
 
   @include on-desktop {
-    margin: 0 102px;
+    padding: $size-14;
+    height: $size-80;
   }
-}
-
-.icon {
-  width: 100%;
 }

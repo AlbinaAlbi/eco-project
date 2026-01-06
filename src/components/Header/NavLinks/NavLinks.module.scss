@@ -1,12 +1,15 @@
-@import '/src/styles/index.scss';
-@import '/src/styles/index.scss';
+@import '/src/styles/index';
 
 .container {
   display: none;
-  justify-content: space-between;
-  width: 100%;
-
+  justify-content: center;
+  gap: $size-24;
+  
   @include on-desktop {
     display: flex;
   }
+}
+
+.container a {
+  text-decoration: none;
 }

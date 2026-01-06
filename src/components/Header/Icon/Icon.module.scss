@@ -1,10 +1,17 @@
-@import '../../../styles/index.scss';
+@import '../../../styles/index';
 
 .container {
-  min-width: 120px;
-  height: 100%;
+  height: $size-24;
+  width: $size-120;
+
+  @include on-desktop {
+    padding: $size-10;
+    height: 100%;
+    width: $size-157;
+  }
 }
 
 .container img {
   height: 100%;
+  width: 100%;
 }
