@@ -1,0 +1,31 @@
+@import '../../../../styles//index.scss';
+
+.container {
+  display: none;
+  
+  @include on-desktop {
+    display: flex;
+  }
+}
+
+.en,
+.ua {
+border: none;
+padding: 0;
+color: $color-gray-500;
+font-family: $font-inter;
+font-size: $size-18;
+width: $size-26;
+}
+
+.active {
+  color: $color-black;
+  font-weight: 600;
+}
+
+.line {
+  margin: 0 $size-xs;
+  height: $size-24;
+  width: $size-1;
+  background-color: $color-gray-500;
+}
