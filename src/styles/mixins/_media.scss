@@ -20,14 +20,14 @@
 }
 
 @mixin content-padding-inline() {
-  padding-inline: 24px;
+  padding-inline: $size-24;
 
   @include on-tablet {
-    padding-inline: 40px;
+    padding-inline: $size-40;
   }
 
   @include on-desktop {
-    padding-inline: 120px;
+    padding-inline: $size-120;
   }
 }
 
@@ -40,7 +40,7 @@
   @include on-tablet {
     --columns: 8;
 
-    column-gap: 30px;
+    column-gap: $size-30;
   }
 
   @include on-desktop {
@@ -51,4 +51,20 @@
 
 .containerContentPadding {
   @include content-padding-inline;
+}
+
+.desktopOnly {
+  display: none;
+
+  @include on-desktop {
+    display: block;
+  };
+}
+
+.tabletAndMore {
+  display: none;
+
+  @include on-tablet {
+    display: block;
+  };
 }
