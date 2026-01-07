@@ -8,18 +8,46 @@
 .container button {
   padding: $size-14-5 $size-17;
   border-radius: $size-40;
+  transition: $allEffectDuration;
+  height: $size-2xl;
 
   @include on-desktop {
     padding: $size-16-5 $size-m;
+    height: $size-52;
+  }
+
+  &:hover {
+    transform: $buttonTransform;
+  }
+
+  &:active {
+    transform: $activeTransform;
   }
 }
 
 .green {
   background-color: $c-button-primary;
   border: none;
+
+
+  &:hover {
+    background-color: $c-button-hover;
+  }
+
+  &:active {
+    background-color: $c-button-active;
+  }
 }
 
 .white {
   background: none;
-  border: 1px solid $color-gray-500;
+  border: $size-1 solid $color-gray-500;
+
+  &:hover {
+    background-color: $color-gray-hover;
+  }
+
+  &:active {
+    background-color: $color-gray-active;
+  }
 }

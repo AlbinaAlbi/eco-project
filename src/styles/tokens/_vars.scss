@@ -31,6 +31,7 @@ $size-26: 26px;
 $size-28: 28px;
 $size-30: 30px; 
 $size-40: 40px;
+$size-52: 52px;
 $size-64: 64px;
 $size-72: 72px;
 $size-80: 80px;
@@ -40,9 +41,10 @@ $size-157: 157px;
 $size-200: 200px;
 $size-260: 260px;
 
-$slideTransform: scale(1.05);
-$NavTransform: scale(1.1);
+$buttonTransform: translateY(-0.5px);
+$activeTransform: translateY(0);
 $effectDuration: 0.5s;
 $transformEffectDuration: transform 0.3s ease;
 $opacityEffectDuration: opacity 0.3s ease;
+$allEffectDuration: all 0.3s ease;
 
