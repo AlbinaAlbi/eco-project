@@ -1,0 +1,6 @@
+export type ButtonProps = {
+  text: string;
+  color?: 'green' | 'white';
+  to?: string;
+  onClick?: () => void;
+};
