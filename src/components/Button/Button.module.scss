@@ -1,5 +1,10 @@
 @import '../../styles/index.scss';
 
+.container {
+  display: flex;
+  justify-content: center;
+}
+
 .container button {
   padding: $size-14-5 $size-17;
   border-radius: $size-40;
