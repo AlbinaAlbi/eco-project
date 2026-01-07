@@ -1,6 +1,6 @@
 import { useSidebar } from '../../context/SidebarContext';
 import { Language } from '../Header/Menu/Language';
-import { Volunteer } from '../Header/Menu/Volunteer';
+import { BecomeAVolunteer } from '../Buttons/BecomeAVolunteer';
 import { NavLinks } from '../Header/NavLinks';
 import styles from './Sidebar.module.scss';
 
@@ -12,7 +12,7 @@ export const Sidebar = () => {
       <div className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
         <div className={styles.container}>
           <NavLinks />
-          <Volunteer />
+          <BecomeAVolunteer />
           <Language />
         </div>
       </div>
