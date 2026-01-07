@@ -1,6 +1,10 @@
 $font-poppins: 'Poppins', sans-serif;
 $font-inter: 'Inter', sans-serif;
 
+$hight-header-mobile: 64px; 
+$hight-header-tablet: 72px; 
+$hight-header-desktop: 80px; 
+
 $size-2xs: 4px;
 $size-xs: 8px;
 $size-s: 12px;
@@ -19,20 +23,26 @@ $size-14: 14px;
 $size-14-5: 14.5px;
 $size-16-5: 16.5px;
 $size-17: 17px;
+$size-16: 16px;
 $size-18: 18px;
+$size-22: 22px;
 $size-24: 24px;
 $size-26: 26px;
 $size-28: 28px;
 $size-30: 30px; 
 $size-40: 40px;
-$size-42: 64px;
+$size-64: 64px;
 $size-72: 72px;
 $size-80: 80px;
 $size-102: 102px;
 $size-120: 120px;
 $size-157: 157px;
+$size-200: 200px;
+$size-260: 260px;
 
 $slideTransform: scale(1.05);
 $NavTransform: scale(1.1);
 $effectDuration: 0.5s;
 $transformEffectDuration: transform 0.3s ease;
+$opacityEffectDuration: opacity 0.3s ease;
+

@@ -2,6 +2,7 @@
 
 .container {
   display: flex;
+  justify-content: center;
 }
 
 .en,
@@ -10,9 +11,13 @@ border: none;
 padding: 0;
 color: $color-gray-500;
 font-family: $font-inter;
-font-size: $size-18;
+font-size: $size-16;
 width: $size-26;
 background: none;
+
+@include on-tablet {
+  height: $size-18;
+}
 }
 
 .active {
@@ -22,7 +27,11 @@ background: none;
 
 .line {
   margin: 0 $size-xs;
-  height: $size-24;
+  height: $size-22;
   width: $size-1;
   background-color: $color-gray-500;
+
+  @include on-tablet {
+    height: $size-24;
+  }
 }
