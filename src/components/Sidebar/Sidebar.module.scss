@@ -5,24 +5,13 @@
   top: calc($size-3xl + $size-xl);
   right: 0;
   width: 100%;
-
-  background: white;
+  background-color: $color-background-white;
   z-index: 1100;
 
   transform: translateX(100%);
-  transition: transform 0.3s ease;
+  transition: $transformEffectDuration;
 }
 
 .sidebar.open {
   transform: translateX(0);
-}
-
-.closeBtn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
 }

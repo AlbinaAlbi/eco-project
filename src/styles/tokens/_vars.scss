@@ -32,7 +32,7 @@ $size-102: 102px;
 $size-120: 120px;
 $size-157: 157px;
 
-$FotoTransform: scale(1.05);
+$slideTransform: scale(1.05);
 $NavTransform: scale(1.1);
 $effectDuration: 0.5s;
-$allEffectDuration: all 0.5s ease;
+$transformEffectDuration: transform 0.3s ease;
