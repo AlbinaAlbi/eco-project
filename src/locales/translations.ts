@@ -7,6 +7,7 @@ export const translations = {
     contacts: 'Contacts',
     description: 'This is a project description',
     volunteer: 'Become a volunteer',
+    explore: 'Explore projects',
   },
   ua: {
     home: 'Головна',
@@ -16,5 +17,6 @@ export const translations = {
     contacts: 'Контакти',
     description: 'Опис проєкту',
     volunteer: 'Стати волонтером',
+    explore: 'Переглянути проєкти',
   },
 };
