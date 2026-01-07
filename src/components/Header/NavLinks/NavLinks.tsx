@@ -12,7 +12,7 @@ export const NavLinks = () => {
   ];
 
   return (
-    <nav className={`${styles.container}`}>
+    <nav className={styles.container}>
       {links.map((link) => (
         <NavLink
           key={link.to}

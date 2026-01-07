@@ -1,7 +1,7 @@
 import styles from './Menu.module.scss';
 import { BurgerMenu } from './BurgerMenu';
-import { Explore } from './Explore';
 import { Language } from './Language';
+import { Volunteer } from './Volunteer';
 
 export const Menu = () => {
   return (
@@ -10,7 +10,7 @@ export const Menu = () => {
         <Language />
       </div>
       <div className="tabletAndMore">
-        <Explore />
+        <Volunteer />
       </div>
       <BurgerMenu />
     </div>
