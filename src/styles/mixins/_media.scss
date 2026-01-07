@@ -58,6 +58,7 @@
 
   @include on-desktop {
     display: block;
+    transition: $opacityEffectDuration;
   };
 }
 
@@ -66,5 +67,16 @@
 
   @include on-tablet {
     display: block;
-  };
+    transition: $opacityEffectDuration;
+  }
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
