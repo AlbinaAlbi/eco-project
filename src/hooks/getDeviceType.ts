@@ -1,11 +1,24 @@
-type DeviceType = 'mobile' | 'tablet' | 'desktop';
+import { useEffect, useState } from 'react';
 
-export const getDeviceType = (width: number): DeviceType => {
-  if (width <= 767) return 'mobile';
+export type DeviceType = 'mobile' | 'tablet' | 'desktop';
 
-  if (width >= 768 && width <= 1199) return 'tablet';
+const getDevice = (): DeviceType => {
+  const width = window.innerWidth;
 
+  if (width < 768) return 'mobile';
+  if (width < 1200) return 'tablet';
   return 'desktop';
 };
 
-export const device = getDeviceType(window.innerWidth);
+export const useDeviceType = (): DeviceType => {
+  const [device, setDevice] = useState<DeviceType>(getDevice());
+
+  useEffect(() => {
+    const handleResize = () => setDevice(getDevice());
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return device;
+};
