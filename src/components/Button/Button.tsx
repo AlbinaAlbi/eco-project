@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import { ButtonProps } from '../../types/ButtonProps';
 import styles from './Button.module.scss';
+import { useSidebar } from '../../context/SidebarContext';
 
 export const Button = ({ text, color = 'green', to, onClick }: ButtonProps) => {
   const classNameContainer = `${styles.container}`;
   const classNameButton = `textButton ${styles[color]}`;
+  const { closeSidebar } = useSidebar();
 
   if (to) {
     return (
@@ -16,7 +18,9 @@ export const Button = ({ text, color = 'green', to, onClick }: ButtonProps) => {
 
   return (
     <div className={classNameContainer}>
-      <button className={classNameButton}>{text}</button>
+      <button className={classNameButton} onClick={closeSidebar}>
+        {text}
+      </button>
     </div>
   );
 };
