@@ -2,39 +2,40 @@ import { COLORS } from '../styles/colors';
 
 export const SECTION_HEADERS = {
   action: {
-    tag: 'Take action',
-    title: 'Together, we createa greener future.',
+    tagKey: 'actionTag' as const,
+    titleKey: 'actionTitle' as const,
     tagColor: COLORS.gray100,
     titleColor: COLORS.black,
   },
   mission: {
-    tag: 'Our mission',
-    title: 'We believe small actions create big change.',
+    tagKey: 'missionTag' as const,
+    titleKey: 'missionTitle' as const,
     tagColor: COLORS.gray100,
     titleColor: COLORS.black,
   },
   works: {
-    tag: 'How it works',
-    title: 'Three simple steps to help you take meaningful action for nature',
+    tagKey: 'worksTag' as const,
+    titleKey: 'worksTitle' as const,
     tagColor: COLORS.gray200,
     titleColor: COLORS.black,
   },
   featured: {
-    tag: 'Featured projects',
-    title: 'Explore initiatives that matter',
+    tagKey: 'featuredTag' as const,
+    titleKey: 'featuredTitle' as const,
+    descriptionKey: 'featuredDescription' as const,
     tagColor: COLORS.gray100,
     titleColor: COLORS.black,
   },
   faq: {
-    tag: 'FAQ',
-    title: 'Common questions about our work',
+    tagKey: 'faqTag' as const,
+    titleKey: 'faqTitle' as const,
     tagColor: COLORS.gray200,
     titleColor: COLORS.black,
   },
   start: {
-    tag: 'Start your initiative',
-    title: 'Have an idea for your own eco-project',
+    tagKey: 'startTag' as const,
+    titleKey: 'startTitle' as const,
     tagColor: COLORS.gray100,
     titleColor: COLORS.white,
   },
-};
+} as const;
