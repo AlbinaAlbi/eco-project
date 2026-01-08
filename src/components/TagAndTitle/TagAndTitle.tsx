@@ -1,25 +1,27 @@
+import { TranslationKey, useLanguage } from '../../context/LanguageContext';
 import styles from './TagAndTitle.module.scss';
 
 interface TagAndTitleProps {
   data: {
-    tag: string;
-    title: string;
+    tagKey: TranslationKey;
+    titleKey: TranslationKey;
     tagColor: string;
     titleColor: string;
   };
 }
 
 export const TagAndTitle = ({ data }: TagAndTitleProps) => {
-  const { tag, title, tagColor, titleColor } = data;
+  const { tagKey, titleKey, tagColor, titleColor } = data;
+  const { t } = useLanguage();
 
   return (
     <div className={styles.container}>
-      <span className="section-header__tag" style={{ backgroundColor: tagColor }}>
-        {tag}
+      <span className={`textSmall ${styles.tagText}`} style={{ backgroundColor: tagColor }}>
+        {t(tagKey)}
       </span>
-      <h2 className="section-header__title" style={{ color: titleColor }}>
-        {title}
-      </h2>
+      <h1 className={styles.titleText} style={{ color: titleColor }}>
+        {t(titleKey)}
+      </h1>
     </div>
   );
 };

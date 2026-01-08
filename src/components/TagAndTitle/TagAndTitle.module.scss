@@ -1,1 +1,40 @@
 @import '../../styles/index.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $size-m;
+  align-items: center;
+  padding-bottom: $size-xs;
+
+  @include on-tablet {
+    gap: $size-24;
+    padding-bottom: $size-m;
+  }
+
+  @include on-desktop {
+    gap: $size-xl;
+  }
+}
+
+.tagText {
+  width: fit-content;
+  padding: $size-s;
+  border-radius: $size-40;
+}
+
+.titleText {
+  display: block;
+  margin: 0;
+  text-align: center;
+  max-width: $size-300;
+
+  @include on-tablet {
+    max-width: $size-350;
+  }
+
+  @include on-desktop {
+    max-width: $size-500;
+    line-height: $size-80;
+  }
+}
