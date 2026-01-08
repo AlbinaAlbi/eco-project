@@ -14,9 +14,11 @@ export const ProjectsPage = () => {
 
       dispatch(setProjects(dataWithStringId));
     };
+
     loadProjects();
   }, [dispatch]);
 
+  console.log(projects);
   return (
     <div>
       <h1>Projects</h1>

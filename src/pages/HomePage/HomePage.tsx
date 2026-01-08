@@ -1,3 +1,10 @@
+import { TakeAction } from '../../components/TakeAction';
+import styles from './HomePage.module.scss';
+
 export const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <div className={styles.container}>
+      <TakeAction />
+    </div>
+  );
 };

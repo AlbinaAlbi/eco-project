@@ -35,4 +35,6 @@ h5 {
 
 .textButton {
   @include responsive-font($font-inter, 500, 16px, 16px, 16px, 19.4px, 19.4px, 19.4px);
+
+  cursor: pointer;
 }
