@@ -3,4 +3,15 @@
 .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  
+  @include on-tablet {
+    max-width: 512px;
+  }
+
+  @include on-desktop {
+    max-width: 590px;
+  }
 }
