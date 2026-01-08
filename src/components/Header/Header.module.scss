@@ -7,17 +7,19 @@
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  margin-top: $size-xl;
   padding: $size-l;
   height: $size-3xl;
+  margin: $size-xl 0 $size-40;
 
   @include on-tablet {
     padding: $size-s $size-24;
     height: $size-72;
+    margin-bottom: $size-2xl;
   }
 
   @include on-desktop {
     padding: $size-14;
     height: $size-80;
+    margin-bottom: $size-3xl;
   }
-}
+} 
