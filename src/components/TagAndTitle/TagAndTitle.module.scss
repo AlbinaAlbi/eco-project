@@ -27,14 +27,8 @@
   display: block;
   margin: 0;
   text-align: center;
-  max-width: $size-300;
-
-  @include on-tablet {
-    max-width: $size-350;
-  }
 
   @include on-desktop {
-    max-width: $size-500;
     line-height: $size-80;
   }
 }
