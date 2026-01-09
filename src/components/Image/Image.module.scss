@@ -1,0 +1,10 @@
+@import '../../styles/index.scss';
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: $size-40;
+  object-fit: cover;
+  display: block;
+  object-position: center bottom;
+}
