@@ -8,35 +8,85 @@ export const translations = {
     description: 'This is a project description',
     volunteer: 'Become a volunteer',
     explore: 'Explore projects',
+
+    actionTag: 'Take action',
+    actionTitle: ['Together, we create ', 'a greener future.'],
     actionDescription: {
-      desktop: [
-        'Join eco-initiatives, volunteer with purpose,',
-        'and make a real impact in your community.',
-      ],
       mobile: [
-        'Join eco-initiatives, volunteer',
-        'with purpose, and make a real impact',
+        'Join eco-initiatives, volunteer ',
+        'with purpose, and make a real impact ',
         'in your community.',
       ],
+      desktop: [
+        'Join eco-initiatives, volunteer with purpose, ',
+        'and make a real impact in your community.',
+      ],
     },
-    actionTag: 'Take action',
-    actionTitle: 'Together, we create a greener future.',
 
     missionTag: 'Our mission',
-    missionTitle: 'We believe small actions create big change.',
+    missionTitle: {
+      mobile: ['We believe small actions create big change.'],
+      tablet: ['We believe small actions ', 'create big change.'],
+    },
+    missionFirstCardTitle: {
+      mobile: ['Connect people ', 'with eco-initiatives'],
+      desktop: ['Connect people with eco-initiatives'],
+    },
+    missionFirstCardDescription: {
+      mobile: [
+        'We help communities find and join ',
+        'local environmental projects — from ',
+        'tree planting to clean-up events',
+      ],
+      desktop: [
+        'We help communities find and join local environmental ',
+        'projects — from tree planting to clean-up events',
+      ],
+    },
+    missionSecondCard: {
+      mobile: ['Learn more ', 'about our mission'],
+      desktop: ['Learn more about our mission'],
+    },
+    missionSecondCardDescription: {
+      mobile: [
+        'Discover who we are, what we stand ',
+        'for, and how we work to support local ',
+        'eco-initiatives',
+      ],
+      desktop: [
+        'Discover who we are, what we stand for, ',
+        'and how we work to support local eco-initiatives',
+      ],
+    },
 
     worksTag: 'How it works',
-    worksTitle: 'Three simple steps to help you take meaningful action for nature',
+    worksTitle: {
+      mobile: ['Three simple steps to help you take meaningful action for nature'],
+      tablet: ['Three simple steps to help ', 'you take meaningful action', 'for nature'],
+    },
 
     featuredTag: 'Featured projects',
-    featuredTitle: 'Explore initiatives that matter',
-    featuredDescription: ['Discover eco-projects in your area and choose how you want to help'],
+    featuredTitle: ['Explore initiatives ', 'that matter'],
+    featuredDescription: ['Discover eco-projects in your area ', 'and choose how you want to help'],
+
+    statisticsTag: 'Our statistics',
+    statisticsTitle: ['What we’ve ', 'achieved together'],
+    statisticsDescription: {
+      mobile: ['Every number reflects people ', 'working together for the planet'],
+      desktop: ['Every number reflects people working together ', 'for the planet'],
+    },
+
     faqTag: 'FAQ',
-    faqTitle: 'Common questions about our work',
+    faqTitle: ['Common questions ', 'about our work'],
 
     startTag: 'Start your initiative',
-    startTitle: 'Have an idea for your own eco-project',
+    startTitle: ['Have an idea for your ', 'own eco-project'],
+    startDescription: {
+      mobile: ['Share your initiative with us, and we’ll help ', 'bring it to life'],
+      desktop: ['Share your initiative with us, and we’ll help bring it to life'],
+    },
   },
+
   ua: {
     home: 'Головна',
     projects: 'Проєкти',
@@ -46,36 +96,85 @@ export const translations = {
     description: 'Опис проєкту',
     volunteer: 'Стати волонтером',
     explore: 'Переглянути проєкти',
+
+    actionTag: 'Долучайся',
+    actionTitle: ['Разом ми створюємо ', 'зеленіше майбутнє.'],
     actionDescription: {
-      desktop: [
-        'Долучайтеся до екоініціатив, волонтерте зі змістом,',
-        'і робіть реальний внесок у розвиток своєї спільноти.',
-      ],
       mobile: [
-        'Долучайтеся до екоініціатив, волонтерте',
-        'зі змістом і робіть реальний внесок',
+        'Долучайтеся до екоініціатив, волонтерте ',
+        'зі змістом і робіть реальний внесок ',
         'у розвиток своєї спільноти.',
       ],
+      desktop: [
+        'Долучайтеся до екоініціатив, волонтерте зі змістом, ',
+        'і робіть реальний внесок у розвиток своєї спільноти.',
+      ],
     },
-    actionTag: 'Долучайся',
-    actionTitle: 'Разом ми створюємо зеленіше майбутнє.',
 
     missionTag: 'Наша місія',
-    missionTitle: 'Ми віримо, що маленькі дії створюють великі зміни.',
+    missionTitle: {
+      mobile: ['Ми віримо, що маленькі дії створюють великі зміни.'],
+      tablet: ['Ми віримо, що маленькі дії ', 'створюють великі зміни.'],
+    },
+    missionFirstCardTitle: {
+      mobile: ['Об’єднуємо людей ', 'з еко-ініціативами'],
+      desktop: ['Об’єднуємо людей з еко-ініціативами'],
+    },
+    missionFirstCardDescription: {
+      mobile: [
+        'Ми допомагаємо громадам знаходити та долучатися до ',
+        'локальних екологічних проєктів — від ',
+        'посадок дерев до заходів з прибирання',
+      ],
+      desktop: [
+        'Ми допомагаємо громадам знаходити та долучатися до локальних ',
+        'екологічних проєктів — від посадок дерев до заходів з прибирання',
+      ],
+    },
+    missionSecondCard: {
+      mobile: ['Дізнайтеся більше', 'про нашу місію'],
+      desktop: ['Дізнайтеся більше про нашу місію'],
+    },
+    missionSecondCardDescription: {
+      mobile: [
+        'Дізнайтеся, хто ми, що ми відстоюємо ',
+        'і як працюємо для підтримки ',
+        'локальних еко-ініціатив',
+      ],
+      desktop: [
+        'Дізнайтеся, хто ми, що ми відстоюємо, ',
+        'і як працюємо для підтримки локальних еко-ініціатив',
+      ],
+    },
 
     worksTag: 'Як це працює',
-    worksTitle: 'Три прості кроки, щоб зробити свій внесок у збереження природи',
+    worksTitle: {
+      mobile: ['Три прості кроки, щоб зробити свій внесок у збереження природи'],
+      tablet: ['Три прості кроки, щоб зробити свій внесок ', 'у збереження природи'],
+    },
 
     featuredTag: 'Рекомендовані проєкти',
-    featuredTitle: 'Досліджуйте ініціативи, які мають значення',
+    featuredTitle: ['Досліджуйте ініціативи ', 'які мають значення'],
     featuredDescription: [
-      'Відкривайте еко-проєкти у своєму регіоні та обирайте, як хочете допомогти',
+      'Відкривайте еко-проєкти у своєму регіоні ',
+      'та обирайте, як хочете допомогти',
     ],
 
+    statisticsTag: 'Наша статистика',
+    statisticsTitle: ['Що ми ', 'досягли разом'],
+    statisticsDescription: {
+      mobile: ['Кожен показник відображає людей ', 'які працюють разом для планети'],
+      desktop: ['Кожен показник відображає людей, які працюють разом', 'для планети'],
+    },
+
     faqTag: 'FAQ',
-    faqTitle: 'Поширені запитання про нашу діяльність',
+    faqTitle: ['Поширені запитання ', 'про нашу діяльність'],
 
     startTag: 'Почніть власну ініціативу',
-    startTitle: 'Маєте ідею для власного еко-проєкту?',
+    startTitle: ['Маєте ідею для власного ', 'еко-проєкту?'],
+    startDescription: {
+      mobile: ['Поділіться своєю ініціативою з нами, і ми допоможемо ', 'втілити її в життя'],
+      desktop: ['Поділіться своєю ініціативою з нами, і ми допоможемо втілити її в життя'],
+    },
   },
-} as const;
+};
