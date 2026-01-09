@@ -1,26 +1,28 @@
-import { TranslationKey, useLanguage } from '../../context/LanguageContext';
 import styles from './TagAndTitle.module.scss';
 
 interface TagAndTitleProps {
-  data: {
-    tagKey: TranslationKey;
-    titleKey: TranslationKey;
-    tagColor: string;
-    titleColor: string;
-  };
+  tag: string;
+  title: string | string[];
+  tagColor: string;
+  titleColor: string;
 }
 
-export const TagAndTitle = ({ data }: TagAndTitleProps) => {
-  const { tagKey, titleKey, tagColor, titleColor } = data;
-  const { t } = useLanguage();
+export const TagAndTitle = ({ tag, title, tagColor, titleColor }: TagAndTitleProps) => {
+  const titleLines = Array.isArray(title) ? title : [title];
 
   return (
     <div className={styles.container}>
       <span className={`textSmall ${styles.tagText}`} style={{ backgroundColor: tagColor }}>
-        {t(tagKey)}
+        {tag}
       </span>
+
       <h1 className={styles.titleText} style={{ color: titleColor }}>
-        {t(titleKey)}
+        {titleLines.map((line, index) => (
+          <span key={index}>
+            {line}
+            {index < titleLines.length - 1 && <br />}
+          </span>
+        ))}
       </h1>
     </div>
   );
