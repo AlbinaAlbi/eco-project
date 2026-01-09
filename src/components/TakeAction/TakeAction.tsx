@@ -1,17 +1,25 @@
 import { useLanguage } from '../../context/LanguageContext';
 import { useDeviceType } from '../../hooks/getDeviceType';
-import { useTranslatedText } from '../../hooks/useResponsiveText';
 import { SECTION_HEADERS } from '../../locales/sectionHeaders';
 import { Button } from '../Button';
+import { Image } from '../Image';
 import { TagAndTitle } from '../TagAndTitle';
-import { Description } from './Description';
+import { Description } from '../Description';
 import styles from './TakeAction.module.scss';
+import TakeActionImg from '../../imgs/Become a Volunteer.png';
+import { useSectionHeader } from '../../hooks/useSectionHeader';
 
 export const TakeAction = () => {
   const { t } = useLanguage();
   const device = useDeviceType();
 
   const { tagKey, titleKey, descriptionKey, tagColor, titleColor } = SECTION_HEADERS.action;
+  const { tag, title, description } = useSectionHeader({
+    tagKey,
+    titleKey,
+    descriptionKey,
+  });
+
   let buttonWidth: string;
 
   switch (device) {
@@ -25,19 +33,18 @@ export const TakeAction = () => {
       buttonWidth = '100%';
   }
 
-  const tag = useTranslatedText(tagKey) as string;
-  const actionTitle = useTranslatedText(titleKey);
-  const rawDescription = useTranslatedText(descriptionKey ?? '');
-  const description = descriptionKey ? rawDescription : null;
-
   return (
     <div className={styles.container}>
-      <TagAndTitle tag={tag} title={actionTitle} tagColor={tagColor} titleColor={titleColor} />
+      <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
       {description && <Description title={description} />}
 
       <div className={styles.buttons}>
         <Button text={t('explore')} buttonWidth={buttonWidth} />
         <Button text={t('volunteer')} color={'white'} buttonWidth={buttonWidth} />
+      </div>
+
+      <div className={styles.img}>
+        <Image img={TakeActionImg} alt={'Become a Volunteer'} />
       </div>
     </div>
   );

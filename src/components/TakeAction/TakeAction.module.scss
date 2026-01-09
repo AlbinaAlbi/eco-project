@@ -12,11 +12,31 @@
 .buttons {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding-top: 24px;
+  gap: $size-16;
+  padding-top: $size-24;
   width: 100%;
+  justify-content: center;
 
   @include on-tablet {
     flex-direction: row;
+  }
+}
+
+.img {
+  height: $size-327;
+  margin-top: $size-24;
+  width: 100%;
+  max-width: 1200px;
+
+  @include on-tablet {
+    margin-top: $size-xl;
+    height: $size-420;
+    width: $size-688;
+  }
+
+  @include on-desktop {
+    margin-top: $size-40;
+    height: $size-600;
+    width: $size-1200;
   }
 }
