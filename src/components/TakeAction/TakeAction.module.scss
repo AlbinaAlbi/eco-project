@@ -6,12 +6,17 @@
   align-items: center;
   justify-content: center;
   align-self: center;
-  
-  @include on-tablet {
-    max-width: 512px;
-  }
+  width: fit-content;
+}
 
-  @include on-desktop {
-    max-width: 590px;
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 24px;
+  width: 100%;
+
+  @include on-tablet {
+    flex-direction: row;
   }
 }
