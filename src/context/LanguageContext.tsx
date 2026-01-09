@@ -5,11 +5,13 @@ type Language = 'en' | 'ua';
 type TranslationSchema = typeof translations.en;
 
 type LeafKeys<T> = {
-  [K in keyof T & string]: T[K] extends string | readonly string[]
+  [K in keyof T & string]: T[K] extends string | readonly string[] // строки или массивы
     ? K
-    : T[K] extends object
-      ? `${K}.${LeafKeys<T[K]>}`
-      : never;
+    : T[K] extends { mobile?: any; tablet?: any; desktop?: any } // объект с устройствами
+      ? K
+      : T[K] extends object
+        ? `${K}.${LeafKeys<T[K]>}`
+        : never;
 }[keyof T & string];
 
 type ValueByPath<T, P extends string> = P extends `${infer K}.${infer R}`
