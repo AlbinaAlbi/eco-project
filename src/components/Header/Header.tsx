@@ -5,14 +5,16 @@ import { NavLinks } from './NavLinks';
 
 export const Header = () => (
   <div className={styles.containerContentPadding}>
-    <div className={styles.container}>
-      <Icon />
+    <div className={styles.box}>
+      <div className={styles.container}>
+        <Icon />
 
-      <div className="desktopOnly">
-        <NavLinks />
+        <div className="desktopOnly">
+          <NavLinks />
+        </div>
+
+        <Menu />
       </div>
-
-      <Menu />
     </div>
   </div>
 );

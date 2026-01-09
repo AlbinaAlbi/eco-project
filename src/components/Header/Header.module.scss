@@ -10,6 +10,8 @@
   padding: $size-l;
   height: $size-3xl;
   margin: $size-xl 0 $size-40;
+  max-width: $size-1000;
+  width: 100%;
 
   @include on-tablet {
     padding: $size-s $size-24;
@@ -23,3 +25,9 @@
     margin-bottom: $size-3xl;
   }
 } 
+
+.box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
