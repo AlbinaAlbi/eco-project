@@ -4,6 +4,7 @@ export const SECTION_HEADERS = {
   action: {
     tagKey: 'actionTag' as const,
     titleKey: 'actionTitle' as const,
+    descriptionKey: 'actionDescription',
     tagColor: COLORS.gray100,
     titleColor: COLORS.black,
   },
