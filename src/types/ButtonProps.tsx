@@ -3,4 +3,5 @@ export type ButtonProps = {
   color?: 'green' | 'white';
   to?: string;
   onClick?: () => void;
+  buttonWidth?: string;
 };
