@@ -4,7 +4,7 @@ import styles from './HomePage.module.scss';
 
 export const HomePage = () => {
   return (
-    <div className={styles.container}>
+    <div className={`containerMaxWidth ${styles.container}`}>
       <TakeAction />
       <Mission />
     </div>
