@@ -9,7 +9,8 @@ export const useTranslatedText = <K extends TranslationKey>(key: K) => {
 
   if (value && typeof value === 'object' && !Array.isArray(value)) {
     const typedValue = value as Partial<Record<DeviceType, string | string[]>>;
-    return typedValue[device] ?? typedValue['desktop'] ?? '';
+
+    return typedValue[device] ?? typedValue['desktop'] ?? typedValue['mobile'] ?? '';
   }
 
   return value as string | string[];
