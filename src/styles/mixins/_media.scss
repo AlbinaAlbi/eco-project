@@ -51,6 +51,13 @@
 
 .containerContentPadding {
   @include content-padding-inline;
+  justify-content: center;
+  display: flex;
+  
+}
+
+.containerMaxWidth {
+  max-width: $desktop-max-width;
 }
 
 .desktopOnly {
