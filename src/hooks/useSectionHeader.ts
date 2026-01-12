@@ -1,4 +1,5 @@
 import { TranslationKey } from '../context/LanguageContext';
+import { useDeviceType } from './getDeviceType';
 import { useTranslatedText } from './useResponsiveText';
 
 interface UseSectionHeaderParams {
@@ -9,7 +10,9 @@ interface UseSectionHeaderParams {
 
 export const useSectionHeader = ({ tagKey, titleKey, descriptionKey }: UseSectionHeaderParams) => {
   const tag = useTranslatedText(tagKey) as string;
-  const title = useTranslatedText(titleKey);
+
+  const title = useTranslatedText(titleKey ?? tagKey);
+
   const description = useTranslatedText(descriptionKey ?? tagKey);
 
   return {
