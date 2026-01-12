@@ -7,21 +7,35 @@
   justify-content: center;
 }
 
-.img {
-  height: $size-327;
-  margin-top: $size-24;
+.imgContainer,
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: $size-m;
   width: 100%;
-  max-width: 1200px;
+
+  @include on-desktop {
+    gap: $size-l;
+  }
+}
+
+.cards {
+  margin-top: $size-24;
 
   @include on-tablet {
     margin-top: $size-xl;
-    height: $size-420;
-    width: $size-688;
+    flex-direction: row;
+    height: $size-450;
   }
 
   @include on-desktop {
     margin-top: $size-40;
-    height: $size-600;
-    width: $size-1200;
+    height: $size-620;
+  }
+}
+
+.cards > *:nth-child(1) {
+  @include on-tablet {
+    width: 50%;
   }
 }
