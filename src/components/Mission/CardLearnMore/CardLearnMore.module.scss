@@ -1,0 +1,49 @@
+@import '../../../styles/index';
+
+.container {
+  height: $size-240;
+  border-radius: $size-xl;
+  background-color: rgba($c-button-primary, 0.8);
+  padding: $size-24;
+  display: flex;
+  align-items: end;
+  position: relative;
+
+  @include on-tablet {
+    height: 50%;
+  }
+}
+
+.container img {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  height: 32px;
+  width: 32px;
+  transform: rotate(45deg);
+  transition: $allEffectDuration;
+}
+
+.container img:hover {
+  filter: brightness(0.7);
+  transform: rotate(45deg) scale(1.05);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: $size-xs;
+  color: $color-black;
+
+  @include on-desktop {
+    gap: $size-16;
+  }
+}
+
+.content > *:nth-child(1) {
+  margin: 0;
+}
+
+.content > *:nth-child(2) {
+  color: $color-black;
+}
