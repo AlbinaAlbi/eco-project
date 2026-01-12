@@ -25,8 +25,9 @@ export const translations = {
 
     missionTag: 'Our mission',
     missionTitle: {
-      mobile: ['We believe small actions create big change.'],
+      mobile: ['We believe small', 'actions create big', 'change.'],
       tablet: ['We believe small actions ', 'create big change.'],
+      desktop: ['We believe small actions ', 'create big change.'],
     },
     missionFirstCardTitle: {
       mobile: ['Connect people ', 'with eco-initiatives'],
