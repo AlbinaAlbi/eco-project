@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   align-self: center;
+  width: 100%;
 }
 
 .buttons {
@@ -25,17 +26,14 @@
   height: $size-327;
   margin-top: $size-24;
   width: 100%;
-  max-width: 1200px;
 
   @include on-tablet {
     margin-top: $size-xl;
     height: $size-420;
-    width: $size-688;
   }
 
   @include on-desktop {
     margin-top: $size-40;
     height: $size-600;
-    width: $size-1200;
   }
 }
