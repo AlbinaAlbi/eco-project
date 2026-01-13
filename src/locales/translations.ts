@@ -8,6 +8,7 @@ export const translations = {
     description: 'This is a project description',
     volunteer: 'Become a volunteer',
     explore: 'Explore projects',
+    step: 'Step',
 
     actionTag: 'Take action',
     actionTitle: ['Together, we create ', 'a greener future.'],
@@ -62,8 +63,20 @@ export const translations = {
 
     worksTag: 'How it works',
     worksTitle: {
-      mobile: ['Three simple steps to help you take meaningful action for nature'],
-      tablet: ['Three simple steps to help ', 'you take meaningful action', 'for nature'],
+      mobile: ['Three simple steps to help you take', 'meaningful action for nature'],
+      tablet: ['Three simple steps to help you take', ' meaningful action', 'for nature'],
+      desktop: ['Three simple steps to help you take meaningful action', 'for nature'],
+    },
+
+    worksSteps: {
+      step1Title: 'Explore projects',
+      step1Description: 'Find eco-initiatives happening in your area',
+
+      step2Title: 'Learn what they need',
+      step2Description: 'See the goals, tasks, and impact of every initiative',
+
+      step3Title: 'Join or support',
+      step3Description: 'Take part as a volunteer or help the project grow with a donation',
     },
 
     featuredTag: 'Featured projects',
@@ -97,6 +110,7 @@ export const translations = {
     description: 'Опис проєкту',
     volunteer: 'Стати волонтером',
     explore: 'Переглянути проєкти',
+    step: 'Крок',
 
     actionTag: 'Долучайся',
     actionTitle: ['Разом ми створюємо ', 'зеленіше майбутнє.'],
@@ -152,6 +166,17 @@ export const translations = {
     worksTitle: {
       mobile: ['Три прості кроки, щоб зробити свій внесок у збереження природи'],
       tablet: ['Три прості кроки, щоб зробити свій внесок ', 'у збереження природи'],
+    },
+
+    worksSteps: {
+      step1Title: 'Переглядайте проєкти',
+      step1Description: 'Знаходьте еко-ініціативи, які відбуваються у вашому регіоні',
+
+      step2Title: 'Дізнайтеся про потреби',
+      step2Description: 'Переглядайте цілі, завдання та вплив кожної ініціативи',
+
+      step3Title: 'Долучайтеся або підтримуйте',
+      step3Description: 'Ставайте волонтером або підтримуйте проєкт донатом',
     },
 
     featuredTag: 'Рекомендовані проєкти',
