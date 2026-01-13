@@ -7,7 +7,7 @@ export const Layout = () => {
   return (
     <div className={styles.container}>
       <Header />
-      <main className={styles.containerContentPadding}>
+      <main>
         <Outlet />
       </main>
       <Footer />
