@@ -1,3 +1,4 @@
+import { useDeviceType } from '../../hooks/getDeviceType';
 import styles from './TagAndTitle.module.scss';
 
 interface TagAndTitleProps {
@@ -5,25 +6,43 @@ interface TagAndTitleProps {
   title: string | string[];
   tagColor: string;
   titleColor: string;
+  bigFont?: boolean;
+  alignLeft?: boolean;
 }
 
-export const TagAndTitle = ({ tag, title, tagColor, titleColor }: TagAndTitleProps) => {
+export const TagAndTitle = ({
+  tag,
+  title,
+  tagColor,
+  titleColor,
+  bigFont = false,
+  alignLeft = false,
+}: TagAndTitleProps) => {
   const titleLines = Array.isArray(title) ? title : [title];
+  const HeadingTag: 'h1' | 'h2' = bigFont ? 'h1' : 'h2';
+  const device = useDeviceType();
+  const onDesktop = device !== 'mobile';
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{ alignItems: alignLeft && onDesktop ? 'start' : 'center' }}
+    >
       <span className={`textSmall ${styles.tagText}`} style={{ backgroundColor: tagColor }}>
         {tag}
       </span>
 
-      <h1 className={styles.titleText} style={{ color: titleColor }}>
+      <HeadingTag
+        className={styles.titleText}
+        style={{ color: titleColor, textAlign: alignLeft && onDesktop ? 'start' : 'center' }}
+      >
         {titleLines.map((line, index) => (
           <span key={index}>
             {line}
             {index < titleLines.length - 1 && <br />}
           </span>
         ))}
-      </h1>
+      </HeadingTag>
     </div>
   );
 };
