@@ -1,0 +1,40 @@
+@import '../../../../styles';
+
+.container {
+  height: $size-327;
+  width: 100%;
+  position: relative;
+
+  @include on-tablet {
+    height: $size-336;
+  }
+
+  @include on-desktop {
+    height: $size-387;
+  }
+}
+
+.status {
+  position: absolute;
+  top: $size-xl;
+  left: $size-xl;
+  border-radius: $size-40;
+  padding: $size-10;
+  background-color: $color-background-blur;
+  color: $color-white;
+  display: flex;
+  align-items: center;
+  gap: $size-2xs;
+  width: $size-72;
+
+  @include on-desktop {
+    width: $size-84;
+  }
+}
+
+.ellipse {
+  height: $size-6;
+  width: $size-6;
+  background-color: $c-button-primary;
+  border-radius: 50%;
+}

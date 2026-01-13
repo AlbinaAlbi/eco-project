@@ -1,0 +1,22 @@
+@import '../../../styles/index';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $size-m;
+  width: $size-327;
+
+  @include on-tablet {
+    width: $size-336;
+  }
+
+  @include on-desktop {
+    width: $size-387;
+  }
+}
+
+.inform {
+  font-size: $size-14;
+}
+
+

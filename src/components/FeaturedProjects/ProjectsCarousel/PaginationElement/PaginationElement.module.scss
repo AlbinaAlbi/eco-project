@@ -1,0 +1,23 @@
+@import '../../../../styles';
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $size-2xs;
+}
+
+.pagination span {
+  width: $size-s;
+  height: $size-xs;
+  border-radius: $size-40;
+  background: $color-gray-200;
+  cursor: pointer;
+  transition: $allEffectDuration;
+}
+
+.pagination span.active {
+  background: $c-button-primary;
+  width: $size-24;
+  transform: scale(1.2);
+}

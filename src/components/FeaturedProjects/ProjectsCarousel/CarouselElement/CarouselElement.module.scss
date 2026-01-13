@@ -1,0 +1,22 @@
+@import '../../../../styles';
+
+.carousel {
+  display: flex;
+  height: $size-2xl;
+  text-align: center;
+  justify-content: center;
+  margin-top: $size-m;
+  gap: $size-l;
+}
+
+.navPrev,
+.navNext {
+  display: flex;
+  padding: $size-11 0;
+  width: $size-24;
+  justify-content: center;
+}
+
+.navPrev {
+  transform: rotate(180deg);
+}
