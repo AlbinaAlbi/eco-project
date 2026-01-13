@@ -2,6 +2,7 @@
 
 .wrapper {
   margin-top: $size-24;
+  align-self: center;
 
   @include on-tablet {
     margin-top: $size-40;

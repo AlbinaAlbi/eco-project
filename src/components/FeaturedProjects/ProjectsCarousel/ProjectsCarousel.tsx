@@ -19,6 +19,7 @@ export const ProjectsCarousel = () => {
   const swiperRef = useRef<SwiperClass | null>(null);
   const paginationCount = Math.min(projects.length, 4);
   const device = useDeviceType();
+  const singleSlide = projects.length === 1;
 
   useEffect(() => {
     const getProjects = async () => {
@@ -48,13 +49,11 @@ export const ProjectsCarousel = () => {
         slidesPerView={1}
         onSwiper={(swiper: SwiperClass) => (swiperRef.current = swiper)}
         onSlideChange={(swiper: SwiperClass) => setActiveIndex(swiper.realIndex)}
-        loop
-        grabCursor
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        navigation
+        loop={!singleSlide}
+        grabCursor={!singleSlide}
+        centeredSlides={singleSlide}
+        autoplay={!singleSlide ? { delay: 3000, disableOnInteraction: false } : false} // отключаем autoplay
+        navigation={!singleSlide}
         breakpoints={{
           768: {
             slidesPerView: 2,
