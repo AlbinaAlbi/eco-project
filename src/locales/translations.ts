@@ -9,6 +9,12 @@ export const translations = {
     volunteer: 'Become a volunteer',
     explore: 'Explore projects',
     step: 'Step',
+    activeStatus: 'Active',
+    inactiveStatus: 'Inactive',
+    region: 'region',
+    donate: 'Donate now',
+    raised: 'Raised',
+    goal: 'Goal',
 
     actionTag: 'Take action',
     actionTitle: ['Together, we create ', 'a greener future.'],
@@ -111,6 +117,12 @@ export const translations = {
     volunteer: 'Стати волонтером',
     explore: 'Переглянути проєкти',
     step: 'Крок',
+    activeStatus: 'Активний',
+    inactiveStatus: 'Неактивний',
+    region: 'регіон',
+    donate: 'Задонатити зараз',
+    raised: 'Зібрано коштів',
+    goal: 'Мета збору',
 
     actionTag: 'Долучайся',
     actionTitle: ['Разом ми створюємо ', 'зеленіше майбутнє.'],
@@ -203,4 +215,11 @@ export const translations = {
       desktop: ['Поділіться своєю ініціативою з нами, і ми допоможемо втілити її в життя'],
     },
   },
+};
+
+export const cityTranslations: Record<string, { en: string; ua: string }> = {
+  kyiv: { en: 'Kyiv', ua: 'Київ' },
+  lviv: { en: 'Lviv', ua: 'Львів' },
+  odessa: { en: 'Odessa', ua: 'Одеса' },
+  kharkiv: { en: 'Kharkiv', ua: 'Харків' },
 };
