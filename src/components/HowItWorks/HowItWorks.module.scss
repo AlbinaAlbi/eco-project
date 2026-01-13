@@ -22,7 +22,7 @@
   }
 
   @include on-desktop {
-    gap: 143px;
+    gap: $size-143;
 
     padding: $size-80 0;
   }

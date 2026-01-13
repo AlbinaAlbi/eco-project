@@ -16,10 +16,10 @@
 
 .container img {
   position: absolute;
-  top: 25px;
-  right: 25px;
-  height: 32px;
-  width: 32px;
+  top: $size-25;
+  right: $size-25;
+  height: $size-xl;
+  width: $size-xl;
   transform: rotate(45deg);
   transition: $allEffectDuration;
 }

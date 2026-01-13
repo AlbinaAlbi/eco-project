@@ -5,6 +5,7 @@
   flex-direction: column;
   gap: $size-2xl;
   align-self: center;
+  width: 100%;
 
   @include on-tablet {
     gap: $size-3xl;

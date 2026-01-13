@@ -4,9 +4,7 @@ export type Project = {
   shortDescription: string;
   imageUrl: string;
   city: string;
-  lat: number;
-  lng: number;
-  currentAmount: number;
   goalAmount: number;
-  status: 'ACTIVE' | 'COMPLETED' | 'PAUSED';
+  currentAmount: number;
+  status: string;
 };
