@@ -1,5 +1,4 @@
 import { TranslationKey } from '../context/LanguageContext';
-import { useDeviceType } from './getDeviceType';
 import { useTranslatedText } from './useResponsiveText';
 
 interface UseSectionHeaderParams {
@@ -18,6 +17,6 @@ export const useSectionHeader = ({ tagKey, titleKey, descriptionKey }: UseSectio
   return {
     tag,
     title,
-    description: descriptionKey ? description : null,
+    description: descriptionKey ? description : '',
   };
 };
