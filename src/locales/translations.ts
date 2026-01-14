@@ -110,20 +110,51 @@ export const translations = {
     },
 
     statisticsList: {
-      statistic1Title: 'Trees planted',
-      statistic1Description: 'New trees planted through community-led reforestation initiatives',
+      statistic1Title: {
+        mobile: ['Trees', 'planted'],
+        tablet: ['Trees', 'planted'],
+        desktop: ['Trees planted'],
+      },
+      statistic1Description: {
+        mobile: ['New trees planted through', 'community-led reforestation initiatives'],
+        tablet: ['New trees planted through', 'community-led reforestation initiatives'],
+        desktop: ['New trees planted through community-led reforestation initiatives'],
+      },
       statistic1Count: '2,450+',
 
-      statistic2Title: 'Volunteers involved',
-      statistic2Description:
-        'People who joined eco-actions to support nature and local communities',
+      statistic2Title: {
+        mobile: ['Volunteers', 'involved'],
+        tablet: ['Volunteers', 'involved'],
+        desktop: ['Volunteers involved'],
+      },
+      statistic2Description: {
+        mobile: ['People who joined eco-actions', 'to support nature and local communities'],
+        tablet: ['People who joined eco-actions', 'to support nature and local communities'],
+        desktop: ['People who joined eco-actions', 'to support nature and local communities'],
+      },
       statistic2Count: '180+',
 
-      statistic3Title: 'Active projects',
-      statistic3Description: 'Ongoing environmental initiatives across different regions',
+      statistic3Title: {
+        mobile: ['Active', 'projects'],
+        tablet: ['Active', 'projects'],
+        desktop: ['Active projects'],
+      },
+      statistic3Description: {
+        mobile: ['Ongoing environmental', 'initiatives across different regions'],
+        tablet: ['Ongoing environmental', 'initiatives across different regions'],
+        desktop: ['Ongoing environmental', 'initiatives across different', 'regions'],
+      },
 
-      statistic4Title: 'Waste collected',
-      statistic4Description: 'Plastic, glass, and mixed waste removed during clean-up events',
+      statistic4Title: {
+        mobile: ['Waste', 'collected'],
+        tablet: ['Waste', 'collected'],
+        desktop: ['Waste collected'],
+      },
+      statistic4Description: {
+        mobile: ['Plastic, glass, and mixed waste', 'removed during clean-ups events'],
+        tablet: ['Plastic, glass, and mixed waste', 'removed during clean-up events'],
+        desktop: ['Plastic, glass, and mixed waste removed during clean-up', 'events'],
+      },
       statistic4Count: '12t',
     },
 
@@ -250,21 +281,51 @@ export const translations = {
     },
 
     statisticsList: {
-      statistic1Title: 'Посаджені дерева',
-      statistic1Description:
-        'Нові дерева, висаджені в межах громадських ініціатив з відновлення лісів',
+      statistic1Title: {
+        mobile: ['Дерев', 'посаджено'],
+        tablet: ['Дерев', 'посаджено'],
+        desktop: ['Дерев посаджено'],
+      },
+      statistic1Description: {
+        mobile: ['Нові дерева посаджено', 'в рамках екологічних ініціатив'],
+        tablet: ['Нові дерева посаджено в рамках', 'екологічних ініціатив'],
+        desktop: ['Нові дерева посаджено в рамках екологічних ініціатив'],
+      },
       statistic1Count: '2 450+',
 
-      statistic2Title: 'Залучені волонтери',
-      statistic2Description:
-        'Люди, які долучилися до екоакцій на підтримку природи та місцевих громад',
+      statistic2Title: {
+        mobile: ['Волонтери', 'залучені'],
+        tablet: ['Волонтери залучені'],
+        desktop: ['Волонтери залучені'],
+      },
+      statistic2Description: {
+        mobile: ['Люди долучилися до еко-акцій', 'щоб підтримати природу'],
+        tablet: ['Люди долучилися до еко-акцій', 'щоб підтримати природу та громади'],
+        desktop: ['Люди, які долучилися до еко-акцій для підтримки природи та локальних громад'],
+      },
       statistic2Count: '180+',
 
-      statistic3Title: 'Активні проєкти',
-      statistic3Description: 'Поточні екологічні ініціативи в різних регіонах',
+      statistic3Title: {
+        mobile: ['Активні', 'проєкти'],
+        tablet: ['Активні проєкти'],
+        desktop: ['Активні проєкти'],
+      },
+      statistic3Description: {
+        mobile: ['Поточні екологічні', 'ініціативи в різних регіонах'],
+        tablet: ['Поточні екологічні ініціативи', 'в різних регіонах'],
+        desktop: ['Поточні екологічні ініціативи в різних регіонах'],
+      },
 
-      statistic4Title: 'Зібрані відходи',
-      statistic4Description: 'Пластик, скло та змішані відходи, зібрані під час прибирань',
+      statistic4Title: {
+        mobile: ['Відходів', 'зібрано'],
+        tablet: ['Відходів зібрано'],
+        desktop: ['Відходів зібрано'],
+      },
+      statistic4Description: {
+        mobile: ['Пластик, скло, змішані відходи', 'під час прибирань'],
+        tablet: ['Пластик, скло та змішані відходи', 'зібрані під час прибирань'],
+        desktop: ['Пластик, скло та змішані відходи, зібрані під час прибирань'],
+      },
       statistic4Count: '12 тонн',
     },
 
