@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './CardLearnMore.module.scss';
 import arrow from '../../../imgs/Arrow.svg';
 import { useDeviceType } from '../../../hooks/getDeviceType';
+import { useRenderText } from '../../../hooks/renderText';
 
 interface CardLearnMoreProps {
   title: string | string[];
@@ -9,10 +10,9 @@ interface CardLearnMoreProps {
 }
 
 export const CardLearnMore = ({ title, description }: CardLearnMoreProps) => {
+  const { renderText } = useRenderText();
   const device = useDeviceType();
   const onDesktop = device === 'desktop';
-  const titleLines = Array.isArray(title) ? title : [title];
-  const descriptionLines = Array.isArray(description) ? description : [description];
 
   return (
     <div className={styles.container}>
@@ -22,22 +22,8 @@ export const CardLearnMore = ({ title, description }: CardLearnMoreProps) => {
         </NavLink>
       )}
       <div className={styles.content}>
-        <h4>
-          {titleLines.map((part, index) => (
-            <span key={index}>
-              {part}
-              {index < titleLines.length - 1 && <br />}
-            </span>
-          ))}
-        </h4>
-        <div className="textBody">
-          {descriptionLines.map((part, index) => (
-            <span key={index}>
-              {part}
-              {index < descriptionLines.length - 1 && <br />}
-            </span>
-          ))}
-        </div>
+        <h4>{renderText(title)}</h4>
+        <div className="textBody">{renderText(description)}</div>
       </div>
     </div>
   );

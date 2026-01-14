@@ -1,3 +1,4 @@
+import { useRenderText } from '../../hooks/renderText';
 import styles from './Description.module.scss';
 
 interface DescriptionProps {
@@ -5,16 +6,7 @@ interface DescriptionProps {
 }
 
 export const Description = ({ title }: DescriptionProps) => {
-  const lines = Array.isArray(title) ? title : [title];
+  const { renderText } = useRenderText();
 
-  return (
-    <div className={styles.container}>
-      {lines.map((part, index) => (
-        <span className="textBody" key={index}>
-          {part}
-          {index < lines.length - 1 && <br />}
-        </span>
-      ))}
-    </div>
-  );
+  return <div className={`textBody ${styles.container}`}>{renderText(title)}</div>;
 };

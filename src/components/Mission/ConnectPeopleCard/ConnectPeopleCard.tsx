@@ -1,3 +1,4 @@
+import { useRenderText } from '../../../hooks/renderText';
 import styles from './ConnectPeopleCard.module.scss';
 
 interface ConnectPeopleCardProps {
@@ -6,28 +7,13 @@ interface ConnectPeopleCardProps {
 }
 
 export const ConnectPeopleCard = ({ title, description }: ConnectPeopleCardProps) => {
-  const titleLines = Array.isArray(title) ? title : [title];
-  const descriptionLines = Array.isArray(description) ? description : [description];
+  const { renderText } = useRenderText();
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <h4>
-          {titleLines.map((part, index) => (
-            <span key={index}>
-              {part}
-              {index < titleLines.length - 1 && <br />}
-            </span>
-          ))}
-        </h4>
-        <div className="textBody">
-          {descriptionLines.map((part, index) => (
-            <span key={index}>
-              {part}
-              {index < descriptionLines.length - 1 && <br />}
-            </span>
-          ))}
-        </div>
+        <h4>{renderText(title)}</h4>
+        <div className="textBody">{renderText(description)}</div>
       </div>
     </div>
   );

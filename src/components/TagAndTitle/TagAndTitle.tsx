@@ -1,4 +1,5 @@
 import { useDeviceType } from '../../hooks/getDeviceType';
+import { useRenderText } from '../../hooks/renderText';
 import styles from './TagAndTitle.module.scss';
 
 interface TagAndTitleProps {
@@ -18,7 +19,8 @@ export const TagAndTitle = ({
   bigFont = false,
   alignLeft = false,
 }: TagAndTitleProps) => {
-  const titleLines = Array.isArray(title) ? title : [title];
+  const { renderText } = useRenderText();
+
   const HeadingTag: 'h1' | 'h2' = bigFont ? 'h1' : 'h2';
   const device = useDeviceType();
   const onDesktop = device !== 'mobile';
@@ -36,12 +38,7 @@ export const TagAndTitle = ({
         className={styles.titleText}
         style={{ color: titleColor, textAlign: alignLeft && onDesktop ? 'start' : 'center' }}
       >
-        {titleLines.map((line, index) => (
-          <span key={index}>
-            {line}
-            {index < titleLines.length - 1 && <br />}
-          </span>
-        ))}
+        {renderText(title)}
       </HeadingTag>
     </div>
   );
