@@ -109,6 +109,24 @@ export const translations = {
       desktop: ['Every number reflects people working together ', 'for the planet'],
     },
 
+    statisticsList: {
+      statistic1Title: 'Trees planted',
+      statistic1Description: 'New trees planted through community-led reforestation initiatives',
+      statistic1Count: '2,450+',
+
+      statistic2Title: 'Volunteers involved',
+      statistic2Description:
+        'People who joined eco-actions to support nature and local communities',
+      statistic2Count: '180+',
+
+      statistic3Title: 'Active projects',
+      statistic3Description: 'Ongoing environmental initiatives across different regions',
+
+      statistic4Title: 'Waste collected',
+      statistic4Description: 'Plastic, glass, and mixed waste removed during clean-up events',
+      statistic4Count: '12t',
+    },
+
     faqTag: 'FAQ',
     faqTitle: ['Common questions ', 'about our work'],
 
@@ -229,6 +247,25 @@ export const translations = {
     statisticsDescription: {
       mobile: ['Кожен показник відображає людей ', 'які працюють разом для планети'],
       desktop: ['Кожен показник відображає людей, які працюють разом', 'для планети'],
+    },
+
+    statisticsList: {
+      statistic1Title: 'Посаджені дерева',
+      statistic1Description:
+        'Нові дерева, висаджені в межах громадських ініціатив з відновлення лісів',
+      statistic1Count: '2 450+',
+
+      statistic2Title: 'Залучені волонтери',
+      statistic2Description:
+        'Люди, які долучилися до екоакцій на підтримку природи та місцевих громад',
+      statistic2Count: '180+',
+
+      statistic3Title: 'Активні проєкти',
+      statistic3Description: 'Поточні екологічні ініціативи в різних регіонах',
+
+      statistic4Title: 'Зібрані відходи',
+      statistic4Description: 'Пластик, скло та змішані відходи, зібрані під час прибирань',
+      statistic4Count: '12 тонн',
     },
 
     faqTag: 'FAQ',
