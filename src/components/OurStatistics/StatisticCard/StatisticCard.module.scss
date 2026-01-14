@@ -1,0 +1,23 @@
+@import '../../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid $color-gray-active;
+  padding: $size-m 0 $size-m $size-s;
+  width: 156px;
+
+  @include on-tablet {
+    width: 160px;
+  }
+
+  @include on-tablet {
+    width: 100%;
+    padding: $size-13 0 $size-13 $size-m;
+  }
+}
+
+.container h4 {
+  margin: 0;
+  padding-bottom: 8px;
+}

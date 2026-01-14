@@ -21,3 +21,13 @@
     padding: $size-80 $size-120;
   }
 }
+
+.statisticsCards {
+  display: grid;
+  gap: $size-m; 
+  grid-template-columns: repeat(2, 1fr); 
+
+  @include on-tablet {
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
