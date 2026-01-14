@@ -27,6 +27,13 @@ export const SECTION_HEADERS = {
     tagColor: COLORS.gray100,
     titleColor: COLORS.black,
   },
+  statistics: {
+    tagKey: 'statisticsTag' as const,
+    titleKey: 'statisticsTitle' as const,
+    descriptionKey: 'statisticsDescription' as const,
+    tagColor: COLORS.gray200,
+    titleColor: COLORS.black,
+  },
   faq: {
     tagKey: 'faqTag' as const,
     titleKey: 'faqTitle' as const,

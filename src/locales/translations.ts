@@ -15,6 +15,7 @@ export const translations = {
     donate: 'Donate now',
     raised: 'Raised',
     goal: 'Goal',
+    viewAll: 'View all projects',
 
     actionTag: 'Take action',
     actionTitle: ['Together, we create ', 'a greener future.'],
@@ -38,10 +39,16 @@ export const translations = {
     },
     missionFirstCardTitle: {
       mobile: ['Connect people ', 'with eco-initiatives'],
+      tablet: ['Connect people ', 'with eco-initiatives'],
       desktop: ['Connect people with eco-initiatives'],
     },
     missionFirstCardDescription: {
       mobile: [
+        'We help communities find and join ',
+        'local environmental projects — from ',
+        'tree planting to clean-up events',
+      ],
+      tablet: [
         'We help communities find and join ',
         'local environmental projects — from ',
         'tree planting to clean-up events',
@@ -51,12 +58,18 @@ export const translations = {
         'projects — from tree planting to clean-up events',
       ],
     },
-    missionSecondCard: {
+    missionSecondCardTitle: {
       mobile: ['Learn more ', 'about our mission'],
+      tablet: ['Learn more ', 'about our mission'],
       desktop: ['Learn more about our mission'],
     },
     missionSecondCardDescription: {
       mobile: [
+        'Discover who we are, what we stand ',
+        'for, and how we work to support local ',
+        'eco-initiatives',
+      ],
+      tablet: [
         'Discover who we are, what we stand ',
         'for, and how we work to support local ',
         'eco-initiatives',
@@ -123,6 +136,7 @@ export const translations = {
     donate: 'Задонатити зараз',
     raised: 'Зібрано коштів',
     goal: 'Мета збору',
+    viewAll: 'Переглянути всі проекти',
 
     actionTag: 'Долучайся',
     actionTitle: ['Разом ми створюємо ', 'зеленіше майбутнє.'],
@@ -145,10 +159,16 @@ export const translations = {
     },
     missionFirstCardTitle: {
       mobile: ['Об’єднуємо людей ', 'з еко-ініціативами'],
+      tablet: ['Об’єднуємо людей ', 'з еко-ініціативами'],
       desktop: ['Об’єднуємо людей з еко-ініціативами'],
     },
     missionFirstCardDescription: {
       mobile: [
+        'Ми допомагаємо громадам знаходити та долучатися до ',
+        'локальних екологічних проєктів — від ',
+        'посадок дерев до заходів з прибирання',
+      ],
+      tablet: [
         'Ми допомагаємо громадам знаходити та долучатися до ',
         'локальних екологічних проєктів — від ',
         'посадок дерев до заходів з прибирання',
@@ -158,12 +178,18 @@ export const translations = {
         'екологічних проєктів — від посадок дерев до заходів з прибирання',
       ],
     },
-    missionSecondCard: {
+    missionSecondCardTitle: {
       mobile: ['Дізнайтеся більше', 'про нашу місію'],
+      tablet: ['Дізнайтеся більше', 'про нашу місію'],
       desktop: ['Дізнайтеся більше про нашу місію'],
     },
     missionSecondCardDescription: {
       mobile: [
+        'Дізнайтеся, хто ми, що ми відстоюємо ',
+        'і як працюємо для підтримки ',
+        'локальних еко-ініціатив',
+      ],
+      tablet: [
         'Дізнайтеся, хто ми, що ми відстоюємо ',
         'і як працюємо для підтримки ',
         'локальних еко-ініціатив',
