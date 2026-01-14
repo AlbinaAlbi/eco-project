@@ -1,0 +1,30 @@
+@import '../../styles';
+
+.container {
+  background-image: url('../../imgs/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  height: $size-700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: $size-24;
+
+  @include on-tablet {
+    background-position: center;  
+    height: $size-600;
+  }
+
+  @include on-desktop {
+    height: $size-800;
+  }
+  
+  > *:last-child {
+    padding-top: $size-24;
+
+    @include on-desktop {
+      padding-top: $size-xl;
+    }
+  }
+}

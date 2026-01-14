@@ -1,19 +1,16 @@
 import { useLanguage } from '../../context/LanguageContext';
 import { useDeviceType } from '../../hooks/getDeviceType';
+import { useSectionHeader } from '../../hooks/useSectionHeader';
 import { SECTION_HEADERS } from '../../locales/sectionHeaders';
 import { Button } from '../Button';
-import { Image } from '../Image';
-import { TagAndTitle } from '../TagAndTitle';
 import { Description } from '../Description';
-import styles from './TakeAction.module.scss';
-import TakeActionImg from '../../imgs/Become a Volunteer.png';
-import { useSectionHeader } from '../../hooks/useSectionHeader';
+import { TagAndTitle } from '../TagAndTitle';
+import styles from './StartInitiative.module.scss';
 
-export const TakeAction = () => {
+export const StartInitiative = () => {
   const { t } = useLanguage();
   const device = useDeviceType();
-
-  const { tagKey, titleKey, descriptionKey, tagColor, titleColor } = SECTION_HEADERS.action;
+  const { tagKey, titleKey, descriptionKey, tagColor, titleColor } = SECTION_HEADERS.start;
   const { tag, title, description } = useSectionHeader({
     tagKey,
     titleKey,
@@ -24,10 +21,10 @@ export const TakeAction = () => {
 
   switch (device) {
     case 'tablet':
-      buttonWidth = '248px';
+      buttonWidth = '320px';
       break;
     case 'desktop':
-      buttonWidth = '285px';
+      buttonWidth = '350px';
       break;
     default:
       buttonWidth = '100%';
@@ -42,17 +39,9 @@ export const TakeAction = () => {
         titleColor={titleColor}
         bigFont={true}
       />
-
       <Description title={description} />
 
-      <div className={styles.buttons}>
-        <Button text={t('explore')} buttonWidth={buttonWidth} />
-        <Button text={t('volunteer')} color={'white'} buttonWidth={buttonWidth} />
-      </div>
-
-      <div className={styles.img}>
-        <Image img={TakeActionImg} alt={'Become a Volunteer'} />
-      </div>
+      <Button text={t('submit')} buttonWidth={buttonWidth} />
     </div>
   );
 };

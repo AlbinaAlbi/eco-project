@@ -8,6 +8,7 @@ import styles from './HomePage.module.scss';
 import { fetchProjects } from '../../api/projects';
 import { Project } from '../../types/Project';
 import { FAQ } from '../../components/FAQ';
+import { StartInitiative } from '../../components/StartInitiative';
 
 export const HomePage = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -45,7 +46,8 @@ export const HomePage = () => {
       <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>
         <FAQ />
       </div>
-      
+
+      <StartInitiative />
     </div>
   );
 };

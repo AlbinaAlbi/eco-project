@@ -43,6 +43,7 @@ export const SECTION_HEADERS = {
   start: {
     tagKey: 'startTag' as const,
     titleKey: 'startTitle' as const,
+    descriptionKey: 'startDescription' as const,
     tagColor: COLORS.gray100,
     titleColor: COLORS.white,
   },

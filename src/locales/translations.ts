@@ -16,6 +16,7 @@ export const translations = {
     raised: 'Raised',
     goal: 'Goal',
     viewAll: 'View all projects',
+    submit: 'Submit a project',
 
     actionTag: 'Take action',
     actionTitle: ['Together, we create ', 'a greener future.'],
@@ -281,6 +282,7 @@ export const translations = {
     raised: 'Зібрано коштів',
     goal: 'Мета збору',
     viewAll: 'Переглянути всі проекти',
+    submit: 'Відправити проєкт',
 
     actionTag: 'Долучайся',
     actionTitle: ['Разом ми створюємо ', 'зеленіше майбутнє.'],
