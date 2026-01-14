@@ -17,7 +17,8 @@ export const StatisticCard = ({ information }: StatisticCardProps) => {
   return (
     <div className={styles.container}>
       <h4>{renderText(titleKey)}</h4>
-      <div className="textBody">{renderText(descriptionKey)}</div>
+      <div className={`textBody ${styles.description}`}>{renderText(descriptionKey)}</div>
+      <h5>{count}</h5>
     </div>
   );
 };
