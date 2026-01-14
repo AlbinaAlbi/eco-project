@@ -3,9 +3,16 @@ import styles from './CardLearnMore.module.scss';
 import arrow from '../../../imgs/Arrow.svg';
 import { useDeviceType } from '../../../hooks/getDeviceType';
 
-export const CardLearnMore = () => {
+interface CardLearnMoreProps {
+  title: string | string[];
+  description: string | string[];
+}
+
+export const CardLearnMore = ({ title, description }: CardLearnMoreProps) => {
   const device = useDeviceType();
   const onDesktop = device === 'desktop';
+  const titleLines = Array.isArray(title) ? title : [title];
+  const descriptionLines = Array.isArray(description) ? description : [description];
 
   return (
     <div className={styles.container}>
@@ -15,9 +22,21 @@ export const CardLearnMore = () => {
         </NavLink>
       )}
       <div className={styles.content}>
-        <h4>Learn more about our mission</h4>
+        <h4>
+          {titleLines.map((part, index) => (
+            <span key={index}>
+              {part}
+              {index < titleLines.length - 1 && <br />}
+            </span>
+          ))}
+        </h4>
         <div className="textBody">
-          Discover who we are, what we stand for, and how we work to support local eco-initiatives
+          {descriptionLines.map((part, index) => (
+            <span key={index}>
+              {part}
+              {index < descriptionLines.length - 1 && <br />}
+            </span>
+          ))}
         </div>
       </div>
     </div>

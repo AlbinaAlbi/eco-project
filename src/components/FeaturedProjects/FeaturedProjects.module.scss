@@ -1,1 +1,15 @@
 @import '../../styles/index.scss';
+
+.container {
+  > *:last-child {
+    padding: $size-24 0 $size-30;
+
+    @include on-tablet {
+      padding: $size-62 0 0;
+    }
+
+    @include on-desktop {
+      padding-top: $size-xl;
+    }
+  }
+}

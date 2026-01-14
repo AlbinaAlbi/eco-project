@@ -36,8 +36,6 @@ export const ProjectsCarousel = () => {
     getProjects();
   }, []);
 
-  console.log(projects);
-
   if (loading) return <p>Loading projects...</p>;
   if (!projects.length) return <p>No projects found</p>;
 

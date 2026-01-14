@@ -23,12 +23,16 @@
   flex-direction: column;
   gap: $size-17;
   color: $color-white;
+
+  @include on-tablet {
+    gap: $size-xs;
+  }
+
+  @include on-desktop {
+    gap: $size-m;
+  }
 }
 
-.content > *:nth-child(1) {
+.content h4 {
   margin: 0;
-}
-
-.content > *:nth-child(2) {
-  font-size: $size-m;
 }

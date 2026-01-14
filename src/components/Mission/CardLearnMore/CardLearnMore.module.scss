@@ -32,18 +32,18 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: $size-xs;
   color: $color-black;
+  gap: $size-xs;
+
+  @include on-tablet {
+    gap: $size-xs;
+  }
 
   @include on-desktop {
-    gap: $size-16;
+    gap: $size-m;
   }
 }
 
-.content > *:nth-child(1) {
+.content h4 {
   margin: 0;
-}
-
-.content > *:nth-child(2) {
-  color: $color-black;
 }
