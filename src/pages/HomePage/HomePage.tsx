@@ -7,6 +7,7 @@ import { TakeAction } from '../../components/TakeAction';
 import styles from './HomePage.module.scss';
 import { fetchProjects } from '../../api/projects';
 import { Project } from '../../types/Project';
+import { FAQ } from '../../components/FAQ';
 
 export const HomePage = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -40,6 +41,11 @@ export const HomePage = () => {
         <FeaturedProjects projects={projects} />
       </div>
       <OurStatistics projectsLength={projects.length} />
+
+      <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>
+        <FAQ />
+      </div>
+      
     </div>
   );
 };

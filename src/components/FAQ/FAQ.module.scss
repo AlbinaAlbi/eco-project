@@ -1,0 +1,59 @@
+@import '../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $size-24;
+
+  @include on-tablet {
+    gap: $size-40;
+  }
+
+  @include on-desktop {
+    gap: $size-2xl;
+  }
+}
+
+.questionsList {
+  display: flex;
+  flex-direction: column;
+  gap: $size-m;
+  width: 100%;
+
+  > *:last-child {
+    border: none;
+    padding: 0;
+  }
+
+  @include on-tablet {
+    gap: $size-l;
+    width: $size-512;
+  }
+
+  @include on-desktop {
+    width: 100%;
+    gap: $size-24;
+  }
+}
+
+.image {
+  display: none;
+
+  @include on-desktop {
+    display: block;
+    width: 100%;
+    height: $size-640;
+  }
+}
+
+.questionsAndImg {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  @include on-desktop {
+    justify-content: space-between;
+    flex-direction: row;
+    gap: $size-l;
+  }
+}

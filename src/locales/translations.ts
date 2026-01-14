@@ -161,6 +161,101 @@ export const translations = {
     faqTag: 'FAQ',
     faqTitle: ['Common questions ', 'about our work'],
 
+    questionList: {
+      questionFirst: {
+        mobile: ['Do I need any experience', 'to join a project?'],
+        tablet: ['Do I need any experience to join', 'a project?'],
+        desktop: ['Do I need any experience to join', 'a project?'],
+      },
+      answerFirst: {
+        mobile: [
+          'No. Most of our initiatives are open to everyone,',
+          'and we provide guidance on-site',
+        ],
+        tablet: [
+          'No. Most of our initiatives are open to everyone,',
+          'and we provide guidance on-site',
+        ],
+        desktop: [
+          'No. Most of our initiatives are open to everyone,',
+          'and we provide guidance on-site',
+        ],
+      },
+
+      questionSecond: {
+        mobile: ['How do I sign up', 'as a volunteer?'],
+        tablet: ['How do I sign up', 'as a volunteer?'],
+        desktop: ['How do I sign up', 'as a volunteer?'],
+      },
+      answerSecond: {
+        mobile: ['Choose a project, click “Join as volunteer,”', 'and submit a short application'],
+        tablet: ['Choose a project, click “Join as volunteer,”', 'and submit a short application'],
+        desktop: ['Choose a project, click “Join as volunteer,”', 'and submit a short application'],
+      },
+
+      questionThird: {
+        mobile: ['Is there any cost', 'to participate?'],
+        tablet: ['Is there any cost to participate?'],
+        desktop: ['Is there any cost to participate?'],
+      },
+      answerThird: {
+        mobile: ['No, volunteering is free. We cover the essential', 'organizational needs'],
+        tablet: ['No, volunteering is free. We cover the essential', 'organizational needs'],
+        desktop: ['No, volunteering is free. We cover the essential', 'organizational needs'],
+      },
+
+      questionFourth: {
+        mobile: ['Can I submit my own', 'eco-project idea'],
+        tablet: ['Can I submit my own', 'eco-project idea'],
+        desktop: ['Can I submit my own', 'eco-project idea'],
+      },
+      answerFourth: {
+        mobile: ['Yes. Use the “Submit project” form and our team will', 'review your proposal'],
+        tablet: ['Yes. Use the “Submit project” form and our team will', 'review your proposal'],
+        desktop: ['Yes. Use the “Submit project” form and our team will', 'review your proposal'],
+      },
+
+      questionFifth: {
+        mobile: ['How do donations help', 'the project'],
+        tablet: ['How do donations help', 'the project'],
+        desktop: ['How do donations help', 'the project'],
+      },
+      answerFifth: {
+        mobile: [
+          'Funds are used for tools, seedlings, transportation,',
+          'and organization of restoration activities',
+        ],
+        tablet: [
+          'Funds are used for tools, seedlings, transportation,',
+          'and organization of restoration activities',
+        ],
+        desktop: [
+          'Funds are used for tools, seedlings, transportation,',
+          'and organization of restoration activities',
+        ],
+      },
+
+      questionSixth: {
+        mobile: ['Is participation safe', 'for beginners?'],
+        tablet: ['Is participation safe', 'for beginners?'],
+        desktop: ['Is participation safe', 'for beginners?'],
+      },
+      answerSixth: {
+        mobile: [
+          'Yes. Every project includes safety instructions',
+          'and support from coordinators',
+        ],
+        tablet: [
+          'Yes. Every project includes safety instructions',
+          'and support from coordinators',
+        ],
+        desktop: [
+          'Yes. Every project includes safety instructions',
+          'and support from coordinators',
+        ],
+      },
+    },
+
     startTag: 'Start your initiative',
     startTitle: ['Have an idea for your ', 'own eco-project'],
     startDescription: {
@@ -331,6 +426,104 @@ export const translations = {
 
     faqTag: 'FAQ',
     faqTitle: ['Поширені запитання ', 'про нашу діяльність'],
+
+    questionList: {
+      questionFirst: {
+        mobile: ['Чи потрібен досвід,', 'щоб долучитися до проєкту?'],
+        tablet: ['Чи потрібен досвід,', 'щоб долучитися до проєкту?'],
+        desktop: ['Чи потрібен досвід,', 'щоб долучитися до проєкту?'],
+      },
+      answerFirst: {
+        mobile: [
+          'Ні. Більшість наших ініціатив відкриті',
+          'для всіх, і ми надаємо підтримку на місці',
+        ],
+        tablet: [
+          'Ні. Більшість наших ініціатив відкриті',
+          'для всіх, і ми надаємо підтримку на місці',
+        ],
+        desktop: [
+          'Ні. Більшість наших ініціатив відкриті для всіх,',
+          'і ми надаємо підтримку на місці',
+        ],
+      },
+
+      questionSecond: {
+        mobile: ['Як я можу', 'стати волонтером?'],
+        tablet: ['Як я можу стати волонтером?'],
+        desktop: ['Як я можу стати волонтером?'],
+      },
+      answerSecond: {
+        mobile: ['Оберіть проєкт, натисніть «Стати волонтером»', 'та заповніть коротку заявку'],
+        tablet: ['Оберіть проєкт, натисніть «Стати волонтером»', 'та заповніть коротку заявку'],
+        desktop: ['Оберіть проєкт, натисніть «Стати волонтером»', 'та заповніть коротку заявку'],
+      },
+
+      questionThird: {
+        mobile: ['Чи є участь платною?'],
+        tablet: ['Чи є участь платною?'],
+        desktop: ['Чи є участь платною?'],
+      },
+      answerThird: {
+        mobile: ['Ні, волонтерство є безкоштовним.', 'Ми покриваємо основні організаційні потреби'],
+        tablet: ['Ні, волонтерство є безкоштовним.', 'Ми покриваємо основні організаційні потреби'],
+        desktop: [
+          'Ні, волонтерство є безкоштовним.',
+          'Ми покриваємо основні організаційні потреби',
+        ],
+      },
+
+      questionFourth: {
+        mobile: ['Чи можу я подати', 'власну еко-ідею?'],
+        tablet: ['Чи можу я подати власну еко-ідею?'],
+        desktop: ['Чи можу я подати власну еко-ідею?'],
+      },
+      answerFourth: {
+        mobile: [
+          'Так. Скористайтеся формою «Подати проєкт»,',
+          'і наша команда розгляне вашу пропозицію',
+        ],
+        tablet: [
+          'Так. Скористайтеся формою «Подати проєкт»,',
+          'і наша команда розгляне вашу пропозицію',
+        ],
+        desktop: [
+          'Так. Скористайтеся формою «Подати проєкт»,',
+          'і наша команда розгляне вашу пропозицію',
+        ],
+      },
+
+      questionFifth: {
+        mobile: ['Як донати допомагають', 'проєктам?'],
+        tablet: ['Як донати допомагають проєктам?'],
+        desktop: ['Як донати допомагають проєктам?'],
+      },
+      answerFifth: {
+        mobile: [
+          'Кошти використовуються на інструменти,',
+          'саджанці, транспорт та організацію заходів',
+        ],
+        tablet: [
+          'Кошти використовуються на інструменти,',
+          'саджанці, транспорт та організацію заходів',
+        ],
+        desktop: [
+          'Кошти використовуються на інструменти, саджанці,',
+          'транспорт та організацію відновлювальних заходів',
+        ],
+      },
+
+      questionSixth: {
+        mobile: ['Чи безпечно брати участь', 'новачкам?'],
+        tablet: ['Чи безпечно брати участь новачкам?'],
+        desktop: ['Чи безпечно брати участь новачкам?'],
+      },
+      answerSixth: {
+        mobile: ['Так. Кожен проєкт включає інструктаж', 'з безпеки та підтримку координаторів'],
+        tablet: ['Так. Кожен проєкт включає інструктаж', 'з безпеки та підтримку координаторів'],
+        desktop: ['Так. Кожен проєкт включає інструктаж', 'з безпеки та підтримку координаторів'],
+      },
+    },
 
     startTag: 'Почніть власну ініціативу',
     startTitle: ['Маєте ідею для власного ', 'еко-проєкту?'],

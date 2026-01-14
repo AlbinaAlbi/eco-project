@@ -1,0 +1,33 @@
+import styles from './QuestionElement.module.scss';
+import arrow from '../../../imgs/Arrow.svg';
+import { useState } from 'react';
+import { useRenderText } from '../../../hooks/renderText';
+
+interface QuestionElementProps {
+  question: {
+    id: number;
+    questionKey: string | string[];
+    answerKey: string | string[];
+  };
+}
+
+export const QuestionElement = ({ question }: QuestionElementProps) => {
+  const { questionKey, answerKey } = question;
+  const { renderText } = useRenderText();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleOpen = () => setIsOpen((prev) => !prev);
+  console.log(isOpen);
+
+  return (
+    <div className={`${styles.container} ${isOpen ? styles.open : ''}`} onClick={toggleOpen}>
+      <div className={`${styles.arrow} ${isOpen ? styles.openArrow : ''}`}>
+        <img src={arrow} alt="Question arrow" />
+      </div>
+      <h4>{renderText(questionKey)}</h4>
+      <div className={`textBody ${styles.answerText} ${isOpen ? styles.openAnswer : ''}`}>
+        {renderText(answerKey)}
+      </div>
+    </div>
+  );
+};

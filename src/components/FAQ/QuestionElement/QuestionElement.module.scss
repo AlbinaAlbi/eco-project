@@ -1,0 +1,49 @@
+@import '../../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: $size-24;
+  border-bottom: $size-1 solid $color-gray-400;
+}
+
+.container h4 {
+  margin: 0;
+  z-index: 1;
+  position: relative;
+}
+
+.arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: $size-40;
+  height: $size-40;
+  background-color: $color-gray-200;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform: rotate(135deg);
+  transition: transform 0.3s;
+}
+
+.openArrow {
+  transform: rotate(45deg);
+}
+
+.answerText {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  color: $color-gray-600;
+  transition: all 0.3s ease;
+}
+
+.openAnswer {
+  padding-top: $size-16;
+  max-height: $size-500; 
+  opacity: 1;
+}
