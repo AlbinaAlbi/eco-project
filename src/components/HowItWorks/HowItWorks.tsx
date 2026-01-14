@@ -1,11 +1,9 @@
 import { useSectionHeader } from '../../hooks/useSectionHeader';
+import { useStepsList } from '../../hooks/useStepsList';
 import { SECTION_HEADERS } from '../../locales/sectionHeaders';
 import { TagAndTitle } from '../TagAndTitle';
 import styles from './HowItWorks.module.scss';
 import { StepsList } from './StepsList';
-import map from '../../imgs/Map.svg';
-import info from '../../imgs/Info.svg';
-import { useLanguage } from '../../context/LanguageContext';
 
 export const HowItWorks = () => {
   const { tagKey, titleKey, tagColor, titleColor } = SECTION_HEADERS.works;
@@ -13,28 +11,7 @@ export const HowItWorks = () => {
     tagKey,
     titleKey,
   });
-  const { t } = useLanguage();
-
-  const stepsList = [
-    {
-      id: 1,
-      titleKey: t('worksSteps.step1Title'),
-      descriptionKey: t('worksSteps.step1Description'),
-      icon: map,
-    },
-    {
-      id: 2,
-      titleKey: t('worksSteps.step2Title'),
-      descriptionKey: t('worksSteps.step2Description'),
-      icon: info,
-    },
-    {
-      id: 3,
-      titleKey: t('worksSteps.step3Title'),
-      descriptionKey: t('worksSteps.step3Description'),
-      icon: info,
-    },
-  ];
+  const stepsList = useStepsList();
 
   return (
     <div className={styles.container}>
