@@ -3,12 +3,13 @@
 .container {
   display: flex;
   flex-direction: column;
-  border-left: 1px solid $color-gray-active;
+  border-left: $size-1 solid $color-gray-active;
   padding: $size-m 0 $size-m $size-s;
-  width: 156px;
+  width: $size-156;
+  height: 100%;
 
   @include on-tablet {
-    width: 160px;
+    width: $size-160;
   }
 
   @include on-tablet {
@@ -19,5 +20,17 @@
 
 .container h4 {
   margin: 0;
-  padding-bottom: 8px;
+  padding-bottom: $size-xs;
+}
+
+.description {
+  color: $color-gray-600;
+}
+
+.container h5 {
+  padding-top: $size-34;
+  font-size: $size-40;
+  line-height: 100%;
+  margin-top: auto;
+  color: $c-button-primary;
 }

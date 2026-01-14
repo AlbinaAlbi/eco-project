@@ -26,8 +26,15 @@
   display: grid;
   gap: $size-m; 
   grid-template-columns: repeat(2, 1fr); 
+  padding-top: $size-24;
 
   @include on-tablet {
     grid-template-columns: repeat(4, 1fr); 
+    padding-top: $size-40;
+  }
+
+  @include on-desktop {
+    gap: $size-l; 
+    padding-top: $size-2xl;
   }
 }
