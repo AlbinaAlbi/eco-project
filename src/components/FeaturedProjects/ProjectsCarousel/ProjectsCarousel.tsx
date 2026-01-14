@@ -6,38 +6,21 @@ import { Swiper as SwiperClass } from 'swiper/types';
 
 import styles from './ProjectsCarousel.module.scss';
 import { ProjectCard } from '../ProjectCard';
-import { useEffect, useRef, useState } from 'react';
-import { fetchProjects } from '../../../api/projects';
-import { Project } from '../../../types/Project';
 import { CarouselElement } from './CarouselElement';
 import { useDeviceType } from '../../../hooks/getDeviceType';
+import { useRef, useState } from 'react';
+import { Project } from '../../../types/Project';
 
-export const ProjectsCarousel = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
+interface ProjectsCarouselProps {
+  projects: Project[];
+}
+
+export const ProjectsCarousel = ({ projects }: ProjectsCarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperClass | null>(null);
   const paginationCount = Math.min(projects.length, 4);
   const device = useDeviceType();
   const singleSlide = projects.length === 1;
-
-  useEffect(() => {
-    const getProjects = async () => {
-      try {
-        const data = await fetchProjects();
-        setProjects(data);
-      } catch (error) {
-        console.error('Failed to fetch projects:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getProjects();
-  }, []);
-
-  if (loading) return <p>Loading projects...</p>;
-  if (!projects.length) return <p>No projects found</p>;
 
   return (
     <div className={styles.wrapper}>
