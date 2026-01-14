@@ -1,5 +1,5 @@
-import { useTranslatedText } from '../../hooks/useResponsiveText';
 import { useSectionHeader } from '../../hooks/useSectionHeader';
+import { useStatistics } from '../../hooks/useStatistics';
 import { SECTION_HEADERS } from '../../locales/sectionHeaders';
 import { Description } from '../Description';
 import { TagAndTitle } from '../TagAndTitle';
@@ -17,32 +17,7 @@ export const OurStatistics = ({ projectsLength }: OurStatisticsProps) => {
     descriptionKey,
   });
 
-  const statisticsList = [
-    {
-      id: 1,
-      titleKey: useTranslatedText('statisticsList.statistic1Title'),
-      descriptionKey: useTranslatedText('statisticsList.statistic1Description'),
-      count: useTranslatedText('statisticsList.statistic1Count'),
-    },
-    {
-      id: 2,
-      titleKey: useTranslatedText('statisticsList.statistic2Title'),
-      descriptionKey: useTranslatedText('statisticsList.statistic2Description'),
-      count: useTranslatedText('statisticsList.statistic2Count'),
-    },
-    {
-      id: 3,
-      titleKey: useTranslatedText('statisticsList.statistic3Title'),
-      descriptionKey: useTranslatedText('statisticsList.statistic3Description'),
-      count: `${projectsLength}`,
-    },
-    {
-      id: 4,
-      titleKey: useTranslatedText('statisticsList.statistic4Title'),
-      descriptionKey: useTranslatedText('statisticsList.statistic4Description'),
-      count: useTranslatedText('statisticsList.statistic4Count'),
-    },
-  ];
+  const statisticsList = useStatistics(projectsLength);
 
   return (
     <div className={styles.container}>
