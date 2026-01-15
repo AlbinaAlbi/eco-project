@@ -9,15 +9,13 @@ interface QuestionElementProps {
     questionKey: string | string[];
     answerKey: string | string[];
   };
+  isOpen: boolean;
+  toggleOpen: () => void;
 }
 
-export const QuestionElement = ({ question }: QuestionElementProps) => {
+export const QuestionElement = ({ question, isOpen, toggleOpen }: QuestionElementProps) => {
   const { questionKey, answerKey } = question;
   const { renderText } = useRenderText();
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleOpen = () => setIsOpen((prev) => !prev);
-  console.log(isOpen);
 
   return (
     <div className={`${styles.container} ${isOpen ? styles.open : ''}`} onClick={toggleOpen}>

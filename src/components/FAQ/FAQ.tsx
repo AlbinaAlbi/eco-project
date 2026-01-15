@@ -6,6 +6,7 @@ import { SECTION_HEADERS } from '../../locales/sectionHeaders';
 import { useSectionHeader } from '../../hooks/useSectionHeader';
 import { QuestionElement } from './QuestionElement';
 import { useQuestion } from '../../hooks/useQuestion';
+import { useState } from 'react';
 
 export const FAQ = () => {
   const { tagKey, titleKey, tagColor, titleColor } = SECTION_HEADERS.faq;
@@ -15,6 +16,12 @@ export const FAQ = () => {
   });
   const questionList = useQuestion();
 
+  const [openQuestionId, setOpenQuestionId] = useState(questionList[0]?.id || null);
+
+  const toggleQuestion = (id: number) => {
+    setOpenQuestionId((prev) => (prev === id ? null : id));
+  };
+
   return (
     <div className={styles.container} id="faq">
       <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
@@ -22,7 +29,12 @@ export const FAQ = () => {
       <div className={styles.questionsAndImg}>
         <div className={styles.questionsList}>
           {questionList.map((question) => (
-            <QuestionElement key={question.id} question={question} />
+            <QuestionElement
+              key={question.id}
+              question={question}
+              isOpen={openQuestionId === question.id}
+              toggleOpen={() => toggleQuestion(question.id)}
+            />
           ))}
         </div>
         <div className={styles.image}>

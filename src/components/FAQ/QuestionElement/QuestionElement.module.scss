@@ -39,7 +39,7 @@
   overflow: hidden;
   opacity: 0;
   color: $color-gray-600;
-  transition: all 0.3s ease;
+  transition: $allEffectDuration;
 }
 
 .openAnswer {
