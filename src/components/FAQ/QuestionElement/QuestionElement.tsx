@@ -1,6 +1,5 @@
 import styles from './QuestionElement.module.scss';
 import arrow from '../../../imgs/Arrow.svg';
-import { useState } from 'react';
 import { useRenderText } from '../../../hooks/renderText';
 
 interface QuestionElementProps {
