@@ -1,0 +1,39 @@
+@import '../../../styles';
+
+.container,
+.itemsBlock {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @include on-tablet {
+    text-align: start;
+  }
+}
+
+.container {
+  gap: $size-s;
+
+  @include on-tablet {
+    gap: $size-m;
+  }
+}
+
+.container h3 {
+  margin: 0;
+  color: $color-gray-600;
+  font-weight: 500;
+}
+
+.itemsBlock a {
+  text-decoration: none;
+  color: $color-black;
+}
+
+.itemsBlock {
+  gap: $size-xs;
+
+  @include on-tablet {
+    gap: $size-m;
+  }
+}

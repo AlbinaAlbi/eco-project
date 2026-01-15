@@ -1,0 +1,69 @@
+@import '../../styles';
+
+.footerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: $size-2xl 0 $size-60;
+
+  @include on-tablet {
+    padding: $size-60 0 0;
+  }
+
+  @include on-desktop {
+    padding-top: $size-100;
+  }
+}
+
+.line {
+  width: 100vw;
+  height: $size-1;
+  background-color: $color-gray-300;
+}
+
+.content, 
+.navAndEmail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $size-2xl;
+  width: 100%;
+
+  @include on-tablet {
+    gap: $size-xl;
+  }
+}
+
+.content {
+  @include on-desktop {
+    gap: $size-50;
+  }
+}
+
+.navAndEmail {
+  @include on-tablet {
+    max-width: $size-688;
+    align-self: center;
+  }
+
+  @include on-desktop {
+    gap: $size-223;
+    max-width: 100%;
+    flex-direction: row;
+  }
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $size-24;
+  width: 100%;
+
+  @include on-tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
