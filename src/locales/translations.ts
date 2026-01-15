@@ -22,6 +22,7 @@ export const translations = {
     terms: 'Terms of Service',
     join: 'Join our newsletter',
     placeholder: 'Email adress',
+    signIn: 'Sign in',
 
     actionTag: 'Take action',
     actionTitle: ['Together, we create ', 'a greener future.'],
@@ -211,9 +212,9 @@ export const translations = {
       },
 
       questionFourth: {
-        mobile: ['Can I submit my own', 'eco-project idea'],
-        tablet: ['Can I submit my own', 'eco-project idea'],
-        desktop: ['Can I submit my own', 'eco-project idea'],
+        mobile: ['Can I submit my own', 'eco-project idea?'],
+        tablet: ['Can I submit my own', 'eco-project idea?'],
+        desktop: ['Can I submit my own', 'eco-project idea?'],
       },
       answerFourth: {
         mobile: ['Yes. Use the “Submit project” form and our team will', 'review your proposal'],
@@ -222,9 +223,9 @@ export const translations = {
       },
 
       questionFifth: {
-        mobile: ['How do donations help', 'the project'],
-        tablet: ['How do donations help', 'the project'],
-        desktop: ['How do donations help', 'the project'],
+        mobile: ['How do donations help', 'the project?'],
+        tablet: ['How do donations help', 'the project?'],
+        desktop: ['How do donations help', 'the project?'],
       },
       answerFifth: {
         mobile: [
@@ -314,6 +315,7 @@ export const translations = {
     terms: 'Умови використання',
     join: 'Підпишіться на нашу розсилку',
     placeholder: 'Електронна адреса',
+    signIn: 'Увійти',
 
     actionTag: 'Долучайся',
     actionTitle: ['Разом ми створюємо ', 'зеленіше майбутнє.'],
