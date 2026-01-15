@@ -6,10 +6,7 @@ import { TagAndTitle } from '../TagAndTitle';
 import styles from './OurStatistics.module.scss';
 import { StatisticCard } from './StatisticCard';
 
-interface OurStatisticsProps {
-  projectsLength: number;
-}
-export const OurStatistics = ({ projectsLength }: OurStatisticsProps) => {
+export const OurStatistics = () => {
   const { tagKey, titleKey, tagColor, descriptionKey, titleColor } = SECTION_HEADERS.statistics;
   const { tag, title, description } = useSectionHeader({
     tagKey,
@@ -17,7 +14,7 @@ export const OurStatistics = ({ projectsLength }: OurStatisticsProps) => {
     descriptionKey,
   });
 
-  const statisticsList = useStatistics(projectsLength);
+  const statisticsList = useStatistics();
 
   return (
     <div className={styles.container}>

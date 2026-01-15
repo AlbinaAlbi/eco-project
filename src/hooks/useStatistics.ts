@@ -1,3 +1,4 @@
+import { useAppSelector } from './hooks';
 import { useTranslatedText } from './useResponsiveText';
 
 interface StatisticItem {
@@ -7,7 +8,9 @@ interface StatisticItem {
   count: string | string[];
 }
 
-export const useStatistics = (projectsLength: number): StatisticItem[] => {
+export const useStatistics = (): StatisticItem[] => {
+  const { projects } = useAppSelector((state) => state.projects);
+
   const statistic1Title = useTranslatedText('statisticsList.statistic1Title');
   const statistic1Description = useTranslatedText('statisticsList.statistic1Description');
   const statistic1Count = useTranslatedText('statisticsList.statistic1Count');
@@ -40,7 +43,7 @@ export const useStatistics = (projectsLength: number): StatisticItem[] => {
       id: 3,
       titleKey: statistic3Title,
       descriptionKey: statistic3Description,
-      count: `${projectsLength}`,
+      count: `${projects.length}`,
     },
     {
       id: 4,
