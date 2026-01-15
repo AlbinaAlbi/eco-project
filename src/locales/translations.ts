@@ -17,6 +17,11 @@ export const translations = {
     goal: 'Goal',
     viewAll: 'View all projects',
     submit: 'Submit a project',
+    rights: '© 2025 EcoLeaf. All rights reserved.',
+    privacy: 'Privacy Policy',
+    terms: 'Terms of Service',
+    join: 'Join our newsletter',
+    placeholder: 'Email adress',
 
     actionTag: 'Take action',
     actionTitle: ['Together, we create ', 'a greener future.'],
@@ -263,6 +268,27 @@ export const translations = {
       mobile: ['Share your initiative with us, and we’ll help ', 'bring it to life'],
       desktop: ['Share your initiative with us, and we’ll help bring it to life'],
     },
+
+    exploreBlock: {
+      title: 'Explore',
+      projects: 'Projects',
+      about: 'About us',
+      works: 'How it works',
+      donate: 'Donate',
+    },
+
+    supportBlock: {
+      title: 'Support',
+      contact: 'Contact',
+      faqs: 'FAQs',
+    },
+
+    socialBlock: {
+      title: 'Social',
+      instagram: 'Instagram',
+      youtube: 'YouTube',
+      linkedin: 'Linkedin',
+    },
   },
 
   ua: {
@@ -283,6 +309,11 @@ export const translations = {
     goal: 'Мета збору',
     viewAll: 'Переглянути всі проекти',
     submit: 'Відправити проєкт',
+    rights: '© 2025 EcoLeaf. Всі права захищені.',
+    privacy: 'Політика конфіденційності',
+    terms: 'Умови використання',
+    join: 'Підпишіться на нашу розсилку',
+    placeholder: 'Електронна адреса',
 
     actionTag: 'Долучайся',
     actionTitle: ['Разом ми створюємо ', 'зеленіше майбутнє.'],
@@ -532,6 +563,27 @@ export const translations = {
     startDescription: {
       mobile: ['Поділіться своєю ініціативою з нами, і ми допоможемо ', 'втілити її в життя'],
       desktop: ['Поділіться своєю ініціативою з нами, і ми допоможемо втілити її в життя'],
+    },
+
+    exploreBlock: {
+      title: 'Дослідити',
+      projects: 'Проєкти',
+      about: 'Про нас',
+      works: 'Як це працює',
+      donate: 'Пожертвувати',
+    },
+
+    supportBlock: {
+      title: 'Підтримка',
+      contact: 'Контакти',
+      faqs: 'Поширені запитання',
+    },
+
+    socialBlock: {
+      title: 'Соціальні мережі',
+      instagram: 'Instagram',
+      youtube: 'YouTube',
+      linkedin: 'LinkedIn',
     },
   },
 };

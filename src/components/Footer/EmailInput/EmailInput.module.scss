@@ -1,0 +1,50 @@
+@import '../../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $size-xs;
+
+  @include on-tablet {
+    width: $size-336;
+  }
+
+  @include on-desktop {
+    width: 100%;
+  }
+}
+
+.inputWrapper input,
+.inputWrapper button {
+  border: none;
+  background: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputWrapper {
+  display: flex;
+  height: $size-2xl;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid $color-gray-200;
+  border-radius: $size-40;
+  padding: $size-14-5 $size-24;
+  background-color: $color-background;
+}
+
+.inputWrapper input {
+  outline: none;
+  width: 100%;
+
+  &::placeholder {
+    color: $color-gray-500;
+  }
+}
+
+.inputWrapper button {
+  opacity: 0.5;
+}
