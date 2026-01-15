@@ -14,7 +14,7 @@ export const HowItWorks = () => {
   const stepsList = useStepsList();
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="works">
       <div className={`containerContentPadding containerMaxWidth ${styles.content}`}>
         <TagAndTitle
           tag={tag}

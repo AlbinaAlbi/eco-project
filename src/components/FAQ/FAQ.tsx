@@ -16,7 +16,7 @@ export const FAQ = () => {
   const questionList = useQuestion();
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="faq">
       <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
 
       <div className={styles.questionsAndImg}>
