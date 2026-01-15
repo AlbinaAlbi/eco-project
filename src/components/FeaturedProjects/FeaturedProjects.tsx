@@ -1,17 +1,13 @@
 import { useLanguage } from '../../context/LanguageContext';
 import { useSectionHeader } from '../../hooks/useSectionHeader';
 import { SECTION_HEADERS } from '../../locales/sectionHeaders';
-import { Project } from '../../types/Project';
 import { Button } from '../Button';
 import { Description } from '../Description';
 import { TagAndTitle } from '../TagAndTitle';
 import styles from './FeaturedProjects.module.scss';
 import { ProjectsCarousel } from './ProjectsCarousel';
 
-interface FeaturedProjectsProps {
-  projects: Project[];
-}
-export const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
+export const FeaturedProjects = () => {
   const { tagKey, titleKey, tagColor, titleColor, descriptionKey } = SECTION_HEADERS.featured;
   const { tag, title, description } = useSectionHeader({
     tagKey,
@@ -26,7 +22,7 @@ export const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
 
       <Description title={description} />
 
-      <ProjectsCarousel projects={projects} />
+      <ProjectsCarousel />
 
       <Button text={t('viewAll')} color={'white'} buttonWidth={'284px'} />
     </div>

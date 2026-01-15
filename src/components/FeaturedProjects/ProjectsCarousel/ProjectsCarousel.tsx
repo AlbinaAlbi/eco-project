@@ -9,13 +9,11 @@ import { ProjectCard } from '../ProjectCard';
 import { CarouselElement } from './CarouselElement';
 import { useDeviceType } from '../../../hooks/getDeviceType';
 import { useRef, useState } from 'react';
-import { Project } from '../../../types/Project';
+import { useAppSelector } from '../../../hooks/hooks';
 
-interface ProjectsCarouselProps {
-  projects: Project[];
-}
+export const ProjectsCarousel = () => {
+  const { projects } = useAppSelector((state) => state.projects);
 
-export const ProjectsCarousel = ({ projects }: ProjectsCarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperClass | null>(null);
   const paginationCount = Math.min(projects.length, 4);

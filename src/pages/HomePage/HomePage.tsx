@@ -1,36 +1,13 @@
-import { useEffect, useState } from 'react';
 import { FeaturedProjects } from '../../components/FeaturedProjects';
 import { HowItWorks } from '../../components/HowItWorks';
 import { Mission } from '../../components/Mission';
 import { OurStatistics } from '../../components/OurStatistics';
 import { TakeAction } from '../../components/TakeAction';
 import styles from './HomePage.module.scss';
-import { fetchProjects } from '../../api/projects';
-import { Project } from '../../types/Project';
 import { FAQ } from '../../components/FAQ';
 import { StartInitiative } from '../../components/StartInitiative';
 
 export const HomePage = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const getProjects = async () => {
-      try {
-        const data = await fetchProjects();
-        setProjects(data);
-      } catch (error) {
-        console.error('Failed to fetch projects:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getProjects();
-  }, []);
-
-  if (loading) return <p>Loading projects...</p>;
-
   return (
     <div className={styles.container}>
       <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>
@@ -39,9 +16,9 @@ export const HomePage = () => {
       </div>
       <HowItWorks />
       <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>
-        <FeaturedProjects projects={projects} />
+        <FeaturedProjects />
       </div>
-      <OurStatistics projectsLength={projects.length} />
+      <OurStatistics />
 
       <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>
         <FAQ />
