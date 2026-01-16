@@ -47,4 +47,11 @@ export const SECTION_HEADERS = {
     tagColor: COLORS.gray100,
     titleColor: COLORS.white,
   },
+  explore: {
+    tagKey: 'exploreTag' as const,
+    titleKey: 'exploreTitle' as const,
+    descriptionKey: 'exploreDescription' as const,
+    tagColor: COLORS.gray100,
+    titleColor: COLORS.black,
+  },
 } as const;
