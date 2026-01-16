@@ -270,6 +270,28 @@ export const translations = {
       desktop: ['Share your initiative with us, and we’ll help bring it to life'],
     },
 
+    exploreTag: 'Explore projects',
+    exploreTitle: {
+      mobile: ['Find projects that', 'need your support'],
+      tablet: ['Find projects that need', 'your support'],
+      desktop: ['Find projects that', 'need your support'],
+    },
+    exploreDescription: {
+      mobile: [
+        'Join eco-initiatives, volunteer',
+        'with purpose, and make a real impact',
+        'in your community.',
+      ],
+      tablet: [
+        'Join eco-initiatives, volunteer with purpose,',
+        'and make a real impact in your community.',
+      ],
+      desktop: [
+        'Join eco-initiatives, volunteer with purpose,',
+        'and make a real impact in your community.',
+      ],
+    },
+
     exploreBlock: {
       title: 'Explore',
       projects: 'Projects',
@@ -460,7 +482,7 @@ export const translations = {
     },
 
     faqTag: 'FAQ',
-    faqTitle: ['Поширені запитання ', 'про нашу діяльність'],
+    faqTitle: ['Поширені запитання', 'про нашу діяльність'],
 
     questionList: {
       questionFirst: {
@@ -561,10 +583,32 @@ export const translations = {
     },
 
     startTag: 'Почніть власну ініціативу',
-    startTitle: ['Маєте ідею для власного ', 'еко-проєкту?'],
+    startTitle: ['Маєте ідею для власного', 'еко-проєкту?'],
     startDescription: {
       mobile: ['Поділіться своєю ініціативою з нами, і ми допоможемо ', 'втілити її в життя'],
       desktop: ['Поділіться своєю ініціативою з нами, і ми допоможемо втілити її в життя'],
+    },
+
+    exploreTag: 'Досліджуй проєкти',
+    exploreTitle: {
+      mobile: ['Знайди проєкти, які', 'потребують твоєї підтримки'],
+      tablet: ['Знайди проєкти, які потребують', 'твоєї підтримки'],
+      desktop: ['Знайди проєкти, які', 'потребують твоєї підтримки'],
+    },
+    exploreDescription: {
+      mobile: [
+        'Приєднуйся до еко-ініціатив, волонтерь',
+        'зі змістом та роби реальний вплив',
+        'у своїй громаді.',
+      ],
+      tablet: [
+        'Приєднуйся до еко-ініціатив, волонтерь зі змістом,',
+        'та роби реальний вплив у своїй громаді.',
+      ],
+      desktop: [
+        'Приєднуйся до еко-ініціатив, волонтерь зі змістом,',
+        'та роби реальний вплив у своїй громаді.',
+      ],
     },
 
     exploreBlock: {
