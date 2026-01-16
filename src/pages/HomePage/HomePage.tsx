@@ -6,8 +6,21 @@ import { TakeAction } from '../../components/TakeAction';
 import styles from './HomePage.module.scss';
 import { FAQ } from '../../components/FAQ';
 import { StartInitiative } from '../../components/StartInitiative';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { fetchProjectsThunk } from '../../store/slices/ProjectsSlice/projectsSlice';
+import { useEffect } from 'react';
 
 export const HomePage = () => {
+  const dispatch = useAppDispatch();
+  const { projects, loading, error } = useAppSelector((state) => state.projects);
+
+  useEffect(() => {
+    dispatch(fetchProjectsThunk());
+  }, [dispatch]);
+
+  if (loading) return <p>Загрузка проектов...</p>;
+  if (error) return <p>Ошибка: {error}</p>;
+
   return (
     <div className={styles.container}>
       <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>
@@ -16,7 +29,7 @@ export const HomePage = () => {
       </div>
       <HowItWorks />
       <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>
-        <FeaturedProjects />
+        <FeaturedProjects projects={projects} />
       </div>
       <OurStatistics />
 
