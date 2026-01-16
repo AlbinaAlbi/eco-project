@@ -1,0 +1,32 @@
+@import '../../../styles';
+
+.wrapper {
+  margin-top: $size-24;
+  align-self: center;
+
+  @include on-tablet {
+    margin-top: $size-40;
+  }
+
+  @include on-desktop {
+    margin-top: $size-2xl;
+  } 
+}
+
+.slide {
+  height: 280px;
+  flex: 0 0 auto;
+  width: $size-327;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  @include on-tablet {
+    width: $size-387;
+    height: $size-300;
+  }
+
+  @include on-desktop {
+    height: $size-382;
+  } 
+}
