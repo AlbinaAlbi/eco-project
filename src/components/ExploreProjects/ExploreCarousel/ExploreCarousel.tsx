@@ -2,35 +2,31 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Swiper as SwiperClass } from 'swiper/types';
 
 import styles from './ExploreCarousel.module.scss';
-import { useRef, useState } from 'react';
 import { SWIPER_IMAGES } from '../../../locales/images';
 import { Image } from '../../Image';
 
 export const ExploreCarousel = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const swiperRef = useRef<SwiperClass | null>(null);
+  const images = [...SWIPER_IMAGES, ...SWIPER_IMAGES, ...SWIPER_IMAGES];
 
   return (
     <div className={styles.wrapper}>
       <Swiper
         modules={[Autoplay]}
-        slidesPerView="auto"
         centeredSlides
-        spaceBetween={20}
-        loop
-        loopAdditionalSlides={5}
-        grabCursor
-        observer
-        observeParents
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
+        loop={true}
+        spaceBetween={16}
+        slidesPerView="auto"
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        speed={5000}
+        breakpoints={{
+          640: { spaceBetween: 16 },
+          1024: { spaceBetween: 24 },
+          1440: { spaceBetween: 32 },
         }}
       >
-        {SWIPER_IMAGES.map((image, index) => (
+        {images.map((image, index) => (
           <SwiperSlide key={index} className={styles.slide}>
             <Image img={image} alt={`Slide ${index + 1}`} />
           </SwiperSlide>

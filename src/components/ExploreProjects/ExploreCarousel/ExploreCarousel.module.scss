@@ -3,6 +3,7 @@
 .wrapper {
   margin-top: $size-24;
   align-self: center;
+  max-width: 100%;
 
   @include on-tablet {
     margin-top: $size-40;
@@ -15,11 +16,10 @@
 
 .slide {
   height: 280px;
-  flex: 0 0 auto;
   width: $size-327;
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  align-items: center; 
 
   @include on-tablet {
     width: $size-387;
