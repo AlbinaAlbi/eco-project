@@ -312,6 +312,36 @@ export const translations = {
       youtube: 'YouTube',
       linkedin: 'Linkedin',
     },
+
+    categoryFilter: {
+      title: 'Category',
+      text: 'All categories',
+      treePlanting: 'Tree planting',
+      recycling: 'Recycling',
+      animalCare: 'Animal care',
+      cleanUps: 'Clean-ups',
+    },
+
+    locationFilter: {
+      title: 'Location',
+      text: 'All Locations',
+      kyiv: 'Kyiv',
+      lviv: 'Lviv',
+      odesa: 'Odesa',
+      kharkiv: 'Kharkiv',
+    },
+
+    statusFilter: {
+      title: 'Status',
+      text: 'All Status',
+      active: 'Active',
+      progress: 'In progress',
+    },
+
+    searchFilter: {
+      title: 'Search',
+      text: 'Find a project',
+    },
   },
 
   ua: {
@@ -630,6 +660,36 @@ export const translations = {
       instagram: 'Instagram',
       youtube: 'YouTube',
       linkedin: 'LinkedIn',
+    },
+
+    categoryFilter: {
+      title: 'Категорія',
+      text: 'Усі категорії',
+      treePlanting: 'Посадка дерев',
+      recycling: 'Переробка',
+      animalCare: 'Догляд за тваринами',
+      cleanUps: 'Прибирання',
+    },
+
+    locationFilter: {
+      title: 'Локація',
+      text: 'Усі локації',
+      kyiv: 'Київ',
+      lviv: 'Львів',
+      odesa: 'Одеса',
+      kharkiv: 'Харків',
+    },
+
+    statusFilter: {
+      title: 'Статус',
+      text: 'Усі статуси',
+      active: 'Активний',
+      progress: 'В процесі',
+    },
+
+    searchFilter: {
+      title: 'Пошук',
+      text: 'Знайти проект',
     },
   },
 };

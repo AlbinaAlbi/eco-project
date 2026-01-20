@@ -1,0 +1,60 @@
+@import '../../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $size-xs;
+
+  @include on-desktop {
+    gap: $size-s;
+  }
+}
+
+.container label {
+  color: $color-gray-600;
+}
+
+.dropdown {
+  height: $size-2xl;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 2px solid $color-gray-400;
+  border-radius: $size-40;
+  padding: 0 $size-24;
+  background-color: $color-background;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  @include on-tablet {
+    border: 1px solid $color-gray-400;
+  }
+}
+
+.dropdown:hover {
+  border-color: $c-button-hover;
+}
+
+.dropdown:focus {
+  outline: none;
+  border-color: $c-button-primary;
+  box-shadow: 0 0 6px $c-button-primary;
+  transform: rotate(360deg);
+}
+
+.dropdown:focus img {
+  transform: rotate(270deg);
+}
+
+.dropdown img {
+  display: flex;
+  justify-content: center;
+  width: $size-18;
+  height: $size-18;
+  padding: $size-2xs $size-6;
+  transform: rotate(90deg);
+  filter: brightness(0);
+  transition: transform 0.3s ease;
+}
+

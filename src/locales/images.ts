@@ -4,4 +4,4 @@ import people from '../imgs/new-people.jpg';
 import newLife from '../imgs/img-life.jpg';
 import manClean from '../imgs/img-clean.jpg';
 
-export const SWIPER_IMAGES = [lake, fatherSon, people, newLife, manClean];
+export const SWIPER_IMAGES = [manClean, newLife, lake, people, fatherSon];

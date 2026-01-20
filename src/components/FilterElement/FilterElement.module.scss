@@ -1,0 +1,20 @@
+@import '../../styles';
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $size-16;
+  padding-top: $size-2xl;
+
+  @include content-padding-inline;
+
+  @include on-tablet {
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: $size-3xl;
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: $size-2xl;
+  }
+}

@@ -1,0 +1,50 @@
+@import '../../../styles';
+
+.dropdownStyles {
+  width: 100%;
+  padding: $size-m;
+  margin: 0;
+  background-color: $color-background;
+  border: $size-1 solid $color-gray-200;
+  box-shadow: 0px $size-2xs $size-25 0px $color-box-scadow;
+  border-radius: $size-m;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $size-2xs;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: $size-s;
+  height: $size-40;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.box {
+  width: $size-l;
+  height: $size-l;
+  border: $size-1 solid $color-gray-50;
+  border-radius: $size-2xs;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; 
+}
+
+.box img {
+  filter: brightness(0) invert(1);
+}
+
+.active {
+  background-color: $c-button-primary;
+}
+
+.count {
+  color: $color-gray-50;
+  position: absolute;
+  right: 0;
+}

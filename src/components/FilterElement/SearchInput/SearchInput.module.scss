@@ -1,0 +1,62 @@
+@import '../../../styles';
+
+.searchInput {
+  display: flex;
+  flex-direction: column;
+  gap: $size-xs;
+
+  @include on-desktop {
+    gap: $size-s;
+  }
+}
+
+.searchInput label {
+  color: $color-gray-600;
+}
+
+.inputWrapper {
+  position: relative;
+  background-color: $color-background;
+}
+
+.icon {
+  position: absolute;
+  height: $size-24;
+  width: $size-24;
+  left: $size-24;
+  top: $size-s;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.icon img {
+  align-self: center;
+  filter: brightness(50%);
+}
+
+.input {
+  height: $size-2xl;
+  width: 100%;
+  padding-left: $size-58;
+  padding-right: $size-24;
+  color: $color-gray-600;
+  border: $size-2 solid $color-gray-400;
+  border-radius: $size-m;
+  outline: none;
+  background: transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  @include on-tablet {
+    border: 1px solid $color-gray-400;
+  }
+}
+
+.input:hover {
+  border-color: $c-button-hover;
+}
+
+.input:focus {
+  border-color: $c-button-primary;
+  box-shadow: 0 0 6px $c-button-primary;
+}
