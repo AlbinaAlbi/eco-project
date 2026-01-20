@@ -7,4 +7,5 @@ export type Project = {
   goalAmount: number;
   currentAmount: number;
   status: string;
+  category: string;
 };
