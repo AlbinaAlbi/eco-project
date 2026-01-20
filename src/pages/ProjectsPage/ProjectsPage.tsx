@@ -9,7 +9,7 @@ import { ProjectsList } from '../../components/ProjectsList';
 
 export const ProjectsPage = () => {
   const dispatch = useAppDispatch();
-  const { projects, loading, error } = useAppSelector((state) => state.projects);
+  const { loading, error } = useAppSelector((state) => state.projects);
   const [selectedFilters, setSelectedFilters] = useState<SelectedFilters>({
     category: null,
     location: null,

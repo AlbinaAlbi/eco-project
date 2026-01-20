@@ -1,1 +1,74 @@
-@import '../../../styles';
+@import '../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top: $size-xl;
+  gap: $size-24;
+
+  @include on-tablet {
+    padding-top: $size-40;
+  }
+
+  @include on-desktop {
+    gap: $size-xl;
+  }
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $size-l;
+
+  @include on-tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $size-m;
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $size-l;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $size-24;
+  height: $size-19;
+
+  @include on-desktop {
+    height: $size-22;
+  }
+}
+
+.arrow,
+.pageButton {
+  border: none;
+  background: none;
+}
+
+.pageButton {
+  color: $color-gray-500;
+}
+
+.title {
+  color: $color-gray-600;
+}
+
+.active {
+  color: $color-black;
+  text-decoration: underline;
+}
+
+.arrow {
+  height: $size-m;
+  width: $size-m;
+  padding: 0;
+}
+
+.arrow img {
+  height: 100%;
+  width: 100%;
+}

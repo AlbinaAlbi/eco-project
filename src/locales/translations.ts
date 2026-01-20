@@ -23,6 +23,8 @@ export const translations = {
     join: 'Join our newsletter',
     placeholder: 'Email adress',
     signIn: 'Sign in',
+    projectsSmall: 'projects',
+    showing: 'Showing',
 
     actionTag: 'Take action',
     actionTitle: ['Together, we create ', 'a greener future.'],
@@ -368,6 +370,8 @@ export const translations = {
     join: 'Підпишіться на нашу розсилку',
     placeholder: 'Електронна адреса',
     signIn: 'Увійти',
+    showing: 'Показано',
+    projectsSmall: 'проєктів',
 
     actionTag: 'Долучайся',
     actionTitle: ['Разом ми створюємо ', 'зеленіше майбутнє.'],
