@@ -7,10 +7,7 @@
 
   @include on-tablet {
     width: $size-336;
-  }
-
-  @include on-desktop {
-    width: 100%;
+    align-self: self-start;
   }
 }
 

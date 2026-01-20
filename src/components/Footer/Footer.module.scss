@@ -48,9 +48,9 @@
   }
 
   @include on-desktop {
-    gap: $size-223;
     max-width: 100%;
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 
@@ -64,6 +64,10 @@
   @include on-tablet {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  @include on-desktop {
+    width: 50%;
   }
 }
 
