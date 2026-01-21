@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: $size-xs;
+  position: relative;
 
   @include on-desktop {
     gap: $size-s;
