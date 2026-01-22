@@ -1,0 +1,20 @@
+@import '../../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  height: 327px;
+  padding: 16px 0 24px;
+
+  @include on-tablet {
+    height: 420px;
+    padding: 24px 0 32px;
+  }
+
+  @include on-desktop {
+    height: 600px;
+  }
+}

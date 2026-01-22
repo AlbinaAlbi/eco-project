@@ -294,6 +294,28 @@ export const translations = {
       ],
     },
 
+    whoWeAreTag: 'Who we are',
+    whoWeAreTitle: ['Growing a greener future, together'],
+    whoWeAreDescription: {
+      mobile: [
+        'We are a volunteer-driven environmental organization dedicated to restoring forests, protecting ecosystems, and empowering communities across Ukraine',
+      ],
+      tablet: [
+        'We are a volunteer-driven environmental organization',
+        'dedicated to restoring forests, protecting ecosystems, and',
+        'empowering communities across Ukraine',
+      ],
+      desktop: [
+        'We are a volunteer-driven environmental',
+        'organization dedicated to restoring forests,',
+        'protecting ecosystems, and empowering',
+        'communities across Ukraine',
+      ],
+    },
+
+    goalsTag: 'Our goals',
+    goalsTitle: ['Growing sustainable', 'environments together'],
+
     exploreBlock: {
       title: 'Explore',
       projects: 'Projects',
@@ -648,6 +670,28 @@ export const translations = {
         'та роби реальний вплив у своїй громаді.',
       ],
     },
+
+    whoWeAreTag: 'Хто ми',
+    whoWeAreTitle: ['Разом вирощуємо зеленіше майбутнє'],
+    whoWeAreDescription: {
+      mobile: [
+        'Ми — волонтерська екологічна організація, яка займається відновленням лісів, захистом екосистем та посиленням громад по всій Україні',
+      ],
+      tablet: [
+        'Ми — волонтерська екологічна організація,',
+        'яка займається відновленням лісів, захистом',
+        'екосистем та посиленням громад по всій Україні',
+      ],
+      desktop: [
+        'Ми — волонтерська екологічна організація,',
+        'яка займається відновленням лісів,',
+        'захистом екосистем та посиленням',
+        'громад по всій Україні',
+      ],
+    },
+
+    goalsTag: 'Наші цілі',
+    goalsTitle: ['Разом будуємо', 'екологічне майбутнє'],
 
     exploreBlock: {
       title: 'Дослідити',
