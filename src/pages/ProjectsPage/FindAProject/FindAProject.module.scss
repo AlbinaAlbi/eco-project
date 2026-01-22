@@ -1,0 +1,10 @@
+@import '../../../styles';
+
+.container {
+  padding-top: $size-2xl;
+  flex-direction: column;
+
+  > *:last-child {
+    padding-top: 24px;
+  }
+}

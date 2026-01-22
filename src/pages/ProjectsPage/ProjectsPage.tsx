@@ -7,6 +7,7 @@ import { SelectedFilters } from '../../types/SelectedFilters';
 import { FilterElement } from '../../components/FilterElement';
 import { ProjectsList } from '../../components/ProjectsList';
 import { filterProjects } from '../../hooks/filterProjects';
+import { FindAProject } from './FindAProject';
 
 export const ProjectsPage = () => {
   const dispatch = useAppDispatch();
@@ -44,6 +45,7 @@ export const ProjectsPage = () => {
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
+      <FindAProject />
     </div>
   );
 };

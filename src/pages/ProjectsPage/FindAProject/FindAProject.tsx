@@ -1,0 +1,26 @@
+import { Button } from '../../../components/Button';
+import { Description } from '../../../components/Description';
+import { TagAndTitle } from '../../../components/TagAndTitle';
+import { useDeviceType } from '../../../hooks/getDeviceType';
+import { useSectionHeader } from '../../../hooks/useSectionHeader';
+import { SECTION_HEADERS } from '../../../locales/sectionHeaders';
+import styles from './FindAProject.module.scss';
+
+export const FindAProject = () => {
+  const { titleKey, descriptionKey, titleColor } = SECTION_HEADERS.findAProject;
+  const { title, description } = useSectionHeader({
+    titleKey,
+    descriptionKey,
+  });
+  const device = useDeviceType();
+
+  return (
+    <div className={`containerContentPadding ${styles.container}`}>
+      <TagAndTitle title={title} titleColor={titleColor} />
+      <Description title={description} />
+      {device !== 'mobile' && (
+        <Button text={'Submit a project'} color={'green'} buttonWidth={'320px'} />
+      )}
+    </div>
+  );
+};

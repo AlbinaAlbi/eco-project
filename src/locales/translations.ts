@@ -345,6 +345,9 @@ export const translations = {
       title: 'Search',
       text: 'Find a project',
     },
+
+    findAProjectTitle: 'Didn’t find a project?',
+    findAProjectDescription: 'Create your own initiative and we’ll help you bring it to life',
   },
 
   ua: {

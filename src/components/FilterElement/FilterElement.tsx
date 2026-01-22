@@ -48,7 +48,7 @@ export const FilterElement = ({ selectedFilters, setSelectedFilters }: FilterEle
               el.options
                 ? el.options.map((opt) => {
                     return {
-                      label: `${opt.label}`,
+                      label: opt.label,
                       count: opt.count,
                       value: opt.value,
                     };

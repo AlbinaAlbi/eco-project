@@ -46,14 +46,13 @@ export interface FilterItem {
 export const useFilter = (): FilterItem[] => {
   const { t } = useLanguage();
   const { projects } = useAppSelector((state) => state.projects);
-  console.log(projects);
   const categoryCount: Record<string, number> = {};
   const cityCount: Record<string, number> = {};
   const statusCount: Record<string, number> = {};
 
   projects.forEach((p) => {
     const rawCategory = p.category.trim().toLowerCase();
-    const category = CATEGORY_MAP[rawCategory]; // ✅ ВОТ ЭТОГО НЕ ХВАТАЛО
+    const category = CATEGORY_MAP[rawCategory];
 
     const rawCity = p.city.trim().toLowerCase();
     const city = CITY_MAP[rawCity];

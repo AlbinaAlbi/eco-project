@@ -54,4 +54,9 @@ export const SECTION_HEADERS = {
     tagColor: COLORS.gray100,
     titleColor: COLORS.black,
   },
+  findAProject: {
+    titleKey: 'findAProjectTitle' as const,
+    descriptionKey: 'findAProjectDescription' as const,
+    titleColor: COLORS.black,
+  },
 } as const;

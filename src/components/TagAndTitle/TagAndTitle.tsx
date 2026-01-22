@@ -3,9 +3,9 @@ import { useRenderText } from '../../hooks/renderText';
 import styles from './TagAndTitle.module.scss';
 
 interface TagAndTitleProps {
-  tag: string;
+  tag?: string;
   title: string | string[];
-  tagColor: string;
+  tagColor?: string;
   titleColor: string;
   bigFont?: boolean;
   alignLeft?: boolean;
@@ -30,9 +30,11 @@ export const TagAndTitle = ({
       className={styles.container}
       style={{ alignItems: alignLeft && onDesktop ? 'start' : 'center' }}
     >
-      <span className={`textSmall ${styles.tagText}`} style={{ backgroundColor: tagColor }}>
-        {tag}
-      </span>
+      {tag && (
+        <span className={`textSmall ${styles.tagText}`} style={{ backgroundColor: tagColor }}>
+          {tag}
+        </span>
+      )}
 
       <HeadingTag
         className={styles.titleText}
