@@ -1,3 +1,4 @@
+import { useAppSelector } from '../../hooks/hooks';
 import { useFilter } from '../../hooks/useFilter';
 import { SelectedFilters } from '../../types/SelectedFilters';
 import { FilterDropdown } from './FilterDropdown';
@@ -8,8 +9,10 @@ interface FilterElementProps {
   selectedFilters: SelectedFilters;
   setSelectedFilters: React.Dispatch<React.SetStateAction<SelectedFilters>>;
 }
+
 export const FilterElement = ({ selectedFilters, setSelectedFilters }: FilterElementProps) => {
   const filterList = useFilter();
+  const { projects } = useAppSelector((state) => state.projects);
 
   return (
     <div className={`containerMaxWidth ${styles.container}`}>
@@ -25,10 +28,16 @@ export const FilterElement = ({ selectedFilters, setSelectedFilters }: FilterEle
           );
         }
 
-        let valueKey: keyof SelectedFilters;
-        if (el.category === 'category') valueKey = 'category';
-        else if (el.category === 'location') valueKey = 'location';
-        else valueKey = 'status';
+        const valueKeyMap: Record<string, keyof SelectedFilters> = {
+          category: 'category',
+          location: 'location',
+          status: 'status',
+        };
+
+        const valueKey = valueKeyMap[el.category];
+
+        const currentValue =
+          el.options?.find((opt) => opt.value === selectedFilters[valueKey]) ?? null;
 
         return (
           <FilterDropdown
@@ -40,23 +49,20 @@ export const FilterElement = ({ selectedFilters, setSelectedFilters }: FilterEle
                 ? el.options.map((opt) => {
                     return {
                       label: `${opt.label}`,
-                      count: `${opt.count}`,
-                      value: opt.label,
+                      count: opt.count,
+                      value: opt.value,
                     };
                   })
                 : []
             }
-            value={
-              selectedFilters[valueKey]
-                ? { label: selectedFilters[valueKey]!, value: selectedFilters[valueKey]! }
-                : null
-            }
+            value={currentValue}
             onChange={(opt) =>
               setSelectedFilters((prev) => ({
                 ...prev,
                 [valueKey]: opt?.value || null,
               }))
             }
+            projectsLength={projects.length}
           />
         );
       })}

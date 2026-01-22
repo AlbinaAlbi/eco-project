@@ -318,10 +318,11 @@ export const translations = {
     categoryFilter: {
       title: 'Category',
       text: 'All categories',
-      treePlanting: 'Tree planting',
-      recycling: 'Recycling',
-      animalCare: 'Animal care',
-      cleanUps: 'Clean-ups',
+      environment: 'Environment',
+      animals: 'Animal Protection',
+      education: 'Education & Lectures',
+      community: 'Community',
+      humanitarian: 'Charity',
     },
 
     locationFilter: {
@@ -669,10 +670,11 @@ export const translations = {
     categoryFilter: {
       title: 'Категорія',
       text: 'Усі категорії',
-      treePlanting: 'Посадка дерев',
-      recycling: 'Переробка',
-      animalCare: 'Догляд за тваринами',
-      cleanUps: 'Прибирання',
+      environment: 'Довкілля',
+      animals: 'Захист тварин',
+      education: 'Навчання та лекторії',
+      community: 'Громада',
+      humanitarian: 'Благодійність',
     },
 
     locationFilter: {

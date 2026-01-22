@@ -1,100 +1,161 @@
 import { useLanguage } from '../context/LanguageContext';
 import { useAppSelector } from './hooks';
+
+export const CITY_MAP: Record<string, string> = {
+  київ: 'kyiv',
+  kyiv: 'kyiv',
+
+  львів: 'lviv',
+  lviv: 'lviv',
+
+  одеса: 'odesa',
+  odessa: 'odesa',
+
+  харків: 'kharkiv',
+  kharkiv: 'kharkiv',
+};
+
+export const CATEGORY_MAP: Record<string, string> = {
+  екологія: 'environment',
+  тварини: 'animals',
+  освіта: 'education',
+  соціум: 'community',
+  'гуманітарна допомога': 'humanitarian',
+
+  environment: 'environment',
+  animals: 'animals',
+  education: 'education',
+  community: 'community',
+  humanitarian: 'humanitarian',
+};
+
+export interface FilterOption {
+  label: string;
+  value: string;
+  count: number;
+}
+
 export interface FilterItem {
   id: number;
   titleKey: string;
   descriptionKey: string;
-  options?: { label: string; count: number }[];
-  category: string;
+  options?: FilterOption[];
+  category: 'category' | 'location' | 'status' | 'search';
 }
 
 export const useFilter = (): FilterItem[] => {
   const { t } = useLanguage();
   const { projects } = useAppSelector((state) => state.projects);
-
+  console.log(projects);
   const categoryCount: Record<string, number> = {};
-  projects.forEach((project) => {
-    const key = project.category.toLowerCase();
-    categoryCount[key] = (categoryCount[key] || 0) + 1;
-  });
-
   const cityCount: Record<string, number> = {};
-  projects.forEach((project) => {
-    const key = project.city.trim().toLowerCase();
-    cityCount[key] = (cityCount[key] || 0) + 1;
+  const statusCount: Record<string, number> = {};
+
+  projects.forEach((p) => {
+    const rawCategory = p.category.trim().toLowerCase();
+    const category = CATEGORY_MAP[rawCategory]; // ✅ ВОТ ЭТОГО НЕ ХВАТАЛО
+
+    const rawCity = p.city.trim().toLowerCase();
+    const city = CITY_MAP[rawCity];
+
+    const status = p.status.toLowerCase();
+
+    if (category) {
+      categoryCount[category] = (categoryCount[category] || 0) + 1;
+    }
+
+    if (city) {
+      cityCount[city] = (cityCount[city] || 0) + 1;
+    }
+
+    statusCount[status] = (statusCount[status] || 0) + 1;
   });
-
-  const categoryTitle = t('categoryFilter.title');
-  const categoryText = t('categoryFilter.text');
-  const categoryOptions1 = t('categoryFilter.treePlanting');
-  const categoryOptions2 = t('categoryFilter.recycling');
-  const categoryOptions3 = t('categoryFilter.animalCare');
-  const categoryOptions4 = t('categoryFilter.cleanUps');
-
-  const locationTitle = t('locationFilter.title');
-  const locationText = t('locationFilter.text');
-  const locationOptions1 = t('locationFilter.kyiv');
-  const locationOptions2 = t('locationFilter.lviv');
-  const locationOptions3 = t('locationFilter.odesa');
-  const locationOptions4 = t('locationFilter.kharkiv');
-
-  const statusTitle = t('statusFilter.title');
-  const statusText = t('statusFilter.text');
-  const statusOptions1 = t('statusFilter.active');
-  const statusOptions2 = t('statusFilter.progress');
-
-  const searchTitle = t('searchFilter.title');
-  const searchText = t('searchFilter.text');
 
   return [
     {
       id: 1,
-      titleKey: categoryTitle,
-      descriptionKey: categoryText,
+      category: 'category',
+      titleKey: t('categoryFilter.title'),
+      descriptionKey: t('categoryFilter.text'),
       options: [
         {
-          label: categoryOptions1,
-          count: categoryCount['treeplanting'] ?? '0',
+          label: t('categoryFilter.environment'),
+          value: 'environment',
+          count: categoryCount['environment'] ?? 0,
         },
-        { label: categoryOptions2, count: categoryCount['recycling'] ?? '0' },
-        { label: categoryOptions3, count: categoryCount['animalcare'] ?? '0' },
-        { label: categoryOptions4, count: categoryCount['cleanups'] ?? '0' },
+        {
+          label: t('categoryFilter.animals'),
+          value: 'animals',
+          count: categoryCount['animals'] ?? 0,
+        },
+        {
+          label: t('categoryFilter.education'),
+          value: 'education',
+          count: categoryCount['education'] ?? 0,
+        },
+        {
+          label: t('categoryFilter.community'),
+          value: 'community',
+          count: categoryCount['community'] ?? 0,
+        },
+        {
+          label: t('categoryFilter.humanitarian'),
+          value: 'humanitarian',
+          count: categoryCount['humanitarian'] ?? 0,
+        },
       ],
-      category: 'category',
     },
     {
       id: 2,
-      titleKey: locationTitle,
-      descriptionKey: locationText,
-      options: [
-        { label: locationOptions1, count: cityCount['київ'] },
-        { label: locationOptions2, count: cityCount['львів'] ?? '0' },
-        { label: locationOptions3, count: cityCount['одеса'] ?? '0' },
-        { label: locationOptions4, count: cityCount['харків'] ?? '0' },
-      ],
       category: 'location',
+      titleKey: t('locationFilter.title'),
+      descriptionKey: t('locationFilter.text'),
+      options: [
+        {
+          label: t('locationFilter.kyiv'),
+          value: 'kyiv',
+          count: cityCount['kyiv'] ?? 0,
+        },
+        {
+          label: t('locationFilter.lviv'),
+          value: 'lviv',
+          count: cityCount['lviv'] ?? 0,
+        },
+        {
+          label: t('locationFilter.odesa'),
+          value: 'odesa',
+          count: cityCount['odesa'] ?? 0,
+        },
+        {
+          label: t('locationFilter.kharkiv'),
+          value: 'kharkiv',
+          count: cityCount['kharkiv'] ?? 0,
+        },
+      ],
     },
     {
       id: 3,
-      titleKey: statusTitle,
-      descriptionKey: statusText,
+      category: 'status',
+      titleKey: t('statusFilter.title'),
+      descriptionKey: t('statusFilter.text'),
       options: [
         {
-          label: statusOptions1,
-          count: projects.filter((p) => p.status === 'ACTIVE').length,
+          label: t('statusFilter.active'),
+          value: 'active',
+          count: statusCount['active'] ?? 0,
         },
         {
-          label: statusOptions2,
-          count: projects.filter((p) => p.status === 'PROGRESS').length,
+          label: t('statusFilter.progress'),
+          value: 'progress',
+          count: statusCount['progress'] ?? 0,
         },
       ],
-      category: 'status',
     },
     {
       id: 4,
-      titleKey: searchTitle,
-      descriptionKey: searchText,
       category: 'search',
+      titleKey: t('searchFilter.title'),
+      descriptionKey: t('searchFilter.text'),
     },
   ];
 };

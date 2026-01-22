@@ -1,15 +1,15 @@
 import { SetStateAction } from 'react';
-import { Option } from '../FilterDropdown';
 import styles from './DropdownStyles.module.scss';
 import img from '../../../imgs/check.svg';
-import { useAppSelector } from '../../../hooks/hooks';
+import { FilterOption } from '../../../hooks/useFilter';
 
 interface DropdownStylesProps {
-  onChange: (option: Option | null) => void;
+  onChange: (option: FilterOption | null) => void;
   setOpen: (value: SetStateAction<boolean>) => void;
-  options: Option[];
+  options: FilterOption[];
   placeholder: string;
-  value: Option | null;
+  value: FilterOption | null;
+  projectsLength: number;
 }
 
 export const DropdownStyles = ({
@@ -18,9 +18,8 @@ export const DropdownStyles = ({
   options,
   placeholder,
   value,
+  projectsLength,
 }: DropdownStylesProps) => {
-  const { projects } = useAppSelector((state) => state.projects);
-
   return (
     <ul className={styles.dropdownStyles}>
       <li
@@ -34,7 +33,7 @@ export const DropdownStyles = ({
           {value === null && <img src={img} alt="Check dropdown" />}
         </span>
         {placeholder}
-        <span className={styles.count}>{projects.length}</span>
+        <span className={styles.count}>{projectsLength}</span>
       </li>
 
       {options.map((opt) => {

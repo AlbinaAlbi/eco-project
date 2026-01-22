@@ -1,15 +1,18 @@
-import { useState } from 'react';
-import { useAppSelector } from '../../hooks/hooks';
 import { ProjectCard } from '../FeaturedProjects/ProjectCard';
 import styles from './ProjectsList.module.scss';
 import arrowImg from '../../imgs/Chevron.svg';
 import { scrollToTop } from '../../hooks/scrollToTop';
 import { useLanguage } from '../../context/LanguageContext';
+import { Project } from '../../types/Project';
 const ITEMS_PER_PAGE = 6;
 
-export const ProjectsList = () => {
-  const { projects } = useAppSelector((state) => state.projects);
-  const [currentPage, setCurrentPage] = useState(1);
+interface ProjectsListProps {
+  projects: Project[];
+  currentPage: number;
+  setCurrentPage: (v: number) => void;
+}
+
+export const ProjectsList = ({ projects, currentPage, setCurrentPage }: ProjectsListProps) => {
   const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const currentProjects = projects.slice(startIndex, startIndex + ITEMS_PER_PAGE);

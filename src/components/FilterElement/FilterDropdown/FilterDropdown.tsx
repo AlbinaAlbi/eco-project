@@ -2,22 +2,25 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './FilterDropdown.module.scss';
 import chevron from '../../../imgs/Chevron.svg';
 import { DropdownStyles } from '../DropdownStyles';
-
-export type Option = {
-  label: string;
-  count?: string;
-  value: string;
-};
+import { FilterOption } from '../../../hooks/useFilter';
 
 type Props = {
   title: string;
-  value: Option | null;
-  options: Option[];
+  value: FilterOption | null;
+  options: FilterOption[];
   placeholder: string;
-  onChange: (option: Option | null) => void;
+  onChange: (option: FilterOption | null) => void;
+  projectsLength: number;
 };
 
-export const FilterDropdown = ({ title, value, options, placeholder, onChange }: Props) => {
+export const FilterDropdown = ({
+  title,
+  value,
+  options,
+  placeholder,
+  onChange,
+  projectsLength,
+}: Props) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -37,16 +40,7 @@ export const FilterDropdown = ({ title, value, options, placeholder, onChange }:
     <div ref={ref} className={`textBody ${styles.container}`}>
       <label>{title}</label>
 
-      <div
-        className={styles.dropdown}
-        tabIndex={0}
-        onClick={(e) => {
-          if (open) {
-            (e.currentTarget as HTMLDivElement).blur();
-          }
-          setOpen((o) => !o);
-        }}
-      >
+      <div className={styles.dropdown} tabIndex={0} onClick={() => setOpen((o) => !o)}>
         {value?.label || placeholder}
         <img src={chevron} alt="Chevron dropdown" />
       </div>
@@ -58,6 +52,7 @@ export const FilterDropdown = ({ title, value, options, placeholder, onChange }:
           options={options}
           placeholder={placeholder}
           value={value}
+          projectsLength={projectsLength}
         />
       )}
     </div>
