@@ -1,11 +1,11 @@
 import styles from './FAQ.module.scss';
-import FAQImg from '../../imgs/FAQImg.png';
-import { Image } from '../Image';
-import { TagAndTitle } from '../TagAndTitle';
-import { SECTION_HEADERS } from '../../locales/sectionHeaders';
-import { useSectionHeader } from '../../hooks/useSectionHeader';
+import FAQImg from '../../../imgs/FAQImg.png';
+import { Image } from '../../../components/Image';
+import { TagAndTitle } from '../../../components/TagAndTitle';
+import { SECTION_HEADERS } from '../../../locales/sectionHeaders';
+import { useSectionHeader } from '../../../hooks/useSectionHeader';
 import { QuestionElement } from './QuestionElement';
-import { useQuestion } from '../../hooks/useQuestion';
+import { useQuestion } from '../../../hooks/useQuestion';
 import { useState } from 'react';
 
 export const FAQ = () => {

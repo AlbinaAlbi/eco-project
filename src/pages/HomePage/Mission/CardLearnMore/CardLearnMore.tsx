@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import styles from './CardLearnMore.module.scss';
-import arrow from '../../../imgs/Arrow.svg';
-import { useDeviceType } from '../../../hooks/getDeviceType';
-import { useRenderText } from '../../../hooks/renderText';
+import arrow from '../../../../imgs/Arrow.svg';
+import { useDeviceType } from '../../../../hooks/getDeviceType';
+import { useRenderText } from '../../../../hooks/renderText';
 
 interface CardLearnMoreProps {
   title: string | string[];

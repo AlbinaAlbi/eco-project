@@ -6,15 +6,15 @@
 }
 
 .image {
-  height: 327px;
-  padding: 16px 0 24px;
+  height: $size-327;
+  padding: $size-m 0 $size-24;
 
   @include on-tablet {
-    height: 420px;
-    padding: 24px 0 32px;
+    height: $size-420;
+    padding: $size-24 0 $size-xl;
   }
 
   @include on-desktop {
-    height: 600px;
+    height: $size-600;
   }
 }

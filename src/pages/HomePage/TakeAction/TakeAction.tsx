@@ -1,13 +1,13 @@
-import { useLanguage } from '../../context/LanguageContext';
-import { useDeviceType } from '../../hooks/getDeviceType';
-import { SECTION_HEADERS } from '../../locales/sectionHeaders';
-import { Button } from '../Button';
-import { Image } from '../Image';
-import { TagAndTitle } from '../TagAndTitle';
-import { Description } from '../Description';
+import { useLanguage } from '../../../context/LanguageContext';
+import { useDeviceType } from '../../../hooks/getDeviceType';
+import { SECTION_HEADERS } from '../../../locales/sectionHeaders';
+import { Button } from '../../../components/Button';
+import { Image } from '../../../components/Image';
+import { TagAndTitle } from '../../../components/TagAndTitle';
+import { Description } from '../../../components/Description';
 import styles from './TakeAction.module.scss';
-import TakeActionImg from '../../imgs/Become a Volunteer.png';
-import { useSectionHeader } from '../../hooks/useSectionHeader';
+import TakeActionImg from '../../../imgs/Become a Volunteer.png';
+import { useSectionHeader } from '../../../hooks/useSectionHeader';
 
 export const TakeAction = () => {
   const { t } = useLanguage();

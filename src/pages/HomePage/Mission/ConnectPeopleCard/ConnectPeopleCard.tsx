@@ -1,4 +1,4 @@
-import { useRenderText } from '../../../hooks/renderText';
+import { useRenderText } from '../../../../hooks/renderText';
 import styles from './ConnectPeopleCard.module.scss';
 
 interface ConnectPeopleCardProps {

@@ -1,9 +1,9 @@
-import { useSectionHeader } from '../../hooks/useSectionHeader';
-import { useStepsList } from '../../hooks/useStepsList';
-import { SECTION_HEADERS } from '../../locales/sectionHeaders';
-import { TagAndTitle } from '../TagAndTitle';
+import { useSectionHeader } from '../../../hooks/useSectionHeader';
+import { useStepsList } from '../../../hooks/useStepsList';
+import { SECTION_HEADERS } from '../../../locales/sectionHeaders';
+import { TagAndTitle } from '../../../components/TagAndTitle';
 import styles from './HowItWorks.module.scss';
-import { StepsList } from './StepsList';
+import { StepsList } from '../../../components/StepsList';
 
 export const HowItWorks = () => {
   const { tagKey, titleKey, tagColor, titleColor } = SECTION_HEADERS.works;

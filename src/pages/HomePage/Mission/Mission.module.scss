@@ -1,39 +1,41 @@
-@import '../../styles/index.scss';
+@import '../../../styles/index';
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  align-self: center;
-  width: 100%;
 }
 
-.buttons {
+.imgContainer,
+.cards {
   display: flex;
   flex-direction: column;
-  gap: $size-16;
-  padding-top: $size-24;
+  gap: $size-m;
   width: 100%;
-  justify-content: center;
 
-  @include on-tablet {
-    flex-direction: row;
+  @include on-desktop {
+    gap: $size-l;
   }
 }
 
-.img {
-  height: $size-327;
+.cards {
   margin-top: $size-24;
-  width: 100%;
 
   @include on-tablet {
     margin-top: $size-xl;
-    height: $size-420;
+    flex-direction: row;
+    height: $size-450;
   }
 
   @include on-desktop {
     margin-top: $size-40;
-    height: $size-600;
+    height: $size-620;
+  }
+}
+
+.cards > *:nth-child(1) {
+  @include on-tablet {
+    width: 50%;
   }
 }

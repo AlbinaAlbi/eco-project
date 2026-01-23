@@ -13,6 +13,7 @@ export const WhoWeAre = () => {
     titleKey,
     descriptionKey,
   });
+
   return (
     <div className={styles.container}>
       <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />

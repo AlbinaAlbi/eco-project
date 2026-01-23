@@ -1,5 +1,15 @@
 @import '../../styles';
 
 .container {
+  gap: $size-2xl;
+  flex-direction: column;
   justify-content: center;
+
+  @include on-tablet {
+    gap: $size-3xl;
+  }
+
+  @include on-tablet {
+    gap: $size-100;
+  }
 }

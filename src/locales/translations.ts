@@ -324,6 +324,24 @@ export const translations = {
       donate: 'Donate',
     },
 
+    goalFirst: {
+      title: 'Restore natural ecosystems',
+      description:
+        'We work to bring forests, rivers, and green spaces back to life through restoration, reforestation, and long-term care',
+    },
+
+    goalSecond: {
+      title: 'Empower communities to take action',
+      description:
+        'We support volunteers, schools, and local residents with tools, knowledge, and opportunities to protect the environment',
+    },
+
+    goalThird: {
+      title: 'Promote sustainable environmental practices',
+      description:
+        'We raise awareness, educate communities, and encourage eco-friendly habits that create lasting positive impact',
+    },
+
     supportBlock: {
       title: 'Support',
       contact: 'Contact',
@@ -712,6 +730,24 @@ export const translations = {
       instagram: 'Instagram',
       youtube: 'YouTube',
       linkedin: 'LinkedIn',
+    },
+
+    goalFirst: {
+      title: 'Відновлення природних екосистем',
+      description:
+        'Ми працюємо над відродженням лісів, річок і зелених зон через відновлення, заліснення та довгостроковий догляд',
+    },
+
+    goalSecond: {
+      title: 'Надихаємо громади діяти',
+      description:
+        'Ми підтримуємо волонтерів, школи та місцевих мешканців, надаючи інструменти, знання й можливості для захисту довкілля',
+    },
+
+    goalThird: {
+      title: 'Популяризація сталих екологічних практик',
+      description:
+        'Ми підвищуємо обізнаність, навчаємо громади та заохочуємо екологічно відповідальні звички, що створюють довготривалий позитивний вплив',
     },
 
     categoryFilter: {

@@ -1,12 +1,12 @@
-import { useSectionHeader } from '../../hooks/useSectionHeader';
-import { SECTION_HEADERS } from '../../locales/sectionHeaders';
-import { Image } from '../Image';
-import { TagAndTitle } from '../TagAndTitle';
+import { useSectionHeader } from '../../../hooks/useSectionHeader';
+import { SECTION_HEADERS } from '../../../locales/sectionHeaders';
+import { Image } from '../../../components/Image';
+import { TagAndTitle } from '../../../components/TagAndTitle';
 import styles from './Mission.module.scss';
-import MissionImg1 from '../../imgs/mission-card-1.jpg';
+import MissionImg1 from '../../../imgs/mission-card-1.jpg';
 import { CardLearnMore } from './CardLearnMore';
 import { ConnectPeopleCard } from './ConnectPeopleCard';
-import { useTranslatedText } from '../../hooks/useResponsiveText';
+import { useTranslatedText } from '../../../hooks/useResponsiveText';
 
 export const Mission = () => {
   const { tagKey, titleKey, tagColor, titleColor } = SECTION_HEADERS.mission;

@@ -1,10 +1,10 @@
 import { FeaturedProjects } from '../../components/FeaturedProjects';
-import { HowItWorks } from '../../components/HowItWorks';
-import { Mission } from '../../components/Mission';
+import { HowItWorks } from './HowItWorks';
+import { Mission } from './Mission';
 import { OurStatistics } from '../../components/OurStatistics';
-import { TakeAction } from '../../components/TakeAction';
+import { TakeAction } from './TakeAction';
 import styles from './HomePage.module.scss';
-import { FAQ } from '../../components/FAQ';
+import { FAQ } from './FAQ';
 import { StartInitiative } from '../../components/StartInitiative';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { fetchProjectsThunk } from '../../store/slices/ProjectsSlice/projectsSlice';
