@@ -15,3 +15,29 @@
     gap: $size-100;
   }
 }
+
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.columnWrapper {
+  display: flex;
+  flex-direction: column; 
+  gap: $size-2xl;
+  align-self: center;
+  width: 100%;
+  
+  @include on-tablet {
+    gap: $size-3xl;
+  }
+
+  @include on-desktop {
+    gap: $size-100;
+  }
+}
+
+.gray {
+  background-color: $color-background;
+}

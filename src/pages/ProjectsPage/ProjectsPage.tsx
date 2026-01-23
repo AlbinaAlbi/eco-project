@@ -37,7 +37,7 @@ export const ProjectsPage = () => {
   if (error) return <p>Ошибка: {error}</p>;
 
   return (
-    <div className={`${styles.container}`}>
+    <div className={styles.container}>
       <ExploreProjects />
       <FilterElement selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} />
       <ProjectsList

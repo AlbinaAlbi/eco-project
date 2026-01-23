@@ -23,19 +23,38 @@ export const HomePage = () => {
 
   return (
     <div className={styles.container}>
-      <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>
-        <TakeAction />
-        <Mission />
-      </div>
-      <HowItWorks />
-      <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>
-        <FeaturedProjects projects={projects} />
-      </div>
-      <OurStatistics />
+      <section className={styles.section}>
+        <div className="containerMaxWidth containerContentPadding">
+          <div className={styles.columnWrapper}>
+            <TakeAction />
+            <Mission />
+          </div>
+        </div>
+      </section>
 
-      <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>
-        <FAQ />
-      </div>
+      <section className={styles.gray}>
+        <HowItWorks />
+      </section>
+
+      <section className={styles.section}>
+        <div className="containerMaxWidth containerContentPadding">
+          <div className={styles.columnWrapper}>
+            <FeaturedProjects projects={projects} />
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.gray}>
+        <OurStatistics />
+      </section>
+
+      <section className={styles.section}>
+        <div className="containerMaxWidth containerContentPadding">
+          <div className={styles.columnWrapper}>
+            <FAQ />
+          </div>
+        </div>
+      </section>
 
       <StartInitiative />
     </div>
