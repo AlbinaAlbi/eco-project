@@ -4,4 +4,5 @@ export type ButtonProps = {
   to?: string;
   onClick?: () => void;
   buttonWidth?: string;
+  backgroundColor?: boolean;
 };

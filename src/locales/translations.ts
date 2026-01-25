@@ -316,6 +316,28 @@ export const translations = {
     goalsTag: 'Our goals',
     goalsTitle: ['Growing sustainable', 'environments together'],
 
+    resultsTag: 'Results',
+    resultsTitle: 'Our impact',
+
+    involvedTag: 'Get involved',
+    involvedTitle: ['Ready to make', 'a real impact?'],
+    involvedDescription: {
+      mobile: [
+        'Join our mission to restore natural',
+        'ecosystems, support local communities,',
+        'and protect Ukraine’s forests for future',
+        'generations',
+      ],
+      tablet: [
+        'Join our mission to restore natural ecosystems, support local',
+        'communities, and protect Ukraine’s forests for future generations',
+      ],
+      desktop: [
+        'Join our mission to restore natural ecosystems, support local',
+        'communities, and protect Ukraine’s forests for future generations',
+      ],
+    },
+
     exploreBlock: {
       title: 'Explore',
       projects: 'Projects',
@@ -710,6 +732,28 @@ export const translations = {
 
     goalsTag: 'Наші цілі',
     goalsTitle: ['Разом будуємо', 'екологічне майбутнє'],
+
+    resultsTag: 'Результати',
+    resultsTitle: 'Наш вплив',
+
+    involvedTag: 'Долучайся',
+    involvedTitle: ['Готові зробити', 'реальний внесок?'],
+    involvedDescription: {
+      mobile: [
+        'Долучайтеся до нашої місії з відновлення',
+        'природних екосистем, підтримки місцевих громад',
+        'та захисту лісів України для майбутніх',
+        'поколінь',
+      ],
+      tablet: [
+        'Долучайтеся до нашої місії з відновлення природних екосистем, підтримки місцевих',
+        'громад та захисту лісів України для майбутніх поколінь',
+      ],
+      desktop: [
+        'Долучайтеся до нашої місії з відновлення природних екосистем, підтримки місцевих',
+        'громад та захисту лісів України для майбутніх поколінь',
+      ],
+    },
 
     exploreBlock: {
       title: 'Дослідити',

@@ -1,6 +1,8 @@
 import { HowItWorks } from '../HomePage/HowItWorks';
 import styles from './AboutUs.module.scss';
 import { Goals } from './Goals/Goals';
+import { Involved } from './Involved';
+import { Results } from './Results';
 import { WhoWeAre } from './WhoWeAre';
 
 export const AboutUs = () => {
@@ -9,8 +11,10 @@ export const AboutUs = () => {
       <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>
         <WhoWeAre />
         <Goals />
+        <HowItWorks />
+        <Results />
       </div>
-      <HowItWorks />
+      <Involved />
     </div>
   );
 };

@@ -1,9 +1,12 @@
 @import '../../styles';
 
 .container {
+  display: flex;
   gap: $size-2xl;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 100%;
 
   @include on-tablet {
     gap: $size-3xl;

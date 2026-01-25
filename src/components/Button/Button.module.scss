@@ -51,3 +51,9 @@
     background-color: $color-gray-active;
   }
 }
+
+.noneBackground {
+  background: none;
+  color: $color-white;
+  border: $size-1 solid $color-gray-500;
+}

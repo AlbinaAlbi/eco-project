@@ -73,4 +73,17 @@ export const SECTION_HEADERS = {
     tagColor: COLORS.gray200,
     titleColor: COLORS.black,
   },
+  results: {
+    tagKey: 'resultsTag' as const,
+    titleKey: 'resultsTitle' as const,
+    tagColor: COLORS.gray200,
+    titleColor: COLORS.black,
+  },
+  involved: {
+    tagKey: 'involvedTag' as const,
+    titleKey: 'involvedTitle' as const,
+    descriptionKey: 'involvedDescription' as const,
+    tagColor: COLORS.gray100,
+    titleColor: COLORS.white,
+  },
 } as const;

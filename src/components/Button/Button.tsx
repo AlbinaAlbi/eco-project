@@ -3,9 +3,16 @@ import { ButtonProps } from '../../types/ButtonProps';
 import styles from './Button.module.scss';
 import { useSidebar } from '../../context/SidebarContext';
 
-export const Button = ({ text, color = 'green', to, onClick, buttonWidth }: ButtonProps) => {
+export const Button = ({
+  text,
+  color = 'green',
+  to,
+  onClick,
+  buttonWidth,
+  backgroundColor = true,
+}: ButtonProps) => {
   const classNameContainer = `${styles.container}`;
-  const classNameButton = `textButton ${styles[color]}`;
+  const classNameButton = `textButton ${backgroundColor ? styles[color] : styles.noneBackground}`;
   const { closeSidebar } = useSidebar();
 
   if (to) {
