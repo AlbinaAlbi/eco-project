@@ -1,6 +1,8 @@
 import { TagAndTitle } from '../../../components/TagAndTitle';
+import { useResultsList } from '../../../hooks/useResultsList';
 import { useSectionHeader } from '../../../hooks/useSectionHeader';
 import { SECTION_HEADERS } from '../../../locales/sectionHeaders';
+import { ResultCard } from './ResultCard';
 import styles from './Results.module.scss';
 
 export const Results = () => {
@@ -9,10 +11,16 @@ export const Results = () => {
     tagKey,
     titleKey,
   });
+  const resultsList = useResultsList();
 
   return (
     <div className={styles.container}>
       <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
+      <div className={styles.resultsList}>
+        {resultsList.map((result) => (
+          <ResultCard key={result.id} inform={result} />
+        ))}
+      </div>
     </div>
   );
 };

@@ -167,6 +167,48 @@ export const translations = {
       statistic4Count: '12t',
     },
 
+    resultsList: {
+      plantedTitle: 'Trees planted',
+      plantedDescription: {
+        mobile: ['Native species planted across', 'damaged forest areas in the', 'Carpathians'],
+        tablet: ['Native species planted across damaged forest', 'areas in the Carpathians'],
+        desktop: ['Native species planted across damaged', 'forest areas in the Carpathians'],
+      },
+      plantedCount: '12,450+',
+
+      volunteersTitle: 'Active volunteers',
+      volunteersDescription: {
+        mobile: ['People who joined restoration', 'projects and community', 'eco-initiatives'],
+        tablet: ['People who joined restoration projects', 'and community eco-initiatives'],
+        desktop: ['People who joined restoration projects', 'and community eco-initiatives'],
+      },
+      volunteersCount: '680+',
+
+      landscapesTitle: 'Restored landscapes',
+      landscapesDescription: {
+        mobile: ['Forest zones, riverbanks,', 'and nature reserves brought', 'back to lifes'],
+        tablet: ['Forest zones, riverbanks, and nature reserves', 'brought back to lifes'],
+        desktop: ['Forest zones, riverbanks, and nature', 'reserves brought back to lifes'],
+      },
+      landscapesCount: '37 ha',
+
+      collectedTitle: 'Waste collected',
+      collectedDescription: {
+        mobile: ['Plastic, glass, and mixed waste', 'removed from natural areas'],
+        tablet: ['Plastic, glass, and mixed waste removed from', 'natural areas'],
+        desktop: ['Plastic, glass, and mixed waste removed', 'from natural areas'],
+      },
+      collectedCount: '24 t',
+
+      reachedTitle: 'People reached',
+      reachedDescription: {
+        mobile: ['Through eco-education,', 'awareness campaigns,', 'and community events'],
+        tablet: ['Through eco-education, awareness', 'campaigns, and community events'],
+        desktop: ['Through eco-education, awareness', 'campaigns, and community events'],
+      },
+      reachedCount: '15000 +',
+    },
+
     faqTag: 'FAQ',
     faqTitle: ['Common questions ', 'about our work'],
 

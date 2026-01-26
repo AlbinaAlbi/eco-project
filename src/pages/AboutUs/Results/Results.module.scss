@@ -1,1 +1,24 @@
 @import '../../../styles';
+
+.container,
+.resultsList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container {
+  gap: $size-40;
+
+  @include on-desktop {
+    gap: $size-44;
+  }
+}
+
+.resultsList {
+  gap: $size-m;
+
+  @include on-tablet {
+    gap: $size-l;
+  }
+}
