@@ -15,7 +15,9 @@ export const Results = () => {
 
   return (
     <div className={styles.container}>
-      <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
+      <div className="wrapperTextAlign">
+        <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
+      </div>
       <div className={styles.resultsList}>
         {resultsList.map((result) => (
           <ResultCard key={result.id} inform={result} />

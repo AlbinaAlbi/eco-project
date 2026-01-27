@@ -32,14 +32,16 @@ export const StartInitiative = () => {
 
   return (
     <div className={styles.container}>
-      <TagAndTitle
-        tag={tag}
-        title={title}
-        tagColor={tagColor}
-        titleColor={titleColor}
-        bigFont={true}
-      />
-      <Description title={description} />
+      <div className="wrapperTextAlign">
+        <TagAndTitle
+          tag={tag}
+          title={title}
+          tagColor={tagColor}
+          titleColor={titleColor}
+          bigFont={true}
+        />
+        <Description title={description} />
+      </div>
 
       <Button text={t('submit')} buttonWidth={buttonWidth} />
     </div>

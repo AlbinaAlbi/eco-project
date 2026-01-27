@@ -35,15 +35,17 @@ export const TakeAction = () => {
 
   return (
     <div className={styles.container}>
-      <TagAndTitle
-        tag={tag}
-        title={title}
-        tagColor={tagColor}
-        titleColor={titleColor}
-        bigFont={true}
-      />
+      <div className="wrapperTextAlign">
+        <TagAndTitle
+          tag={tag}
+          title={title}
+          tagColor={tagColor}
+          titleColor={titleColor}
+          bigFont={true}
+        />
 
-      <Description title={description} />
+        <Description title={description} />
+      </div>
 
       <div className={styles.buttons}>
         <Button text={t('explore')} buttonWidth={buttonWidth} />

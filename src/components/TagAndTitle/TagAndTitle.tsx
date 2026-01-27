@@ -22,24 +22,16 @@ export const TagAndTitle = ({
   const { renderText } = useRenderText();
 
   const HeadingTag: 'h1' | 'h2' = bigFont ? 'h1' : 'h2';
-  const device = useDeviceType();
-  const onDesktop = device !== 'mobile';
 
   return (
-    <div
-      className={styles.container}
-      style={{ alignItems: alignLeft && onDesktop ? 'start' : 'center' }}
-    >
+    <div className={styles.container}>
       {tag && (
         <span className={`textSmall ${styles.tagText}`} style={{ backgroundColor: tagColor }}>
           {tag}
         </span>
       )}
 
-      <HeadingTag
-        className={styles.titleText}
-        style={{ color: titleColor, textAlign: alignLeft && onDesktop ? 'start' : 'center' }}
-      >
+      <HeadingTag className={styles.titleText} style={{ color: titleColor }}>
         {renderText(title)}
       </HeadingTag>
     </div>

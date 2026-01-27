@@ -16,11 +16,15 @@ export const WhoWeAre = () => {
 
   return (
     <div className={styles.container}>
-      <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
+      <div className="wrapperTextAlign">
+        <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
+      </div>
       <div className={styles.image}>
         <Image img={img} alt={'WhoWeAre img'} />
       </div>
-      <Description title={description} />
+      <div className="wrapperTextAlign">
+        <Description title={description} />
+      </div>
     </div>
   );
 };

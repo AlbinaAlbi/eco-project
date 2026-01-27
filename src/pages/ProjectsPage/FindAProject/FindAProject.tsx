@@ -18,8 +18,10 @@ export const FindAProject = () => {
 
   return (
     <div className={`containerContentPadding ${styles.container}`}>
-      <TagAndTitle title={title} titleColor={titleColor} />
-      <Description title={description} />
+      <div className="wrapperTextAlign">
+        <TagAndTitle title={title} titleColor={titleColor} />
+        <Description title={description} />
+      </div>
       {device !== 'mobile' && <Button text={t('submit')} color={'green'} buttonWidth={'320px'} />}
     </div>
   );

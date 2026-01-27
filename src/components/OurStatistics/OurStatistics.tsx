@@ -19,9 +19,10 @@ export const OurStatistics = () => {
   return (
     <div className={styles.container}>
       <div className={`containerContentPadding containerMaxWidth ${styles.content}`}>
-        <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
-        <Description title={description} />
-
+        <div className="wrapperTextAlign">
+          <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
+          <Description title={description} />
+        </div>
         <div className={styles.statisticsCards}>
           {statisticsList.map((statistic) => (
             <StatisticCard key={statistic.id} information={statistic} />

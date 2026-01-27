@@ -24,7 +24,9 @@ export const FAQ = () => {
 
   return (
     <div className={styles.container} id="faq">
-      <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
+      <div className="wrapperTextAlign">
+        <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
+      </div>
 
       <div className={styles.questionsAndImg}>
         <div className={styles.questionsList}>

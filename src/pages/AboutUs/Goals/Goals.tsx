@@ -15,7 +15,9 @@ export const Goals = () => {
 
   return (
     <div className={styles.container}>
-      <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
+      <div className="wrapperTextAlign">
+        <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
+      </div>
       <div className={styles.cardsList}>
         {cardsList.map((info) => (
           <div

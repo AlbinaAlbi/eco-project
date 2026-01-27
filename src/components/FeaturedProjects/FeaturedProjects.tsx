@@ -23,9 +23,11 @@ export const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
 
   return (
     <div className={styles.container}>
-      <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
+      <div className="wrapperTextAlign">
+        <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
 
-      <Description title={description} />
+        <Description title={description} />
+      </div>
 
       <ProjectsCarousel projects={projects} />
 

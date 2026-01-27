@@ -25,6 +25,10 @@ export const translations = {
     signIn: 'Sign in',
     projectsSmall: 'projects',
     showing: 'Showing',
+    sendMessage: 'Send message',
+    name: 'Name',
+    email: 'Email',
+    message: 'Message',
 
     actionTag: 'Take action',
     actionTitle: ['Together, we create ', 'a greener future.'],
@@ -435,6 +439,13 @@ export const translations = {
         'We raise awareness, educate communities, and encourage eco-friendly habits that create lasting positive impact',
     },
 
+    messageTitle: 'Send us a message',
+    messageDescription: {
+      mobile: ['Have questions? Use this form to get', 'in touch with our team over email'],
+      tablet: ['Have questions? Use this form to get', 'in touch with our team over email'],
+      desktop: ['Have questions? Use this form to get in touch', 'with our team over email'],
+    },
+
     supportBlock: {
       title: 'Support',
       contact: 'Contact',
@@ -509,6 +520,10 @@ export const translations = {
     signIn: 'Увійти',
     showing: 'Показано',
     projectsSmall: 'проєктів',
+    sendMessage: 'Надіслати повідомлення',
+    name: 'Імʼя',
+    email: 'Пошта',
+    message: 'Повідомлення',
 
     actionTag: 'Долучайся',
     actionTitle: ['Разом ми створюємо ', 'зеленіше майбутнє.'],
@@ -650,6 +665,24 @@ export const translations = {
         desktop: ['Пластик, скло та змішані відходи, зібрані під час прибирань'],
       },
       statistic4Count: '12 тонн',
+    },
+
+    contactsTag: 'Звʼязатися з нами',
+    contactsTitle: ['Будемо раді', 'вашому зверненню'],
+    contactsDescription: {
+      mobile: [
+        'Звертайтесь із будь-якими питаннями щодо',
+        'волонтерства, партнерства',
+        'або подання власного еко-проєкту',
+      ],
+      tablet: [
+        'Звертайтесь із будь-якими питаннями щодо волонтерства, партнерства',
+        'або подання власного еко-проєкту',
+      ],
+      desktop: [
+        'Звертайтесь із будь-якими питаннями щодо волонтерства, партнерства',
+        'або подання власного еко-проєкту',
+      ],
     },
 
     contactsList: {
@@ -877,6 +910,21 @@ export const translations = {
         'Ми підвищуємо обізнаність, навчаємо громади та заохочуємо екологічно відповідальні звички, що створюють довготривалий позитивний вплив',
     },
 
+    messageTitle: 'Напишіть нам',
+    messageDescription: {
+      mobile: [
+        'Маєте запитання? Скористайтесь цією формою,',
+        'щоб зв’язатися з нашою командою електронною поштою',
+      ],
+      tablet: [
+        'Маєте запитання? Скористайтесь цією формою,',
+        'щоб зв’язатися з нашою командою електронною поштою',
+      ],
+      desktop: [
+        'Маєте запитання? Скористайтесь цією формою, щоб зв’язатися',
+        'з нашою командою електронною поштою',
+      ],
+    },
     categoryFilter: {
       title: 'Категорія',
       text: 'Усі категорії',

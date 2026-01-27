@@ -93,4 +93,9 @@ export const SECTION_HEADERS = {
     tagColor: COLORS.gray100,
     titleColor: COLORS.black,
   },
+  message: {
+    titleKey: 'messageTitle' as const,
+    descriptionKey: 'messageDescription' as const,
+    titleColor: COLORS.black,
+  },
 } as const;

@@ -30,8 +30,10 @@ export const Involved = () => {
   }
   return (
     <div className={styles.container}>
-      <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
-      <div className={styles.description}>
+      <div className="wrapperTextAlign">
+        <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
+      </div>
+      <div className={`wrapperTextAlign ${styles.description}`}>
         <Description title={description} />
       </div>
       <div className={styles.buttons}>

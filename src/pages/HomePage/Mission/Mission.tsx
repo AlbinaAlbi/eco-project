@@ -24,7 +24,9 @@ export const Mission = () => {
 
   return (
     <div className={styles.container}>
-      <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
+      <div className="wrapperTextAlign">
+        <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
+      </div>
 
       <div className={styles.cards}>
         <Image img={MissionImg1} alt={'Mission card 1'} />

@@ -1,0 +1,44 @@
+@import '../../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $size-24;
+
+  @include on-tablet {
+    flex-direction: row;
+    gap: $size-16;
+  }
+}
+
+.firstPart {
+  width: 100%;
+  text-align: center;
+
+  @include on-tablet {
+    text-align: start;
+  }
+
+  @include on-desktop {
+    width: $size-488;
+  }
+}
+
+.messageWrapper {
+  padding-top: $size-24;
+}
+
+.image {
+  height: $size-327;
+  width: 100%;
+
+  @include on-tablet {
+    height: $size-387;
+  }
+
+  @include on-desktop {
+    height: $size-466;
+    width: $size-590;
+  }
+}
