@@ -86,4 +86,11 @@ export const SECTION_HEADERS = {
     tagColor: COLORS.gray100,
     titleColor: COLORS.white,
   },
+  contacts: {
+    tagKey: 'contactsTag' as const,
+    titleKey: 'contactsTitle' as const,
+    descriptionKey: 'contactsDescription' as const,
+    tagColor: COLORS.gray100,
+    titleColor: COLORS.black,
+  },
 } as const;

@@ -209,6 +209,35 @@ export const translations = {
       reachedCount: '15000 +',
     },
 
+    contactsTag: 'Contact us',
+    contactsTitle: ['We’d love to hear', 'from you'],
+    contactsDescription: {
+      mobile: [
+        'Reach out with any questions about',
+        'volunteering, partnerships,',
+        'or submitting your own eco-project',
+      ],
+      tablet: [
+        'Reach out with any questions about volunteering, partnerships,',
+        'or submitting your own eco-project',
+      ],
+      desktop: [
+        'Reach out with any questions about volunteering, partnerships,',
+        'or submitting your own eco-project',
+      ],
+    },
+    contactsList: {
+      questionsDescription: {
+        mobile: ['Quick questions, feedback,', 'or collaboration ideas'],
+        tablet: ['Quick questions,', 'feedback,', 'or collaboration ideas'],
+        desktop: ['Quick questions,', 'feedback,', 'or collaboration ideas'],
+      },
+
+      joiningDescription: ['For joining a project', 'or confirming', 'your participation'],
+
+      reachedDescription: ['Send us details about', 'your eco-initiative'],
+    },
+
     faqTag: 'FAQ',
     faqTitle: ['Common questions ', 'about our work'],
 
@@ -621,6 +650,18 @@ export const translations = {
         desktop: ['Пластик, скло та змішані відходи, зібрані під час прибирань'],
       },
       statistic4Count: '12 тонн',
+    },
+
+    contactsList: {
+      questionsDescription: {
+        mobile: ['Швидкі запитання, відгуки', 'або ідеї для співпраці'],
+        tablet: ['Швидкі запитання,', 'відгуки,', 'або ідеї для співпраці'],
+        desktop: ['Швидкі запитання,', 'відгуки,', 'або ідеї для співпраці'],
+      },
+
+      joiningDescription: ['Для приєднання до проєкту', 'або підтвердження вашої участі'],
+
+      reachedDescription: ['Надішліть нам деталі', 'вашої екоініціативи'],
     },
 
     faqTag: 'FAQ',

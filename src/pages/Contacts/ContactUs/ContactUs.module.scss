@@ -1,0 +1,18 @@
+@import '../../../styles';
+
+.contactsList {
+  display: grid;
+  gap: $size-m;
+  padding-top: $size-24;
+  grid-template-columns: repeat(1, 1fr); 
+
+  @include on-tablet {
+    padding-top: $size-40;
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  @include on-desktop {
+    padding-top: $size-2xl;
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
