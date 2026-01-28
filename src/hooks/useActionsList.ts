@@ -7,20 +7,20 @@ export interface ActionsListProps {
 }
 
 export const useActionsList = (): ActionsListProps[] => {
-  const plantedTitle = useTranslatedText('actionsList.plantedTitle');
-  const plantedCount = useTranslatedText('resultsList.plantedCount');
+  const plantedTitle = useTranslatedText('plantedTitle');
+  const plantedCount = useTranslatedText('plantedCount');
 
-  const volunteersTitle = useTranslatedText('actionsList.volunteersTitle');
-  const volunteersCount = useTranslatedText('actionsList.volunteersCount');
+  const volunteersTitle = useTranslatedText('volunteersTitle');
+  const volunteersCount = useTranslatedText('volunteersCount');
 
-  const landscapesTitle = useTranslatedText('actionsList.landscapesTitle');
-  const landscapesCount = useTranslatedText('actionsList.landscapesCount');
+  const landscapesTitle = useTranslatedText('landscapesTitle');
+  const landscapesCount = useTranslatedText('landscapesCount');
 
-  const collectedTitle = useTranslatedText('actionsList.collectedTitle');
-  const collectedCount = useTranslatedText('actionsList.collectedCount');
+  const collectedTitle = useTranslatedText('collectedTitle');
+  const collectedCount = useTranslatedText('collectedCount');
 
-  const reachedTitle = useTranslatedText('actionsList.reachedTitle');
-  const reachedCount = useTranslatedText('actionsList.reachedCount');
+  const reachedTitle = useTranslatedText('reachedTitle');
+  const reachedCount = useTranslatedText('reachedCount');
 
   return [
     {

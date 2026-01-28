@@ -7,12 +7,13 @@ import { Description } from '../../../components/Description';
 import styles from './TakeAction.module.scss';
 import { useSectionHeader } from '../../../hooks/useSectionHeader';
 import { useActionsList } from '../../../hooks/useActionsList';
-import { ActionCard } from '../../../components/ActionCard';
+import { ActionsList } from './ActionsList';
 
 export const TakeAction = () => {
   const { t } = useLanguage();
   const device = useDeviceType();
   const actionsList = useActionsList();
+  const mobileDevice = device === 'mobile';
 
   const { tagKey, titleKey, descriptionKey, tagColor, titleColor, describtionColor } =
     SECTION_HEADERS.action;
@@ -60,13 +61,11 @@ export const TakeAction = () => {
             backgroundColor={false}
           />
         </div>
+
+        {!mobileDevice && <ActionsList actionsList={actionsList} />}
       </div>
 
-      <div className={styles.actions}>
-        {actionsList.map((action) => (
-          <ActionCard key={action.id} action={action} />
-        ))}
-      </div>
+      {mobileDevice && <ActionsList actionsList={actionsList} />}
     </div>
   );
 };

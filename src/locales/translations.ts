@@ -45,22 +45,20 @@ export const translations = {
       ],
     },
 
-    actionsList: {
-      plantedTitle: ['Trees', 'planted'],
-      plantedCount: '12,450+',
+    plantedTitle: ['Trees', 'planted'],
+    plantedCount: '12,450+',
 
-      volunteersTitle: ['Active', 'volunteers'],
-      volunteersCount: '680+',
+    volunteersTitle: ['Active', 'volunteers'],
+    volunteersCount: '680+',
 
-      landscapesTitle: ['Restored', 'landscapes'],
-      landscapesCount: '37 ha',
+    landscapesTitle: ['Restored', 'landscapes'],
+    landscapesCount: '37 ha',
 
-      collectedTitle: ['Waste', 'collected'],
-      collectedCount: '24 t',
+    collectedTitle: ['Waste', 'collected'],
+    collectedCount: '24 t',
 
-      reachedTitle: ['People', 'reached'],
-      reachedCount: '15,000+',
-    },
+    reachedTitle: ['People', 'reached'],
+    reachedCount: '15,000+',
 
     missionTag: 'Our mission',
     missionTitle: {
