@@ -7,6 +7,7 @@ import { Region } from './Region';
 import { useLanguage } from '../../../context/LanguageContext';
 import { TitleCard } from './TitleCard';
 import { ProgressBar } from './ProgressBar';
+import { Link } from 'react-router-dom';
 
 interface ProjectCardProps {
   project: Project;
@@ -23,7 +24,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   const statusText = status === 'ACTIVE' ? 'Active' : 'Inactive';
 
   return (
-    <div className={styles.container}>
+    <Link to={`/projects/${project.id}`} className={styles.container}>
       <ImgAndStatus status={statusText} url={imageUrl} title={title} />
 
       <div className={styles.inform}>
@@ -33,6 +34,6 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         <ProgressBar goalAmount={goalAmount} currentAmount={currentAmount} />
         <Button text={t('donate')} buttonWidth={'100%'} />
       </div>
-    </div>
+    </Link>
   );
 };

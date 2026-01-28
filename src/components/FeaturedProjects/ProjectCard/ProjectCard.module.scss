@@ -5,6 +5,8 @@
   flex-direction: column;
   gap: $size-m;
   width: $size-327;
+  text-decoration: none;
+  color: inherit;
 
   @include on-tablet {
     width: $size-336;

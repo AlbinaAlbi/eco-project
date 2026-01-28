@@ -29,6 +29,7 @@ export const translations = {
     name: 'Name',
     email: 'Email',
     message: 'Message',
+    help: 'Help now',
 
     actionTag: 'Take action',
     actionTitle: ['Together, we create ', 'a greener future.'],
@@ -42,6 +43,23 @@ export const translations = {
         'Join eco-initiatives, volunteer with purpose, ',
         'and make a real impact in your community.',
       ],
+    },
+
+    actionsList: {
+      plantedTitle: ['Trees', 'planted'],
+      plantedCount: '12,450+',
+
+      volunteersTitle: ['Active', 'volunteers'],
+      volunteersCount: '680+',
+
+      landscapesTitle: ['Restored', 'landscapes'],
+      landscapesCount: '37 ha',
+
+      collectedTitle: ['Waste', 'collected'],
+      collectedCount: '24 t',
+
+      reachedTitle: ['People', 'reached'],
+      reachedCount: '15,000+',
     },
 
     missionTag: 'Our mission',
@@ -524,6 +542,7 @@ export const translations = {
     name: 'Імʼя',
     email: 'Пошта',
     message: 'Повідомлення',
+    help: 'Долучитися до допомоги',
 
     actionTag: 'Долучайся',
     actionTitle: ['Разом ми створюємо ', 'зеленіше майбутнє.'],
@@ -537,6 +556,23 @@ export const translations = {
         'Долучайтеся до екоініціатив, волонтерте зі змістом, ',
         'і робіть реальний внесок у розвиток своєї спільноти.',
       ],
+    },
+
+    actionsList: {
+      plantedTitle: ['Дерев', 'висаджено'],
+      plantedCount: '12 450+',
+
+      volunteersTitle: ['Активних', 'волонтерів'],
+      volunteersCount: '680+',
+
+      landscapesTitle: ['Відновлених', 'територій'],
+      landscapesCount: '37 га',
+
+      collectedTitle: ['Відходів', 'зібрано'],
+      collectedCount: '24 т',
+
+      reachedTitle: ['Людей', 'охоплено'],
+      reachedCount: '15 000+',
     },
 
     missionTag: 'Наша місія',
