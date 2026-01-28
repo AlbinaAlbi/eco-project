@@ -41,13 +41,7 @@ export const TakeAction = () => {
     <div className={styles.content}>
       <div className={styles.container}>
         <div className="wrapperTextAlign">
-          <TagAndTitle
-            tag={tag}
-            title={title}
-            tagColor={tagColor}
-            titleColor={titleColor}
-            bigFont={true}
-          />
+          <TagAndTitle title={title} tagColor={tagColor} titleColor={titleColor} bigFont={true} />
 
           <Description title={description} describtionColor={describtionColor} />
         </div>

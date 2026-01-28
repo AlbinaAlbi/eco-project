@@ -56,4 +56,9 @@
   background: none;
   color: $color-white;
   border: $size-1 solid $color-gray-500;
+
+  &:hover {
+    background-color: $color-gray-hover;
+    color: $color-black;
+  }
 }

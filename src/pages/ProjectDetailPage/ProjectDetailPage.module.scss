@@ -1,0 +1,15 @@
+@import '../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $size-2xl;
+
+  @include on-tablet {
+    gap: $size-64;
+  }
+
+  @include on-desktop {
+    gap: $size-100;
+  }
+}
