@@ -22,17 +22,21 @@
   padding: $size-xl;
   display: flex;
   flex-direction: column;
-  gap: $size-24;
+  gap: $size-2xs;
   align-items: center;
   border: 1px solid $color-gray-400;
   border-radius: $size-40;
-  margin-top: $size-xl;
+  margin: $size-xl 0 $size-2xl;
+
+  @include on-tablet {
+    margin-bottom: $size-3xl;
+  }
 
   @include on-desktop {
     flex-direction: row;
     justify-content: space-between;
     gap: $size-20;
-    margin-top: $size-2xl;
+    margin: $size-2xl 0 $size-100;
   }
 }
 
@@ -53,5 +57,17 @@
 
   @include on-desktop {
     gap: $size-20;
+  }
+}
+
+.image {
+  height: $size-327;
+
+  @include on-tablet {
+    height: $size-420;
+  }
+
+  @include on-desktop {
+    height: $size-600;
   }
 }
