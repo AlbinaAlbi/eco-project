@@ -30,6 +30,9 @@ export const translations = {
     email: 'Email',
     message: 'Message',
     help: 'Help now',
+    open: 'Open for volunteers',
+    closed: 'Closed for volunteers',
+    volunteersNeeded: 'Volunteers needed:',
 
     actionTag: 'Take action',
     actionTitle: ['Together, we create ', 'a greener future.'],
@@ -541,6 +544,9 @@ export const translations = {
     email: 'Пошта',
     message: 'Повідомлення',
     help: 'Долучитися',
+    open: 'Можна долучитися',
+    closed: 'Набір завершено',
+    volunteersNeeded: 'Потрібні волонтери:',
 
     actionTag: 'Долучайся',
     actionTitle: ['Разом ми створюємо ', 'зеленіше майбутнє.'],

@@ -2,15 +2,18 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { Project } from '../../../types/Project';
 import { fetchProjectById, fetchProjects as fetchProjectsAPI } from '../../../api/projects';
+import { ProjectDetail } from '../../../types/ProjectDetail';
 
 interface ProjectsState {
   projects: Project[];
+  currentProject: ProjectDetail | null;
   loading: boolean;
   error: string | null;
 }
 
 const initialState: ProjectsState = {
   projects: [],
+  currentProject: null,
   loading: false,
   error: null,
 };
@@ -21,7 +24,7 @@ export const fetchProjectsThunk = createAsyncThunk(
     try {
       const projects = await fetchProjectsAPI();
       return projects;
-    } catch (err) {
+    } catch {
       return rejectWithValue('Failed to fetch projects');
     }
   },
@@ -33,7 +36,7 @@ export const fetchProjectByIdThunk = createAsyncThunk(
     try {
       const project = await fetchProjectById(id);
       return project;
-    } catch (err) {
+    } catch {
       return rejectWithValue('Failed to fetch project by id');
     }
   },
@@ -67,13 +70,11 @@ const projectsSlice = createSlice({
       .addCase(fetchProjectByIdThunk.pending, (state) => {
         state.loading = true;
         state.error = null;
+        state.currentProject = null;
       })
-      .addCase(fetchProjectByIdThunk.fulfilled, (state, action: PayloadAction<Project>) => {
+      .addCase(fetchProjectByIdThunk.fulfilled, (state, action: PayloadAction<ProjectDetail>) => {
+        state.currentProject = action.payload;
         state.loading = false;
-        const exists = state.projects.find((p) => p.id === action.payload.id);
-        if (!exists) {
-          state.projects.push(action.payload);
-        }
       })
       .addCase(fetchProjectByIdThunk.rejected, (state, action) => {
         state.loading = false;

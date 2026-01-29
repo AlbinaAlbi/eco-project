@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+
 }
 
 .section {
@@ -12,4 +14,44 @@
   flex-direction: column;
   align-items: center;
   gap: $size-xs;
+  width: 100%;
+}
+
+.progressBar {
+  width: 100%;
+  padding: $size-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $size-24;
+  align-items: center;
+  border: 1px solid $color-gray-400;
+  border-radius: $size-40;
+  margin-top: $size-xl;
+
+  @include on-desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: $size-20;
+    margin-top: $size-2xl;
+  }
+}
+
+.progressBar {
+  > :first-child {
+    width: 100%;
+  }
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: $size-16;
+
+  @include on-tablet {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @include on-desktop {
+    gap: $size-20;
+  }
 }
