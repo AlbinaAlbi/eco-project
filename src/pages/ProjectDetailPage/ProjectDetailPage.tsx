@@ -8,6 +8,7 @@ import {
   fetchProjectsThunk,
 } from '../../store/slices/ProjectsSlice/projectsSlice';
 import { DescriptionDetail } from './DescriptionDetail';
+import { OurGoals } from './OurGoals';
 
 export const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -39,6 +40,7 @@ export const ProjectDetailPage = () => {
     <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>
       <HeaderProject project={project} projectDetail={currentProject} />
       <DescriptionDetail text={text} />
+      <OurGoals />
     </div>
   );
 };

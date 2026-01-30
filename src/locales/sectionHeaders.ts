@@ -99,4 +99,21 @@ export const SECTION_HEADERS = {
     descriptionKey: 'messageDescription' as const,
     titleColor: COLORS.black,
   },
+  ourGoals: {
+    tagKey: 'goalsTag' as const,
+    titleKey: 'projectGoals' as const,
+    tagColor: COLORS.gray100,
+    titleColor: COLORS.black,
+  },
+  resultsProject: {
+    tagKey: 'resultsTag' as const,
+    titleKey: 'progressTitle' as const,
+    tagColor: COLORS.gray100,
+    titleColor: COLORS.black,
+  },
+  readyToHelpTitle: {
+    titleKey: 'readyToHelpTitle' as const,
+    descriptionKey: 'readyToHelpDescription' as const,
+    titleColor: COLORS.black,
+  },
 } as const;

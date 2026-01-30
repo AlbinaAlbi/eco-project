@@ -34,6 +34,7 @@ export const translations = {
     closed: 'Closed for volunteers',
     volunteersNeeded: 'Volunteers needed:',
     descriptionText: 'Description',
+    projectGoals: 'Project goals',
 
     actionTag: 'Take action',
     actionTitle: ['Together, we create ', 'a greener future.'],
@@ -413,6 +414,29 @@ export const translations = {
 
     resultsTag: 'Results',
     resultsTitle: 'Our impact',
+    progressTitle: 'Our progress in numbers',
+
+    readyToHelpTitle: {
+      mobile: ['Ready to help', 'restore the', 'Carpathian forests'],
+      tablet: ['Ready to help restore', 'the Carpathian forests'],
+      desktop: ['Ready to help restore', 'the Carpathian forests'],
+    },
+
+    readyToHelpDescription: {
+      mobile: [
+        'Join our volunteer team or support',
+        'the project with a donation — every action',
+        'brings the forest back to life',
+      ],
+      tablet: [
+        'Join our volunteer team or support the project',
+        'with a donation — every action brings the forest back to life',
+      ],
+      desktop: [
+        'Join our volunteer team or support the project',
+        'with a donation — every action brings the forest back to life',
+      ],
+    },
 
     involvedTag: 'Get involved',
     involvedTitle: ['Ready to make', 'a real impact?'],
@@ -549,6 +573,7 @@ export const translations = {
     closed: 'Набір завершено',
     volunteersNeeded: 'Потрібні волонтери:',
     descriptionText: 'Опис',
+    projectGoals: 'Цілі проєкту',
 
     actionTag: 'Долучайся',
     actionTitle: ['Разом ми створюємо ', 'зеленіше майбутнє.'],
@@ -939,6 +964,29 @@ export const translations = {
 
     resultsTag: 'Результати',
     resultsTitle: 'Наш вплив',
+    progressTitle: 'Наші результати в цифрах',
+
+    readyToHelpTitle: {
+      mobile: ['Готові допомогти', 'відновити', 'карпатські ліси'],
+      tablet: ['Готові допомогти відновити', 'карпатські ліси'],
+      desktop: ['Готові допомогти відновити', 'карпатські ліси'],
+    },
+
+    readyToHelpDescription: {
+      mobile: [
+        'Долучайтеся до нашої волонтерської',
+        'команди або підтримайте проєкт донатом —',
+        'кожна дія повертає ліс до життя',
+      ],
+      tablet: [
+        'Долучайтеся до нашої волонтерської команди або',
+        'підтримайте проєкт донатом — кожна дія повертає ліс до життя',
+      ],
+      desktop: [
+        'Долучайтеся до нашої волонтерської команди або',
+        'підтримайте проєкт донатом — кожна дія повертає ліс до життя',
+      ],
+    },
 
     involvedTag: 'Долучайся',
     involvedTitle: ['Готові зробити', 'реальний внесок?'],

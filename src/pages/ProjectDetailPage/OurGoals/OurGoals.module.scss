@@ -1,0 +1,30 @@
+@import '../../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $size-m;
+
+  @include on-tablet {
+    gap: $size-24;
+  }
+
+  @include on-desktop {
+    gap: $size-xl;
+  }
+}
+
+.goalList {
+  display: grid;
+  gap: $size-m;
+  grid-template-columns: repeat(1, 1fr); 
+
+  @include on-tablet {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  @include on-desktop {
+    gap: $size-20;
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
