@@ -9,6 +9,7 @@ import {
 } from '../../store/slices/ProjectsSlice/projectsSlice';
 import { DescriptionDetail } from './DescriptionDetail';
 import { OurGoals } from './OurGoals';
+import { ResultsProject } from './ResultsProject';
 
 export const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -41,6 +42,7 @@ export const ProjectDetailPage = () => {
       <HeaderProject project={project} projectDetail={currentProject} />
       <DescriptionDetail text={text} />
       <OurGoals />
+      <ResultsProject />
     </div>
   );
 };

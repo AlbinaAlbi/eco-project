@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: $size-m;
+  align-items: center;
 
   @include on-tablet {
     gap: $size-24;

@@ -31,14 +31,12 @@ export const OurGoals = () => {
 
   return (
     <div className={styles.container}>
-      <div className="wrapperTextAlign">
-        <TagAndTitle
-          tag={t(tagKey)}
-          title={t(titleKey)}
-          tagColor={tagColor}
-          titleColor={titleColor}
-        />
-      </div>
+      <TagAndTitle
+        tag={t(tagKey)}
+        title={t(titleKey)}
+        tagColor={tagColor}
+        titleColor={titleColor}
+      />
       <div className={styles.goalList}>
         {list.map((goal) => (
           <ProjectGoal key={goal.count} goal={goal} />
