@@ -62,6 +62,7 @@
 
 .image {
   height: $size-327;
+  width: 100%;
 
   @include on-tablet {
     height: $size-420;

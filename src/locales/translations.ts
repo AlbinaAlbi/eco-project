@@ -33,6 +33,7 @@ export const translations = {
     open: 'Open for volunteers',
     closed: 'Closed for volunteers',
     volunteersNeeded: 'Volunteers needed:',
+    descriptionText: 'Description',
 
     actionTag: 'Take action',
     actionTitle: ['Together, we create ', 'a greener future.'],
@@ -547,6 +548,7 @@ export const translations = {
     open: 'Можна долучитися',
     closed: 'Набір завершено',
     volunteersNeeded: 'Потрібні волонтери:',
+    descriptionText: 'Опис',
 
     actionTag: 'Долучайся',
     actionTitle: ['Разом ми створюємо ', 'зеленіше майбутнє.'],

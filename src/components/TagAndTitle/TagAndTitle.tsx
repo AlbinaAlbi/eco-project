@@ -1,12 +1,11 @@
-import { useDeviceType } from '../../hooks/getDeviceType';
 import { useRenderText } from '../../hooks/renderText';
 import styles from './TagAndTitle.module.scss';
 
 interface TagAndTitleProps {
   tag?: string;
-  title: string | string[];
+  title?: string | string[];
   tagColor?: string;
-  titleColor: string;
+  titleColor?: string;
   bigFont?: boolean;
   alignLeft?: boolean;
 }
@@ -31,9 +30,11 @@ export const TagAndTitle = ({
         </span>
       )}
 
-      <HeadingTag className={styles.titleText} style={{ color: titleColor }}>
-        {renderText(title)}
-      </HeadingTag>
+      {title && (
+        <HeadingTag className={styles.titleText} style={{ color: titleColor }}>
+          {renderText(title)}
+        </HeadingTag>
+      )}
     </div>
   );
 };
