@@ -35,6 +35,7 @@ export const translations = {
     volunteersNeeded: 'Volunteers needed:',
     descriptionText: 'Description',
     projectGoals: 'Project goals',
+    joinAsVolunteer: 'Join as volunteer',
 
     actionTag: 'Take action',
     actionTitle: ['Together, we create ', 'a greener future.'],
@@ -574,6 +575,7 @@ export const translations = {
     volunteersNeeded: 'Потрібні волонтери:',
     descriptionText: 'Опис',
     projectGoals: 'Цілі проєкту',
+    joinAsVolunteer: 'Стати волонтером',
 
     actionTag: 'Долучайся',
     actionTitle: ['Разом ми створюємо ', 'зеленіше майбутнє.'],

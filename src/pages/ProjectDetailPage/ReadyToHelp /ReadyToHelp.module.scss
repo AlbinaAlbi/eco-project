@@ -1,0 +1,27 @@
+@import '../../../styles/';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  gap: $size-16;
+  padding-top: $size-24;
+
+  @include on-tablet {
+    flex-direction: row;
+  }
+
+  @include on-desktop {
+    gap: $size-l;
+    padding-top: $size-xl;
+
+  }
+}

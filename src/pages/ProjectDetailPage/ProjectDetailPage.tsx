@@ -10,6 +10,7 @@ import {
 import { DescriptionDetail } from './DescriptionDetail';
 import { OurGoals } from './OurGoals';
 import { ResultsProject } from './ResultsProject';
+import { ReadyToHelp } from './ReadyToHelp /ReadyToHelp';
 
 export const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -43,6 +44,7 @@ export const ProjectDetailPage = () => {
       <DescriptionDetail text={text} />
       <OurGoals />
       <ResultsProject />
+      <ReadyToHelp />
     </div>
   );
 };

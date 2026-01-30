@@ -111,7 +111,7 @@ export const SECTION_HEADERS = {
     tagColor: COLORS.gray100,
     titleColor: COLORS.black,
   },
-  readyToHelpTitle: {
+  readyToHelpSection: {
     titleKey: 'readyToHelpTitle' as const,
     descriptionKey: 'readyToHelpDescription' as const,
     titleColor: COLORS.black,

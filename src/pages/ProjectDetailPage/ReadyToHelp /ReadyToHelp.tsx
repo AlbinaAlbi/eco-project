@@ -5,18 +5,19 @@ import { useLanguage } from '../../../context/LanguageContext';
 import { useDeviceType } from '../../../hooks/getDeviceType';
 import { useSectionHeader } from '../../../hooks/useSectionHeader';
 import { SECTION_HEADERS } from '../../../locales/sectionHeaders';
-import styles from './Involved.module.scss';
+import styles from './ReadyToHelp.module.scss';
 
-export const Involved = () => {
-  const { tagKey, titleKey, descriptionKey, tagColor, titleColor } = SECTION_HEADERS.involved;
-  const { tag, title, description } = useSectionHeader({
-    tagKey,
+export const ReadyToHelp = () => {
+  const { t } = useLanguage();
+  const { titleKey, titleColor, descriptionKey } = SECTION_HEADERS.readyToHelpSection;
+  const { title, description } = useSectionHeader({
     titleKey,
     descriptionKey,
   });
-  const { t } = useLanguage();
+
   const device = useDeviceType();
-  let buttonWidth: string;
+
+  let buttonWidth;
 
   switch (device) {
     case 'tablet':
@@ -31,15 +32,11 @@ export const Involved = () => {
 
   return (
     <div className={styles.container}>
-      <div className="wrapperTextAlign">
-        <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
-      </div>
-      <div className={`wrapperTextAlign ${styles.description}`}>
-        <Description title={description} />
-      </div>
+      <TagAndTitle title={title} titleColor={titleColor} />
+      <Description title={description} />
       <div className={styles.buttons}>
-        <Button text={t('submit')} color={'green'} buttonWidth={buttonWidth} />
-        <Button text={t('donate')} backgroundColor={false} buttonWidth={buttonWidth} />
+        <Button text={t('donate')} color="green" buttonWidth={buttonWidth} />
+        <Button text={t('joinAsVolunteer')} color="white" buttonWidth={buttonWidth} />
       </div>
     </div>
   );
