@@ -1,8 +1,9 @@
-@import '../../styles/index.scss';
+@import '../../styles';
 
 .container {
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
 
 .container button {

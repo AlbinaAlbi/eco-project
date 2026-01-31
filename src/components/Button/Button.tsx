@@ -18,7 +18,9 @@ export const Button = ({
   if (to) {
     return (
       <Link to={to} className={classNameContainer}>
-        {text}
+        <button className={classNameButton} onClick={closeSidebar} style={{ width: buttonWidth }}>
+          {text}
+        </button>
       </Link>
     );
   }

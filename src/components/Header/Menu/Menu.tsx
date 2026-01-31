@@ -20,7 +20,7 @@ export const Menu = () => {
           ${isOpen ? styles.hidden : styles.visible}
         `}
       >
-        <Button text={t('help')} buttonWidth={'186px'} />
+        <Button text={t('help')} buttonWidth={'186px'} to="/help" />
       </div>
       <BurgerMenu />
     </div>
