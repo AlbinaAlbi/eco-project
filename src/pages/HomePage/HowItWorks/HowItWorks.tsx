@@ -12,6 +12,7 @@ export const HowItWorks = () => {
     tagKey,
     titleKey,
   });
+
   const stepsList = useStepsList();
   const device = useDeviceType();
   const onDesktop = device !== 'mobile';

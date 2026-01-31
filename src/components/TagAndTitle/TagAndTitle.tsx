@@ -23,15 +23,31 @@ export const TagAndTitle = ({
   const HeadingTag: 'h1' | 'h2' = bigFont ? 'h1' : 'h2';
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{
+        justifyContent: alignLeft ? 'flex-start' : 'center',
+        alignItems: alignLeft ? 'start' : 'center',
+      }}
+    >
       {tag && (
-        <span className={`textSmall ${styles.tagText}`} style={{ backgroundColor: tagColor }}>
+        <span
+          className={`textSmall ${styles.tagText}`}
+          style={{
+            backgroundColor: tagColor,
+          }}
+        >
           {tag}
         </span>
       )}
 
       {title && (
-        <HeadingTag className={styles.titleText} style={{ color: titleColor }}>
+        <HeadingTag
+          className={styles.titleText}
+          style={{
+            color: titleColor,
+          }}
+        >
           {renderText(title)}
         </HeadingTag>
       )}

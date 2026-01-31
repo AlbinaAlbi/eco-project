@@ -491,6 +491,23 @@ export const translations = {
       desktop: ['Have questions? Use this form to get in touch', 'with our team over email'],
     },
 
+    startYourProjectTag: 'Start Your Project Journey',
+    startYourProjectTitle: 'Submit Your Project',
+    startYourProjectDescription: {
+      mobile: [
+        'Fill out the form below so we can review',
+        'your project and publish it on the platform',
+      ],
+      tablet: [
+        'Fill out the form below so we can review your project',
+        'and publish it on the platform',
+      ],
+      desktop: [
+        'Fill out the form below so we can review your project',
+        'and publish it on the platform',
+      ],
+    },
+
     supportBlock: {
       title: 'Support',
       contact: 'Contact',
@@ -1048,6 +1065,24 @@ export const translations = {
         'Ми підвищуємо обізнаність, навчаємо громади та заохочуємо екологічно відповідальні звички, що створюють довготривалий позитивний вплив',
     },
 
+    startYourProjectTag: 'Розпочніть шлях свого проєкту',
+    startYourProjectTitle: 'Подати свій проєкт',
+    startYourProjectDescription: {
+      mobile: [
+        'Заповніть форму нижче, щоб ми могли',
+        'переглянути ваш проєкт і опублікувати',
+        'його на платформі',
+      ],
+      tablet: [
+        'Заповніть форму нижче, щоб ми могли переглянути ваш проєкт',
+        'і опублікувати його на платформі',
+      ],
+      desktop: [
+        'Заповніть форму нижче, щоб ми могли переглянути ваш проєкт',
+        'і опублікувати його на платформі',
+      ],
+    },
+
     messageTitle: 'Напишіть нам',
     messageDescription: {
       mobile: [
@@ -1063,6 +1098,7 @@ export const translations = {
         'з нашою командою електронною поштою',
       ],
     },
+
     categoryFilter: {
       title: 'Категорія',
       text: 'Усі категорії',
