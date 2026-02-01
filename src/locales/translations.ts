@@ -508,6 +508,33 @@ export const translations = {
       ],
     },
 
+    transparentProcessTag: 'Simple & Transparent process',
+    transparentProcessTitle: 'How it works',
+
+    fillOut: {
+      title: 'Fill out the form',
+      description:
+        'Provide all the necessary details about your project, including title, description, goal, category, and contact email. Attach images or additional materials if available',
+    },
+
+    review: {
+      title: 'Review by admin',
+      description:
+        'Our team reviews your submission to make sure all information is complete and your project meets our guidelines. We may contact you for additional details if needed',
+    },
+
+    project: {
+      title: 'Project published',
+      description:
+        'Once approved, your project will be published on the platform and visible to everyone. Supporters can explore and donate to your project during its active period',
+    },
+
+    automatic: {
+      title: 'Automatic expiry',
+      description:
+        'Each project has a limited visibility period (e.g., 2 weeks to 1 month). After this time, it will be automatically removed from the platform to keep the content fresh and prevent inactive projects from lingering',
+    },
+
     supportBlock: {
       title: 'Support',
       contact: 'Contact',

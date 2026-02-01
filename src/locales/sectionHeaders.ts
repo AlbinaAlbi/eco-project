@@ -116,11 +116,17 @@ export const SECTION_HEADERS = {
     descriptionKey: 'readyToHelpDescription' as const,
     titleColor: COLORS.black,
   },
-  StartYourProject: {
+  startYourProject: {
     tagKey: 'startYourProjectTag' as const,
     titleKey: 'startYourProjectTitle' as const,
     descriptionKey: 'startYourProjectDescription' as const,
     tagColor: COLORS.gray100,
+    titleColor: COLORS.black,
+  },
+  transparentProcess: {
+    tagKey: 'transparentProcessTag' as const,
+    titleKey: 'transparentProcessTitle' as const,
+    tagColor: COLORS.gray200,
     titleColor: COLORS.black,
   },
 } as const;
