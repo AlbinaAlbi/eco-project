@@ -1,0 +1,26 @@
+@import '../../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+
+  @include on-desktop {
+    flex-direction: row;
+    gap: $size-221;
+  }
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+
+  @include on-desktop {
+    text-align: left;
+    justify-content: start;
+  }
+}

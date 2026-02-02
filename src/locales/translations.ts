@@ -608,6 +608,41 @@ export const translations = {
         'Each project has a limited visibility period (e.g., 2 weeks to 1 month). After this time, it will be automatically removed from the platform to keep the content fresh and prevent inactive projects from lingering',
     },
 
+    request: {
+      tag: 'Request support',
+      title: ['Request help', 'for your project'],
+      description: [
+        'Please provide accurate and complete',
+        'information about your project. This helps',
+        'us review your submission faster',
+        'and publish it on the platform',
+      ],
+    },
+
+    requestBlockTitle: 'Your request should include:',
+    requestBlock: {
+      clear: {
+        title: '1. Clear project information',
+        description: 'Project name, type, duration, and goals',
+      },
+      verified: {
+        title: '2. Verified contact details',
+        description: 'Email and phone number for communication',
+      },
+      detailed: {
+        title: '3. Detailed project description',
+        description: 'What problem you are addressing and why it matters',
+      },
+      requested: {
+        title: '4. Requested support & justification',
+        description: 'Explain what kind of help you need and how it will be used',
+      },
+      visual: {
+        title: '5. Visual or external proof',
+        description: 'Images, links, or documents that support your request',
+      },
+    },
+
     supportBlock: {
       title: 'Support',
       contact: 'Contact',
@@ -1126,12 +1161,144 @@ export const translations = {
       ],
     },
 
+    supportTag: 'Що ми підтримуємо',
+    supportTitle: 'Типи проєктів, які ми підтримуємо',
+
+    transparentProcessTag: 'Простий і прозорий процес',
+    transparentProcessTitle: 'Як це працює',
+
+    sustainability: {
+      title: ['Довкілля та', 'сталий розвиток'],
+      description: {
+        mobile: [
+          'Проєкти, спрямовані на захист',
+          'довкілля, сталий розвиток,',
+          'переробку відходів, кліматичні дії',
+          'та збереження природи',
+        ],
+        tablet: [
+          'Проєкти, спрямовані на захист довкілля,',
+          'сталий розвиток, переробку відходів,',
+          'кліматичні дії та збереження природи',
+        ],
+        desktop: [
+          'Проєкти, спрямовані на захист довкілля,',
+          'сталий розвиток, переробку відходів,',
+          'кліматичні дії та збереження природи',
+        ],
+      },
+    },
+
+    protection: {
+      title: ['Захист', 'тварин'],
+      description: {
+        mobile: [
+          'Проєкти, спрямовані на допомогу',
+          'тваринам, підтримку притулків,',
+          'захист дикої природи та',
+          'покращення добробуту тварин',
+        ],
+        tablet: [
+          'Проєкти, спрямовані на допомогу тваринам,',
+          'підтримку притулків, захист дикої природи',
+          'та покращення добробуту тварин',
+        ],
+        desktop: [
+          'Проєкти, спрямовані на допомогу тваринам,',
+          'підтримку притулків, захист дикої природи',
+          'та покращення добробуту тварин',
+        ],
+      },
+    },
+
+    education: {
+      title: ['Спільнота', 'та освіта'],
+      description: {
+        mobile: [
+          'Ініціативи, орієнтовані на спільноти',
+          'та освіту, що підвищують',
+          'обізнаність і створюють позитивний',
+          'екологічний або соціальний вплив',
+        ],
+        tablet: [
+          'Ініціативи, орієнтовані на спільноти та освіту,',
+          'що підвищують обізнаність і створюють',
+          'позитивний екологічний або соціальний вплив',
+        ],
+        desktop: [
+          'Ініціативи, орієнтовані на спільноти та освіту,',
+          'що підвищують обізнаність і створюють',
+          'позитивний екологічний або соціальний вплив',
+        ],
+      },
+    },
+
     exploreBlock: {
       title: 'Дослідити',
       projects: 'Проєкти',
       about: 'Про нас',
       works: 'Як це працює',
       donate: 'Пожертвувати',
+    },
+
+    fillOut: {
+      title: 'Заповніть форму',
+      description:
+        'Надайте всю необхідну інформацію про ваш проєкт, зокрема назву, опис, мету, категорію та контактну електронну адресу. За можливості додайте зображення або додаткові матеріали',
+    },
+
+    review: {
+      title: 'Перевірка адміністратором',
+      description:
+        'Наша команда перевіряє подану інформацію, щоб переконатися, що всі дані заповнені коректно та проєкт відповідає нашим вимогам. За потреби ми можемо зв’язатися з вами для уточнення деталей',
+    },
+
+    project: {
+      title: 'Проєкт опубліковано',
+      description:
+        'Після схвалення ваш проєкт буде опублікований на платформі та стане доступним для всіх. Підтримувачі зможуть переглядати його та робити пожертви протягом активного періоду',
+    },
+
+    automatic: {
+      title: 'Автоматичне завершення',
+      description:
+        'Кожен проєкт має обмежений період видимості (наприклад, від 2 тижнів до 1 місяця). Після цього часу він буде автоматично видалений з платформи, щоб контент залишався актуальним і не накопичувалися неактивні проєкти',
+    },
+
+    request: {
+      tag: 'Запит на підтримку',
+      title: 'Запит допомоги для вашого проєкту',
+      description: [
+        'Будь ласка, надайте точну та повну',
+        'інформацію про ваш проєкт. Це допоможе',
+        'нам швидше розглянути заявку',
+        'та опублікувати її на платформі',
+      ],
+    },
+
+    requestBlock: {
+      title: 'Ваш запит має містити:',
+
+      clear: {
+        title: '1. Чітка інформація про проєкт',
+        description: 'Назва проєкту, тип, тривалість та цілі',
+      },
+      verified: {
+        title: '2. Підтверджені контактні дані',
+        description: 'Електронна пошта та номер телефону для зв’язку',
+      },
+      detailed: {
+        title: '3. Детальний опис проєкту',
+        description: 'Яку проблему ви вирішуєте та чому це важливо',
+      },
+      requested: {
+        title: '4. Запитувана підтримка та обґрунтування',
+        description: 'Поясніть, яка саме допомога вам потрібна та як вона буде використана',
+      },
+      visual: {
+        title: '5. Візуальні або зовнішні підтвердження',
+        description: 'Зображення, посилання або документи, що підтверджують ваш запит',
+      },
     },
 
     supportBlock: {

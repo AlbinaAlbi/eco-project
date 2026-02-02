@@ -135,4 +135,11 @@ export const SECTION_HEADERS = {
     tagColor: COLORS.gray200,
     titleColor: COLORS.black,
   },
+  request: {
+    tagKey: 'request.tag' as const,
+    titleKey: 'request.title' as const,
+    descriptionKey: 'request.description' as const,
+    tagColor: COLORS.gray100,
+    titleColor: COLORS.black,
+  },
 } as const;

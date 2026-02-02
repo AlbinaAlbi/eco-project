@@ -1,4 +1,5 @@
 import styles from './HelpNow.module.scss';
+import { RequestSupport } from './RequestSupport';
 import { StartYourProject } from './StartYourProject';
 import { Support } from './Support';
 import { TransparentProcess } from './TransparentProcess';
@@ -11,6 +12,7 @@ export const HelpNow = () => {
         <TransparentProcess />
       </div>
       <Support />
+      <RequestSupport />
     </div>
   );
 };
