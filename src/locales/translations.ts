@@ -511,6 +511,79 @@ export const translations = {
     transparentProcessTag: 'Simple & Transparent process',
     transparentProcessTitle: 'How it works',
 
+    supportTag: 'What we support',
+    supportTitle: 'Supported project types',
+
+    sustainability: {
+      title: ['Environmental &', 'Sustainability'],
+      description: {
+        mobile: [
+          'Projects focused on environmental',
+          'protection, sustainability,',
+          'recycling, climate action, and',
+          'nature conservation',
+        ],
+        tablet: [
+          'Projects focused on environmental',
+          'protection, sustainability, recycling,',
+          'climate action, and nature',
+          'conservation',
+        ],
+        desktop: [
+          'Projects focused on environmental',
+          'protection, sustainability, recycling,',
+          'climate action, and nature',
+          'conservation',
+        ],
+      },
+    },
+
+    protection: {
+      title: ['Animal', 'protection'],
+      description: {
+        mobile: [
+          'Projects aimed at helping animals,',
+          'supporting shelters, protecting',
+          'wildlife, and improving animal',
+          'welfare',
+        ],
+        tablet: [
+          'Projects aimed at helping animals,',
+          'supporting shelters, protecting',
+          'wildlife, and improving animal',
+          'welfare',
+        ],
+        desktop: [
+          'Projects aimed at helping animals,',
+          'supporting shelters, protecting',
+          'wildlife, and improving animal welfare',
+        ],
+      },
+    },
+
+    education: {
+      title: ['Community', '& Education'],
+      description: {
+        mobile: [
+          'Community-driven and',
+          'educational initiatives that raise',
+          'awareness and create positive',
+          'environmental or social impact',
+        ],
+        tablet: [
+          'Community-driven and educational initiatives',
+          'that raise awareness and create positive',
+          'environmental or social impact',
+        ],
+        desktop: [
+          'Community-driven and educational',
+          'initiatives that raise awareness',
+          'and create positive environmental',
+          'or social impact',
+        ],
+      },
+    },
+
     fillOut: {
       title: 'Fill out the form',
       description:

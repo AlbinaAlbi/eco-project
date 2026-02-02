@@ -11,6 +11,7 @@ export const StartYourProject = () => {
     titleKey,
     descriptionKey,
   });
+
   return (
     <div>
       <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />

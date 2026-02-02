@@ -129,4 +129,10 @@ export const SECTION_HEADERS = {
     tagColor: COLORS.gray200,
     titleColor: COLORS.black,
   },
+  support: {
+    tagKey: 'supportTag' as const,
+    titleKey: 'supportTitle' as const,
+    tagColor: COLORS.gray200,
+    titleColor: COLORS.black,
+  },
 } as const;
