@@ -34,8 +34,36 @@ export const translations = {
     closed: 'Closed for volunteers',
     volunteersNeeded: 'Volunteers needed:',
     descriptionText: 'Description',
-    projectGoals: 'Project goals',
     joinAsVolunteer: 'Join as volunteer',
+
+    projectPame: 'Project name',
+    chooseAName: 'Choose a name of your project',
+
+    projectDescription: 'Project description',
+    describeYourProject: 'Describe your project, its goals, and why you need support',
+
+    projectGoals: 'Project goals',
+    clearlyDescribe:
+      'Clearly describe what you want to achieve with this project and what success looks like',
+
+    projectCategory: 'Project category',
+    chooseCategory: 'Choose category',
+
+    fundingGoal: 'Funding goal',
+    targetAmount: 'Target amount (₴)',
+
+    contactEmail: 'Contact email',
+    contactYou: 'We’ll contact you about your project',
+
+    projectDuration: 'Project Duration',
+    weeks: 'weeks',
+    month: 'month',
+
+    projectImage: 'Project Image',
+    upload: 'upload PNG / JPG, max size 5MB',
+    uploadImage: 'Upload image',
+    agree: 'I agree to the processing of my personal data',
+    submitRequest: 'Submit request',
 
     actionTag: 'Take action',
     actionTitle: ['Together, we create ', 'a greener future.'],
@@ -611,12 +639,24 @@ export const translations = {
     request: {
       tag: 'Request support',
       title: ['Request help', 'for your project'],
-      description: [
-        'Please provide accurate and complete',
-        'information about your project. This helps',
-        'us review your submission faster',
-        'and publish it on the platform',
-      ],
+      description: {
+        mobile: [
+          'Please provide accurate and complete',
+          'information about your project. This helps',
+          'us review your submission faster',
+          'and publish it on the platform',
+        ],
+        tablet: [
+          'Please provide accurate and complete information about',
+          'your project. This helps us review your submission faster',
+          'and publish it on the platform',
+        ],
+        desktop: [
+          'Please provide accurate and complete information about',
+          'your project. This helps us review your submission faster',
+          'and publish it on the platform',
+        ],
+      },
     },
 
     requestBlockTitle: 'Your request should include:',
@@ -728,6 +768,34 @@ export const translations = {
     descriptionText: 'Опис',
     projectGoals: 'Цілі проєкту',
     joinAsVolunteer: 'Стати волонтером',
+
+    projectPame: 'Назва проєкту',
+    chooseAName: 'Оберіть назву вашого проєкту',
+
+    projectDescription: 'Опис проєкту',
+    describeYourProject: 'Опишіть свій проєкт, його цілі та чому потрібна підтримка',
+
+    clearlyDescribe: 'Чітко опишіть, чого ви хочете досягти цим проєктом та як виглядає успіх',
+
+    projectCategory: 'Категорія проєкту',
+    chooseCategory: 'Оберіть категорію',
+
+    fundingGoal: 'Бюджет проєкту',
+    targetAmount: 'Цільова сума (₴)',
+
+    contactEmail: 'Контактний email',
+    contactYou: 'Ми зв’яжемося з вами щодо вашого проєкту',
+
+    projectDuration: 'Тривалість проєкту',
+    weeks: 'тижні',
+    month: 'місяць',
+
+    projectImage: 'Зображення проєкту',
+    upload: 'Завантажте PNG / JPG, максимальний розмір 5 МБ',
+    uploadImage: 'Завантажити зображення',
+
+    agree: 'Я погоджуюся на обробку моїх персональних даних',
+    submitRequest: 'Надіслати запит',
 
     actionTag: 'Долучайся',
     actionTitle: ['Разом ми створюємо ', 'зеленіше майбутнє.'],
@@ -1370,7 +1438,7 @@ export const translations = {
       title: 'Категорія',
       text: 'Усі категорії',
       environment: 'Довкілля',
-      animals: 'Захист тварин',
+      request: 'Захист тварин',
       education: 'Навчання та лекторії',
       community: 'Громада',
       humanitarian: 'Благодійність',

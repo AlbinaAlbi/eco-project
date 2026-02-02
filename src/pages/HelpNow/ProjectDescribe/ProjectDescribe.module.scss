@@ -1,0 +1,57 @@
+@import '../../../styles';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $size-16;
+
+  @include on-desktop {
+    gap: $size-20;
+    width: $size-692;
+    padding-top: $size-2xl; 
+  }
+}
+
+.input,
+.describe,
+.choose,
+.goals {
+  display: flex;
+  flex-direction: column;
+  gap: $size-xs;
+  text-align: start;
+}
+
+.describe textarea,
+.goals textarea,
+.choose textarea,
+.input input,
+.choose select {
+  border: $size-1 solid $color-gray-200;
+  border-radius: $size-40;
+  padding: 0 $size-24;
+  opacity: 0.7;
+}
+
+.input input,
+.choose select {
+  height: $size-2xl;
+  align-items: center;
+
+  @include on-desktop {
+    height: $size-52;
+  }
+}
+
+.describe textarea {
+  height: $size-255;
+}
+
+.goals textarea {
+  height: $size-195;
+}
+
+.goals textarea,
+.describe textarea {
+  padding: $size-16;
+}

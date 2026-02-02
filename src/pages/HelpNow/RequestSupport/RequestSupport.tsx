@@ -3,6 +3,7 @@ import { TagAndTitle } from '../../../components/TagAndTitle';
 import { useDeviceType } from '../../../hooks/getDeviceType';
 import { useSectionHeader } from '../../../hooks/useSectionHeader';
 import { SECTION_HEADERS } from '../../../locales/sectionHeaders';
+import { ProjectDescribe } from '../ProjectDescribe';
 import { RequestInclude } from '../RequestInclude';
 import styles from './RequestSupport.module.scss';
 
@@ -28,6 +29,7 @@ export const RequestSupport = () => {
         />
         <Description title={description} />
         {!isDesktop && <RequestInclude />}
+        <ProjectDescribe />
       </div>
       {isDesktop && <RequestInclude />}
     </div>
