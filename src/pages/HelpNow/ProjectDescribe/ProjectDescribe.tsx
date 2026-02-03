@@ -14,6 +14,7 @@ export interface ProjectFormState {
   contactEmail: string;
   fundingGoal: string;
   projectDuration: string;
+  image: File | null;
 }
 
 export const ProjectDescribe = () => {
@@ -26,6 +27,7 @@ export const ProjectDescribe = () => {
     contactEmail: '',
     fundingGoal: '',
     projectDuration: '',
+    image: null,
   });
 
   const handleChange = (
@@ -46,6 +48,15 @@ export const ProjectDescribe = () => {
     };
 
     console.log('SEND TO API:', payload);
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+
+    setForm((prev) => ({
+      ...prev,
+      image: file,
+    }));
   };
 
   return (
@@ -102,7 +113,7 @@ export const ProjectDescribe = () => {
 
       <ProjectDuration formDuration={form.projectDuration} setForm={setForm} />
 
-      <ProjectImage />
+      <ProjectImage image={form.image} onChange={handleImageChange} />
     </form>
   );
 };

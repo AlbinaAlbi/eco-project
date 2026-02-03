@@ -5,8 +5,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
   @include on-desktop {
     flex-direction: row;
+    align-items: start;
   }
 }
 
