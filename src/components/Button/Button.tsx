@@ -10,15 +10,24 @@ export const Button = ({
   onClick,
   buttonWidth,
   backgroundColor = true,
+  type = 'button',
 }: ButtonProps) => {
   const classNameContainer = `${styles.container}`;
   const classNameButton = `textButton ${backgroundColor ? styles[color] : styles.noneBackground}`;
   const { closeSidebar } = useSidebar();
 
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (onClick) {
+      onClick();
+    }
+
+    closeSidebar();
+  };
+
   if (to) {
     return (
       <Link to={to} className={classNameContainer}>
-        <button className={classNameButton} onClick={closeSidebar} style={{ width: buttonWidth }}>
+        <button className={classNameButton} onClick={handleClick} style={{ width: buttonWidth }}>
           {text}
         </button>
       </Link>
@@ -27,7 +36,12 @@ export const Button = ({
 
   return (
     <div className={classNameContainer}>
-      <button className={classNameButton} onClick={closeSidebar} style={{ width: buttonWidth }}>
+      <button
+        className={classNameButton}
+        onClick={handleClick}
+        style={{ width: buttonWidth }}
+        type={type}
+      >
         {text}
       </button>
     </div>

@@ -8,6 +8,8 @@ import { ProjectImage } from '../ProjectImage';
 import { Agree } from '../Agree';
 import { Button } from '../../../components/Button';
 import { useDeviceType } from '../../../hooks/getDeviceType';
+import { createProject } from '../../../api/projects';
+import { ProjectCreate } from '../../../types/ProjectCreate';
 
 export interface ProjectFormState {
   projectName: string;
@@ -22,25 +24,25 @@ export interface ProjectFormState {
 
 export const ProjectDescribe = () => {
   const { t } = useLanguage();
-  const [form, setForm] = useState<ProjectFormState>({
-    projectName: '',
-    projectDescription: '',
-    projectCategory: '',
-    projectGoals: '',
+  const device = useDeviceType();
+  const [form, setForm] = useState<ProjectCreate>({
+    title: '',
+    shortDescription: '',
+    goals: '',
+    category: '',
     contactEmail: '',
-    fundingGoal: '',
-    projectDuration: '',
+    goalAmount: '',
+    duration: '',
     image: null,
   });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
-    const name = e.target.name as keyof ProjectFormState;
+    const name = e.target.name as keyof ProjectCreate;
     const value = e.target.value;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
-  const device = useDeviceType();
 
   let buttonWidth: string;
 
@@ -52,16 +54,16 @@ export const ProjectDescribe = () => {
       buttonWidth = '100%';
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    const payload = {
-      ...form,
-      donationGoal: Number(form.fundingGoal),
-      volunteersNeeded: Number(form.fundingGoal),
-    };
-
-    console.log('SEND TO API:', payload);
+    try {
+      const data = await createProject(form);
+      console.log('Проект создан:', data);
+      alert('Проект успешно создан!');
+    } catch (err) {
+      console.error(err);
+      alert('Ошибка при создании проекта.');
+    }
   };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -80,7 +82,7 @@ export const ProjectDescribe = () => {
         handleChange={handleChange}
         textTranslate={t('projectName')}
         textPlaceholder={t('chooseAName')}
-        name={'projectName'}
+        name={'title'}
       />
 
       <Projectinput
@@ -88,7 +90,7 @@ export const ProjectDescribe = () => {
         handleChange={handleChange}
         textTranslate={t('projectDescription')}
         textPlaceholder={t('describeYourProject')}
-        name={'projectDescription'}
+        name={'shortDescription'}
         isTextArea={true}
       />
 
@@ -97,7 +99,7 @@ export const ProjectDescribe = () => {
         handleChange={handleChange}
         textTranslate={t('projectGoals')}
         textPlaceholder={t('clearlyDescribe')}
-        name={'projectGoals'}
+        name={'goals'}
         isTextArea={true}
       />
 
@@ -113,7 +115,7 @@ export const ProjectDescribe = () => {
         handleChange={handleChange}
         textTranslate={t('fundingGoal')}
         textPlaceholder={t('targetAmount')}
-        name={'fundingGoal'}
+        name={'goalAmount'}
       />
 
       <Projectinput
@@ -124,11 +126,10 @@ export const ProjectDescribe = () => {
         name={'contactEmail'}
       />
 
-      <ProjectDuration formDuration={form.projectDuration} setForm={setForm} />
-
-      <ProjectImage image={form.image} onChange={handleImageChange} />
+      <ProjectDuration formDuration={form.duration} setForm={setForm} />
+      <ProjectImage image={form.image ?? null} onChange={handleImageChange} />
       <Agree />
-      <Button text={t('submitRequest')} color="green" buttonWidth={buttonWidth} />
+      <Button text={t('submitRequest')} color="green" buttonWidth={buttonWidth} type="submit" />
     </form>
   );
 };

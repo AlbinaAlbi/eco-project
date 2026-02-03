@@ -1,10 +1,10 @@
-import { ProjectFormState } from '../ProjectDescribe';
+import { ProjectCreate } from '../../../types/ProjectCreate';
 import styles from './Projectinput.module.scss';
 
-type TextFieldName = Exclude<keyof ProjectFormState, 'image'>;
+type TextFieldName = Exclude<keyof ProjectCreate, 'image'>;
 
 interface ProjectinputProps {
-  form: ProjectFormState;
+  form: ProjectCreate;
   handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   textTranslate: string;
   textPlaceholder: string;

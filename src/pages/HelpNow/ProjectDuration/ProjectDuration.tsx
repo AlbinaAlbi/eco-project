@@ -1,19 +1,18 @@
 import styles from './ProjectDuration.module.scss';
 import check from '../../../imgs/check.svg';
 import { useLanguage } from '../../../context/LanguageContext';
-import { Dispatch, SetStateAction } from 'react';
-import { ProjectFormState } from '../ProjectDescribe';
+import { ProjectCreate } from '../../../types/ProjectCreate';
 
 interface ProjectDurationProps {
   formDuration: string;
-  setForm: Dispatch<SetStateAction<ProjectFormState>>;
+  setForm: React.Dispatch<React.SetStateAction<ProjectCreate>>;
 }
 
 export const ProjectDuration = ({ formDuration, setForm }: ProjectDurationProps) => {
   const { t } = useLanguage();
 
   return (
-    <div className={`${styles.projectDuration}`}>
+    <div className={styles.projectDuration}>
       <div className="textBody">{t('projectDuration')}</div>
 
       <div className={`textSecondary ${styles.durationOptions}`}>
@@ -25,7 +24,7 @@ export const ProjectDuration = ({ formDuration, setForm }: ProjectDurationProps)
           <div
             key={option.value}
             className={styles.durationOption}
-            onClick={() => setForm((prev) => ({ ...prev, projectDuration: option.value }))}
+            onClick={() => setForm((prev) => ({ ...prev, duration: option.value }))}
           >
             <div
               className={`${formDuration === option.value ? styles.active : ''} ${styles.check}`}

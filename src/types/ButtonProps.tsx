@@ -5,4 +5,5 @@ export type ButtonProps = {
   onClick?: () => void;
   buttonWidth?: string;
   backgroundColor?: boolean;
+  type?: 'button' | 'submit' | 'reset';
 };

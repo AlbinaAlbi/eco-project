@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useLanguage } from '../../../context/LanguageContext';
-import { ProjectFormState } from '../ProjectDescribe';
 import styles from './ProjectCategory.module.scss';
 import chevron from '../../../imgs/Chevron.svg';
+import { ProjectCreate } from '../../../types/ProjectCreate';
 
 interface ProjectCategoryProps {
-  form: ProjectFormState;
-  setForm: React.Dispatch<React.SetStateAction<ProjectFormState>>;
+  form: ProjectCreate;
+  setForm: React.Dispatch<React.SetStateAction<ProjectCreate>>; // ← исправлено
   textTranslate: string;
   textPlaceholder: string;
 }
@@ -28,10 +28,10 @@ export const ProjectCategory = ({
     { value: 'culture', label: t('categoryFilter.humanitarian') },
   ];
 
-  const selected = options.find((o) => o.value === form.projectCategory);
+  const selected = options.find((o) => o.value === form.category);
 
   const handleSelect = (value: string) => {
-    setForm((prev) => ({ ...prev, projectCategory: value }));
+    setForm((prev) => ({ ...prev, category: value }));
     setOpen(false);
   };
 

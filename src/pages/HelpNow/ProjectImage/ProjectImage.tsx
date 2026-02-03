@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { Button } from '../../../components/Button';
 import { useLanguage } from '../../../context/LanguageContext';
 import { useDeviceType } from '../../../hooks/getDeviceType';
@@ -11,6 +12,7 @@ interface ProjectImageProps {
 export const ProjectImage = ({ image, onChange }: ProjectImageProps) => {
   const { t } = useLanguage();
   const device = useDeviceType();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   let buttonWidth: string;
 
@@ -25,11 +27,37 @@ export const ProjectImage = ({ image, onChange }: ProjectImageProps) => {
       buttonWidth = '100%';
   }
 
+  const handleButtonClick = () => {
+    inputRef.current?.click();
+  };
+
   return (
     <div className={styles.container}>
       <div className="textSecondary">{t('projectImage')}</div>
       <div className={`textSmall ${styles.upload}`}>{t('upload')}</div>
-      <Button text={t('uploadImage')} color="white" buttonWidth={buttonWidth} />
+
+      <input
+        type="file"
+        accept="image/*"
+        style={{ display: 'none' }}
+        ref={inputRef}
+        onChange={onChange}
+      />
+
+      <Button
+        text={t('uploadImage')}
+        color="white"
+        buttonWidth={buttonWidth}
+        onClick={handleButtonClick}
+      />
+
+      {image && (
+        <img
+          src={URL.createObjectURL(image)}
+          alt="Превью"
+          style={{ marginTop: '10px', maxWidth: buttonWidth }}
+        />
+      )}
     </div>
   );
 };
