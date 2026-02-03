@@ -1,16 +1,17 @@
 import { ProjectFormState } from '../ProjectDescribe';
 import styles from './Projectinput.module.scss';
 
+type TextFieldName = Exclude<keyof ProjectFormState, 'image'>;
+
 interface ProjectinputProps {
   form: ProjectFormState;
-  handleChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
-  ) => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   textTranslate: string;
   textPlaceholder: string;
-  name: keyof ProjectFormState;
+  name: TextFieldName;
   isTextArea?: boolean;
 }
+
 export const Projectinput = ({
   form,
   handleChange,
@@ -21,9 +22,10 @@ export const Projectinput = ({
 }: ProjectinputProps) => {
   return (
     <div className={styles.input}>
-      <div className={`textSecondary`}>{textTranslate}</div>
+      <div className={`textSecondary ${styles.container}`}>{textTranslate}</div>
       {isTextArea ? (
         <textarea
+          className="textBody"
           name={name}
           placeholder={textPlaceholder}
           value={form[name]}
@@ -32,6 +34,7 @@ export const Projectinput = ({
         />
       ) : (
         <input
+          className="textBody"
           name={name}
           placeholder={textPlaceholder}
           value={form[name]}

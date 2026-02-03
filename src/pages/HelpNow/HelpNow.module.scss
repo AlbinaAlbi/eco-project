@@ -23,6 +23,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
   @include on-tablet {
     padding: $size-2xl 0;
@@ -31,8 +32,4 @@
   @include on-desktop {
     padding: $size-80 0;
   }
-}
-
-.box {
-
 }

@@ -2,7 +2,6 @@ import { Button } from '../../../components/Button';
 import { useLanguage } from '../../../context/LanguageContext';
 import { useDeviceType } from '../../../hooks/getDeviceType';
 import styles from './ProjectImage.module.scss';
-import safe from '../../../imgs/Safe.svg';
 
 interface ProjectImageProps {
   image: File | null;

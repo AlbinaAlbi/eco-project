@@ -6,6 +6,8 @@ import { Projectinput } from '../Projectinput';
 import { ProjectCategory } from '../ProjectCategory';
 import { ProjectImage } from '../ProjectImage';
 import { Agree } from '../Agree';
+import { Button } from '../../../components/Button';
+import { useDeviceType } from '../../../hooks/getDeviceType';
 
 export interface ProjectFormState {
   projectName: string;
@@ -38,6 +40,17 @@ export const ProjectDescribe = () => {
     const value = e.target.value;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
+  const device = useDeviceType();
+
+  let buttonWidth: string;
+
+  switch (device) {
+    case 'desktop':
+      buttonWidth = '692px';
+      break;
+    default:
+      buttonWidth = '100%';
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -90,9 +103,8 @@ export const ProjectDescribe = () => {
 
       <ProjectCategory
         form={form}
-        handleChange={handleChange}
+        setForm={setForm}
         textTranslate={t('projectCategory')}
-        name={'projectCategory'}
         textPlaceholder={t('chooseCategory')}
       />
 
@@ -116,6 +128,7 @@ export const ProjectDescribe = () => {
 
       <ProjectImage image={form.image} onChange={handleImageChange} />
       <Agree />
+      <Button text={t('submitRequest')} color="green" buttonWidth={buttonWidth} />
     </form>
   );
 };

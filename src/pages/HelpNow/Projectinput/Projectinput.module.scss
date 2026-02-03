@@ -23,6 +23,9 @@
 
 .input textarea {  
   height: $size-255;
-  height: $size-195;
   padding: $size-16;
+
+  @include on-desktop {
+    height: $size-195;
+  }
 }
