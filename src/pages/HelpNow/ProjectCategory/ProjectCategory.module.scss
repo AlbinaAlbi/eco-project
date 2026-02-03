@@ -1,0 +1,36 @@
+@import '../../../styles';
+
+.choose {
+  display: flex;
+  flex-direction: column;
+  gap: $size-xs;
+  text-align: start;
+}
+
+.choose select {
+  border: $size-1 solid $color-gray-200;
+  border-radius: $size-40;
+  padding: 0 $size-24;
+  opacity: 0.5;
+  height: $size-2xl;
+  align-items: center;
+
+  @include on-desktop {
+    height: $size-52;
+  }
+}
+
+.input select {  
+  height: $size-255;
+  height: $size-195;
+  padding: $size-16;
+}
+
+.choose select {
+  height: $size-2xl;
+  align-items: center;
+
+  @include on-desktop {
+    height: $size-52;
+  }
+}

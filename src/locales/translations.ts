@@ -36,7 +36,7 @@ export const translations = {
     descriptionText: 'Description',
     joinAsVolunteer: 'Join as volunteer',
 
-    projectPame: 'Project name',
+    projectName: 'Project name',
     chooseAName: 'Choose a name of your project',
 
     projectDescription: 'Project description',
@@ -769,7 +769,7 @@ export const translations = {
     projectGoals: 'Цілі проєкту',
     joinAsVolunteer: 'Стати волонтером',
 
-    projectPame: 'Назва проєкту',
+    projectName: 'Назва проєкту',
     chooseAName: 'Оберіть назву вашого проєкту',
 
     projectDescription: 'Опис проєкту',

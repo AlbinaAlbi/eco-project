@@ -2,9 +2,12 @@ import { useState } from 'react';
 import { useLanguage } from '../../../context/LanguageContext';
 import styles from './ProjectDescribe.module.scss';
 import { ProjectDuration } from '../ProjectDuration';
+import { Projectinput } from '../Projectinput';
+import { ProjectCategory } from '../ProjectCategory';
+import { ProjectImage } from '../ProjectImage';
 
 export interface ProjectFormState {
-  name: string;
+  projectName: string;
   projectDescription: string;
   projectCategory: string;
   projectGoals: string;
@@ -15,8 +18,8 @@ export interface ProjectFormState {
 
 export const ProjectDescribe = () => {
   const { t } = useLanguage();
-  const [form, setForm] = useState({
-    name: '',
+  const [form, setForm] = useState<ProjectFormState>({
+    projectName: '',
     projectDescription: '',
     projectCategory: '',
     projectGoals: '',
@@ -28,7 +31,8 @@ export const ProjectDescribe = () => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
-    const { name, value } = e.target;
+    const name = e.target.name as keyof ProjectFormState;
+    const value = e.target.value;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -46,81 +50,59 @@ export const ProjectDescribe = () => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <div className={styles.input}>
-        <div className={`textSecondary`}>{t('projectPame')}</div>
-        <input
-          name="projectPame"
-          placeholder={t('chooseAName')}
-          value={form.name}
-          onChange={handleChange}
-          required
-        />
-      </div>
+      <Projectinput
+        form={form}
+        handleChange={handleChange}
+        textTranslate={t('projectName')}
+        textPlaceholder={t('chooseAName')}
+        name={'projectName'}
+      />
 
-      <div className={styles.describe}>
-        <div className={`textSecondary`}>{t('projectDescription')}</div>
-        <textarea
-          name="projectDescription"
-          placeholder={t('describeYourProject')}
-          value={form.projectDescription}
-          onChange={handleChange}
-          required
-        />
-      </div>
+      <Projectinput
+        form={form}
+        handleChange={handleChange}
+        textTranslate={t('projectDescription')}
+        textPlaceholder={t('describeYourProject')}
+        name={'projectDescription'}
+        isTextArea={true}
+      />
 
-      <div className={styles.goals}>
-        <div className={`textSecondary`}>{t('projectGoals')}</div>
-        <textarea
-          name="projectGoals"
-          placeholder={t('clearlyDescribe')}
-          value={form.projectGoals}
-          onChange={handleChange}
-          required
-        />
-      </div>
+      <Projectinput
+        form={form}
+        handleChange={handleChange}
+        textTranslate={t('projectGoals')}
+        textPlaceholder={t('clearlyDescribe')}
+        name={'projectGoals'}
+        isTextArea={true}
+      />
 
-      <div className={styles.choose}>
-        <div className={`textSecondary`}>{t('projectCategory')}</div>
-        <select
-          name="projectCategory"
-          value={form.projectCategory}
-          onChange={handleChange}
-          required
-        >
-          <option value="" disabled>
-            {t('chooseCategory')}
-          </option>
-          <option value="environment">{t('categoryFilter.environment')}</option>
-          <option value="animals">{t('categoryFilter.animals')}</option>
-          <option value="education">{t('categoryFilter.education')}</option>
-          <option value="community">{t('categoryFilter.community')}</option>
-          <option value="culture">{t('categoryFilter.humanitarian')}</option>
-        </select>
-      </div>
+      <ProjectCategory
+        form={form}
+        handleChange={handleChange}
+        textTranslate={t('projectCategory')}
+        name={'projectCategory'}
+        textPlaceholder={t('chooseCategory')}
+      />
 
-      <div className={styles.input}>
-        <div className={`textSecondary`}>{t('fundingGoal')}</div>
-        <input
-          name="fundingGoal"
-          placeholder={t('targetAmount')}
-          value={form.fundingGoal}
-          onChange={handleChange}
-          required
-        />
-      </div>
+      <Projectinput
+        form={form}
+        handleChange={handleChange}
+        textTranslate={t('fundingGoal')}
+        textPlaceholder={t('targetAmount')}
+        name={'fundingGoal'}
+      />
 
-      <div className={styles.input}>
-        <div className={`textSecondary`}>{t('contactEmail')}</div>
-        <input
-          name="contactEmail"
-          placeholder={t('contactYou')}
-          value={form.contactEmail}
-          onChange={handleChange}
-          required
-        />
-      </div>
+      <Projectinput
+        form={form}
+        handleChange={handleChange}
+        textTranslate={t('contactEmail')}
+        textPlaceholder={t('contactYou')}
+        name={'contactEmail'}
+      />
 
       <ProjectDuration formDuration={form.projectDuration} setForm={setForm} />
+
+      <ProjectImage />
     </form>
   );
 };

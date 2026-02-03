@@ -13,8 +13,8 @@ export const ProjectDuration = ({ formDuration, setForm }: ProjectDurationProps)
   const { t } = useLanguage();
 
   return (
-    <div className={styles.projectDuration}>
-      <div className="textSecondary">{t('projectDuration')}</div>
+    <div className={`textSecondary ${styles.projectDuration}`}>
+      <div>{t('projectDuration')}</div>
 
       <div className={styles.durationOptions}>
         {[
