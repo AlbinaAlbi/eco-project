@@ -390,6 +390,64 @@ export const translations = {
       },
     },
 
+    questionCommomList: {
+      questionFirst: {
+        mobile: ['How long does the review', 'process take?'],
+        tablet: ['How long does the review process take?'],
+        desktop: ['How long does the review', 'process take?'],
+      },
+      answerFirst: [
+        'All submissions are reviewed within 2–5 business days.',
+        'We may contact you if additional information is required.',
+      ],
+
+      questionSecond: {
+        mobile: ['What happens after I', 'submit my request?'],
+        tablet: ['What happens after I submit my request?'],
+        desktop: ['What happens after I submit', 'my request?'],
+      },
+
+      answerSecond:
+        'Our team reviews your submission to ensure it meets our guidelines. Once approved, your project will be published on the platform.',
+
+      questionThird: {
+        mobile: ['Can my request', 'be rejected?'],
+        tablet: ['Can my request be rejected?'],
+        desktop: ['Can my request be rejected?'],
+      },
+      answerThird: [
+        'Yes. Requests may be declined if they lack sufficient information,',
+        'do not align with our mission, or cannot be verified.',
+      ],
+
+      questionFourth: {
+        mobile: ['How will you contact me?'],
+        tablet: ['How will you contact me?'],
+        desktop: ['How will you contact me?'],
+      },
+      answerFourth: 'We will contact you via the email address you provided in the submission form',
+
+      questionFifth: {
+        mobile: ['How long will my project', 'be visible on the', 'platform?'],
+        tablet: ['How long will my project', 'be visible on the platform?'],
+        desktop: ['How long will my project', 'be visible on the platform?'],
+      },
+      answerFifth: [
+        'Approved projects are published for a limited period,',
+        'typically between two weeks and one month.',
+      ],
+
+      questionSixth: {
+        mobile: ['Why do you review all', 'submissions before', 'publication?'],
+        tablet: ['Why do you review all submissions', 'before publication?'],
+        desktop: ['Why do you review all', 'submissions before', 'publication?'],
+      },
+      answerSixth: [
+        'Review helps us ensure authenticity, prevent fraud,',
+        'and maintain trust within the EcoLeaf community.',
+      ],
+    },
+
     startTag: 'Start your initiative',
     startTitle: ['Have an idea for your ', 'own eco-project'],
     startDescription: {
@@ -1131,6 +1189,64 @@ export const translations = {
         tablet: ['Так. Кожен проєкт включає інструктаж', 'з безпеки та підтримку координаторів'],
         desktop: ['Так. Кожен проєкт включає інструктаж', 'з безпеки та підтримку координаторів'],
       },
+    },
+
+    questionCommomList: {
+      questionFirst: {
+        mobile: ['Скільки часу займає', 'процес перевірки?'],
+        tablet: ['Скільки часу займає процес перевірки?'],
+        desktop: ['Скільки часу займає', 'процес перевірки?'],
+      },
+      answerFirst: [
+        'Усі заявки перевіряються протягом 2–5 робочих днів.',
+        'Ми можемо зв’язатися з вами, якщо потрібна додаткова інформація.',
+      ],
+
+      questionSecond: {
+        mobile: ['Що відбувається після того,', 'як я надішлю заявку?'],
+        tablet: ['Що відбувається після того,', 'як я надішлю заявку?'],
+        desktop: ['Що відбувається після того,', 'як я надішлю заявку?'],
+      },
+      answerSecond:
+        'Наша команда перевіряє вашу заявку, щоб переконатися, що вона відповідає нашим вимогам. Після затвердження ваш проект буде опублікований на платформі.',
+
+      questionThird: {
+        mobile: ['Чи можуть мою заявку', 'відхилити?'],
+        tablet: ['Чи можуть мою заявку відхилити?'],
+        desktop: ['Чи можуть мою заявку відхилити?'],
+      },
+      answerThird: [
+        'Так. Заявки можуть бути відхилені, якщо в них недостатньо інформації,',
+        'не відповідають нашій місії або не можуть бути підтверджені.',
+      ],
+
+      questionFourth: {
+        mobile: ['Як ви зі мною зв’яжетесь?'],
+        tablet: ['Як ви зі мною зв’яжетесь?'],
+        desktop: ['Як ви зі мною зв’яжетесь?'],
+      },
+      answerFourth:
+        'Ми зв’яжемося з вами через електронну пошту, яку ви вказали у формі подання заявки.',
+
+      questionFifth: {
+        mobile: ['Як довго мій проект', 'буде відображатися на', 'платформі?'],
+        tablet: ['Як довго мій проект буде відображатися на платформі?'],
+        desktop: ['Як довго мій проект', 'буде відображатися на платформі?'],
+      },
+      answerFifth: [
+        'Затверджені проекти публікуються на обмежений період,',
+        'зазвичай від двох тижнів до одного місяця.',
+      ],
+
+      questionSixth: {
+        mobile: ['Чому ви перевіряєте всі', 'заявки перед', 'публікацією?'],
+        tablet: ['Чому ви перевіряєте всі заявки перед', 'публікацією?'],
+        desktop: ['Чому ви перевіряєте всі', 'заявки перед', 'публікацією?'],
+      },
+      answerSixth: [
+        'Перевірка допомагає нам забезпечити автентичність, запобігти шахрайству,',
+        'та підтримувати довіру всередині спільноти EcoLeaf.',
+      ],
     },
 
     startTag: 'Почніть власну ініціативу',

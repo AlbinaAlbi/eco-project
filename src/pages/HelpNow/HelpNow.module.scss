@@ -33,3 +33,10 @@
     padding: $size-80 0;
   }
 }
+
+.columnWrapper {
+  display: flex;
+  flex-direction: column; 
+  align-self: center;
+  width: 100%;
+}

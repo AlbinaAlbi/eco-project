@@ -2,19 +2,25 @@ import styles from './FAQ.module.scss';
 import FAQImg from '../../../imgs/FAQImg.png';
 import { Image } from '../../../components/Image';
 import { TagAndTitle } from '../../../components/TagAndTitle';
-import { SECTION_HEADERS } from '../../../locales/sectionHeaders';
 import { useSectionHeader } from '../../../hooks/useSectionHeader';
 import { QuestionElement } from './QuestionElement';
-import { useQuestion } from '../../../hooks/useQuestion';
 import { useState } from 'react';
+import { TranslationKey } from '../../../context/LanguageContext';
+import { useQuestionProps } from '../../../hooks/useQuestion';
 
-export const FAQ = () => {
-  const { tagKey, titleKey, tagColor, titleColor } = SECTION_HEADERS.faq;
+interface FAQProps {
+  questionList: useQuestionProps[];
+  tagKey: TranslationKey;
+  titleKey: TranslationKey;
+  tagColor: string;
+  titleColor: string;
+}
+
+export const FAQ = ({ questionList, tagKey, titleKey, tagColor, titleColor }: FAQProps) => {
   const { tag, title } = useSectionHeader({
-    tagKey,
-    titleKey,
+    tagKey: tagKey ?? null,
+    titleKey: titleKey ?? null,
   });
-  const questionList = useQuestion();
 
   const [openQuestionId, setOpenQuestionId] = useState(questionList[0]?.id || null);
 

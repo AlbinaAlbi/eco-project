@@ -1,6 +1,6 @@
 import { useTranslatedText } from './useResponsiveText';
 
-interface useQuestionProps {
+export interface useQuestionProps {
   id: number;
   questionKey: string | string[];
   answerKey: string | string[];

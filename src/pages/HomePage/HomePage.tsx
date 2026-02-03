@@ -9,10 +9,13 @@ import { StartInitiative } from '../../components/StartInitiative';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { fetchProjectsThunk } from '../../store/slices/ProjectsSlice/projectsSlice';
 import { useEffect } from 'react';
+import { SECTION_HEADERS } from '../../locales/sectionHeaders';
+import { useQuestion } from '../../hooks/useQuestion';
 
 export const HomePage = () => {
   const dispatch = useAppDispatch();
   const { projects, loading, error } = useAppSelector((state) => state.projects);
+  const questionList = useQuestion();
 
   useEffect(() => {
     dispatch(fetchProjectsThunk());
@@ -51,7 +54,13 @@ export const HomePage = () => {
       <section className={styles.section}>
         <div className="containerMaxWidth containerContentPadding">
           <div className={styles.columnWrapper}>
-            <FAQ />
+            <FAQ
+              questionList={questionList}
+              tagKey={SECTION_HEADERS.faq.tagKey}
+              titleKey={SECTION_HEADERS.faq.titleKey}
+              tagColor={SECTION_HEADERS.faq.tagColor}
+              titleColor={SECTION_HEADERS.faq.titleColor}
+            />
           </div>
         </div>
       </section>
