@@ -5,6 +5,7 @@ import { ProjectDuration } from '../ProjectDuration';
 import { Projectinput } from '../Projectinput';
 import { ProjectCategory } from '../ProjectCategory';
 import { ProjectImage } from '../ProjectImage';
+import { Agree } from '../Agree';
 
 export interface ProjectFormState {
   projectName: string;
@@ -114,6 +115,7 @@ export const ProjectDescribe = () => {
       <ProjectDuration formDuration={form.projectDuration} setForm={setForm} />
 
       <ProjectImage image={form.image} onChange={handleImageChange} />
+      <Agree />
     </form>
   );
 };

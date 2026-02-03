@@ -1,0 +1,25 @@
+@import '../../../styles';
+
+.container {
+  display: flex;
+  gap: $size-xs;
+}
+
+.button {
+  width: $size-m;
+  height: $size-m;
+  border: $size-1 solid $color-gray-400;
+  background: none;
+  border-radius: $size-2xs;
+}
+
+.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $c-button-primary;
+}
+
+.active img {
+  filter: brightness(0) invert(1);
+}
