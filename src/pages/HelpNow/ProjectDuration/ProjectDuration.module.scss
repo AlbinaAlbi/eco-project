@@ -21,6 +21,9 @@
 
 .active {
   background-color: $c-button-primary;
+  border-radius: 50%;
+  width: $size-m;
+  height: $size-m;
 }
 
 .active img {
@@ -28,12 +31,13 @@
 }
 
 .check {
-  width: $size-m;
-  height: $size-m;
+  width: $size-24;
+  height: $size-24;
   border: $size-1 solid $color-gray-400;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 4px;
 }

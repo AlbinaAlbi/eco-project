@@ -1,5 +1,4 @@
 import styles from './ProjectDuration.module.scss';
-import check from '../../../imgs/check.svg';
 import { useLanguage } from '../../../context/LanguageContext';
 import { ProjectCreate } from '../../../types/ProjectCreate';
 
@@ -26,10 +25,8 @@ export const ProjectDuration = ({ formDuration, setForm }: ProjectDurationProps)
             className={styles.durationOption}
             onClick={() => setForm((prev) => ({ ...prev, duration: option.value }))}
           >
-            <div
-              className={`${formDuration === option.value ? styles.active : ''} ${styles.check}`}
-            >
-              {formDuration === option.value && <img src={check} alt="Check" />}
+            <div className={styles.check}>
+              <div className={`${formDuration === option.value ? styles.active : ''}`} />
             </div>
 
             <span>{option.label}</span>
