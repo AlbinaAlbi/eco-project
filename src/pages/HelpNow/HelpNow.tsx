@@ -1,3 +1,6 @@
+import { ErrorElement } from '../../components/ErrorElement';
+import { Loader } from '../../components/Loader';
+import { useAppSelector } from '../../hooks/hooks';
 import { useQuestionCommomList } from '../../hooks/useQuestionCommomList';
 import { SECTION_HEADERS } from '../../locales/sectionHeaders';
 import { FAQ } from '../HomePage/FAQ';
@@ -9,6 +12,10 @@ import { TransparentProcess } from './TransparentProcess';
 
 export const HelpNow = () => {
   const questionList = useQuestionCommomList();
+  const { loading, error } = useAppSelector((state) => state.projects);
+
+  if (loading) return <Loader />;
+  if (error) return <ErrorElement message={error} />;
 
   return (
     <div className={styles.container}>

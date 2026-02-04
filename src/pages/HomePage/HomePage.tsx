@@ -11,6 +11,8 @@ import { fetchProjectsThunk } from '../../store/slices/ProjectsSlice/projectsSli
 import { useEffect } from 'react';
 import { SECTION_HEADERS } from '../../locales/sectionHeaders';
 import { useQuestion } from '../../hooks/useQuestion';
+import { Loader } from '../../components/Loader';
+import { ErrorElement } from '../../components/ErrorElement';
 
 export const HomePage = () => {
   const dispatch = useAppDispatch();
@@ -21,8 +23,8 @@ export const HomePage = () => {
     dispatch(fetchProjectsThunk());
   }, [dispatch]);
 
-  if (loading) return <p>Загрузка проектов...</p>;
-  if (error) return <p>Ошибка: {error}</p>;
+  if (loading) return <Loader />;
+  if (error) return <ErrorElement message={error} />;
 
   return (
     <div className={styles.container}>

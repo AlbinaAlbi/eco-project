@@ -11,6 +11,8 @@ import { DescriptionDetail } from './DescriptionDetail';
 import { OurGoals } from './OurGoals';
 import { ResultsProject } from './ResultsProject';
 import { ReadyToHelp } from './ReadyToHelp /ReadyToHelp';
+import { Loader } from '../../components/Loader';
+import { ErrorElement } from '../../components/ErrorElement';
 
 export const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -34,9 +36,9 @@ export const ProjectDetailPage = () => {
     }
   }, [dispatch, id, projects.length, currentProject]);
 
-  if (loading) return <p>Загрузка проекта...</p>;
-  if (error) return <p>Ошибка: {error}</p>;
-  if (!project || !currentProject) return <p>Проект не найден</p>;
+  if (loading) return <Loader text="Загрузка проектов..." duration={1000} />;
+  if (error) return <ErrorElement message={error} />;
+  if (!project || !currentProject) return <p>Проект не знайдено</p>;
 
   return (
     <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>

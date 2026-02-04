@@ -8,6 +8,8 @@ import { FilterElement } from '../../components/FilterElement';
 import { ProjectsList } from '../../components/ProjectsList';
 import { filterProjects } from '../../hooks/filterProjects';
 import { FindAProject } from './FindAProject';
+import { Loader } from '../../components/Loader';
+import { ErrorElement } from '../../components/ErrorElement';
 
 export const ProjectsPage = () => {
   const dispatch = useAppDispatch();
@@ -33,8 +35,8 @@ export const ProjectsPage = () => {
     [projects, selectedFilters],
   );
 
-  if (loading) return <p>Загрузка проектов...</p>;
-  if (error) return <p>Ошибка: {error}</p>;
+  if (loading) return <Loader />;
+  if (error) return <ErrorElement message={error} />;
 
   return (
     <div className={styles.container}>
