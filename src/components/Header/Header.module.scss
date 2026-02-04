@@ -9,25 +9,33 @@
   justify-content: space-between;
   padding: $size-l;
   height: $size-3xl;
-  margin: $size-xl 0 $size-40;
   max-width: $size-1000;
   width: 100%;
+  align-self: center;
 
   @include on-tablet {
     padding: $size-s $size-24;
     height: $size-72;
-    margin-bottom: $size-2xl;
   }
 
   @include on-desktop {
     padding: $size-14;
     height: $size-80;
-    margin-bottom: $size-3xl;
   }
 } 
 
 .box {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: $size-m;
+  align-items: center;
+
+  @include on-tablet {
+    gap: $size-24;
+  }
+
+  @include on-desktop {
+    gap: $size-xl;
+  }
 }

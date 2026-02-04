@@ -1,3 +1,4 @@
+import { BackButton } from '../BackButton';
 import styles from './Header.module.scss';
 import { Icon } from './Icon';
 import { Menu } from './Menu';
@@ -14,6 +15,9 @@ export const Header = () => (
         </div>
 
         <Menu />
+      </div>
+      <div className="containerMaxWidth">
+        <BackButton />
       </div>
     </div>
   </div>

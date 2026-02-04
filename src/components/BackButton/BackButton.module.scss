@@ -1,0 +1,30 @@
+@import '../../styles';
+
+.backButton {
+  background: none;
+  height: $size-17;
+  border: none;
+  color: $color-gray-500;
+  cursor: pointer;
+}
+
+.mobile,
+.desktop {
+  display: flex;
+  align-items: center;
+  gap: $size-xs;
+}
+
+.mobile .image {
+  transform: rotate(180deg);
+}
+
+.image {
+  display: flex;
+  align-items: center;
+}
+
+.image img {
+  height: $size-16;
+  width: $size-xs;
+}

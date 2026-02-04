@@ -35,6 +35,7 @@ export const translations = {
     volunteersNeeded: 'Volunteers needed:',
     descriptionText: 'Description',
     joinAsVolunteer: 'Join as volunteer',
+    back: 'Back',
 
     projectName: 'Project name',
     chooseAName: 'Choose a name of your project',
@@ -826,6 +827,7 @@ export const translations = {
     descriptionText: 'Опис',
     projectGoals: 'Цілі проєкту',
     joinAsVolunteer: 'Стати волонтером',
+    back: 'Назад',
 
     projectName: 'Назва проєкту',
     chooseAName: 'Оберіть назву вашого проєкту',
