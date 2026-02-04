@@ -3,6 +3,8 @@ import styles from './CardLearnMore.module.scss';
 import arrow from '../../../../imgs/Arrow.svg';
 import { useDeviceType } from '../../../../hooks/getDeviceType';
 import { useRenderText } from '../../../../hooks/renderText';
+import { Button } from '../../../../components/Button';
+import { useLanguage } from '../../../../context/LanguageContext';
 
 interface CardLearnMoreProps {
   title: string | string[];
@@ -12,6 +14,7 @@ interface CardLearnMoreProps {
 export const CardLearnMore = ({ title, description }: CardLearnMoreProps) => {
   const { renderText } = useRenderText();
   const device = useDeviceType();
+  const { t } = useLanguage();
   const onDesktop = device === 'desktop';
 
   return (
@@ -24,6 +27,7 @@ export const CardLearnMore = ({ title, description }: CardLearnMoreProps) => {
       <div className={styles.content}>
         <h4>{renderText(title)}</h4>
         <div className="textBody">{renderText(description)}</div>
+        {onDesktop && <Button text={t('explore')} color="white" buttonWidth="285px" to="/help" />}
       </div>
     </div>
   );

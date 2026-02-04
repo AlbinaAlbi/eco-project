@@ -41,7 +41,7 @@
 }
 
 .white {
-  background: none;
+  background-color: $color-white;
   border: $size-1 solid $color-gray-500;
 
   &:hover {
