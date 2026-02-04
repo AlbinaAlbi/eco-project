@@ -47,6 +47,14 @@
   background: transparent;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
+  &:hover {
+    border: $size-1-5 solid $c-button-primary;
+  }
+
+  &:focus::placeholder {
+    color: $color-black;
+  }
+
   @include on-tablet {
     border: 1px solid $color-gray-400;
   }
