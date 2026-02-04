@@ -14,12 +14,10 @@
   align-self: center;
 
   @include on-tablet {
-    padding: $size-s $size-24;
     height: $size-72;
   }
 
   @include on-desktop {
-    padding: $size-14;
     height: $size-80;
   }
 } 
@@ -30,12 +28,15 @@
   flex-direction: column;
   gap: $size-m;
   align-items: center;
+  padding: $size-xl 0 $size-40;
 
   @include on-tablet {
+    padding-bottom: $size-xl;
     gap: $size-24;
   }
 
   @include on-desktop {
+    padding-bottom: $size-24;
     gap: $size-xl;
   }
 }
