@@ -20,17 +20,17 @@ export const useBlockFooter = (): BlockFooterProps[] => {
       id: 1,
       title: t('exploreBlock.title'),
       navItems: [
-        { label: t('exploreBlock.projects'), path: '/projects' },
-        { label: t('exploreBlock.about'), path: '/about' },
+        { label: t('exploreBlock.projects'), path: '/projects', isAnchor: true },
+        { label: t('exploreBlock.about'), path: '/about', isAnchor: true },
         { label: t('exploreBlock.works'), path: '/#works', isAnchor: true },
-        { label: t('exploreBlock.donate'), path: '/donate' },
+        { label: t('exploreBlock.donate'), path: '/donate', isAnchor: true },
       ],
     },
     {
       id: 2,
       title: t('supportBlock.title'),
       navItems: [
-        { label: t('supportBlock.contact'), path: '/contacts' },
+        { label: t('supportBlock.contact'), path: '/contacts', isAnchor: true },
         { label: t('supportBlock.faqs'), path: '/#faq', isAnchor: true },
       ],
     },

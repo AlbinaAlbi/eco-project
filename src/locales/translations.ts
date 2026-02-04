@@ -36,6 +36,9 @@ export const translations = {
     descriptionText: 'Description',
     joinAsVolunteer: 'Join as volunteer',
     back: 'Back',
+    sending: 'Sending',
+    received: 'Thank you! We have received your email.',
+    errorSending: 'Error sending email.',
 
     projectName: 'Project name',
     chooseAName: 'Choose a name of your project',
@@ -828,6 +831,9 @@ export const translations = {
     projectGoals: 'Цілі проєкту',
     joinAsVolunteer: 'Стати волонтером',
     back: 'Назад',
+    sending: 'Надсилання',
+    received: 'Дякуємо! Ми отримали ваш лист.',
+    errorSending: 'Помилка надсилання листа.',
 
     projectName: 'Назва проєкту',
     chooseAName: 'Оберіть назву вашого проєкту',

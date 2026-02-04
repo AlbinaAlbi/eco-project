@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ButtonProps } from '../../types/ButtonProps';
 import styles from './Button.module.scss';
 import { useSidebar } from '../../context/SidebarContext';
+import { scrollToTop } from '../../hooks/scrollToTop';
 
 export const Button = ({
   text,
@@ -21,6 +22,7 @@ export const Button = ({
       onClick();
     }
 
+    scrollToTop();
     closeSidebar();
   };
 
