@@ -31,7 +31,7 @@ export const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
 
       <ProjectsCarousel projects={projects} />
 
-      <Button text={t('viewAll')} color={'white'} buttonWidth={'284px'} />
+      <Button text={t('viewAll')} color={'white'} buttonWidth={'284px'} to="/projects" />
     </div>
   );
 };

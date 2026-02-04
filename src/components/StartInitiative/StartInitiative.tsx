@@ -43,7 +43,7 @@ export const StartInitiative = () => {
         <Description title={description} />
       </div>
 
-      <Button text={t('submit')} buttonWidth={buttonWidth} />
+      <Button text={t('submit')} buttonWidth={buttonWidth} to="/help" />
     </div>
   );
 };

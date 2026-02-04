@@ -47,12 +47,13 @@ export const TakeAction = () => {
         </div>
 
         <div className={styles.buttons}>
-          <Button text={t('explore')} buttonWidth={buttonWidth} />
+          <Button text={t('explore')} buttonWidth={buttonWidth} to="/projects" />
           <Button
             text={t('volunteer')}
             color={'white'}
             buttonWidth={buttonWidth}
             backgroundColor={false}
+            to="/help"
           />
         </div>
 
