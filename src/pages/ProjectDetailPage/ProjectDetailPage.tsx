@@ -16,11 +16,12 @@ export const ProjectDetailPage = () => {
   const dispatch = useAppDispatch();
   const { currentProject, loading, error } = useAppSelector((state) => state.projects);
 
+  console.log(currentProject);
   useEffect(() => {
-    if (id && !currentProject) {
+    if (id) {
       dispatch(fetchProjectByIdThunk(id));
     }
-  }, [dispatch, id, currentProject]);
+  }, [dispatch, id]);
 
   if (loading) return <Loader text="Загрузка проектов..." duration={1000} />;
   if (error) return <ErrorElement message={error} />;

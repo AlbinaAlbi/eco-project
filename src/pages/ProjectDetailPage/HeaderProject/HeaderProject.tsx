@@ -19,16 +19,18 @@ interface HeaderProjectProps {
 }
 
 export const HeaderProject = ({ projectDetail }: HeaderProjectProps) => {
-  const cityTranslations = useTranslatedCity(projectDetail.city);
   const { t } = useLanguage();
+  const cityTranslations = useTranslatedCity(projectDetail.city);
   const category = projectDetail.category.toLowerCase().trim();
   const categoryKey = `categoryFilter.${CATEGORY_MAP[category]}` as TranslationKey;
   const translationKey = t(categoryKey);
+
   const translationTag = Array.isArray(translationKey)
     ? translationKey[0]
     : typeof translationKey === 'string'
       ? translationKey
       : '';
+
   const device = useDeviceType();
   let buttonWidth;
 
@@ -56,7 +58,7 @@ export const HeaderProject = ({ projectDetail }: HeaderProjectProps) => {
       <div className={styles.section}>
         <Region regionText={cityTranslations} />
         <Status status={projectDetail.status} />
-        <VolunteersNeeded count={39} />
+        <VolunteersNeeded count={projectDetail.volunteersNeeded} />
       </div>
       <div className={styles.progressBar}>
         <ProgressBar
@@ -71,7 +73,7 @@ export const HeaderProject = ({ projectDetail }: HeaderProjectProps) => {
       </div>
 
       <div className={styles.image}>
-        <Image img={man} alt={'Man plantin'} />
+        <Image img={projectDetail.imageUrl} alt={projectDetail.title} />
       </div>
     </div>
   );

@@ -21,11 +21,9 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   const cityTranslations = useTranslatedCity(city);
   const regionText = `${cityTranslations} ${t('region')}`;
 
-  console.log(project.status);
+  console.log(project.id);
 
   const statusText = status === 'ACTIVE' ? 'Active' : 'Inactive';
-
-  console.log(project.status);
 
   return (
     <Link to={`/projects/${project.id}`} className={styles.container}>
