@@ -3,16 +3,9 @@ import { useAppSelector } from './hooks';
 
 export const CITY_MAP: Record<string, string> = {
   київ: 'kyiv',
-  kyiv: 'kyiv',
-
   львів: 'lviv',
-  lviv: 'lviv',
-
   одеса: 'odesa',
-  odessa: 'odesa',
-
   харків: 'kharkiv',
-  kharkiv: 'kharkiv',
 };
 
 export const CATEGORY_MAP: Record<string, string> = {
@@ -21,12 +14,11 @@ export const CATEGORY_MAP: Record<string, string> = {
   освіта: 'education',
   соціум: 'community',
   'гуманітарна допомога': 'humanitarian',
+};
 
-  environment: 'environment',
-  animals: 'animals',
-  education: 'education',
-  community: 'community',
-  humanitarian: 'humanitarian',
+export const STATUS_MAP: Record<string, string> = {
+  active: 'active',
+  completed: 'completed',
 };
 
 export interface FilterOption {
@@ -57,7 +49,8 @@ export const useFilter = (): FilterItem[] => {
     const rawCity = p.city.trim().toLowerCase();
     const city = CITY_MAP[rawCity];
 
-    const status = p.status.toLowerCase();
+    const rawStatus = p.status.trim().toLowerCase();
+    const status = STATUS_MAP[rawStatus];
 
     if (category) {
       categoryCount[category] = (categoryCount[category] || 0) + 1;
@@ -67,7 +60,9 @@ export const useFilter = (): FilterItem[] => {
       cityCount[city] = (cityCount[city] || 0) + 1;
     }
 
-    statusCount[status] = (statusCount[status] || 0) + 1;
+    if (status) {
+      statusCount[status] = (statusCount[status] || 0) + 1;
+    }
   });
 
   return [
@@ -144,9 +139,9 @@ export const useFilter = (): FilterItem[] => {
           count: statusCount['active'] ?? 0,
         },
         {
-          label: t('statusFilter.progress'),
-          value: 'progress',
-          count: statusCount['progress'] ?? 0,
+          label: t('statusFilter.completed'),
+          value: 'completed',
+          count: statusCount['completed'] ?? 0,
         },
       ],
     },

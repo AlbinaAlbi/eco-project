@@ -23,6 +23,8 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 
   const statusText = status === 'ACTIVE' ? 'Active' : 'Inactive';
 
+  console.log(project.status);
+
   return (
     <Link to={`/projects/${project.id}`} className={styles.container}>
       <ImgAndStatus status={statusText} url={imageUrl} title={title} />

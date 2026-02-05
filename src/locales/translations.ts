@@ -781,7 +781,7 @@ export const translations = {
       title: 'Status',
       text: 'All Status',
       active: 'Active',
-      progress: 'In progress',
+      completed: 'Сompleted',
     },
 
     searchFilter: {
@@ -1562,7 +1562,7 @@ export const translations = {
       title: 'Категорія',
       text: 'Усі категорії',
       environment: 'Довкілля',
-      request: 'Захист тварин',
+      animals: 'Захист тварин',
       education: 'Навчання та лекторії',
       community: 'Громада',
       humanitarian: 'Благодійність',
@@ -1581,7 +1581,7 @@ export const translations = {
       title: 'Статус',
       text: 'Усі статуси',
       active: 'Активний',
-      progress: 'В процесі',
+      completed: 'Завершений',
     },
 
     searchFilter: {

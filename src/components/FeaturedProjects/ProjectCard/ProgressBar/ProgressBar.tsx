@@ -9,7 +9,7 @@ interface ProgressBarProps {
 
 export const ProgressBar = ({ goalAmount, currentAmount }: ProgressBarProps) => {
   const formatNumber = (value: number) => new Intl.NumberFormat('uk-UA').format(value);
-  const percentage = (currentAmount / goalAmount) * 100;
+  const percentage = Math.floor((currentAmount / goalAmount) * 100);
   const { t } = useLanguage();
 
   return (
