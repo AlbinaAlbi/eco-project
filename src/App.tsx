@@ -5,7 +5,6 @@ import { Layout } from './components/Layout';
 import { HomePage } from './pages/HomePage';
 import { ProjectDetailPage } from './pages/ProjectDetailPage';
 import { NotFoundPage } from './pages/NotFoundPage';
-import { ProtectedRoute } from './auth/ProtectedRoute';
 import { AppErrorHandler } from './pages/AppErrorHandler';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { Contacts } from './pages/Contacts';

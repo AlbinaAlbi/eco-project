@@ -8,8 +8,6 @@ export const filterProjects = (projects: Project[], filters: SelectedFilters) =>
     const cityCode = CITY_MAP[project.city.toLowerCase()];
     const statusCode = STATUS_MAP[project.status.toLowerCase()];
 
-    console.log(filters.status, project.status);
-
     if (filters.category && categoryCode !== filters.category) return false;
     if (filters.location && cityCode !== filters.location) return false;
     if (filters.status && statusCode !== filters.status) return false;

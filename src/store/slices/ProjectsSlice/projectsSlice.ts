@@ -2,11 +2,10 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { Project } from '../../../types/Project';
 import { fetchProjectById, fetchProjects as fetchProjectsAPI } from '../../../api/projects';
-import { ProjectDetail } from '../../../types/ProjectDetail';
 
 interface ProjectsState {
   projects: Project[];
-  currentProject: ProjectDetail | null;
+  currentProject: Project | null;
   loading: boolean;
   error: string | null;
 }
@@ -50,7 +49,7 @@ const projectsSlice = createSlice({
       state.projects.push(action.payload);
     },
     removeProject(state, action: PayloadAction<string>) {
-      state.projects = state.projects.filter((p) => p.id !== action.payload);
+      state.projects = state.projects.filter((p) => String(p.id) !== action.payload);
     },
   },
   extraReducers: (builder) => {
@@ -72,7 +71,7 @@ const projectsSlice = createSlice({
         state.error = null;
         state.currentProject = null;
       })
-      .addCase(fetchProjectByIdThunk.fulfilled, (state, action: PayloadAction<ProjectDetail>) => {
+      .addCase(fetchProjectByIdThunk.fulfilled, (state, action: PayloadAction<Project>) => {
         state.currentProject = action.payload;
         state.loading = false;
       })

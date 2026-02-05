@@ -21,6 +21,8 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   const cityTranslations = useTranslatedCity(city);
   const regionText = `${cityTranslations} ${t('region')}`;
 
+  console.log(project.status);
+
   const statusText = status === 'ACTIVE' ? 'Active' : 'Inactive';
 
   console.log(project.status);

@@ -1,7 +1,5 @@
 import { Button } from '../../../components/Button';
 import { Description } from '../../../components/Description';
-import { ProgressBar } from '../../../components/FeaturedProjects/ProjectCard/ProgressBar';
-import { Region } from '../../../components/FeaturedProjects/ProjectCard/Region';
 import { Image } from '../../../components/Image';
 import { Status } from '../../../components/Status';
 import { TagAndTitle } from '../../../components/TagAndTitle';
@@ -10,20 +8,20 @@ import { TranslationKey, useLanguage } from '../../../context/LanguageContext';
 import { useDeviceType } from '../../../hooks/getDeviceType';
 import { CATEGORY_MAP } from '../../../hooks/useFilter';
 import { useTranslatedCity } from '../../../hooks/useTranslatedCity';
-import { Project } from '../../../types/Project';
-import { ProjectDetail } from '../../../types/ProjectDetail';
 import styles from './HeaderProject.module.scss';
 import man from '../../../imgs/man plantin.png';
+import { Project } from '../../../types/Project';
+import { Region } from '../../../components/FeaturedProjects/ProjectCard/Region';
+import { ProgressBar } from '../../../components/FeaturedProjects/ProjectCard/ProgressBar';
 
 interface HeaderProjectProps {
-  project: Project;
-  projectDetail: ProjectDetail;
+  projectDetail: Project;
 }
 
-export const HeaderProject = ({ project, projectDetail }: HeaderProjectProps) => {
-  const cityTranslations = useTranslatedCity(project.city);
+export const HeaderProject = ({ projectDetail }: HeaderProjectProps) => {
+  const cityTranslations = useTranslatedCity(projectDetail.city);
   const { t } = useLanguage();
-  const category = project.category.toLowerCase().trim();
+  const category = projectDetail.category.toLowerCase().trim();
   const categoryKey = `categoryFilter.${CATEGORY_MAP[category]}` as TranslationKey;
   const translationKey = t(categoryKey);
   const translationTag = Array.isArray(translationKey)
@@ -49,19 +47,22 @@ export const HeaderProject = ({ project, projectDetail }: HeaderProjectProps) =>
     <div className={`wrapperTextAlign ${styles.container}`}>
       <TagAndTitle
         tag={translationTag}
-        title={project.title}
+        title={projectDetail.title}
         tagColor={'#EDEEEE'}
         titleColor={'#121212'}
       />
-      <Description title={project.shortDescription} />
+      <Description title={projectDetail.shortDescription} />
 
       <div className={styles.section}>
         <Region regionText={cityTranslations} />
-        <Status status={project.status} />
+        <Status status={projectDetail.status} />
         <VolunteersNeeded count={39} />
       </div>
       <div className={styles.progressBar}>
-        <ProgressBar goalAmount={project.goalAmount} currentAmount={project.currentAmount} />
+        <ProgressBar
+          goalAmount={projectDetail.goalAmount}
+          currentAmount={projectDetail.currentAmount}
+        />
 
         <div className={styles.buttons}>
           <Button text={t('explore')} buttonWidth={buttonWidth} />

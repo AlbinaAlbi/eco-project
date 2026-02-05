@@ -1,11 +1,16 @@
 export type Project = {
-  id: string;
+  id: number;
   title: string;
   shortDescription: string;
+  fullDescription: string;
   imageUrl: string;
+  category: string;
   city: string;
   goalAmount: number;
   currentAmount: number;
   status: string;
-  category: string;
+  goals: string;
+  volunteersNeeded: number;
+  volunteersActive: number;
+  progress: number;
 };

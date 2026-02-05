@@ -1,18 +1,18 @@
 import { Project } from '../types/Project';
 import { ProjectCreate } from '../types/ProjectCreate';
-import { ProjectDetail } from '../types/ProjectDetail';
 import { api } from './api';
 
 export const fetchProjects = async (): Promise<Project[]> => {
   const response = await api.get<Project[]>('/projects');
+
   return response.data.map((p) => ({
     ...p,
-    id: p.id.toString(),
+    id: p.id,
   }));
 };
 
-export const fetchProjectById = async (id: string): Promise<ProjectDetail> => {
-  const response = await api.get<ProjectDetail>(`/projects/${id}`);
+export const fetchProjectById = async (id: string): Promise<Project> => {
+  const response = await api.get<Project>(`/projects/${id}`);
   return response.data;
 };
 

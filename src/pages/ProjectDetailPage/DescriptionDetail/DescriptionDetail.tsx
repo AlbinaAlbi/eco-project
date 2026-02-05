@@ -3,7 +3,7 @@ import { useLanguage } from '../../../context/LanguageContext';
 import styles from './DescriptionDetail.module.scss';
 
 interface DescriptionDetailProps {
-  text: string[];
+  text: string;
 }
 
 export const DescriptionDetail = ({ text }: DescriptionDetailProps) => {
@@ -12,11 +12,7 @@ export const DescriptionDetail = ({ text }: DescriptionDetailProps) => {
   return (
     <div className={styles.container}>
       <TagAndTitle tag={t('descriptionText')} tagColor={'#EDEEEE'} />
-      <div className={`textBody ${styles.descriptionText}`}>
-        {text.map((t, i) => (
-          <div key={i}>{t}</div>
-        ))}
-      </div>
+      <div className={`textBody ${styles.descriptionText}`}>{text}</div>
     </div>
   );
 };
