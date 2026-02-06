@@ -2,14 +2,14 @@ import styles from './ProjectGoal.module.scss';
 
 interface ProjectGoalProps {
   goal: {
-    count: number;
     title: string;
     description: string;
   };
+  goalInd: number;
 }
 
-export const ProjectGoal = ({ goal }: ProjectGoalProps) => {
-  const countGoal = `0${goal.count}`;
+export const ProjectGoal = ({ goal, goalInd }: ProjectGoalProps) => {
+  const countGoal = `0${goalInd}`;
   return (
     <div className={styles.container}>
       <div className={styles.count}>{countGoal}</div>

@@ -31,7 +31,7 @@ export const ProjectDetailPage = () => {
     <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>
       <HeaderProject projectDetail={currentProject} />
       <DescriptionDetail text={currentProject.fullDescription} />
-      <OurGoals />
+      <OurGoals projectGoals={currentProject.goals} />
       <ResultsProject />
       <ReadyToHelp />
     </div>

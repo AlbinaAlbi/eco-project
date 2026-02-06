@@ -9,8 +9,15 @@ export type Project = {
   goalAmount: number;
   currentAmount: number;
   status: string;
-  goals: string;
+  goals: [
+    {
+      title: string;
+      description: string;
+    },
+  ];
   volunteersNeeded: number;
   volunteersActive: number;
   progress: number;
+  readyToHelpTitle: string;
+  readyToHelpDescription: string;
 };

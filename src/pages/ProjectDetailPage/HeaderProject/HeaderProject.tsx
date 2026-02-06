@@ -9,7 +9,6 @@ import { useDeviceType } from '../../../hooks/getDeviceType';
 import { CATEGORY_MAP } from '../../../hooks/useFilter';
 import { useTranslatedCity } from '../../../hooks/useTranslatedCity';
 import styles from './HeaderProject.module.scss';
-import man from '../../../imgs/man plantin.png';
 import { Project } from '../../../types/Project';
 import { Region } from '../../../components/FeaturedProjects/ProjectCard/Region';
 import { ProgressBar } from '../../../components/FeaturedProjects/ProjectCard/ProgressBar';
