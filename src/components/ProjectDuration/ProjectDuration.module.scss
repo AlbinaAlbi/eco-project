@@ -1,0 +1,43 @@
+@import '../../styles';
+
+.projectDuration {
+  display: flex;
+  flex-direction: column;
+  gap: $size-xs;
+  text-align: start;
+}
+
+.durationOptions {
+  display: flex;
+  flex-direction: column;
+  gap: $size-xs;
+}
+
+.durationOption {
+  display: flex;
+  align-items: center;
+  gap: $size-xs;
+}
+
+.active {
+  background-color: $c-button-primary;
+  border-radius: 50%;
+  width: $size-m;
+  height: $size-m;
+}
+
+.active img {
+  filter: brightness(0);
+}
+
+.check {
+  width: $size-24;
+  height: $size-24;
+  border: $size-1 solid $color-gray-400;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}

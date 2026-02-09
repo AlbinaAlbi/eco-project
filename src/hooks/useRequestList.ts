@@ -1,10 +1,5 @@
 import { useLanguage } from '../context/LanguageContext';
-
-export interface RequestListProps {
-  id: number;
-  titleKey: string;
-  descriptionKey: string;
-}
+import { RequestListProps } from '../types/RequestListProps';
 
 export const useRequestList = (): RequestListProps[] => {
   const { t } = useLanguage();

@@ -137,4 +137,24 @@ export const SECTION_HEADERS = {
     tagColor: COLORS.gray100,
     titleColor: COLORS.black,
   },
+  volunteer: {
+    tagKey: 'volunteer' as const,
+    titleKey: 'becomePart.title' as const,
+    descriptionKey: 'becomePart.description' as const,
+    tagColor: COLORS.gray100,
+    titleColor: COLORS.black,
+  },
+  requestInclude: {
+    tagKey: 'requestInclude.tag' as const,
+    titleKey: 'requestInclude.title' as const,
+    descriptionKey: 'requestInclude.description' as const,
+    tagColor: COLORS.gray100,
+    titleColor: COLORS.black,
+  },
+  questionsVolunteering: {
+    tagKey: 'faqTag' as const,
+    titleKey: 'volunteeringTitle' as const,
+    tagColor: COLORS.gray200,
+    titleColor: COLORS.black,
+  },
 } as const;

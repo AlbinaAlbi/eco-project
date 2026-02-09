@@ -41,6 +41,13 @@ export const translations = {
     errorSending: 'Error sending email.',
     requestHelp: 'Request help',
     supportWithADonation: 'Support with a donation',
+    fullName: 'Full name',
+    cityLocation: 'City / Location',
+    optionalMessage: 'Optional message',
+    enterName: 'Enter your full name',
+    enterEmail: 'Enter your email',
+    eGKyiv: 'e.g., Kyiv',
+    messageOptional: 'Message (optional)',
 
     projectName: 'Project name',
     chooseAName: 'Choose a name of your project',
@@ -299,7 +306,9 @@ export const translations = {
     },
 
     faqTag: 'FAQ',
-    faqTitle: ['Common questions ', 'about our work'],
+    faqTitle: ['Common questions', 'about our work'],
+
+    volunteeringTitle: ['Common questions', 'about volunteering'],
 
     questionList: {
       questionFirst: {
@@ -396,6 +405,27 @@ export const translations = {
       },
     },
 
+    becomePart: {
+      title: ['Become part of the change'],
+      description: {
+        mobile: [
+          'Share your time and skills with',
+          'eco-initiatives that need real help.',
+          'Fill in the form and we’ll connect you with',
+          'projects where you can make an impact',
+        ],
+        tablet: [
+          'Share your time and skills with eco-initiatives that need real help.',
+          'Fill in the form and we’ll connect you with projects where',
+          'you can make an impact',
+        ],
+        desktop: [
+          'Share your time and skills with eco-initiatives that need real help.',
+          'Fill in the form and we’ll connect you with projects where you can make an impact',
+        ],
+      },
+    },
+
     questionCommomList: {
       questionFirst: {
         mobile: ['How long does the review', 'process take?'],
@@ -451,6 +481,57 @@ export const translations = {
       answerSixth: [
         'Review helps us ensure authenticity, prevent fraud,',
         'and maintain trust within the EcoLeaf community.',
+      ],
+    },
+
+    questionsVolunteering: {
+      questionFirst: {
+        mobile: ['Who can become', 'a volunteer?'],
+        tablet: ['Who can become a volunteer?'],
+        desktop: ['Who can become a volunteer?'],
+      },
+      answerFirst: [
+        'Anyone who wants to support eco-projects and has',
+        'the time to contribute. You don’t need prior experience, just motivation!',
+      ],
+
+      questionSecond: {
+        mobile: ['How do I know if my', 'request is accepted?'],
+        tablet: ['How do I know if my request', 'is accepted?'],
+        desktop: ['How do I know if my request', 'is accepted?'],
+      },
+
+      answerSecond:
+        'The project organizer will contact you via email or phone to confirm your participation.',
+
+      questionThird: {
+        mobile: ['Is there any cost', 'to volunteering?'],
+        tablet: ['Is there any cost to volunteering?'],
+        desktop: ['Is there any cost', 'to volunteering?'],
+      },
+      answerThird: [
+        'No, volunteering is completely free.',
+        'You only need to dedicate your time and skills',
+      ],
+
+      questionFourth: {
+        mobile: ['Can I volunteer for', 'multiple projects at once?'],
+        tablet: ['Can I volunteer for multiple', 'projects at once?'],
+        desktop: ['Can I volunteer for multiple', 'projects at once?'],
+      },
+      answerFourth: [
+        'Yes! You can submit requests for as many',
+        'projects as you want and choose which ones to join',
+      ],
+
+      questionFifth: {
+        mobile: ['What if I don’t have', 'specific skills?'],
+        tablet: ['What if I don’t have specific skills?'],
+        desktop: ['What if I don’t have specific', 'skills?'],
+      },
+      answerFifth: [
+        'That’s okay! Every volunteer is valuable. Projects often',
+        'need general help, and organizers will guide you.',
       ],
     },
 
@@ -700,6 +781,27 @@ export const translations = {
         'Each project has a limited visibility period (e.g., 2 weeks to 1 month). After this time, it will be automatically removed from the platform to keep the content fresh and prevent inactive projects from lingering',
     },
 
+    requestIncludeTitle: 'Your request should include:',
+    requestIncludeBlock: {
+      name: {
+        title: '1. Full Name',
+        description: 'So the project organizer knows who you are',
+      },
+      contact: {
+        title: '2. Contact Information',
+        description: 'Provide a valid email to get a confirmation',
+      },
+      location: {
+        title: '3. Your сity / Location',
+        description: 'What problem you are addressing and why it matters',
+      },
+      requested: {
+        title: '4. Optional Message',
+        description:
+          'A short note for the organizer if you want to share more details or ask questions',
+      },
+    },
+
     request: {
       tag: 'Request support',
       title: ['Request help', 'for your project'],
@@ -723,8 +825,29 @@ export const translations = {
       },
     },
 
-    requestBlockTitle: 'Your request should include:',
+    requestInclude: {
+      tag: 'Join the project',
+      title: 'Become a Volunteer',
+      description: {
+        mobile: [
+          'Fill out the form below and the project',
+          'organizer will get in touch to guide you',
+          'on how to start contributing',
+        ],
+        tablet: [
+          'Fill out the form below and the project organizer will get in touch',
+          'to guide you on how to start contributing',
+        ],
+        desktop: [
+          'Fill out the form below and the project organizer will get in',
+          'touch to guide you on how to start contributing',
+        ],
+      },
+    },
+
     requestBlock: {
+      title: 'Your request should include:',
+
       clear: {
         title: '1. Clear project information',
         description: 'Project name, type, duration, and goals',
@@ -838,6 +961,13 @@ export const translations = {
     errorSending: 'Помилка надсилання листа.',
     requestHelp: 'Запросити допомогу',
     supportWithADonation: 'Допомогти донатом',
+    fullName: 'Повне імʼя',
+    cityLocation: 'Місто / Локація',
+    optionalMessage: 'Необовʼязкове повідомлення',
+    enterName: 'Введіть ваше повне імʼя',
+    enterEmail: 'Введіть вашу електронну пошту',
+    eGKyiv: 'наприклад, Київ',
+    messageOptional: 'Повідомлення (необовʼязково)',
 
     projectName: 'Назва проєкту',
     chooseAName: 'Оберіть назву вашого проєкту',
@@ -1105,6 +1235,28 @@ export const translations = {
     faqTag: 'FAQ',
     faqTitle: ['Поширені запитання', 'про нашу діяльність'],
 
+    volunteeringTitle: ['Поширені запитання', 'про волонтерство'],
+
+    becomePart: {
+      title: ['Станьте частиною змін'],
+      description: {
+        mobile: [
+          'Діліться своїм часом та навичками з',
+          'еко-ініціативами, які потребують реальної допомоги.',
+          'Заповніть форму, і ми з’єднаємо вас з',
+          'проектами, де ви зможете зробити свій внесок',
+        ],
+        tablet: [
+          'Діліться своїм часом та навичками з еко-ініціативами, які потребують реальної допомоги.',
+          'Заповніть форму, і ми з’єднаємо вас з проектами, де',
+          'ви зможете зробити свій внесок',
+        ],
+        desktop: [
+          'Діліться своїм часом та навичками з еко-ініціативами, які потребують реальної допомоги.',
+          'Заповніть форму, і ми з’єднаємо вас з проектами, де ви зможете зробити свій внесок',
+        ],
+      },
+    },
     questionList: {
       questionFirst: {
         mobile: ['Чи потрібен досвід,', 'щоб долучитися до проєкту?'],
@@ -1204,6 +1356,115 @@ export const translations = {
     },
 
     questionCommomList: {
+      questionFirst: {
+        mobile: ['Скільки часу займає', 'процес перевірки?'],
+        tablet: ['Скільки часу займає процес перевірки?'],
+        desktop: ['Скільки часу займає', 'процес перевірки?'],
+      },
+      answerFirst: [
+        'Усі заявки перевіряються протягом 2–5 робочих днів.',
+        'Ми можемо зв’язатися з вами, якщо потрібна додаткова інформація.',
+      ],
+
+      questionSecond: {
+        mobile: ['Що відбувається після того,', 'як я надішлю заявку?'],
+        tablet: ['Що відбувається після того,', 'як я надішлю заявку?'],
+        desktop: ['Що відбувається після того,', 'як я надішлю заявку?'],
+      },
+      answerSecond:
+        'Наша команда перевіряє вашу заявку, щоб переконатися, що вона відповідає нашим вимогам. Після затвердження ваш проект буде опублікований на платформі.',
+
+      questionThird: {
+        mobile: ['Чи можуть мою заявку', 'відхилити?'],
+        tablet: ['Чи можуть мою заявку відхилити?'],
+        desktop: ['Чи можуть мою заявку відхилити?'],
+      },
+      answerThird: [
+        'Так. Заявки можуть бути відхилені, якщо в них недостатньо інформації,',
+        'не відповідають нашій місії або не можуть бути підтверджені.',
+      ],
+
+      questionFourth: {
+        mobile: ['Як ви зі мною зв’яжетесь?'],
+        tablet: ['Як ви зі мною зв’яжетесь?'],
+        desktop: ['Як ви зі мною зв’яжетесь?'],
+      },
+      answerFourth:
+        'Ми зв’яжемося з вами через електронну пошту, яку ви вказали у формі подання заявки.',
+
+      questionFifth: {
+        mobile: ['Як довго мій проект', 'буде відображатися на', 'платформі?'],
+        tablet: ['Як довго мій проект буде відображатися на платформі?'],
+        desktop: ['Як довго мій проект', 'буде відображатися на платформі?'],
+      },
+      answerFifth: [
+        'Затверджені проекти публікуються на обмежений період,',
+        'зазвичай від двох тижнів до одного місяця.',
+      ],
+
+      questionSixth: {
+        mobile: ['Чому ви перевіряєте всі', 'заявки перед', 'публікацією?'],
+        tablet: ['Чому ви перевіряєте всі заявки перед', 'публікацією?'],
+        desktop: ['Чому ви перевіряєте всі', 'заявки перед', 'публікацією?'],
+      },
+      answerSixth: [
+        'Перевірка допомагає нам забезпечити автентичність, запобігти шахрайству,',
+        'та підтримувати довіру всередині спільноти EcoLeaf.',
+      ],
+    },
+
+    questionsVolunteering: {
+      questionFirst: {
+        mobile: ['Хто може', 'стати волонтером?'],
+        tablet: ['Хто може стати волонтером?'],
+        desktop: ['Хто може стати волонтером?'],
+      },
+      answerFirst: [
+        'Будь-хто, хто хоче підтримати еко-проєкти та має',
+        'час долучитися. Досвід не потрібен — достатньо мотивації!',
+      ],
+
+      questionSecond: {
+        mobile: ['Як я дізнаюся,', 'що мою заявку прийнято?'],
+        tablet: ['Як я дізнаюся, що мою заявку', 'прийнято?'],
+        desktop: ['Як я дізнаюся, що мою заявку', 'прийнято?'],
+      },
+
+      answerSecond:
+        'Організатор проєкту зв’яжеться з вами електронною поштою або телефоном, щоб підтвердити участь.',
+
+      questionThird: {
+        mobile: ['Чи є волонтерство', 'платним?'],
+        tablet: ['Чи є волонтерство платним?'],
+        desktop: ['Чи є волонтерство', 'платним?'],
+      },
+      answerThird: [
+        'Ні, волонтерство є повністю безкоштовним.',
+        'Потрібно лише приділити свій час та навички',
+      ],
+
+      questionFourth: {
+        mobile: ['Чи можу я волонтерити', 'в кількох проєктах одночасно?'],
+        tablet: ['Чи можу я волонтерити в кількох', 'проєктах одночасно?'],
+        desktop: ['Чи можу я волонтерити в кількох', 'проєктах одночасно?'],
+      },
+      answerFourth: [
+        'Так! Ви можете подати заявки на будь-яку',
+        'кількість проєктів і самостійно обрати, до яких долучитися',
+      ],
+
+      questionFifth: {
+        mobile: ['А якщо в мене немає', 'спеціальних навичок?'],
+        tablet: ['А якщо в мене немає спеціальних навичок?'],
+        desktop: ['А якщо в мене немає', 'спеціальних навичок?'],
+      },
+      answerFifth: [
+        'Це не проблема! Кожен волонтер важливий.',
+        'Проєктам часто потрібна базова допомога, а організатори все підкажуть.',
+      ],
+    },
+
+    QuestionsVolunteering: {
       questionFirst: {
         mobile: ['Скільки часу займає', 'процес перевірки?'],
         tablet: ['Скільки часу займає процес перевірки?'],
@@ -1472,6 +1733,26 @@ export const translations = {
       ],
     },
 
+    requestInclude: {
+      tag: 'Долучитися до проєкту',
+      title: 'Стати волонтером',
+      description: {
+        mobile: [
+          'Заповніть форму нижче, і організатор проєкту',
+          'зв’яжеться з вами, щоб пояснити,',
+          'як почати долучатися до роботи',
+        ],
+        tablet: [
+          'Заповніть форму нижче, і організатор проєкту зв’яжеться з вами,',
+          'щоб пояснити, як почати долучатися до роботи',
+        ],
+        desktop: [
+          'Заповніть форму нижче, і організатор проєкту зв’яжеться з вами,',
+          'щоб пояснити, як почати долучатися до роботи',
+        ],
+      },
+    },
+
     requestBlock: {
       title: 'Ваш запит має містити:',
 
@@ -1494,6 +1775,27 @@ export const translations = {
       visual: {
         title: '5. Візуальні або зовнішні підтвердження',
         description: 'Зображення, посилання або документи, що підтверджують ваш запит',
+      },
+    },
+
+    requestIncludeTitle: 'Ваш запит має містити:',
+    requestIncludeBlock: {
+      name: {
+        title: '1. Повне ім’я',
+        description: 'Щоб організатор проєкту знав, хто ви',
+      },
+      contact: {
+        title: '2. Контактна інформація',
+        description: 'Вкажіть дійсну електронну адресу, щоб отримати підтвердження',
+      },
+      location: {
+        title: '3. Ваше місто / місцезнаходження',
+        description: 'Яку проблему ви вирішуєте і чому це важливо',
+      },
+      requested: {
+        title: '4. Додаткове повідомлення (необов’язково)',
+        description:
+          'Коротка нотатка для організатора, якщо хочете поділитися деталями або поставити запитання',
       },
     },
 

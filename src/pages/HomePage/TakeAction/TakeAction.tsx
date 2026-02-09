@@ -18,7 +18,7 @@ export const TakeAction = () => {
   const { tagKey, titleKey, descriptionKey, tagColor, titleColor, describtionColor } =
     SECTION_HEADERS.action;
 
-  const { tag, title, description } = useSectionHeader({
+  const { title, description } = useSectionHeader({
     tagKey,
     titleKey,
     descriptionKey,

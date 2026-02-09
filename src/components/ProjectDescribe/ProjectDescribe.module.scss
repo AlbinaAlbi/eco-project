@@ -1,0 +1,13 @@
+@import '../../styles';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $size-16;
+
+  @include on-desktop {
+    gap: $size-20;
+    width: $size-692;
+    padding-top: $size-2xl; 
+  }
+}

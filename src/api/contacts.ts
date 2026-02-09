@@ -1,6 +1,11 @@
 import { api } from './api';
 
-export const sendContact = async (data: { name: string; email: string; message: string }) => {
+export const sendContact = async (data: {
+  name: string;
+  email: string;
+  message: string;
+  city: string;
+}) => {
   const response = await api.post('/contacts', data);
-  console.log(response.data);
+  return response.data;
 };

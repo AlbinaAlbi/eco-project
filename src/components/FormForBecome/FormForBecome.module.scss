@@ -1,0 +1,51 @@
+@import '../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $size-m;
+  padding-top: $size-24;
+  width: 100%;
+
+  @include on-desktop {
+    gap: $size-l;
+    padding-top: $size-2xl;
+  }
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: $size-xs;
+  width: 100%;
+  text-align: start;
+}
+
+.box input,
+.box textarea {
+  border-radius: $size-40;
+  border: $size-1 solid $color-gray-200;
+  padding-left: $size-24;
+
+  &::placeholder {
+    color: $color-gray-500;
+  }
+}
+
+.box input {
+  height: $size-2xl;
+}
+
+.box textarea {
+  height: $size-225;
+  padding-top: $size-16;
+
+  @include on-tablet {
+    height: $size-175;
+    padding-top: $size-24;
+  }
+
+  @include on-desktop {
+    height: $size-195;
+  }
+}

@@ -13,6 +13,7 @@ import { SECTION_HEADERS } from '../../locales/sectionHeaders';
 import { useQuestion } from '../../hooks/useQuestion';
 import { Loader } from '../../components/Loader';
 import { ErrorElement } from '../../components/ErrorElement';
+import FAQImg from '../../imgs/FAQImg.png';
 
 export const HomePage = () => {
   const dispatch = useAppDispatch();
@@ -62,6 +63,7 @@ export const HomePage = () => {
               titleKey={SECTION_HEADERS.faq.titleKey}
               tagColor={SECTION_HEADERS.faq.tagColor}
               titleColor={SECTION_HEADERS.faq.titleColor}
+              image={FAQImg}
             />
           </div>
         </div>

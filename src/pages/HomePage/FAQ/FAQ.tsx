@@ -1,5 +1,4 @@
 import styles from './FAQ.module.scss';
-import FAQImg from '../../../imgs/FAQImg.png';
 import { Image } from '../../../components/Image';
 import { TagAndTitle } from '../../../components/TagAndTitle';
 import { useSectionHeader } from '../../../hooks/useSectionHeader';
@@ -14,9 +13,10 @@ interface FAQProps {
   titleKey: TranslationKey;
   tagColor: string;
   titleColor: string;
+  image: string;
 }
 
-export const FAQ = ({ questionList, tagKey, titleKey, tagColor, titleColor }: FAQProps) => {
+export const FAQ = ({ questionList, tagKey, titleKey, tagColor, titleColor, image }: FAQProps) => {
   const { tag, title } = useSectionHeader({
     tagKey: tagKey ?? null,
     titleKey: titleKey ?? null,
@@ -46,7 +46,7 @@ export const FAQ = ({ questionList, tagKey, titleKey, tagColor, titleColor }: FA
           ))}
         </div>
         <div className={styles.image}>
-          <Image img={FAQImg} alt={'FAQ Img'} />
+          <Image img={image} alt={'FAQ Img'} />
         </div>
       </div>
     </div>

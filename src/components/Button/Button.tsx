@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ButtonProps } from '../../types/ButtonProps';
 import styles from './Button.module.scss';
 import { useSidebar } from '../../context/SidebarContext';
@@ -21,7 +21,6 @@ export const Button = ({
   const handleClick = () => {
     scrollToTop();
     closeSidebar();
-    console.log('navigate to:', to);
 
     if (to) {
       navigate(to);
