@@ -2,7 +2,10 @@ import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import styles from './ProjectDetailPage.module.scss';
 import { useEffect } from 'react';
-import { fetchProjectByIdThunk } from '../../store/slices/ProjectsSlice/projectsSlice';
+import {
+  clearCurrentProject,
+  fetchProjectByIdThunk,
+} from '../../store/slices/ProjectsSlice/projectsSlice';
 import { DescriptionDetail } from './DescriptionDetail';
 import { OurGoals } from './OurGoals';
 import { ResultsProject } from './ResultsProject';
@@ -16,11 +19,14 @@ export const ProjectDetailPage = () => {
   const dispatch = useAppDispatch();
   const { currentProject, loading, error } = useAppSelector((state) => state.projects);
 
-  console.log(currentProject);
   useEffect(() => {
     if (id) {
       dispatch(fetchProjectByIdThunk(id));
     }
+
+    return () => {
+      dispatch(clearCurrentProject());
+    };
   }, [dispatch, id]);
 
   if (loading) return <Loader text="Загрузка проектов..." duration={1000} />;
@@ -33,7 +39,10 @@ export const ProjectDetailPage = () => {
       <DescriptionDetail text={currentProject.fullDescription} />
       <OurGoals projectGoals={currentProject.goals} />
       <ResultsProject />
-      <ReadyToHelp />
+      <ReadyToHelp
+        title={currentProject.readyToHelpTitle}
+        description={currentProject.readyToHelpDescription}
+      />
     </div>
   );
 };

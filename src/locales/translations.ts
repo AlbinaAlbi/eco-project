@@ -39,6 +39,8 @@ export const translations = {
     sending: 'Sending',
     received: 'Thank you! We have received your email.',
     errorSending: 'Error sending email.',
+    requestHelp: 'Request help',
+    supportWithADonation: 'Support with a donation',
 
     projectName: 'Project name',
     chooseAName: 'Choose a name of your project',
@@ -834,6 +836,8 @@ export const translations = {
     sending: 'Надсилання',
     received: 'Дякуємо! Ми отримали ваш лист.',
     errorSending: 'Помилка надсилання листа.',
+    requestHelp: 'Запросити допомогу',
+    supportWithADonation: 'Допомогти донатом',
 
     projectName: 'Назва проєкту',
     chooseAName: 'Оберіть назву вашого проєкту',

@@ -25,6 +25,8 @@ function App() {
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/help" element={<HelpNow />} />
+          <Route path="/volunteer" element={<HelpNow />} />
+          <Route path="/donate" element={<HelpNow />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

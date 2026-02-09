@@ -1,8 +1,9 @@
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import arrowBack from '../../imgs/Chevron.svg';
 import styles from './BackButton.module.scss';
 import { TranslationKey, useLanguage } from '../../context/LanguageContext';
 import { useDeviceType } from '../../hooks/getDeviceType';
+import { useAppSelector } from '../../hooks/hooks';
 
 const PAGE_KEYS: Record<string, TranslationKey> = {
   '/': 'home',
@@ -16,6 +17,8 @@ const PAGE_KEYS: Record<string, TranslationKey> = {
 export const BackButton = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { currentProject } = useAppSelector((state) => state.projects);
+
   const { t } = useLanguage();
   const device = useDeviceType();
   const isMobile = device === 'mobile';
@@ -45,6 +48,15 @@ export const BackButton = () => {
                 <img src={arrowBack} alt="Back" />
               </div>
               <span className={styles.current}>{t(currentKey) as string}</span>
+            </>
+          )}
+
+          {currentProject && (
+            <>
+              <div className={styles.image}>
+                <img src={arrowBack} alt="Back" />
+              </div>
+              <span className={styles.current}>{currentProject.title}</span>
             </>
           )}
         </span>

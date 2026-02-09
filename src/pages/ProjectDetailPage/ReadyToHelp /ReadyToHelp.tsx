@@ -3,17 +3,15 @@ import { Description } from '../../../components/Description';
 import { TagAndTitle } from '../../../components/TagAndTitle';
 import { useLanguage } from '../../../context/LanguageContext';
 import { useDeviceType } from '../../../hooks/getDeviceType';
-import { useSectionHeader } from '../../../hooks/useSectionHeader';
-import { SECTION_HEADERS } from '../../../locales/sectionHeaders';
 import styles from './ReadyToHelp.module.scss';
 
-export const ReadyToHelp = () => {
+interface ReadyToHelpProps {
+  title: string;
+  description: string;
+}
+
+export const ReadyToHelp = ({ title, description }: ReadyToHelpProps) => {
   const { t } = useLanguage();
-  const { titleKey, titleColor, descriptionKey } = SECTION_HEADERS.readyToHelpSection;
-  const { title, description } = useSectionHeader({
-    titleKey,
-    descriptionKey,
-  });
 
   const device = useDeviceType();
 
@@ -32,11 +30,16 @@ export const ReadyToHelp = () => {
 
   return (
     <div className={styles.container}>
-      <TagAndTitle title={title} titleColor={titleColor} />
+      <TagAndTitle title={title} />
       <Description title={description} />
       <div className={styles.buttons}>
-        <Button text={t('donate')} color="green" buttonWidth={buttonWidth} />
-        <Button text={t('joinAsVolunteer')} color="white" buttonWidth={buttonWidth} />
+        <Button text={t('donate')} color="green" buttonWidth={buttonWidth} to="donate" />
+        <Button
+          text={t('joinAsVolunteer')}
+          color="white"
+          buttonWidth={buttonWidth}
+          to="volunteer"
+        />
       </div>
     </div>
   );

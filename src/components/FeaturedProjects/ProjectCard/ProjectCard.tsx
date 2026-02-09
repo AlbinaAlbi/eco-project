@@ -7,7 +7,7 @@ import { Region } from './Region';
 import { useLanguage } from '../../../context/LanguageContext';
 import { TitleCard } from './TitleCard';
 import { ProgressBar } from './ProgressBar';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 interface ProjectCardProps {
   project: Project;
@@ -15,18 +15,21 @@ interface ProjectCardProps {
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
   const { t } = useLanguage();
+  const location = useLocation();
 
   const { title, imageUrl, city, goalAmount, currentAmount, status } = project;
 
   const cityTranslations = useTranslatedCity(city);
   const regionText = `${cityTranslations} ${t('region')}`;
 
-  console.log(project.id);
-
   const statusText = status === 'ACTIVE' ? 'Active' : 'Inactive';
 
   return (
-    <Link to={`/projects/${project.id}`} className={styles.container}>
+    <Link
+      to={`/projects/${project.id}`}
+      className={styles.container}
+      state={{ from: location.pathname }}
+    >
       <ImgAndStatus status={statusText} url={imageUrl} title={title} />
 
       <div className={styles.inform}>

@@ -4,21 +4,23 @@ import { Icon } from './Icon';
 import { Menu } from './Menu';
 import { NavLinks } from './NavLinks';
 
-export const Header = () => (
-  <div className={styles.containerContentPadding}>
-    <div className={styles.box}>
-      <div className={styles.container}>
-        <Icon />
+export const Header = () => {
+  return (
+    <div className={styles.containerContentPadding}>
+      <div className={styles.box}>
+        <div className={styles.container}>
+          <Icon />
 
-        <div className="desktopOnly">
-          <NavLinks />
+          <div className="desktopOnly">
+            <NavLinks />
+          </div>
+
+          <Menu />
         </div>
-
-        <Menu />
-      </div>
-      <div className="containerMaxWidth">
-        <BackButton />
+        <div className="containerMaxWidth">
+          <BackButton />
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};

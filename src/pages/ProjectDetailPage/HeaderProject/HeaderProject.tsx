@@ -32,13 +32,16 @@ export const HeaderProject = ({ projectDetail }: HeaderProjectProps) => {
 
   const device = useDeviceType();
   let buttonWidth;
+  let bigImgUrl = projectDetail.imageMobile;
 
   switch (device) {
     case 'desktop':
       buttonWidth = '253px';
+      bigImgUrl = projectDetail.imageDesktop;
       break;
     case 'tablet':
       buttonWidth = '248px';
+      bigImgUrl = projectDetail.imageTablet;
       break;
     default:
       buttonWidth = '263px';
@@ -66,13 +69,13 @@ export const HeaderProject = ({ projectDetail }: HeaderProjectProps) => {
         />
 
         <div className={styles.buttons}>
-          <Button text={t('explore')} buttonWidth={buttonWidth} />
-          <Button text={t('volunteer')} color={'white'} buttonWidth={buttonWidth} />
+          <Button text={t('supportWithADonation')} buttonWidth={buttonWidth} to="donate" />
+          <Button text={t('volunteer')} color={'white'} buttonWidth={buttonWidth} to="volunteer" />
         </div>
       </div>
 
       <div className={styles.image}>
-        <Image img={projectDetail.imageUrl} alt={projectDetail.title} />
+        <Image img={bigImgUrl} alt={projectDetail.title} />
       </div>
     </div>
   );

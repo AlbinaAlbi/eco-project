@@ -20,4 +20,7 @@ export type Project = {
   progress: number;
   readyToHelpTitle: string;
   readyToHelpDescription: string;
+  imageDesktop: string;
+  imageTablet: string;
+  imageMobile: string;
 };

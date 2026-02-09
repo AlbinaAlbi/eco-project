@@ -27,7 +27,7 @@ export const CardLearnMore = ({ title, description }: CardLearnMoreProps) => {
       <div className={styles.content}>
         <h4>{renderText(title)}</h4>
         <div className="textBody">{renderText(description)}</div>
-        {onDesktop && <Button text={t('explore')} color="white" buttonWidth="285px" to="/help" />}
+        {onDesktop && <Button text={t('about')} color="white" buttonWidth="285px" to="/about" />}
       </div>
     </div>
   );

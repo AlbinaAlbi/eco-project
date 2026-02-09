@@ -3,7 +3,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: $size-312;
+  height: auto;
   background-color: $c-button-primary;
   border-radius: $size-xl;
   padding: $size-xl;
@@ -11,9 +11,6 @@
   height: 100%;
   justify-content: space-between;
 
-  @include on-desktop {
-    height: $size-352;
-  }
 }
 
 .container:nth-child(3) {
@@ -43,7 +40,6 @@
 }
 
 .description {
-  margin-top: auto;
   padding-top: $size-xs;
   color: $color-gray-700;
 }
