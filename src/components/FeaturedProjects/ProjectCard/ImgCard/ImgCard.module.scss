@@ -1,0 +1,15 @@
+@import '../../../../styles';
+
+.container {
+  height: $size-327;
+  width: 100%;
+  position: relative;
+
+  @include on-tablet {
+    height: $size-336;
+  }
+
+  @include on-desktop {
+    height: $size-387;
+  }
+}

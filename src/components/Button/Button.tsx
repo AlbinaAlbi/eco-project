@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ButtonProps } from '../../types/ButtonProps';
 import styles from './Button.module.scss';
 import { useSidebar } from '../../context/SidebarContext';
@@ -16,25 +16,17 @@ export const Button = ({
   const classNameContainer = `${styles.container}`;
   const classNameButton = `textButton ${backgroundColor ? styles[color] : styles.noneBackground}`;
   const { closeSidebar } = useSidebar();
+  const navigate = useNavigate();
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (onClick) {
-      onClick();
-    }
-
+  const handleClick = () => {
     scrollToTop();
     closeSidebar();
-  };
+    console.log('navigate to:', to);
 
-  if (to) {
-    return (
-      <Link to={to} className={classNameContainer}>
-        <button className={classNameButton} onClick={handleClick} style={{ width: buttonWidth }}>
-          {text}
-        </button>
-      </Link>
-    );
-  }
+    if (to) {
+      navigate(to);
+    }
+  };
 
   return (
     <div className={classNameContainer}>

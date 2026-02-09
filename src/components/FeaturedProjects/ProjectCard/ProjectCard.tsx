@@ -2,12 +2,13 @@ import { useTranslatedCity } from '../../../hooks/useTranslatedCity';
 import { Project } from '../../../types/Project';
 import { Button } from '../../Button';
 import styles from './ProjectCard.module.scss';
-import { ImgAndStatus } from './ImgAndStatus';
-import { Region } from './Region';
+import { ImgCard } from './ImgCard';
 import { useLanguage } from '../../../context/LanguageContext';
 import { TitleCard } from './TitleCard';
 import { ProgressBar } from './ProgressBar';
 import { Link, useLocation } from 'react-router-dom';
+import { Region } from './Region';
+import { StatusCard } from './StatusCard/StatusCard';
 
 interface ProjectCardProps {
   project: Project;
@@ -17,7 +18,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   const { t } = useLanguage();
   const location = useLocation();
 
-  const { title, imageUrl, city, goalAmount, currentAmount, status } = project;
+  const { title, city, goalAmount, currentAmount, status, imageDesktop } = project;
 
   const cityTranslations = useTranslatedCity(city);
   const regionText = `${cityTranslations} ${t('region')}`;
@@ -30,10 +31,13 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       className={styles.container}
       state={{ from: location.pathname }}
     >
-      <ImgAndStatus status={statusText} url={imageUrl} title={title} />
+      <ImgCard url={imageDesktop} title={title} />
 
       <div className={styles.inform}>
-        <Region regionText={regionText} />
+        <div className={styles.regionAndStatus}>
+          <Region regionText={regionText} />
+          <StatusCard status={statusText} />
+        </div>
 
         <TitleCard titleText={title} />
         <ProgressBar goalAmount={goalAmount} currentAmount={currentAmount} />

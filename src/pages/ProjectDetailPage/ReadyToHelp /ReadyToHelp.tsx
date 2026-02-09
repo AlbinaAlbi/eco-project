@@ -33,12 +33,12 @@ export const ReadyToHelp = ({ title, description }: ReadyToHelpProps) => {
       <TagAndTitle title={title} />
       <Description title={description} />
       <div className={styles.buttons}>
-        <Button text={t('donate')} color="green" buttonWidth={buttonWidth} to="donate" />
+        <Button text={t('donate')} color="green" buttonWidth={buttonWidth} to="/donate" />
         <Button
           text={t('joinAsVolunteer')}
           color="white"
           buttonWidth={buttonWidth}
-          to="volunteer"
+          to="/volunteer"
         />
       </div>
     </div>

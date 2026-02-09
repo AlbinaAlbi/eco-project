@@ -11,6 +11,7 @@ import { Contacts } from './pages/Contacts';
 import { AboutUs } from './pages/AboutUs';
 import { Sidebar } from './components/Sidebar';
 import { HelpNow } from './pages/HelpNow';
+import { BecomeAVolunteer } from './pages/BecomeAVolunteer';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/help" element={<HelpNow />} />
-          <Route path="/volunteer" element={<HelpNow />} />
+          <Route path="/volunteer" element={<BecomeAVolunteer />} />
           <Route path="/donate" element={<HelpNow />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />

@@ -69,8 +69,8 @@ export const HeaderProject = ({ projectDetail }: HeaderProjectProps) => {
         />
 
         <div className={styles.buttons}>
-          <Button text={t('supportWithADonation')} buttonWidth={buttonWidth} to="donate" />
-          <Button text={t('volunteer')} color={'white'} buttonWidth={buttonWidth} to="volunteer" />
+          <Button text={t('explore')} buttonWidth={buttonWidth} to="/projects" />
+          <Button text={t('volunteer')} color={'white'} buttonWidth={buttonWidth} to="/volunteer" />
         </div>
       </div>
 

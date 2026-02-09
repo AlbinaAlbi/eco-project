@@ -1,0 +1,51 @@
+@import '../../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $size-24;
+  background-color: $color-gray-background;
+  border-radius: $size-40;
+  padding: $size-xl;
+  margin: $size-24 0 $size-20;
+  align-items: start;
+
+  @include on-tablet {
+    margin: $size-2xl 0 $size-24;
+  }
+
+  @include on-desktop {
+    margin: 0;
+    width: 30%;
+    text-align: left;
+  }
+}
+
+.container h4 {
+  margin: 0;
+}
+
+.informContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $size-s;
+
+  @include on-desktop {
+    gap: $size-m;
+  }
+}
+
+.informContainer h5 {
+  font-weight: 300;
+}
+
+.boxInform {
+  display: flex;
+  flex-direction: column;
+  gap: $size-xs;
+  text-align: start;
+}
+
+.description {
+  color: $color-gray-600;
+}
