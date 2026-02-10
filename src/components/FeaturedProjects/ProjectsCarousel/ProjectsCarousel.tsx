@@ -27,13 +27,14 @@ export const ProjectsCarousel = ({ projects }: ProjectsCarouselProps) => {
       <Swiper
         modules={[Navigation, Autoplay, Pagination]}
         spaceBetween={16}
+        speed={900}
         slidesPerView={1}
         onSwiper={(swiper: SwiperClass) => (swiperRef.current = swiper)}
         onSlideChange={(swiper: SwiperClass) => setActiveIndex(swiper.realIndex)}
         loop={!singleSlide}
         grabCursor={!singleSlide}
         centeredSlides={singleSlide}
-        autoplay={!singleSlide ? { delay: 3000, disableOnInteraction: false } : false} // отключаем autoplay
+        autoplay={!singleSlide ? { delay: 4000, disableOnInteraction: false } : false} // отключаем autoplay
         navigation={!singleSlide}
         breakpoints={{
           768: {
