@@ -7,14 +7,18 @@ import { RequestListProps } from '../../types/RequestListProps';
 import styles from './RequestSupport.module.scss';
 import { RequestInclude } from '../RequestInclude';
 import { FormForBecome } from '../FormForBecome';
+import { ProjectDescribe } from '../ProjectDescribe';
 
 interface RequestSupportProps {
   requestList: RequestListProps[];
   section?: string;
 }
 export const RequestSupport = ({ requestList, section }: RequestSupportProps) => {
-  const { tagKey, titleKey, descriptionKey, tagColor, titleColor } =
-    section === 'request' ? SECTION_HEADERS.request : SECTION_HEADERS.requestInclude;
+  const isRequest = section === 'request';
+  const { tagKey, titleKey, descriptionKey, tagColor, titleColor } = isRequest
+    ? SECTION_HEADERS.request
+    : SECTION_HEADERS.requestInclude;
+
   const { tag, title, description } = useSectionHeader({
     tagKey,
     titleKey,
@@ -35,7 +39,7 @@ export const RequestSupport = ({ requestList, section }: RequestSupportProps) =>
         />
         <Description title={description} />
         {!isDesktop && <RequestInclude list={requestList} />}
-        <FormForBecome />
+        {isRequest ? <FormForBecome /> : <ProjectDescribe />}
       </div>
       {isDesktop && <RequestInclude list={requestList} />}
     </div>
