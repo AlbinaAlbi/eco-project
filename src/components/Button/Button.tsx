@@ -18,12 +18,17 @@ export const Button = ({
   const { closeSidebar } = useSidebar();
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    scrollToTop();
-    closeSidebar();
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    onClick?.(e);
+
+    if (type !== 'submit') {
+      e.preventDefault();
+    }
 
     if (to) {
       navigate(to);
+      scrollToTop();
+      closeSidebar();
     }
   };
 

@@ -1,4 +1,4 @@
-import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import arrowBack from '../../imgs/Chevron.svg';
 import styles from './BackButton.module.scss';
 import { TranslationKey, useLanguage } from '../../context/LanguageContext';
