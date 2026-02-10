@@ -8,7 +8,7 @@ import { FAQ } from '../HomePage/FAQ';
 import styles from './BecomeAVolunteer.module.scss';
 import { TransparentProcess } from '../../components/TransparentProcess';
 import { VolunteerHeader } from '../../components/VolunteerHeader';
-import { useQuestionsVolunteeringList } from '../../hooks/useQuestionCommomList copy';
+import { useQuestionsVolunteeringList } from '../../hooks/useQuestionsVolunteeringList';
 import FAQImg from '../../imgs/nature.jpg';
 import { useBecomeAVolunteer } from '../../hooks/useBecomeAVolunteer';
 
