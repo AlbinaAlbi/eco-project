@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { useDeviceType } from '../../hooks/getDeviceType';
 import styles from './FormForBecome.module.scss';
 import { sendContact } from '../../api/contacts';
 import { Button } from '../Button';

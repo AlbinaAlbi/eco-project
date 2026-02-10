@@ -2,11 +2,15 @@ import { StepsList } from '../StepsList';
 import { TagAndTitle } from '../TagAndTitle';
 import { useDeviceType } from '../../hooks/getDeviceType';
 import { useSectionHeader } from '../../hooks/useSectionHeader';
-import { useTransparentProcess } from '../../hooks/useTransparentProcess';
 import { SECTION_HEADERS } from '../../locales/sectionHeaders';
 import styles from './TransparentProcess.module.scss';
+import { StepsListProps } from '../../types/StepsListProps';
 
-export const TransparentProcess = () => {
+interface TransparentProcessProps {
+  stepsList: StepsListProps[];
+}
+
+export const TransparentProcess = ({ stepsList }: TransparentProcessProps) => {
   const { tagKey, titleKey, tagColor, titleColor } = SECTION_HEADERS.transparentProcess;
   const { tag, title } = useSectionHeader({
     tagKey,
@@ -14,8 +18,6 @@ export const TransparentProcess = () => {
   });
   const device = useDeviceType();
   const isLeft = device === 'mobile' ? false : true;
-
-  const stepsList = useTransparentProcess();
 
   return (
     <div className={`containerContentPadding containerMaxWidth ${styles.container}`}>

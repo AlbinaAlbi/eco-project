@@ -10,11 +10,13 @@ import { TransparentProcess } from '../../components/TransparentProcess';
 import { VolunteerHeader } from '../../components/VolunteerHeader';
 import { useQuestionsVolunteeringList } from '../../hooks/useQuestionCommomList copy';
 import FAQImg from '../../imgs/nature.jpg';
+import { useBecomeAVolunteer } from '../../hooks/useBecomeAVolunteer';
 
 export const BecomeAVolunteer = () => {
   const questionList = useQuestionsVolunteeringList();
   const { loading, error } = useAppSelector((state) => state.projects);
   const requestList = useRequestShouldInclude();
+  const stepsList = useBecomeAVolunteer();
 
   if (loading) return <Loader />;
   if (error) return <ErrorElement message={error} />;
@@ -23,7 +25,7 @@ export const BecomeAVolunteer = () => {
     <div className={styles.container}>
       <VolunteerHeader />
       <div className={styles.transparent}>
-        <TransparentProcess />
+        <TransparentProcess stepsList={stepsList} />
       </div>
       <RequestSupport requestList={requestList} />
       <div className="containerMaxWidth containerContentPadding">

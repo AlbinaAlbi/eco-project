@@ -1,15 +1,9 @@
 import { useLanguage } from '../context/LanguageContext';
 import map from '../imgs/Map.svg';
 import info from '../imgs/Info.svg';
+import { StepsListProps } from '../types/StepsListProps';
 
-interface TransparentProcessListProps {
-  id: number;
-  titleKey: string;
-  descriptionKey: string;
-  icon: string;
-}
-
-export const useTransparentProcessList = (): TransparentProcessListProps[] => {
+export const useTransparentProcessList = (): StepsListProps[] => {
   const { t } = useLanguage();
 
   const titleFirst = t('worksSteps.step1Title');

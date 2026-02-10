@@ -3,7 +3,7 @@ import map from '../imgs/Map.svg';
 import info from '../imgs/Info.svg';
 import { StepsListProps } from '../types/StepsListProps';
 
-export const useStepsList = (): StepsListProps[] => {
+export const useHomeStepsList = (): StepsListProps[] => {
   const { t } = useLanguage();
 
   const titleFirst = t('worksSteps.step1Title');

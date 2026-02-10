@@ -759,26 +759,31 @@ export const translations = {
 
     fillOut: {
       title: 'Fill out the form',
-      description:
+      descriptionProvide:
         'Provide all the necessary details about your project, including title, description, goal, category, and contact email. Attach images or additional materials if available',
     },
 
     review: {
       title: 'Review by admin',
-      description:
+      descriptionReviews:
         'Our team reviews your submission to make sure all information is complete and your project meets our guidelines. We may contact you for additional details if needed',
+      descriptionInformation: 'Your information is securely sent to the organizer of this project',
     },
 
     project: {
       title: 'Project published',
-      description:
+      descriptionApproved:
         'Once approved, your project will be published on the platform and visible to everyone. Supporters can explore and donate to your project during its active period',
+      descriptionProject:
+        'The project owner verifies your email and contacts you to confirm your participation',
     },
 
     automatic: {
       title: 'Automatic expiry',
-      description:
+      descriptionAutomatic:
         'Each project has a limited visibility period (e.g., 2 weeks to 1 month). After this time, it will be automatically removed from the platform to keep the content fresh and prevent inactive projects from lingering',
+      descriptionConfirmed:
+        'Once confirmed, you can join the project and start making a positive impact',
     },
 
     requestIncludeTitle: 'Your request should include:',

@@ -5,7 +5,7 @@ import eye from '../imgs/eye.svg';
 import timer from '../imgs/timer.svg';
 import { StepsListProps } from '../types/StepsListProps';
 
-export const useTransparentProcess = (): StepsListProps[] => {
+export const useBecomeAVolunteer = (): StepsListProps[] => {
   const { t } = useLanguage();
 
   const titleFirst = t('fillOut.title');
@@ -13,15 +13,15 @@ export const useTransparentProcess = (): StepsListProps[] => {
   const iconFirst = folder;
 
   const titleSecond = t('review.title');
-  const descriptionSecond = t('review.descriptionReviews');
+  const descriptionSecond = t('review.descriptionInformation');
   const iconSecond = safe;
 
   const titleThird = t('project.title');
-  const descriptionThird = t('project.descriptionApproved');
+  const descriptionThird = t('project.descriptionProject');
   const iconThird = eye;
 
   const titleFourth = t('automatic.title');
-  const descriptionFourth = t('automatic.descriptionAutomatic');
+  const descriptionFourth = t('automatic.descriptionConfirmed');
   const iconFourth = timer;
 
   return [

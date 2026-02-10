@@ -14,11 +14,13 @@ import { useQuestion } from '../../hooks/useQuestion';
 import { Loader } from '../../components/Loader';
 import { ErrorElement } from '../../components/ErrorElement';
 import FAQImg from '../../imgs/FAQImg.png';
+import { useHomeStepsList } from '../../hooks/useHomeStepsList copy';
 
 export const HomePage = () => {
   const dispatch = useAppDispatch();
   const { projects, loading, error } = useAppSelector((state) => state.projects);
   const questionList = useQuestion();
+  const homeStepsList = useHomeStepsList();
 
   useEffect(() => {
     dispatch(fetchProjectsThunk());
@@ -39,7 +41,7 @@ export const HomePage = () => {
       </section>
 
       <section className={styles.gray}>
-        <HowItWorks />
+        <HowItWorks stepsList={homeStepsList} />
       </section>
 
       <section className={styles.section}>

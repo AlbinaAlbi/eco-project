@@ -11,11 +11,13 @@ import { Support } from '../../components/Support';
 import { useRequestList } from '../../hooks/useRequestList';
 import { TransparentProcess } from '../../components/TransparentProcess';
 import beautiful from '../../imgs/beautiful.jpg';
+import { useTransparentProcess } from '../../hooks/useTransparentProcess';
 
 export const HelpNow = () => {
   const questionList = useQuestionCommomList();
   const { loading, error } = useAppSelector((state) => state.projects);
   const requestList = useRequestList();
+  const stepsList = useTransparentProcess();
 
   if (loading) return <Loader />;
   if (error) return <ErrorElement message={error} />;
@@ -24,7 +26,7 @@ export const HelpNow = () => {
     <div className={styles.container}>
       <StartYourProject />
       <div className={styles.transparent}>
-        <TransparentProcess />
+        <TransparentProcess stepsList={stepsList} />
       </div>
       <Support />
       <RequestSupport requestList={requestList} section={'request'} />
