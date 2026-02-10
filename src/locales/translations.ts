@@ -48,6 +48,8 @@ export const translations = {
     enterEmail: 'Enter your email',
     eGKyiv: 'e.g., Kyiv',
     messageOptional: 'Message (optional)',
+    evenNature: 'Even nature couldn’t find this page',
+    goHome: 'Go home',
 
     projectName: 'Project name',
     chooseAName: 'Choose a name of your project',
@@ -973,6 +975,8 @@ export const translations = {
     enterEmail: 'Введіть вашу електронну пошту',
     eGKyiv: 'наприклад, Київ',
     messageOptional: 'Повідомлення (необовʼязково)',
+    evenNature: 'Навіть природа не змогла знайти цю сторінку',
+    goHome: 'На головну',
 
     projectName: 'Назва проєкту',
     chooseAName: 'Оберіть назву вашого проєкту',

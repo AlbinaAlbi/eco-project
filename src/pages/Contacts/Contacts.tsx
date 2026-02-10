@@ -9,7 +9,7 @@ export const Contacts = () => {
   const { loading, error } = useAppSelector((state) => state.projects);
 
   if (loading) return <Loader />;
-  if (error) return <ErrorElement message={error} />;
+  if (error) return <ErrorElement />;
 
   return (
     <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>

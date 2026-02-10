@@ -38,7 +38,7 @@ export const ProjectsPage = () => {
   console.log(filteredProjects);
 
   if (loading) return <Loader />;
-  if (error) return <ErrorElement message={error} />;
+  if (error) return <ErrorElement />;
 
   return (
     <div className={styles.container}>

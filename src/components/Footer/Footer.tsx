@@ -3,7 +3,7 @@ import { BottomFooter } from './BottomFooter';
 import { CardNav } from './CardNav';
 import { EmailInput } from './EmailInput';
 import styles from './Footer.module.scss';
-import logoImg from '../../imgs/EcoLeaf..svg';
+import logoImg from '../../imgs/EcoLeafBig.svg';
 
 export const Footer = () => {
   const footerList = useBlockFooter();

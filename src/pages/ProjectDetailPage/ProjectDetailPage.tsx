@@ -30,7 +30,7 @@ export const ProjectDetailPage = () => {
   }, [dispatch, id]);
 
   if (loading) return <Loader text="Загрузка проектов..." duration={1000} />;
-  if (error) return <ErrorElement message={error} />;
+  if (error) return <ErrorElement />;
   if (!currentProject) return <p>Проект не знайдено</p>;
 
   return (
