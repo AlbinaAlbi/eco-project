@@ -3,11 +3,12 @@ import { Button } from '../../../components/Button';
 import { useLanguage } from '../../../context/LanguageContext';
 import { api } from '../../../api/api';
 import styles from './MessageBlock.module.scss';
+import { Message } from '../../../types/Message';
 
 export const MessageBlock = () => {
   const { t } = useLanguage();
 
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState<Message>({ name: '', email: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
@@ -21,7 +22,7 @@ export const MessageBlock = () => {
     setLoading(true);
     setSuccess(false);
     setError('');
-
+    console.log(form);
     try {
       await api.post('/contacts', form);
       setSuccess(true);
@@ -62,7 +63,12 @@ export const MessageBlock = () => {
         required
       />
 
-      <Button text={loading ? t('sending') : t('sendMessage')} color={'green'} buttonWidth="100%" />
+      <Button
+        text={loading ? t('sending') : t('sendMessage')}
+        color={'green'}
+        buttonWidth="100%"
+        type="submit"
+      />
 
       {success && <p style={{ color: 'green' }}>Повідомлення відправлено!</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}

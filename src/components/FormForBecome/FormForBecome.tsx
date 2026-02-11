@@ -72,7 +72,7 @@ export const FormForBecome = () => {
           type="text"
           name="city"
           placeholder={t('eGKyiv')}
-          value={form.email}
+          value={form.city}
           onChange={handleChange}
           required
         />
