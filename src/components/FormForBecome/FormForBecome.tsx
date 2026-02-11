@@ -57,7 +57,7 @@ export const FormForBecome = () => {
         <div className={styles.title}>{t('contactEmail')}</div>
         <input
           className="textBody"
-          type="email"
+          type="text"
           name="email"
           placeholder={t('enterEmail')}
           value={form.email}
@@ -69,8 +69,8 @@ export const FormForBecome = () => {
         <div className={styles.title}>{t('cityLocation')}</div>
         <input
           className="textBody"
-          type="email"
-          name="email"
+          type="text"
+          name="city"
           placeholder={t('eGKyiv')}
           value={form.email}
           onChange={handleChange}

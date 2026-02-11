@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import styles from './ProjectCategory.module.scss';
 import chevron from '../../imgs/Chevron.svg';
@@ -19,6 +19,7 @@ export const ProjectCategory = ({
 }: ProjectCategoryProps) => {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   const options = [
     { value: 'environment', label: t('categoryFilter.environment') },
@@ -35,8 +36,22 @@ export const ProjectCategory = ({
     setOpen(false);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className={styles.choose}>
+    <div className={styles.choose} ref={wrapperRef}>
       <div className="textSecondary">{textTranslate}</div>
 
       <div

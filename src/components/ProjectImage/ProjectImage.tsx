@@ -44,12 +44,14 @@ export const ProjectImage = ({ image, onChange }: ProjectImageProps) => {
         onChange={onChange}
       />
 
-      <Button
-        text={t('uploadImage')}
-        color="white"
-        buttonWidth={buttonWidth}
-        onClick={handleButtonClick}
-      />
+      <div className={styles.button}>
+        <Button
+          text={t('uploadImage')}
+          color="white"
+          buttonWidth={buttonWidth}
+          onClick={handleButtonClick}
+        />
+      </div>
 
       {image && (
         <img
