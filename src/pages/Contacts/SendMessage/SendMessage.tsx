@@ -6,6 +6,7 @@ import { SECTION_HEADERS } from '../../../locales/sectionHeaders';
 import styles from './SendMessage.module.scss';
 import greenField from '../../../imgs/green-field.jpg';
 import { MessageBlock } from '../MessageBlock';
+import { useDeviceType } from '../../../hooks/getDeviceType';
 
 export const SendMessage = () => {
   const { titleKey, descriptionKey, titleColor } = SECTION_HEADERS.message;
@@ -13,11 +14,13 @@ export const SendMessage = () => {
     titleKey,
     descriptionKey,
   });
+  const device = useDeviceType();
+  const isMobile = device === 'mobile';
 
   return (
     <div className={styles.container}>
       <div className={styles.firstPart}>
-        <TagAndTitle title={title} titleColor={titleColor} />
+        <TagAndTitle title={title} titleColor={titleColor} alignLeft={isMobile ? false : true} />
 
         <Description title={description} />
 

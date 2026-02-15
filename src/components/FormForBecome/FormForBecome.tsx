@@ -32,8 +32,12 @@ export const FormForBecome = () => {
       await sendContact(form);
       setSuccess(true);
       setForm({ name: '', email: '', city: '', message: '' });
+
+      setTimeout(() => setSuccess(false), 3000);
     } catch (err: any) {
       setError(err.message || 'Помилка при відправці');
+
+      setTimeout(() => setError(''), 3000);
     } finally {
       setLoading(false);
     }
@@ -88,8 +92,9 @@ export const FormForBecome = () => {
           required
         />
       </div>
-      <Button text={t('submitRequest')} buttonWidth="100%" />
-      {success && <p className={styles.success}>Сообщение отправлено!</p>}
+      <Button text={t('submitRequest')} buttonWidth="100%" type="submit" />
+      {success && <p style={{ color: 'green' }}>{t('messageSent')}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </form>
   );
 };

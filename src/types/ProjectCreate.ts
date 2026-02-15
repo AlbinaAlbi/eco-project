@@ -6,5 +6,5 @@ export type ProjectCreate = {
   contactEmail: string;
   goalAmount: number | string;
   duration: string;
-  image?: File | null;
+  imageUrl: string;
 };

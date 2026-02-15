@@ -50,6 +50,7 @@ export const translations = {
     messageOptional: 'Message (optional)',
     evenNature: 'Even nature couldn’t find this page',
     goHome: 'Go home',
+    messageSent: 'Message sent!',
 
     projectName: 'Project name',
     chooseAName: 'Choose a name of your project',
@@ -977,6 +978,7 @@ export const translations = {
     messageOptional: 'Повідомлення (необовʼязково)',
     evenNature: 'Навіть природа не змогла знайти цю сторінку',
     goHome: 'На головну',
+    messageSent: 'Повідомлення відправлено!',
 
     projectName: 'Назва проєкту',
     chooseAName: 'Оберіть назву вашого проєкту',

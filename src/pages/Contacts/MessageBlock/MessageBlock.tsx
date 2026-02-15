@@ -22,7 +22,7 @@ export const MessageBlock = () => {
     setLoading(true);
     setSuccess(false);
     setError('');
-    console.log(form);
+
     try {
       await api.post('/contacts', form);
       setSuccess(true);
@@ -70,7 +70,7 @@ export const MessageBlock = () => {
         type="submit"
       />
 
-      {success && <p style={{ color: 'green' }}>Повідомлення відправлено!</p>}
+      {success && <p style={{ color: 'green' }}>{t('messageSent')}</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </form>
   );

@@ -10,6 +10,7 @@ import { ProjectCreate } from '../../types/ProjectCreate';
 import { Agree } from '../Agree';
 import { ProjectDuration } from '../ProjectDuration';
 import { ProjectImage } from '../ProjectImage';
+import { uploadFileAndGetUrl } from '../../hooks/uploadFileAndGetUrl';
 
 export interface ProjectFormState {
   projectName: string;
@@ -19,12 +20,13 @@ export interface ProjectFormState {
   contactEmail: string;
   fundingGoal: string;
   projectDuration: string;
-  image: File | null;
+  imageUrl: '';
 }
 
 export const ProjectDescribe = () => {
   const { t } = useLanguage();
   const device = useDeviceType();
+  const [previewFile, setPreviewFile] = useState<File | null>(null); // для прев'ю
   const [form, setForm] = useState<ProjectCreate>({
     title: '',
     shortDescription: '',
@@ -33,14 +35,33 @@ export const ProjectDescribe = () => {
     contactEmail: '',
     goalAmount: '',
     duration: '',
-    image: null,
+    imageUrl: '',
   });
+
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setPreviewFile(file);
+
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const base64String = reader.result as string; // это строка
+      setForm((prev) => ({ ...prev, imageUrl: base64String }));
+    };
+    reader.readAsDataURL(file);
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     const name = e.target.name as keyof ProjectCreate;
-    const value = e.target.value;
+    let value: string | number = e.target.value;
+
+    if (name === 'goalAmount') {
+      value = Number(value);
+    }
+
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -64,15 +85,6 @@ export const ProjectDescribe = () => {
       console.error(err);
       alert('Ошибка при создании проекта.');
     }
-  };
-
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
-
-    setForm((prev) => ({
-      ...prev,
-      image: file,
-    }));
   };
 
   return (
@@ -127,7 +139,7 @@ export const ProjectDescribe = () => {
       />
 
       <ProjectDuration formDuration={form.duration} setForm={setForm} />
-      <ProjectImage image={form.image ?? null} onChange={handleImageChange} />
+      <ProjectImage image={previewFile} onChange={handleImageChange} />
       <Agree />
       <Button text={t('submitRequest')} color="green" buttonWidth={buttonWidth} type="submit" />
     </form>
