@@ -10,13 +10,13 @@ import { TransparentProcess } from '../../components/TransparentProcess';
 import { VolunteerHeader } from '../../components/VolunteerHeader';
 import { useQuestionsVolunteeringList } from '../../hooks/useQuestionsVolunteeringList';
 import FAQImg from '../../imgs/nature.jpg';
-import { useBecomeAVolunteer } from '../../hooks/useBecomeAVolunteer';
+import { useBecomeVolunteer } from '../../hooks/useBecomeVolunteer';
 
 export const BecomeAVolunteer = () => {
   const questionList = useQuestionsVolunteeringList();
   const { loading, error } = useAppSelector((state) => state.projects);
   const requestList = useRequestShouldInclude();
-  const stepsList = useBecomeAVolunteer();
+  const stepsList = useBecomeVolunteer();
 
   if (loading) return <Loader />;
   if (error) return <ErrorElement />;

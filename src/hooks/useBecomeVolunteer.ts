@@ -5,7 +5,7 @@ import eye from '../imgs/eye.svg';
 import timer from '../imgs/timer.svg';
 import { StepsListProps } from '../types/StepsListProps';
 
-export const useBecomeAVolunteer = (): StepsListProps[] => {
+export const useBecomeVolunteer = (): StepsListProps[] => {
   const { t } = useLanguage();
 
   const titleFirst = t('fillOut.title');

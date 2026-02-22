@@ -14,7 +14,7 @@ import { useQuestion } from '../../hooks/useQuestion';
 import { Loader } from '../../components/Loader';
 import { ErrorElement } from '../../components/ErrorElement';
 import FAQImg from '../../imgs/FAQImg.png';
-import { useHomeStepsList } from '../../hooks/useHomeStepsList copy';
+import { useHomeStepsList } from '../../hooks/useHomeStepsList';
 
 export const HomePage = () => {
   const dispatch = useAppDispatch();
