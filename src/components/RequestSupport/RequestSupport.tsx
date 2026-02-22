@@ -1,6 +1,6 @@
 import { Description } from '../Description';
 import { TagAndTitle } from '../TagAndTitle';
-import { useDeviceType } from '../../hooks/getDeviceType';
+import { useDeviceType } from '../../utils/getDeviceType';
 import { useSectionHeader } from '../../hooks/useSectionHeader';
 import { SECTION_HEADERS } from '../../locales/sectionHeaders';
 import { RequestListProps } from '../../types/RequestListProps';

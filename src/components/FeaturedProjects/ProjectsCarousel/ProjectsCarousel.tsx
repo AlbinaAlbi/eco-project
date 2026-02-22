@@ -7,7 +7,7 @@ import { Swiper as SwiperClass } from 'swiper/types';
 import styles from './ProjectsCarousel.module.scss';
 import { ProjectCard } from '../ProjectCard';
 import { CarouselElement } from './CarouselElement';
-import { useDeviceType } from '../../../hooks/getDeviceType';
+import { useDeviceType } from '../../../utils/getDeviceType';
 import { useRef, useState } from 'react';
 import { Project } from '../../../types/Project';
 

@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { ButtonProps } from '../../types/ButtonProps';
 import styles from './Button.module.scss';
 import { useSidebar } from '../../context/SidebarContext';
-import { scrollToTop } from '../../hooks/scrollToTop';
+import { scrollToTop } from '../../utils/scrollToTop';
 
 export const Button = ({
   text,

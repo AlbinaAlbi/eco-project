@@ -3,7 +3,7 @@ import { SECTION_HEADERS } from '../../../locales/sectionHeaders';
 import { TagAndTitle } from '../../../components/TagAndTitle';
 import styles from './HowItWorks.module.scss';
 import { StepsList } from '../../../components/StepsList';
-import { useDeviceType } from '../../../hooks/getDeviceType';
+import { useDeviceType } from '../../../utils/getDeviceType';
 import { StepsListProps } from '../../../types/StepsListProps';
 
 interface HowItWorksProps {

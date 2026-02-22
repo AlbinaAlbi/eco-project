@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styles from './CardLearnMore.module.scss';
 import arrow from '../../../../imgs/Arrow.svg';
-import { useDeviceType } from '../../../../hooks/getDeviceType';
+import { useDeviceType } from '../../../../utils/getDeviceType';
 import { useRenderText } from '../../../../hooks/useRenderText';
 import { Button } from '../../../../components/Button';
 import { useLanguage } from '../../../../context/LanguageContext';

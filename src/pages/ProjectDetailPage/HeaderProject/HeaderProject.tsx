@@ -5,7 +5,7 @@ import { Status } from '../../../components/Status';
 import { TagAndTitle } from '../../../components/TagAndTitle';
 import { VolunteersNeeded } from '../../../components/VolunteersNeeded';
 import { TranslationKey, useLanguage } from '../../../context/LanguageContext';
-import { useDeviceType } from '../../../hooks/getDeviceType';
+import { useDeviceType } from '../../../utils/getDeviceType';
 import { CATEGORY_MAP } from '../../../hooks/useFilter';
 import { useTranslatedCity } from '../../../hooks/useTranslatedCity';
 import styles from './HeaderProject.module.scss';

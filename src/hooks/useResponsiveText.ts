@@ -1,5 +1,5 @@
 import { TranslationKey, useLanguage } from '../context/LanguageContext';
-import { DeviceType, useDeviceType } from './getDeviceType';
+import { DeviceType, useDeviceType } from '../utils/getDeviceType';
 
 export const useTranslatedText = <K extends TranslationKey>(key: K) => {
   const { t } = useLanguage();

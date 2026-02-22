@@ -1,5 +1,5 @@
 import { useLanguage } from '../../context/LanguageContext';
-import { useDeviceType } from '../../hooks/getDeviceType';
+import { useDeviceType } from '../../utils/getDeviceType';
 import { useSectionHeader } from '../../hooks/useSectionHeader';
 import { SECTION_HEADERS } from '../../locales/sectionHeaders';
 import { Button } from '../Button';

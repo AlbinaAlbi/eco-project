@@ -6,7 +6,7 @@ import styles from './ProjectsPage.module.scss';
 import { SelectedFilters } from '../../types/SelectedFilters';
 import { FilterElement } from '../../components/FilterElement';
 import { ProjectsList } from '../../components/ProjectsList';
-import { filterProjects } from '../../hooks/filterProjects';
+import { filterProjects } from '../../utils/filterProjects';
 import { FindAProject } from './FindAProject';
 import { Loader } from '../../components/Loader';
 import { ErrorElement } from '../../components/ErrorElement';

@@ -2,7 +2,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import arrowBack from '../../imgs/Chevron.svg';
 import styles from './BackButton.module.scss';
 import { TranslationKey, useLanguage } from '../../context/LanguageContext';
-import { useDeviceType } from '../../hooks/getDeviceType';
+import { useDeviceType } from '../../utils/getDeviceType';
 import { useAppSelector } from '../../hooks/hooks';
 
 const PAGE_KEYS: Record<string, TranslationKey> = {

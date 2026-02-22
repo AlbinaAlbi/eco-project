@@ -1,5 +1,3 @@
-import { filterProjects } from '../hooks/filterProjects';
-import { SelectedFilters } from '../types/SelectedFilters';
 import { createProject } from './factories/project.factory';
 
 jest.mock('../utils/useFilter', () => ({

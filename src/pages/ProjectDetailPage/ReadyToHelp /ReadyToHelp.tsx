@@ -2,7 +2,7 @@ import { Button } from '../../../components/Button';
 import { Description } from '../../../components/Description';
 import { TagAndTitle } from '../../../components/TagAndTitle';
 import { useLanguage } from '../../../context/LanguageContext';
-import { useDeviceType } from '../../../hooks/getDeviceType';
+import { useDeviceType } from '../../../utils/getDeviceType';
 import styles from './ReadyToHelp.module.scss';
 
 interface ReadyToHelpProps {

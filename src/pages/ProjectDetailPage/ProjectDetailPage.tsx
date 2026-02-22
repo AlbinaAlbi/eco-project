@@ -14,7 +14,7 @@ import { Loader } from '../../components/Loader';
 import { ErrorElement } from '../../components/ErrorElement';
 import { HeaderProject } from './HeaderProject';
 import { useLanguage } from '../../context/LanguageContext';
-import { scrollToTop } from '../../hooks/scrollToTop';
+import { scrollToTop } from '../../utils/scrollToTop';
 
 export const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();

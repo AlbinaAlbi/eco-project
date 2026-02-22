@@ -4,7 +4,7 @@ import alonePana from '../../imgs/Alone-pana 1.svg';
 import { useEffect } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import { Button } from '../Button';
-import { useDeviceType } from '../../hooks/getDeviceType';
+import { useDeviceType } from '../../utils/getDeviceType';
 
 export const ErrorElement = () => {
   const { t } = useLanguage();

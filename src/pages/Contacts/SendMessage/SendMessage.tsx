@@ -6,7 +6,7 @@ import { SECTION_HEADERS } from '../../../locales/sectionHeaders';
 import styles from './SendMessage.module.scss';
 import greenField from '../../../imgs/green-field.jpg';
 import { MessageBlock } from '../MessageBlock';
-import { useDeviceType } from '../../../hooks/getDeviceType';
+import { useDeviceType } from '../../../utils/getDeviceType';
 
 export const SendMessage = () => {
   const { titleKey, descriptionKey, titleColor } = SECTION_HEADERS.message;

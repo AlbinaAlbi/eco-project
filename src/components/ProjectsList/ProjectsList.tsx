@@ -1,7 +1,7 @@
 import { ProjectCard } from '../FeaturedProjects/ProjectCard';
 import styles from './ProjectsList.module.scss';
 import arrowImg from '../../imgs/Chevron.svg';
-import { scrollToTop } from '../../hooks/scrollToTop';
+import { scrollToTop } from '../../utils/scrollToTop';
 import { useLanguage } from '../../context/LanguageContext';
 import { Project } from '../../types/Project';
 const ITEMS_PER_PAGE = 6;

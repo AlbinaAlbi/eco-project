@@ -4,7 +4,7 @@ import styles from './ProjectDescribe.module.scss';
 import { Projectinput } from '../Projectinput';
 import { ProjectCategory } from '../ProjectCategory';
 import { Button } from '../Button';
-import { useDeviceType } from '../../hooks/getDeviceType';
+import { useDeviceType } from '../../utils/getDeviceType';
 import { createProject } from '../../api/project';
 import { ProjectCreate } from '../../types/ProjectCreate';
 import { Agree } from '../Agree';

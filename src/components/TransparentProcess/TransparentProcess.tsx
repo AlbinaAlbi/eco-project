@@ -1,6 +1,6 @@
 import { StepsList } from '../StepsList';
 import { TagAndTitle } from '../TagAndTitle';
-import { useDeviceType } from '../../hooks/getDeviceType';
+import { useDeviceType } from '../../utils/getDeviceType';
 import { useSectionHeader } from '../../hooks/useSectionHeader';
 import { SECTION_HEADERS } from '../../locales/sectionHeaders';
 import styles from './TransparentProcess.module.scss';

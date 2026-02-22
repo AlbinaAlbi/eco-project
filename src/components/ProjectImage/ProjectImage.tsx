@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Button } from '../Button';
 import { useLanguage } from '../../context/LanguageContext';
-import { useDeviceType } from '../../hooks/getDeviceType';
+import { useDeviceType } from '../../utils/getDeviceType';
 import styles from './ProjectImage.module.scss';
 
 interface ProjectImageProps {
