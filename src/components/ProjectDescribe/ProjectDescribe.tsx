@@ -45,7 +45,7 @@ export const ProjectDescribe = () => {
 
     const reader = new FileReader();
     reader.onloadend = () => {
-      setForm((prev) => ({ ...prev, imageUrl: '' }));
+      setForm((prev) => ({ ...prev, imageUrl: URL.createObjectURL(file) }));
     };
     reader.readAsDataURL(file);
   };
@@ -83,16 +83,7 @@ export const ProjectDescribe = () => {
     e.preventDefault();
 
     try {
-      const data = await createProject({
-        title: 'Test Project',
-        shortDescription: 'Short test description',
-        goals: 'Test goals',
-        category: 'EDUCATION',
-        contactEmail: 'test@test.com',
-        goalAmount: 1000.0,
-        duration: '30_DAYS',
-        imageUrl: 'https://example.com/test.jpg',
-      });
+      const data = await createProject(form);
 
       console.log('Проект создан:', data);
       alert('Проект успешно создан!');
