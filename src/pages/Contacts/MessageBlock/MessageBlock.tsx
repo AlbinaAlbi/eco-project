@@ -27,8 +27,8 @@ export const MessageBlock = () => {
       await api.post('/contacts', form);
       setSuccess(true);
       setForm({ name: '', email: '', message: '' });
-    } catch (err: any) {
-      setError(err.message || 'Помилка при відправці');
+    } catch {
+      setError('Помилка при відправці');
     } finally {
       setLoading(false);
     }

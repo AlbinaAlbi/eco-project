@@ -10,6 +10,7 @@ interface ProjectinputProps {
   textPlaceholder: string;
   name: TextFieldName;
   isTextArea?: boolean;
+  type?: string;
 }
 
 export const Projectinput = ({
@@ -19,6 +20,7 @@ export const Projectinput = ({
   textPlaceholder,
   name,
   isTextArea,
+  type,
 }: ProjectinputProps) => {
   return (
     <div className={styles.input}>
@@ -28,18 +30,21 @@ export const Projectinput = ({
           className="textBody"
           name={name}
           placeholder={textPlaceholder}
-          value={form[name]}
+          value={form[name] ?? ''}
           onChange={handleChange}
           required
         />
       ) : (
         <input
+          type={type || 'text'}
           className="textBody"
           name={name}
           placeholder={textPlaceholder}
-          value={form[name]}
+          value={form[name] ?? ''}
           onChange={handleChange}
           required
+          min={type === 'number' ? 0 : undefined}
+          step={type === 'number' ? 1 : undefined}
         />
       )}
     </div>

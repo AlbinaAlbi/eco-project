@@ -10,7 +10,6 @@ import { ProjectCreate } from '../../types/ProjectCreate';
 import { Agree } from '../Agree';
 import { ProjectDuration } from '../ProjectDuration';
 import { ProjectImage } from '../ProjectImage';
-import { uploadFileAndGetUrl } from '../../hooks/uploadFileAndGetUrl';
 
 export interface ProjectFormState {
   projectName: string;
@@ -26,14 +25,14 @@ export interface ProjectFormState {
 export const ProjectDescribe = () => {
   const { t } = useLanguage();
   const device = useDeviceType();
-  const [previewFile, setPreviewFile] = useState<File | null>(null); // для прев'ю
+  const [previewFile, setPreviewFile] = useState<File | null>(null);
   const [form, setForm] = useState<ProjectCreate>({
     title: '',
     shortDescription: '',
     goals: '',
     category: '',
     contactEmail: '',
-    goalAmount: '',
+    goalAmount: 0,
     duration: '',
     imageUrl: '',
   });
@@ -46,23 +45,28 @@ export const ProjectDescribe = () => {
 
     const reader = new FileReader();
     reader.onloadend = () => {
-      const base64String = reader.result as string; // это строка
-      setForm((prev) => ({ ...prev, imageUrl: base64String }));
+      setForm((prev) => ({ ...prev, imageUrl: '' }));
     };
     reader.readAsDataURL(file);
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const name = e.target.name as keyof ProjectCreate;
-    let value: string | number = e.target.value;
+    const value = e.target.value;
 
-    if (name === 'goalAmount') {
-      value = Number(value);
-    }
+    setForm((prev) => {
+      if (name === 'goalAmount') {
+        return {
+          ...prev,
+          goalAmount: value === '' ? null : Number(value),
+        };
+      }
 
-    setForm((prev) => ({ ...prev, [name]: value }));
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
   };
 
   let buttonWidth: string;
@@ -77,8 +81,19 @@ export const ProjectDescribe = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     try {
-      const data = await createProject(form);
+      const data = await createProject({
+        title: 'Test Project',
+        shortDescription: 'Short test description',
+        goals: 'Test goals',
+        category: 'EDUCATION',
+        contactEmail: 'test@test.com',
+        goalAmount: 1000.0,
+        duration: '30_DAYS',
+        imageUrl: 'https://example.com/test.jpg',
+      });
+
       console.log('Проект создан:', data);
       alert('Проект успешно создан!');
     } catch (err) {
@@ -128,6 +143,7 @@ export const ProjectDescribe = () => {
         textTranslate={t('fundingGoal')}
         textPlaceholder={t('targetAmount')}
         name={'goalAmount'}
+        type="number"
       />
 
       <Projectinput

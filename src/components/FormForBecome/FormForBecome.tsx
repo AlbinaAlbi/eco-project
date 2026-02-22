@@ -4,6 +4,7 @@ import styles from './FormForBecome.module.scss';
 import { sendContact } from '../../api/contacts';
 import { Button } from '../Button';
 import { FormData } from '../../types/FormData';
+import { Loader } from '../Loader';
 
 export const FormForBecome = () => {
   const { t } = useLanguage();
@@ -34,14 +35,18 @@ export const FormForBecome = () => {
       setForm({ name: '', email: '', city: '', message: '' });
 
       setTimeout(() => setSuccess(false), 3000);
-    } catch (err: any) {
-      setError(err.message || 'Помилка при відправці');
+    } catch {
+      setError('Помилка при відправці');
 
       setTimeout(() => setError(''), 3000);
     } finally {
       setLoading(false);
     }
   };
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <form className={`textSecondary ${styles.container}`} onSubmit={handleSubmit}>
