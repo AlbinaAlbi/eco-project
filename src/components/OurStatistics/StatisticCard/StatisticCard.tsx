@@ -1,4 +1,4 @@
-import { useRenderText } from '../../../hooks/renderText';
+import { useRenderText } from '../../../hooks/useRenderText';
 import styles from './StatisticCard.module.scss';
 
 interface StatisticCardProps {

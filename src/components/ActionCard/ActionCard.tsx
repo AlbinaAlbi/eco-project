@@ -1,4 +1,4 @@
-import { useRenderText } from '../../hooks/renderText';
+import { useRenderText } from '../../hooks/useRenderText';
 import { ActionsListProps } from '../../hooks/useActionsList';
 import styles from './ActionCard.module.scss';
 

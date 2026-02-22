@@ -1,4 +1,4 @@
-import { useRenderText } from '../../../../hooks/renderText';
+import { useRenderText } from '../../../../hooks/useRenderText';
 import { ResultsListProps } from '../../../../hooks/useResultsList';
 import styles from './ResultCard.module.scss';
 

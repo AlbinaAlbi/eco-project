@@ -1,4 +1,4 @@
-import { useRenderText } from '../../hooks/renderText';
+import { useRenderText } from '../../hooks/useRenderText';
 import { SupportListProps } from '../../hooks/useSupportList';
 import styles from './SupportCardInform.module.scss';
 

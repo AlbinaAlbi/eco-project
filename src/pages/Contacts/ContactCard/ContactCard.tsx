@@ -1,4 +1,4 @@
-import { useRenderText } from '../../../hooks/renderText';
+import { useRenderText } from '../../../hooks/useRenderText';
 import { ContactsListProps } from '../../../hooks/useContactsList';
 import styles from './ContactCard.module.scss';
 

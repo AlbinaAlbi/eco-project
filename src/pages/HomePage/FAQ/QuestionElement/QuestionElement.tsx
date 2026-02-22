@@ -1,6 +1,6 @@
 import styles from './QuestionElement.module.scss';
 import arrow from '../../../../imgs/Arrow.svg';
-import { useRenderText } from '../../../../hooks/renderText';
+import { useRenderText } from '../../../../hooks/useRenderText';
 
 interface QuestionElementProps {
   question: {
