@@ -13,13 +13,18 @@ import { ReadyToHelp } from './ReadyToHelp /ReadyToHelp';
 import { Loader } from '../../components/Loader';
 import { ErrorElement } from '../../components/ErrorElement';
 import { HeaderProject } from './HeaderProject';
+import { useLanguage } from '../../context/LanguageContext';
+import { scrollToTop } from '../../hooks/scrollToTop';
 
 export const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
   const { currentProject, loading, error } = useAppSelector((state) => state.projects);
+  const { t } = useLanguage();
 
   useEffect(() => {
+    scrollToTop();
+
     if (id) {
       dispatch(fetchProjectByIdThunk(id));
     }
@@ -29,9 +34,9 @@ export const ProjectDetailPage = () => {
     };
   }, [dispatch, id]);
 
-  if (loading) return <Loader text="Загрузка проектов..." duration={1000} />;
+  if (loading) return <Loader text={`${t('projectsloading')}...`} duration={1000} />;
   if (error) return <ErrorElement />;
-  if (!currentProject) return <p>Проект не знайдено</p>;
+  if (!currentProject) return <p>{t('projectNotFound')}</p>;
 
   return (
     <div className={`containerMaxWidth containerContentPadding ${styles.container}`}>

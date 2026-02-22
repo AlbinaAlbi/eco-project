@@ -11,19 +11,19 @@ export const ResultsProject = () => {
   const list = [
     {
       count: '2450+',
-      title: 'Trees planted',
+      title: t('resultsList.plantedTitle'),
     },
     {
       count: '180+',
-      title: 'Volunteers involved',
+      title: t('volunteersInvolved'),
     },
     {
-      count: '12 ha',
-      title: 'Forest area restored',
+      count: `12 ${t('ha')}`,
+      title: t('forestArea'),
     },
     {
-      count: '3 months',
-      title: 'Damaged zones rehabilitated through planting and soil care',
+      count: `3 ${t('months')}`,
+      title: t('damagedZones'),
     },
   ];
 

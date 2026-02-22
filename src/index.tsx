@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { store } from './store/store';
 import { LanguageProvider } from './context/LanguageContext';
 import { SidebarProvider } from './context/SidebarContext';
+import './index.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
