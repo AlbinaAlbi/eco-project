@@ -7,7 +7,7 @@ type TranslationSchema = typeof translations.en;
 type LeafKeys<T> = {
   [K in keyof T & string]: T[K] extends string | readonly string[]
     ? K
-    : T[K] extends { mobile?: any; tablet?: any; desktop?: any }
+    : T[K] extends { mobile?: string[]; tablet?: string[]; desktop?: string[] }
       ? K
       : T[K] extends object
         ? `${K}.${LeafKeys<T[K]>}`
