@@ -5,7 +5,7 @@ import { Projectinput } from '../Projectinput';
 import { ProjectCategory } from '../ProjectCategory';
 import { Button } from '../Button';
 import { useDeviceType } from '../../hooks/getDeviceType';
-import { createProject } from '../../api/projects';
+import { createProject } from '../../api/project';
 import { ProjectCreate } from '../../types/ProjectCreate';
 import { Agree } from '../Agree';
 import { ProjectDuration } from '../ProjectDuration';

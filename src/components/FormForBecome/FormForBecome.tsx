@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import styles from './FormForBecome.module.scss';
-import { sendContact } from '../../api/contacts';
+import { sendContact } from '../../api/contact';
 import { Button } from '../Button';
 import { FormData } from '../../types/FormData';
 import { Loader } from '../Loader';
