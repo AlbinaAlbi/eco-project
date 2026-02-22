@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { AuthProvider } from './context/AuthContext';
 import './styles/index.scss';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -15,13 +14,11 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <LanguageProvider>
-        <AuthProvider>
-          <SidebarProvider>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-          </SidebarProvider>
-        </AuthProvider>
+        <SidebarProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </SidebarProvider>
       </LanguageProvider>
     </Provider>
   </React.StrictMode>,
