@@ -4,7 +4,7 @@ export type ProjectCreate = {
   goals: string;
   category: string;
   contactEmail: string;
-  goalAmount: number | string;
+  goalAmount: number | null;
   duration: string;
   imageUrl: string;
 };
