@@ -6,20 +6,39 @@ import { useEffect, useState } from 'react';
 export const EmailInput = () => {
   const { t } = useLanguage();
   const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    if (status === 'success' || status === 'error') {
-      const timer = setTimeout(() => setStatus('idle'), 2000);
-      return () => clearTimeout(timer);
+    if (!success && !error) return;
+
+    const timer = setTimeout(() => {
+      setSuccess(false);
+      setError('');
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, [success, error]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (error) {
+      setError('');
     }
-  }, [status]);
+
+    setEmail(e.target.value);
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!email) return;
+    setLoading(true);
 
-    setStatus('loading');
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      setError(t('invalidEmail'));
+      return;
+    }
 
     try {
       await fetch('/api/subscribe', {
@@ -28,10 +47,12 @@ export const EmailInput = () => {
         body: JSON.stringify({ email }),
       });
 
-      setStatus('success');
+      setSuccess(true);
       setEmail('');
-    } catch (err) {
-      setStatus('error');
+    } catch {
+      setError(t('errorSending'));
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -51,17 +72,17 @@ export const EmailInput = () => {
           placeholder={t('placeholder')}
           required
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => handleChange(e)}
         />
-        <button type="submit" disabled={status === 'loading'}>
+        <button type="submit" disabled={loading}>
           <img src={arrow} alt="Email arrow" />
         </button>
       </div>
 
       <div className={`textSecondary ${styles.statusMessage}`}>
-        {status === 'loading' && <span className={styles.loading}>{t('sending')}...</span>}
-        {status === 'success' && <span className={styles.success}>{t('received')}</span>}
-        {status === 'error' && <span className={styles.error}>{t('errorSending')}</span>}
+        {loading && <span className={styles.loading}>{t('sending')}...</span>}
+        {success && <span className={styles.success}>{t('received')}</span>}
+        {error && <span className={styles.error}>{t('errorSending')}</span>}
       </div>
     </form>
   );

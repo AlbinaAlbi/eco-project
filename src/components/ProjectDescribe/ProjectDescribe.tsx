@@ -10,6 +10,8 @@ import { ProjectCreate } from '../../types/ProjectCreate';
 import { Agree } from '../Agree';
 import { ProjectDuration } from '../ProjectDuration';
 import { ProjectImage } from '../ProjectImage';
+import { setError } from '../../store/slices/ErrorSlise/errorSlice';
+import { Loader } from '../Loader';
 
 export interface ProjectFormState {
   projectName: string;
@@ -25,6 +27,10 @@ export interface ProjectFormState {
 export const ProjectDescribe = () => {
   const { t } = useLanguage();
   const device = useDeviceType();
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
   const [previewFile, setPreviewFile] = useState<File | null>(null);
   const [form, setForm] = useState<ProjectCreate>({
     title: '',
@@ -51,6 +57,10 @@ export const ProjectDescribe = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (error) {
+      setError('');
+    }
+
     const name = e.target.name as keyof ProjectCreate;
     const value = e.target.value;
 
@@ -82,16 +92,65 @@ export const ProjectDescribe = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    try {
-      const data = await createProject(form);
+    if (form.title.trim().length < 3) {
+      setError(t('projectNameMinLength'));
+      return;
+    }
 
-      console.log('Проект создан:', data);
-      alert('Проект успешно создан!');
-    } catch (err) {
-      console.error(err);
-      alert('Ошибка при создании проекта.');
+    if (form.shortDescription.trim().length < 20) {
+      setError(t('shortDescriptionMinLength'));
+      return;
+    }
+
+    if (form.goals.trim().length < 10) {
+      setError(t('goalsDescription'));
+      return;
+    }
+
+    if (!form.category) {
+      setError(t('selectCategory'));
+      return;
+    }
+
+    if (!form.goalAmount || form.goalAmount <= 0) {
+      setError(t('validFundAmount'));
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.contactEmail)) {
+      setError(t('invalidEmail'));
+      return;
+    }
+
+    if (!form.duration) {
+      setError(t('selectProjectDuration'));
+      return;
+    }
+
+    if (!form.imageUrl) {
+      setError(t('addProjectImage'));
+      return;
+    }
+
+    try {
+      setLoading(true);
+      await createProject(form);
+      setSuccess(true);
+
+      setTimeout(() => setSuccess(false), 3000);
+    } catch {
+      setError(t('errorForSending'));
+
+      setTimeout(() => setError(''), 3000);
+    } finally {
+      setLoading(false);
     }
   };
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
@@ -149,6 +208,8 @@ export const ProjectDescribe = () => {
       <ProjectImage image={previewFile} onChange={handleImageChange} />
       <Agree />
       <Button text={t('submitRequest')} color="green" buttonWidth={buttonWidth} type="submit" />
+      {success && <p style={{ color: 'green' }}>{t('messageSent')}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </form>
   );
 };

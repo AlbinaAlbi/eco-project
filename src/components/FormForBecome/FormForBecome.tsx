@@ -20,14 +20,40 @@ export const FormForBecome = () => {
   const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (error) {
+      setError('');
+    }
+
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     setSuccess(false);
     setError('');
+
+    if (form.name.trim().length < 2) {
+      setError(t('nameMinLength'));
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      setError(t('invalidEmail'));
+      return;
+    }
+
+    if (form.city.trim().length < 2) {
+      setError(t('cityMinLength'));
+      return;
+    }
+
+    if (form.message.trim().length < 10) {
+      setError(t('messageMinLength'));
+      return;
+    }
+
+    setLoading(true);
 
     try {
       await sendContact(form);
@@ -36,7 +62,7 @@ export const FormForBecome = () => {
 
       setTimeout(() => setSuccess(false), 3000);
     } catch {
-      setError('Помилка при відправці');
+      setError(t('errorForSending'));
 
       setTimeout(() => setError(''), 3000);
     } finally {

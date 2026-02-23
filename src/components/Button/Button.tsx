@@ -1,8 +1,17 @@
 import { useNavigate } from 'react-router-dom';
-import { ButtonProps } from '../../types/ButtonProps';
 import styles from './Button.module.scss';
 import { useSidebar } from '../../context/SidebarContext';
 import { scrollToTop } from '../../utils/scrollToTop';
+
+type ButtonProps = {
+  text: string;
+  color?: 'green' | 'white';
+  to?: string;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  buttonWidth?: string;
+  backgroundColor?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+};
 
 export const Button = ({
   text,
