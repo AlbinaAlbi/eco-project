@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLanguage } from '../../context/LanguageContext';
+import { TranslationKey, useLanguage } from '../../context/LanguageContext';
 import styles from './ProjectDescribe.module.scss';
 import { Projectinput } from '../Projectinput';
 import { ProjectCategory } from '../ProjectCategory';
@@ -11,6 +11,8 @@ import { Agree } from '../Agree';
 import { ProjectDuration } from '../ProjectDuration';
 import { ProjectImage } from '../ProjectImage';
 import { Loader } from '../Loader';
+
+type ProjectFormErrors = Partial<Record<keyof ProjectCreate, TranslationKey>>;
 
 export interface ProjectFormState {
   projectName: string;
@@ -27,7 +29,7 @@ export const ProjectDescribe = () => {
   const { t } = useLanguage();
   const device = useDeviceType();
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState('');
+  const [errors, setErrors] = useState<ProjectFormErrors>({});
   const [loading, setLoading] = useState(false);
 
   const [previewFile, setPreviewFile] = useState<File | null>(null);
@@ -43,40 +45,31 @@ export const ProjectDescribe = () => {
     imageUrl: '',
   });
 
-  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+  const setField = <K extends keyof ProjectCreate>(key: K, value: ProjectCreate[K]) => {
+    if (errors[key]) {
+      setErrors((prev) => ({ ...prev, [key]: undefined }));
+    }
 
+    setForm((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+  };
+
+  const handleImageChange = (file: File) => {
     setPreviewFile(file);
-
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setForm((prev) => ({ ...prev, imageUrl: URL.createObjectURL(file) }));
-    };
-    reader.readAsDataURL(file);
+    setField('imageUrl', URL.createObjectURL(file));
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    if (error) {
-      setError('');
-    }
-
     const name = e.target.name as keyof ProjectCreate;
     const value = e.target.value;
 
-    setForm((prev) => {
-      if (name === 'goalAmount') {
-        return {
-          ...prev,
-          goalAmount: value === '' ? null : Number(value),
-        };
-      }
-
-      return {
-        ...prev,
-        [name]: value,
-      };
-    });
+    if (name === 'goalAmount') {
+      setField(name, value === '' ? null : Number(value));
+    } else {
+      setField(name, value);
+    }
   };
 
   let buttonWidth: string;
@@ -92,44 +85,43 @@ export const ProjectDescribe = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    const newErrors: ProjectFormErrors = {};
+
     if (form.title.trim().length < 3) {
-      setError(t('projectNameMinLength'));
-      return;
+      newErrors.title = 'projectNameMinLength';
     }
 
     if (form.shortDescription.trim().length < 20) {
-      setError(t('shortDescriptionMinLength'));
-      return;
+      newErrors.shortDescription = 'shortDescriptionMinLength';
     }
 
     if (form.goals.trim().length < 10) {
-      setError(t('goalsDescription'));
-      return;
+      newErrors.goals = 'goalsDescription';
     }
 
     if (!form.category) {
-      setError(t('selectCategory'));
-      return;
+      newErrors.category = 'selectCategory';
     }
 
     if (!form.goalAmount || form.goalAmount <= 0) {
-      setError(t('validFundAmount'));
-      return;
+      newErrors.goalAmount = 'validFundAmount';
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(form.contactEmail)) {
-      setError(t('invalidEmail'));
-      return;
+      newErrors.contactEmail = 'invalidEmail';
     }
 
     if (!form.duration) {
-      setError(t('selectProjectDuration'));
-      return;
+      newErrors.duration = 'selectProjectDuration';
     }
 
     if (!form.imageUrl) {
-      setError(t('addProjectImage'));
+      newErrors.imageUrl = 'addProjectImage';
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
 
@@ -137,11 +129,9 @@ export const ProjectDescribe = () => {
       setLoading(true);
       await createProject(form);
       setSuccess(true);
-
-      setTimeout(() => setSuccess(false), 3000);
+      setErrors({});
     } catch {
-      setError(t('errorForSending'));
-      setTimeout(() => setError(''), 3000);
+      setErrors({ title: 'errorForSending' });
     } finally {
       setLoading(false);
     }
@@ -159,6 +149,7 @@ export const ProjectDescribe = () => {
         textTranslate={t('projectName')}
         textPlaceholder={t('chooseAName')}
         name={'title'}
+        error={errors.title}
       />
 
       <Projectinput
@@ -168,6 +159,7 @@ export const ProjectDescribe = () => {
         textPlaceholder={t('describeYourProject')}
         name={'shortDescription'}
         isTextArea={true}
+        error={errors.shortDescription}
       />
 
       <Projectinput
@@ -177,6 +169,7 @@ export const ProjectDescribe = () => {
         textPlaceholder={t('clearlyDescribe')}
         name={'goals'}
         isTextArea={true}
+        error={errors.goals}
       />
 
       <ProjectCategory
@@ -184,6 +177,7 @@ export const ProjectDescribe = () => {
         setForm={setForm}
         textTranslate={t('projectCategory')}
         textPlaceholder={t('chooseCategory')}
+        error={errors.category}
       />
 
       <Projectinput
@@ -193,6 +187,7 @@ export const ProjectDescribe = () => {
         textPlaceholder={t('targetAmount')}
         name={'goalAmount'}
         type="number"
+        error={errors.goalAmount}
       />
 
       <Projectinput
@@ -201,20 +196,32 @@ export const ProjectDescribe = () => {
         textTranslate={t('contactEmail')}
         textPlaceholder={t('contactYou')}
         name={'contactEmail'}
+        error={errors.contactEmail}
       />
 
-      <ProjectDuration formDuration={form.duration} setForm={setForm} />
-      <ProjectImage image={previewFile} onChange={handleImageChange} />
+      <ProjectDuration
+        formDuration={form.duration}
+        setForm={setForm}
+        onChange={(value) => setField('duration', value)}
+        error={errors.duration}
+      />
+      <ProjectImage
+        image={previewFile}
+        onChange={(e) => {
+          const file = e.target.files?.[0];
+          if (file) handleImageChange(file);
+        }}
+        error={errors.imageUrl}
+      />
       <Agree agree={agree} setAgree={setAgree} />
       <Button
         text={t('submitRequest')}
         color="green"
         buttonWidth={buttonWidth}
         type="submit"
-        isDisabled={agree}
+        isDisabled={!agree}
       />
       {success && <p style={{ color: 'green' }}>{t('messageSent')}</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
     </form>
   );
 };

@@ -22,7 +22,7 @@ export const Button = ({
   buttonWidth,
   backgroundColor = true,
   type = 'button',
-  isDisabled = true,
+  isDisabled = false,
 }: ButtonProps) => {
   const classNameContainer = `${styles.container}`;
   const classNameButton = `textButton ${backgroundColor ? styles[color] : styles.noneBackground}`;
@@ -50,7 +50,7 @@ export const Button = ({
         onClick={handleClick}
         style={{ width: buttonWidth }}
         type={type}
-        disabled={!isDisabled}
+        disabled={isDisabled}
       >
         {text}
       </button>

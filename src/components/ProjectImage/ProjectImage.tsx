@@ -1,18 +1,21 @@
 import { useRef } from 'react';
 import { Button } from '../Button';
-import { useLanguage } from '../../context/LanguageContext';
+import { TranslationKey, useLanguage } from '../../context/LanguageContext';
 import { useDeviceType } from '../../utils/getDeviceType';
 import styles from './ProjectImage.module.scss';
+import { useTranslatedText } from '../../hooks/useResponsiveText';
 
 interface ProjectImageProps {
   image: File | null;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  error?: TranslationKey;
 }
 
-export const ProjectImage = ({ image, onChange }: ProjectImageProps) => {
+export const ProjectImage = ({ image, onChange, error }: ProjectImageProps) => {
   const { t } = useLanguage();
   const device = useDeviceType();
   const inputRef = useRef<HTMLInputElement>(null);
+  const translatedError = useTranslatedText(error);
 
   let buttonWidth: string;
 
@@ -52,6 +55,7 @@ export const ProjectImage = ({ image, onChange }: ProjectImageProps) => {
           onClick={handleButtonClick}
         />
       </div>
+      {error && <div className={`textSmall ${styles.error}`}>{translatedError}</div>}
 
       {image && (
         <img

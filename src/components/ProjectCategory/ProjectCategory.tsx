@@ -1,14 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
-import { useLanguage } from '../../context/LanguageContext';
+import { TranslationKey, useLanguage } from '../../context/LanguageContext';
 import styles from './ProjectCategory.module.scss';
 import chevron from '../../imgs/Chevron.svg';
 import { ProjectCreate } from '../../types/ProjectCreate';
+import { useTranslatedText } from '../../hooks/useResponsiveText';
 
 interface ProjectCategoryProps {
   form: ProjectCreate;
   setForm: React.Dispatch<React.SetStateAction<ProjectCreate>>; // ← исправлено
   textTranslate: string;
   textPlaceholder: string;
+  error?: TranslationKey;
 }
 
 export const ProjectCategory = ({
@@ -16,10 +18,12 @@ export const ProjectCategory = ({
   setForm,
   textTranslate,
   textPlaceholder,
+  error,
 }: ProjectCategoryProps) => {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const translatedError = useTranslatedText(error);
 
   const options = [
     { value: 'environment', label: t('categoryFilter.environment') },
@@ -62,6 +66,8 @@ export const ProjectCategory = ({
 
         <img src={chevron} alt="Chevron" />
       </div>
+
+      {error && <div className={`textSmall ${styles.error}`}>{translatedError}</div>}
 
       {open && (
         <ul className={styles.list}>

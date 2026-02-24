@@ -1,3 +1,5 @@
+import { TranslationKey, useLanguage } from '../../context/LanguageContext';
+import { useTranslatedText } from '../../hooks/useResponsiveText';
 import { ProjectCreate } from '../../types/ProjectCreate';
 import styles from './Projectinput.module.scss';
 
@@ -11,6 +13,7 @@ interface ProjectinputProps {
   name: TextFieldName;
   isTextArea?: boolean;
   type?: string;
+  error?: TranslationKey;
 }
 
 export const Projectinput = ({
@@ -21,7 +24,10 @@ export const Projectinput = ({
   name,
   isTextArea,
   type,
+  error,
 }: ProjectinputProps) => {
+  const translatedError = useTranslatedText(error);
+
   return (
     <div className={styles.input}>
       <div className={`textSecondary ${styles.container}`}>{textTranslate}</div>
@@ -47,6 +53,7 @@ export const Projectinput = ({
           step={type === 'number' ? 1 : undefined}
         />
       )}
+      {error && <div className={`textSmall ${styles.error}`}>{translatedError}</div>}
     </div>
   );
 };
