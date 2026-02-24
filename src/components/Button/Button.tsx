@@ -11,6 +11,7 @@ type ButtonProps = {
   buttonWidth?: string;
   backgroundColor?: boolean;
   type?: 'button' | 'submit' | 'reset';
+  isDisabled?: boolean;
 };
 
 export const Button = ({
@@ -21,6 +22,7 @@ export const Button = ({
   buttonWidth,
   backgroundColor = true,
   type = 'button',
+  isDisabled = true,
 }: ButtonProps) => {
   const classNameContainer = `${styles.container}`;
   const classNameButton = `textButton ${backgroundColor ? styles[color] : styles.noneBackground}`;
@@ -48,6 +50,7 @@ export const Button = ({
         onClick={handleClick}
         style={{ width: buttonWidth }}
         type={type}
+        disabled={!isDisabled}
       >
         {text}
       </button>

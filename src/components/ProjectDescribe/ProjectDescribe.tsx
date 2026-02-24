@@ -10,7 +10,6 @@ import { ProjectCreate } from '../../types/ProjectCreate';
 import { Agree } from '../Agree';
 import { ProjectDuration } from '../ProjectDuration';
 import { ProjectImage } from '../ProjectImage';
-import { setError } from '../../store/slices/ErrorSlise/errorSlice';
 import { Loader } from '../Loader';
 
 export interface ProjectFormState {
@@ -32,6 +31,7 @@ export const ProjectDescribe = () => {
   const [loading, setLoading] = useState(false);
 
   const [previewFile, setPreviewFile] = useState<File | null>(null);
+  const [agree, setAgree] = useState(false);
   const [form, setForm] = useState<ProjectCreate>({
     title: '',
     shortDescription: '',
@@ -141,7 +141,6 @@ export const ProjectDescribe = () => {
       setTimeout(() => setSuccess(false), 3000);
     } catch {
       setError(t('errorForSending'));
-
       setTimeout(() => setError(''), 3000);
     } finally {
       setLoading(false);
@@ -206,8 +205,14 @@ export const ProjectDescribe = () => {
 
       <ProjectDuration formDuration={form.duration} setForm={setForm} />
       <ProjectImage image={previewFile} onChange={handleImageChange} />
-      <Agree />
-      <Button text={t('submitRequest')} color="green" buttonWidth={buttonWidth} type="submit" />
+      <Agree agree={agree} setAgree={setAgree} />
+      <Button
+        text={t('submitRequest')}
+        color="green"
+        buttonWidth={buttonWidth}
+        type="submit"
+        isDisabled={agree}
+      />
       {success && <p style={{ color: 'green' }}>{t('messageSent')}</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </form>
