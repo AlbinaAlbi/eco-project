@@ -1,21 +1,14 @@
 import styles from './ProjectDuration.module.scss';
 import { TranslationKey, useLanguage } from '../../context/LanguageContext';
-import { ProjectCreate } from '../../types/ProjectCreate';
 import { useTranslatedText } from '../../hooks/useResponsiveText';
 
 interface ProjectDurationProps {
   formDuration: string;
-  setForm: React.Dispatch<React.SetStateAction<ProjectCreate>>;
   onChange: (value: string) => void;
   error?: TranslationKey;
 }
 
-export const ProjectDuration = ({
-  formDuration,
-  setForm,
-  error,
-  onChange,
-}: ProjectDurationProps) => {
+export const ProjectDuration = ({ formDuration, error, onChange }: ProjectDurationProps) => {
   const { t } = useLanguage();
   const translatedError = useTranslatedText(error);
 

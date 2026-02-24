@@ -31,10 +31,7 @@ export const ProjectDescribe = () => {
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState<ProjectFormErrors>({});
   const [loading, setLoading] = useState(false);
-
-  const [previewFile, setPreviewFile] = useState<File | null>(null);
-  const [agree, setAgree] = useState(false);
-  const [form, setForm] = useState<ProjectCreate>({
+  const newProject = {
     title: '',
     shortDescription: '',
     goals: '',
@@ -43,7 +40,11 @@ export const ProjectDescribe = () => {
     goalAmount: 0,
     duration: '',
     imageUrl: '',
-  });
+  };
+
+  const [previewFile, setPreviewFile] = useState<File | null>(null);
+  const [agree, setAgree] = useState(false);
+  const [form, setForm] = useState<ProjectCreate>(newProject);
 
   const setField = <K extends keyof ProjectCreate>(key: K, value: ProjectCreate[K]) => {
     if (errors[key]) {
@@ -91,8 +92,8 @@ export const ProjectDescribe = () => {
       newErrors.title = 'projectNameMinLength';
     }
 
-    if (form.shortDescription.trim().length < 20) {
-      newErrors.shortDescription = 'shortDescriptionMinLength';
+    if (form.shortDescription.trim().length > 20) {
+      newErrors.shortDescription = 'shortDescriptionMaxLength';
     }
 
     if (form.goals.trim().length < 10) {
@@ -130,6 +131,9 @@ export const ProjectDescribe = () => {
       await createProject(form);
       setSuccess(true);
       setErrors({});
+      setForm(newProject);
+      setAgree(false);
+      setPreviewFile(null);
     } catch {
       setErrors({ title: 'errorForSending' });
     } finally {
@@ -201,10 +205,10 @@ export const ProjectDescribe = () => {
 
       <ProjectDuration
         formDuration={form.duration}
-        setForm={setForm}
         onChange={(value) => setField('duration', value)}
         error={errors.duration}
       />
+
       <ProjectImage
         image={previewFile}
         onChange={(e) => {
@@ -213,7 +217,9 @@ export const ProjectDescribe = () => {
         }}
         error={errors.imageUrl}
       />
+
       <Agree agree={agree} setAgree={setAgree} />
+
       <Button
         text={t('submitRequest')}
         color="green"
@@ -221,6 +227,7 @@ export const ProjectDescribe = () => {
         type="submit"
         isDisabled={!agree}
       />
+
       {success && <p style={{ color: 'green' }}>{t('messageSent')}</p>}
     </form>
   );

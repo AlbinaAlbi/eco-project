@@ -30,11 +30,10 @@ export const Button = ({
   const navigate = useNavigate();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    onClick?.(e);
-
-    if (type !== 'submit') {
+    if (type === 'button') {
       e.preventDefault();
     }
+    onClick?.(e);
 
     if (to) {
       navigate(to);
