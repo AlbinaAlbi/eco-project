@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../../../components/Button';
 import { useLanguage } from '../../../context/LanguageContext';
 import { api } from '../../../api/api';
@@ -12,6 +12,16 @@ export const MessageBlock = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    if (!success) return;
+
+    const timer = setTimeout(() => {
+      setSuccess(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [success]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (error) {
@@ -91,8 +101,16 @@ export const MessageBlock = () => {
         type="submit"
       />
 
-      {success && <p style={{ color: 'green' }}>{t('messageSent')}</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {success && (
+        <p className={styles.success} style={{ color: 'green' }}>
+          {t('messageSent')}
+        </p>
+      )}
+      {error && (
+        <p className={styles.error} style={{ color: 'red' }}>
+          {error}
+        </p>
+      )}
     </form>
   );
 };

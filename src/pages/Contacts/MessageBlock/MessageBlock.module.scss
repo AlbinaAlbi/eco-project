@@ -3,6 +3,7 @@
 .form {
   display: flex;
   flex-direction: column;
+  position: relative;
   gap: $size-s;
 
   @include on-desktop {
@@ -37,10 +38,9 @@
   }
 }
 
-.form:last-child {
-  padding-top: $size-2xs;
-
-  @include on-tablet {
-    padding-top: $size-xs;
-  }
+.success,
+.error {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
 }
