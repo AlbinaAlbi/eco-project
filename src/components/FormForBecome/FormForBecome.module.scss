@@ -3,6 +3,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  position: relative;
   gap: $size-m;
   padding-top: $size-24;
   width: 100%;
@@ -48,4 +49,12 @@
   @include on-desktop {
     height: $size-195;
   }
+}
+
+
+.success,
+.error {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
 }

@@ -4,7 +4,6 @@ import styles from './FormForBecome.module.scss';
 import { sendContact } from '../../api/contact';
 import { Button } from '../Button';
 import { FormData } from '../../types/FormData';
-import { Loader } from '../Loader';
 
 export const FormForBecome = () => {
   const { t } = useLanguage();
@@ -15,7 +14,6 @@ export const FormForBecome = () => {
     message: '',
   });
 
-  const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
 
@@ -53,8 +51,6 @@ export const FormForBecome = () => {
       return;
     }
 
-    setLoading(true);
-
     try {
       await sendContact(form);
       setSuccess(true);
@@ -65,14 +61,8 @@ export const FormForBecome = () => {
       setError(t('errorForSending'));
 
       setTimeout(() => setError(''), 3000);
-    } finally {
-      setLoading(false);
     }
   };
-
-  if (loading) {
-    return <Loader />;
-  }
 
   return (
     <form className={`textSecondary ${styles.container}`} onSubmit={handleSubmit}>
@@ -124,8 +114,16 @@ export const FormForBecome = () => {
         />
       </div>
       <Button text={t('submitRequest')} buttonWidth="100%" type="submit" />
-      {success && <p style={{ color: 'green' }}>{t('messageSent')}</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {success && (
+        <p className={styles.success} style={{ color: 'green' }}>
+          {t('messageSent')}
+        </p>
+      )}
+      {error && (
+        <p className={styles.error} style={{ color: 'red' }}>
+          {error}
+        </p>
+      )}
     </form>
   );
 };
