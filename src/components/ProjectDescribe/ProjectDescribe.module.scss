@@ -3,6 +3,7 @@
 .form {
   display: flex;
   flex-direction: column;
+  position: relative;
   gap: $size-16;
 
   @include on-desktop {
@@ -10,4 +11,11 @@
     width: $size-692;
     padding-top: $size-2xl; 
   }
+}
+
+.success,
+.error {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
 }

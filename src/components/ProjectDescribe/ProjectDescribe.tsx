@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TranslationKey, useLanguage } from '../../context/LanguageContext';
 import styles from './ProjectDescribe.module.scss';
 import { Projectinput } from '../Projectinput';
@@ -10,7 +10,6 @@ import { ProjectCreate } from '../../types/ProjectCreate';
 import { Agree } from '../Agree';
 import { ProjectDuration } from '../ProjectDuration';
 import { ProjectImage } from '../ProjectImage';
-import { Loader } from '../Loader';
 
 type ProjectFormErrors = Partial<Record<keyof ProjectCreate, TranslationKey>>;
 
@@ -30,14 +29,25 @@ export const ProjectDescribe = () => {
   const device = useDeviceType();
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState<ProjectFormErrors>({});
-  const [loading, setLoading] = useState(false);
+  const [errorSending, setErrorSending] = useState(false);
+
+  useEffect(() => {
+    if (!success) return;
+
+    const timer = setTimeout(() => {
+      setSuccess(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [success]);
+
   const newProject = {
     title: '',
     shortDescription: '',
     goals: '',
     category: '',
     contactEmail: '',
-    goalAmount: 0,
+    goalAmount: null,
     duration: '',
     imageUrl: '',
   };
@@ -58,11 +68,13 @@ export const ProjectDescribe = () => {
   };
 
   const handleImageChange = (file: File) => {
+    setErrorSending(false);
     setPreviewFile(file);
     setField('imageUrl', URL.createObjectURL(file));
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setErrorSending(false);
     const name = e.target.name as keyof ProjectCreate;
     const value = e.target.value;
 
@@ -127,7 +139,6 @@ export const ProjectDescribe = () => {
     }
 
     try {
-      setLoading(true);
       await createProject(form);
       setSuccess(true);
       setErrors({});
@@ -135,9 +146,7 @@ export const ProjectDescribe = () => {
       setAgree(false);
       setPreviewFile(null);
     } catch {
-      setErrors({ title: 'errorForSending' });
-    } finally {
-      setLoading(false);
+      setErrorSending(true);
     }
   };
 
@@ -224,7 +233,16 @@ export const ProjectDescribe = () => {
         isDisabled={!agree}
       />
 
-      {success && <p style={{ color: 'green' }}>{t('messageSent')}</p>}
+      {success && (
+        <p className={styles.success} style={{ color: 'green' }}>
+          {t('messageSent')}
+        </p>
+      )}
+      {errorSending && (
+        <p className={styles.error} style={{ color: 'red' }}>
+          {t('errorForSending')}
+        </p>
+      )}
     </form>
   );
 };
