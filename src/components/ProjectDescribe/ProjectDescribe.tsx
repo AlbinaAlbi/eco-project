@@ -92,8 +92,8 @@ export const ProjectDescribe = () => {
       newErrors.title = 'projectNameMinLength';
     }
 
-    if (form.shortDescription.trim().length > 20) {
-      newErrors.shortDescription = 'shortDescriptionMaxLength';
+    if (form.shortDescription.trim().length < 20) {
+      newErrors.shortDescription = 'shortDescriptionMinLength';
     }
 
     if (form.goals.trim().length < 10) {
@@ -140,10 +140,6 @@ export const ProjectDescribe = () => {
       setLoading(false);
     }
   };
-
-  if (loading) {
-    return <Loader />;
-  }
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
