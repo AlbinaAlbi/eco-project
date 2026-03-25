@@ -23,13 +23,16 @@ export const HowItWorks = ({ stepsList }: HowItWorksProps) => {
   return (
     <div className={styles.container} id="works">
       <div className={`containerContentPadding containerMaxWidth ${styles.content}`}>
-        <div className={onDesktop ? '' : 'wrapperTextAlign'}>
+        <div
+          className={onDesktop ? '' : 'wrapperTextAlign'}
+          style={{ alignItems: onDesktop ? 'center' : '' }}
+        >
           <TagAndTitle
             tag={tag}
             title={title}
             tagColor={tagColor}
             titleColor={titleColor}
-            alignLeft={true}
+            alignLeft={onDesktop ? true : false}
           />
         </div>
 
