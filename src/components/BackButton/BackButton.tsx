@@ -17,8 +17,8 @@ const PAGE_KEYS: Record<string, TranslationKey> = {
 export const BackButton = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const pathnames = location.pathname.split('/').filter(Boolean);
   const { currentProject } = useAppSelector((state) => state.projects);
-
   const { t } = useLanguage();
   const device = useDeviceType();
   const isMobile = device === 'mobile';
@@ -47,16 +47,13 @@ export const BackButton = () => {
               <div className={styles.image}>
                 <img src={arrowBack} alt="Back" />
               </div>
-              <span className={styles.current}>{t(currentKey) as string}</span>
-            </>
-          )}
-
-          {currentProject && (
-            <>
-              <div className={styles.image}>
-                <img src={arrowBack} alt="Back" />
-              </div>
-              <span className={styles.current}>{currentProject.title}</span>
+              <span className={styles.current}>
+                {currentKey
+                  ? (t(currentKey) as string)
+                  : currentProject
+                    ? currentProject.title
+                    : ''}
+              </span>
             </>
           )}
         </span>

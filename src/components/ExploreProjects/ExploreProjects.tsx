@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import { useSectionHeader } from '../../hooks/useSectionHeader';
 import { SECTION_HEADERS } from '../../locales/sectionHeaders';
 import { Description } from '../Description';
