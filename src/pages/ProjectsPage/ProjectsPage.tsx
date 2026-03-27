@@ -35,8 +35,6 @@ export const ProjectsPage = () => {
     [projects, selectedFilters],
   );
 
-  console.log(filteredProjects);
-
   if (loading) return <Loader />;
   if (error) return <ErrorElement />;
 

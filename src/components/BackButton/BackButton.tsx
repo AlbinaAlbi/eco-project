@@ -4,7 +4,6 @@ import styles from './BackButton.module.scss';
 import { TranslationKey, useLanguage } from '../../context/LanguageContext';
 import { useDeviceType } from '../../utils/getDeviceType';
 import { useAppSelector } from '../../hooks/hooks';
-
 const PAGE_KEYS: Record<string, TranslationKey> = {
   '/': 'home',
   '/projects': 'projects',
@@ -23,7 +22,18 @@ export const BackButton = () => {
   const device = useDeviceType();
   const isMobile = device === 'mobile';
 
-  const currentKey = PAGE_KEYS[location.pathname] ?? null;
+  const getTranslatedText = (key?: TranslationKey | string): string => {
+    if (!key) return '';
+    const value = t(key as TranslationKey);
+    if (!value) return '';
+    if (typeof value === 'string') return value;
+    if (Array.isArray(value)) return value.join(' ');
+    if ('mobile' in value && 'desktop' in value) {
+      return isMobile ? value.mobile.join(' ') : value.desktop.join(' ');
+    }
+    return '';
+  };
+  console.log('BackButton pathnames:', pathnames);
 
   if (location.pathname === '/') {
     return null;
@@ -42,20 +52,23 @@ export const BackButton = () => {
       ) : (
         <span className={`textSecondary ${styles.desktop}`}>
           <span onClick={() => navigate('/')}>{t('home')}</span>
-          {currentKey && (
-            <>
-              <div className={styles.image}>
-                <img src={arrowBack} alt="Back" />
-              </div>
-              <span className={styles.current}>
-                {currentKey
-                  ? (t(currentKey) as string)
-                  : currentProject
+          {pathnames.map((segment, index) => {
+            const routeTo = '/' + pathnames.slice(0, index + 1).join('/');
+            const translationKey = PAGE_KEYS[routeTo] ?? segment;
+
+            return (
+              <span key={routeTo} className={styles.segment} onClick={() => navigate(routeTo)}>
+                <div className={styles.image}>
+                  <img src={arrowBack} alt="Back" />
+                </div>
+                <span className={styles.current}>
+                  {segment.match(/^\d+$/) && currentProject
                     ? currentProject.title
-                    : ''}
+                    : getTranslatedText(translationKey)}
+                </span>
               </span>
-            </>
-          )}
+            );
+          })}
         </span>
       )}
     </button>
