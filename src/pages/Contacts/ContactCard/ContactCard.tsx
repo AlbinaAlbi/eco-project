@@ -15,7 +15,9 @@ export const ContactCard = ({ contact }: ContactCardProps) => {
         <img src={contact.img} alt={`Contact card img ${contact.id}`} />
       </div>
       <h4>{renderText(contact.descriptionKey)}</h4>
-      <div className={styles.email}>{contact.email}</div>
+      <a href={`mailto:${contact.email}`} className={styles.email} title="Написать письмо">
+        {contact.email}
+      </a>
     </div>
   );
 };

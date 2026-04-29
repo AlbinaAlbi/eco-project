@@ -5,7 +5,7 @@ import { Projectinput } from '../Projectinput';
 import { ProjectCategory } from '../ProjectCategory';
 import { Button } from '../Button';
 import { useDeviceType } from '../../utils/getDeviceType';
-import { createProject } from '../../api/project';
+import { handleSubm } from '../../api/project';
 import { ProjectCreate } from '../../types/ProjectCreate';
 import { Agree } from '../Agree';
 import { ProjectDuration } from '../ProjectDuration';
@@ -139,13 +139,14 @@ export const ProjectDescribe = () => {
     }
 
     try {
-      await createProject(form);
+      await handleSubm(form);
       setSuccess(true);
       setErrors({});
       setForm(newProject);
       setAgree(false);
       setPreviewFile(null);
-    } catch {
+    } catch (err) {
+      console.error(err);
       setErrorSending(true);
     }
   };
