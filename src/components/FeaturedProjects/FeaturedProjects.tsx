@@ -1,7 +1,7 @@
 import { useLanguage } from '../../context/LanguageContext';
 import { useSectionHeader } from '../../hooks/useSectionHeader';
 import { SECTION_HEADERS } from '../../locales/sectionHeaders';
-import { Project } from '../../types/Project';
+import { Project } from '../../types/ProjectType';
 import { Button } from '../Button';
 import { Description } from '../Description';
 import { TagAndTitle } from '../TagAndTitle';

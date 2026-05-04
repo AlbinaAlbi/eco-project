@@ -1,5 +1,5 @@
 import { CATEGORY_MAP, CITY_MAP, STATUS_MAP } from '../hooks/useFilter';
-import { Project } from '../types/Project';
+import { Project } from '../types/ProjectType';
 import { SelectedFilters } from '../types/SelectedFilters';
 
 export const filterProjects = (projects: Project[], filters: SelectedFilters) => {

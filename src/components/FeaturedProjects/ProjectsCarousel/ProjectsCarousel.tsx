@@ -9,7 +9,7 @@ import { ProjectCard } from '../ProjectCard';
 import { CarouselElement } from './CarouselElement';
 import { useDeviceType } from '../../../utils/getDeviceType';
 import { useRef, useState } from 'react';
-import { Project } from '../../../types/Project';
+import { Project } from '../../../types/ProjectType';
 
 interface ProjectsCarouselProps {
   projects: Project[];

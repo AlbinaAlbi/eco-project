@@ -8,7 +8,7 @@ import { ProgressBar } from './ProgressBar';
 import { Link, useLocation } from 'react-router-dom';
 import { Region } from './Region';
 import { StatusCard } from './StatusCard/StatusCard';
-import { Project } from '../../../types/Project';
+import { Project } from '../../../types/ProjectType';
 
 interface ProjectCardProps {
   project: Project;

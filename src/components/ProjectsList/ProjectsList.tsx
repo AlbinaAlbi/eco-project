@@ -3,7 +3,7 @@ import styles from './ProjectsList.module.scss';
 import arrowImg from '../../imgs/Chevron.svg';
 import { scrollToTop } from '../../utils/scrollToTop';
 import { useLanguage } from '../../context/LanguageContext';
-import { Project } from '../../types/Project';
+import { Project } from '../../types/ProjectType';
 const ITEMS_PER_PAGE = 6;
 
 interface ProjectsListProps {

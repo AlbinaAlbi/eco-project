@@ -1,4 +1,4 @@
-import { Project } from '../types/Project';
+import { Project } from '../types/ProjectType';
 import { ProjectCreate } from '../types/ProjectCreate';
 import { api } from './api';
 

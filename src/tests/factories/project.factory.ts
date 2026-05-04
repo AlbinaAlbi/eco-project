@@ -1,4 +1,4 @@
-import { Project } from '../../types/Project';
+import { Project } from '../../types/ProjectType';
 
 export const createProject = (overrides?: Partial<Project>): Project => ({
   id: 1,

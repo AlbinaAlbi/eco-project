@@ -1,7 +1,7 @@
 // src/store/slices/ProjectsSlice/projectsSlice.ts
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { fetchProjectById, fetchProjects as fetchProjectsAPI } from '../../../api/project';
-import { Project } from '../../../types/Project';
+import { Project } from '../../../types/ProjectType';
 
 interface ProjectsState {
   projects: Project[];
