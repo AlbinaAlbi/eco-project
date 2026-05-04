@@ -25,25 +25,6 @@ export const createProject = async (project: ProjectCreate) => {
 };
 
 export const handleSubm = async (project: ProjectCreate) => {
-  const res = await fetch('http://localhost:8080/api/v1/projects/project-request', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(project),
-  });
-
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Помилка запиту: ${res.status} ${text}`);
-  }
-
-  const text = await res.text();
-
-  let result;
-  try {
-    result = text ? JSON.parse(text) : { message: 'Запит відправлений (буз відповіді)' };
-  } catch {
-    result = { message: 'Відповіть не є JSON' };
-  }
-
-  return result;
+  const response = await api.post('/projects/project-request', project);
+  return response.data;
 };
