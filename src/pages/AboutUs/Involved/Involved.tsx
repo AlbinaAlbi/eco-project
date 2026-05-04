@@ -38,8 +38,13 @@ export const Involved = () => {
         <Description title={description} />
       </div>
       <div className={styles.buttons}>
-        <Button text={t('submit')} color={'green'} buttonWidth={buttonWidth} />
-        <Button text={t('donate')} backgroundColor={false} buttonWidth={buttonWidth} />
+        <Button to={'/volunteer'} text={t('submit')} color={'green'} buttonWidth={buttonWidth} />
+        <Button
+          to={'/donate'}
+          text={t('donate')}
+          backgroundColor={false}
+          buttonWidth={buttonWidth}
+        />
       </div>
     </div>
   );
