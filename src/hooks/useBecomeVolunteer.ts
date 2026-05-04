@@ -1,5 +1,5 @@
 import { useLanguage } from '../context/LanguageContext';
-import folder from '../imgs/Folder.svg';
+import clipboard from '../imgs/clipboard.svg';
 import safe from '../imgs/Safe.svg';
 import eye from '../imgs/eye.svg';
 import timer from '../imgs/timer.svg';
@@ -10,7 +10,7 @@ export const useBecomeVolunteer = (): StepsListProps[] => {
 
   const titleFirst = t('fillOut.title');
   const descriptionFirst = t('fillOut.descriptionProvide');
-  const iconFirst = folder;
+  const iconFirst = clipboard;
 
   const titleSecond = t('review.title');
   const descriptionSecond = t('review.descriptionInformation');
