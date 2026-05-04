@@ -1,22 +1,42 @@
 @import '../../styles/index';
-@import '../../styles/mixins/media';
 
 .container {
-  height: $size-3xl;
   background-color: $color-gray-100;
-  border-radius: $size-40px;
+  border-radius: $size-40;
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  padding: $size-s;
+  padding: $size-l;
+  height: $size-3xl;
+  max-width: $size-1000;
+  width: 100%;
+  align-self: center;
+
+  @include on-tablet {
+    height: $size-72;
+  }
 
   @include on-desktop {
-    margin: 0 102px;
+    height: $size-80;
   }
-}
+} 
 
-.icon {
+.box {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: $size-m;
+  align-items: center;
+  padding: $size-xl 0 $size-40;
 
+  @include on-tablet {
+    padding-bottom: $size-xl;
+    gap: $size-24;
+  }
+
+  @include on-desktop {
+    padding-bottom: $size-24;
+    gap: $size-xl;
+  }
 }

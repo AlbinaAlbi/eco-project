@@ -1,0 +1,66 @@
+@import '../../styles';
+
+.choose {
+  display: flex;
+  flex-direction: column;
+  gap: $size-xs;
+  text-align: start;
+  position: relative;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  border: $size-1 solid $color-gray-200;
+  border-radius: $size-40;
+  padding: 0 $size-24;
+  opacity: 0.5;
+  height: $size-2xl;
+  justify-content: space-between;
+
+  @include on-desktop {
+    height: $size-52;
+  }
+  
+  @include on-desktop {
+    height: $size-52;
+  }
+}
+
+.select img {
+  height: 100%;
+  width: 9px;
+  transform: rotate(90deg);
+  filter: brightness(0);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: $size-14;
+  padding: $size-16;
+  border-radius: $size-16;
+  border: $size-1 solid $color-gray-200;
+  box-shadow: 0 4px 25px 0 #00000014;
+  list-style: none;
+  background-color: $color-background;
+  position: absolute;
+  z-index: 10;
+  top: 90%;
+  width: 50%;
+
+  left: 0;
+}
+
+.list li {
+  cursor: pointer;
+  transition: text-shadow 0.3s ease;
+
+  &:hover {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.error {
+  color: $color-system-error;
+}

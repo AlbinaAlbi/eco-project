@@ -1,0 +1,46 @@
+@import '../../../styles';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: $size-s;
+
+  @include on-desktop {
+    gap: $size-m;
+  }
+}
+
+.form input,
+.form textarea {
+  border-radius: $size-40;
+  border: $size-1-5 solid $color-gray-200;
+  display: flex;
+  padding: 0 $size-24;
+  outline: none;
+  resize: none;
+}
+
+.form input {
+  height: $size-2xl;
+
+  @include on-desktop {
+    gap: $size-52;
+  }
+}
+
+.form textarea {
+  height: $size-80;
+  padding-top: $size-m;
+
+  @include on-desktop {
+    gap: $size-100;
+  }
+}
+
+.success,
+.error {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+}

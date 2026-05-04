@@ -1,0 +1,14 @@
+@import '../../../../styles';
+
+.status {
+  display: flex;
+  justify-content: space-between;
+  gap: $size-2xs;
+  align-items: center;
+}
+
+.ellipse {
+  width: $size-xs;
+  height: $size-xs;
+  border-radius: 50%;
+}

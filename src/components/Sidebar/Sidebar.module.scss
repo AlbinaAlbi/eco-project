@@ -1,0 +1,40 @@
+@import '../../styles/index';
+
+.sidebar {
+  position: fixed;
+  top: calc($hight-header-mobile + $size-xl);
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-background-white;
+  z-index: 1100;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: $opacityEffectDuration;
+
+  @include on-tablet {
+    top: calc($hight-header-tablet + $size-xl);
+  }
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top: $size-200;
+  gap: $size-72;
+
+  > *:last-child {
+    margin-top: 8px;
+  }
+
+  @include on-tablet {
+    padding-top: $size-260;
+    gap: $size-80;
+  }
+}

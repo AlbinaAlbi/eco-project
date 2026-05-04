@@ -1,0 +1,34 @@
+import { useSectionHeader } from '../../hooks/useSectionHeader';
+import { useStatistics } from '../../hooks/useStatistics';
+import { SECTION_HEADERS } from '../../locales/sectionHeaders';
+import { Description } from '../Description';
+import { TagAndTitle } from '../TagAndTitle';
+import styles from './OurStatistics.module.scss';
+import { StatisticCard } from './StatisticCard';
+
+export const OurStatistics = () => {
+  const { tagKey, titleKey, tagColor, descriptionKey, titleColor } = SECTION_HEADERS.statistics;
+  const { tag, title, description } = useSectionHeader({
+    tagKey,
+    titleKey,
+    descriptionKey,
+  });
+
+  const statisticsList = useStatistics();
+
+  return (
+    <div className={styles.container}>
+      <div className={`containerContentPadding containerMaxWidth ${styles.content}`}>
+        <div className="wrapperTextAlign">
+          <TagAndTitle tag={tag} title={title} tagColor={tagColor} titleColor={titleColor} />
+          <Description title={description} />
+        </div>
+        <div className={styles.statisticsCards}>
+          {statisticsList.map((statistic) => (
+            <StatisticCard key={statistic.id} information={statistic} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};

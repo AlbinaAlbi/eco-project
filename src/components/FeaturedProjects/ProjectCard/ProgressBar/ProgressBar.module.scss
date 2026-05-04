@@ -1,0 +1,35 @@
+@import '../../../../styles';
+
+.container {
+  padding : $size-s 0 $size-l;
+  width: 100%;
+}
+
+.raisedAndGoal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.goal {
+  align-items: end;
+}
+
+.goal h5,
+.raised h5 {
+  font-weight: lighter;
+}
+
+.goal,
+.raised {
+  display: flex;
+  flex-direction: column;
+  gap: $size-xs;
+}
+
+.goal span,
+.raised span {
+  color: $color-gray-700;
+  font-weight: lighter;
+}

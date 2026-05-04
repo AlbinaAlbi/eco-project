@@ -1,0 +1,51 @@
+@import '../../../../styles';
+
+.info,
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: $color-gray-100;
+  width: 100%;
+  padding: $size-xl;
+  border-radius: $size-xl;
+  gap: $size-20;
+  width: 100%;
+
+  @include on-tablet {
+    flex-direction: row;
+  }
+}
+
+.info {
+  order: 2;
+  gap: $size-xs;
+
+  @include on-tablet {
+    order: 1;
+    text-align: start;
+  }
+}
+
+.count {
+  order: 1;
+  font-family: $font-poppins;
+  font-size: $size-xl;
+
+  @include on-tablet {
+    order: 2;
+    font-size: $size-38;
+  }
+
+  @include on-desktop {
+    font-size: $size-45;
+  }
+}
+
+.description {
+  color: $color-gray-600;
+}

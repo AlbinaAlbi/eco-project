@@ -1,0 +1,75 @@
+@import '../../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+}
+
+.section {
+  padding-top: $size-s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $size-xs;
+  width: 100%;
+}
+
+.progressBar {
+  width: 100%;
+  padding: $size-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $size-2xs;
+  align-items: center;
+  border: $size-1 solid $color-gray-400;
+  border-radius: $size-40;
+  margin: $size-xl 0 $size-2xl;
+
+  @include on-tablet {
+    margin-bottom: $size-3xl;
+  }
+
+  @include on-desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: $size-20;
+    margin: $size-2xl 0 $size-100;
+  }
+}
+
+.progressBar {
+  > :first-child {
+    width: 100%;
+  }
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: $size-16;
+
+  @include on-tablet {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @include on-desktop {
+    gap: $size-20;
+  }
+}
+
+.image {
+  height: $size-327;
+  width: 100%;
+  overflow: hidden;
+
+  @include on-tablet {
+    height: $size-420;
+  }
+
+  @include on-desktop {
+    height: $size-600;
+  }
+}

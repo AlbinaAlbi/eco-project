@@ -1,0 +1,34 @@
+@import '../../../styles';
+
+.container {
+  color: $color-gray-600;
+  height: 100%;
+  width: 100%;
+}
+
+.container,
+.termsAndPrivacy {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: $size-m;
+  align-items: center;
+
+  @include on-tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.termsAndPrivacy {
+  @include on-tablet {
+    gap: $size-24;
+    order: 2;
+  }
+}
+
+.rights {
+  @include on-tablet {
+    order: 1;
+  }
+}

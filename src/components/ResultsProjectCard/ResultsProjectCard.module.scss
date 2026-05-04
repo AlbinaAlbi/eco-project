@@ -1,0 +1,45 @@
+@import '../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: $size-211;
+  background-color: $color-gray-100;
+  border-radius: $size-40;
+  padding: $size-xl;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+
+  @include on-desktop {
+    height: fit-content;
+    flex-direction: row;
+  }
+}
+
+.container h5 {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  order: 2;
+  height: $size-72;
+  justify-content: center;
+
+  @include on-desktop {
+    order: 1;
+    height: auto;
+  }
+}
+
+.count {
+  color: $color-black;
+  font-size: $size-40;
+  font-weight: 300;
+  font-family: $font-poppins;
+  order: 1;
+
+  @include on-desktop {
+    order: 2;
+    font-size: $size-45;
+  }
+}

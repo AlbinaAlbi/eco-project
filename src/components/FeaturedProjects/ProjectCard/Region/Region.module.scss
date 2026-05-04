@@ -1,0 +1,24 @@
+@import '../../../../styles';
+
+.location {
+  height: $size-16;
+  width: $size-16;
+  text-align: center;
+
+  @include on-tablet {
+    height: $size-14;
+    width: $size-14;
+  }
+
+  @include on-desktop {
+    height: $size-18;
+    width: $size-18;
+  }
+}
+
+.region {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-bottom: 8px;
+}

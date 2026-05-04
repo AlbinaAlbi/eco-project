@@ -1,0 +1,38 @@
+@import '../../../../styles/index';
+
+.container {
+  height: $size-327;
+  border-radius: $size-xl;
+  background-image: url('../../../../imgs/mission-card-2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: $size-24;
+  display: flex;
+  align-items: end;
+  width: 100%;
+
+  @include on-tablet {
+    height: 50%;
+    width: 100%;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: $size-17;
+  color: $color-white;
+
+  @include on-tablet {
+    gap: $size-xs;
+  }
+
+  @include on-desktop {
+    gap: $size-m;
+  }
+}
+
+.content h4 {
+  margin: 0;
+}

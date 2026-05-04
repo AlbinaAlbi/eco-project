@@ -1,0 +1,67 @@
+@import '../../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  background-image: url('../../../imgs/Home page.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
+  border-radius: $size-40;
+  padding: $size-24;
+  height: $size-600;
+
+  @include on-tablet {
+    height: $size-640;
+    padding: $size-xl;
+    justify-content: end;
+  }
+
+  @include on-desktop {
+    height: $size-750;
+    padding: $size-3xl;
+  }
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.container > * {
+  position: relative;
+  z-index: 2;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: $size-16;
+  padding-top: $size-24;
+  width: 100%;
+  justify-content: center;
+
+  @include on-tablet {
+    flex-direction: row;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: $size-2xl;
+
+  @include on-tablet {
+    gap: 0;
+  }
+}

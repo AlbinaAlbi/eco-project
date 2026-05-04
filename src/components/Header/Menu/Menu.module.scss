@@ -1,0 +1,7 @@
+@import '../../../styles/index.scss';
+
+.container {
+  display: flex;
+  gap: $size-xl;
+  align-items: center;
+}

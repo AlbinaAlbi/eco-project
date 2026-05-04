@@ -1,0 +1,42 @@
+@import '../../../../styles';
+
+.actions {
+  @include on-tablet {
+    padding-top: $size-58;
+  }
+
+  @include on-desktop {
+    padding-top: $size-100;
+  }
+}
+
+.actions,
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $size-16;
+  width: 100%;
+
+  @include on-desktop {
+    flex-direction: row;
+    width: auto;
+  }
+}
+
+.list {
+  @include on-tablet {
+    flex-direction: row;
+  }
+}
+
+@include on-desktop {
+  .actions > :nth-child(1) {
+    justify-content: end;
+  }
+
+  .actions > :nth-child(2) {
+    justify-content: start;
+  }
+}
+

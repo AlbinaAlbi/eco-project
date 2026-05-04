@@ -1,0 +1,35 @@
+@import '../../styles/index.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $size-m;
+  padding-bottom: $size-xs;
+
+  @include on-tablet {
+    gap: $size-24;
+    padding-bottom: $size-m;
+  }
+
+  @include on-desktop {
+    gap: $size-xl;
+  }
+}
+
+.tagText {
+  width: fit-content;
+  padding: $size-s;
+  border-radius: $size-40;
+  height: $size-40;
+}
+
+.titleText {
+  display: block;
+  margin: 0;
+}
+
+span {
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+}

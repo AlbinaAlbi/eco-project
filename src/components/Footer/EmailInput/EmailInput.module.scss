@@ -1,0 +1,67 @@
+@import '../../../styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $size-xs;
+
+  @include on-tablet {
+    width: $size-336;
+    align-self: self-start;
+  }
+}
+
+.inputWrapper input,
+.inputWrapper button {
+  border: none;
+  background: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputWrapper {
+  display: flex;
+  height: $size-2xl;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: $size-1 solid $color-gray-200;
+  border-radius: $size-40;
+  padding: $size-14-5 $size-24;
+  background-color: $color-background;
+
+  &:hover {
+    border: $size-1-5 solid $c-button-primary;
+  }
+
+  &:focus-within {
+    border: $size-1-5 solid $c-button-primary;
+
+    button {
+      opacity: 1;
+    }
+  }
+}
+
+.inputWrapper input {
+  outline: none;
+  width: 100%;
+
+  &::placeholder {
+    color: $color-gray-500;
+  }
+
+  &:focus::placeholder {
+    color: $color-black;
+  }
+}
+
+.inputWrapper button {
+  opacity: 0.5;
+}
+
+.statusMessage {
+  color: $color-gray-500;
+}

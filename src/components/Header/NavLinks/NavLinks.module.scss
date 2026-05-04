@@ -1,7 +1,36 @@
-@import '/src/styles/index.scss';
+@import '/src/styles/index';
 
 .container {
+  justify-content: center;
   display: flex;
-  justify-content: space-between;  
-  width: 100%;
+  gap: $size-xl;
+  flex-direction: column;
+  align-items: center;
+
+  @include on-tablet {
+    gap: $size-64;
+  }
+
+  @include on-desktop {
+    flex-direction: row;
+    gap: $size-24;
+  }
+}
+
+.container a {
+  text-decoration: none;
+  color: $color-black;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  height: $size-2xl;
+  font-size: $size-l;
+
+  @include on-desktop {
+    height: $size-24;
+  }
+}
+
+.active {
+  border-bottom: $size-1-5 solid $c-button-primary;
 }

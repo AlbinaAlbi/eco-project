@@ -1,0 +1,64 @@
+@import '../../../styles';
+
+.cardsList {
+  display: grid;
+  flex-direction: column;
+  gap: $size-m;
+  grid-template-columns: 1fr;
+
+  @include on-tablet {
+    gap: $size-40;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  height: $size-400;
+  border-radius: $size-40;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: $size-26 $size-24;
+  text-align: center;
+  
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+  }
+
+  @include on-tablet {
+    height: $size-480;
+  }
+
+  @include on-desktop {
+    height: $size-520;
+  }
+}
+
+.title,
+.description {
+  position: relative;
+  z-index: 1;
+  color: $color-white;
+  font-weight: 300;
+}
+
+.description {
+  padding: $size-m;
+  backdrop-filter: blur($size-24);
+  border-radius: $size-xl;
+}

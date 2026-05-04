@@ -1,0 +1,36 @@
+@import '../../styles';
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: $size-xs;
+  text-align: start;
+}
+
+.input input,
+.input textarea {
+  border: $size-1 solid $color-gray-200;
+  border-radius: $size-40;
+  padding: 0 $size-24;
+  opacity: 0.5;
+  height: $size-2xl;
+  align-items: center;
+
+  @include on-desktop {
+    height: $size-52;
+  }
+}
+
+.input textarea {  
+  resize: none;
+  height: $size-255;
+  padding: $size-16;
+
+  @include on-desktop {
+    height: $size-195;
+  }
+}
+
+.error {
+  color: $color-system-error;
+}
