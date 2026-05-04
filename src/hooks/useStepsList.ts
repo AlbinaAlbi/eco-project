@@ -1,6 +1,7 @@
 import { useLanguage } from '../context/LanguageContext';
 import map from '../imgs/Map.svg';
 import info from '../imgs/Info.svg';
+import handHeart from '../imgs/Hand-heart.svg';
 import { StepsListProps } from '../types/StepsListProps';
 
 export const useStepsList = (): StepsListProps[] => {
@@ -12,11 +13,11 @@ export const useStepsList = (): StepsListProps[] => {
 
   const titleSecond = t('worksSteps.step2Title');
   const descriptionSecond = t('worksSteps.step2Description');
-  const iconSecond = map;
+  const iconSecond = info;
 
   const titleThird = t('worksSteps.step3Title');
   const descriptionThird = t('worksSteps.step3Description');
-  const iconThird = info;
+  const iconThird = handHeart;
 
   return [
     {
