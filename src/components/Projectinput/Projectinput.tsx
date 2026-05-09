@@ -1,4 +1,4 @@
-import { TranslationKey, useLanguage } from '../../context/LanguageContext';
+import { TranslationKey } from '../../context/LanguageContext';
 import { useTranslatedText } from '../../hooks/useResponsiveText';
 import { ProjectCreate } from '../../types/ProjectCreate';
 import styles from './Projectinput.module.scss';
