@@ -4,10 +4,9 @@ export const useRenderText = () => {
   const renderText = (text: string | string[]): ReactNode => {
     if (Array.isArray(text)) {
       return text.map((line, i) => (
-        <span key={i}>
+        <div key={i} style={{ display: 'block' }}>
           {line}
-          <br />
-        </span>
+        </div>
       ));
     }
     return text;
